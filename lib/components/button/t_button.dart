@@ -34,7 +34,7 @@ class TButton extends StatelessWidget {
     switch (tButtonType) {
       case TButtonType.primary:
         return ElevatedButton(
-          style: ElevatedButton.styleFrom(backgroundColor: TColors.secondary),
+          style: ElevatedButton.styleFrom(backgroundColor: TColors.primary),
           onPressed: onPressed,
           child: child,
         );
@@ -46,7 +46,7 @@ class TButton extends StatelessWidget {
         );
       case TButtonType.outlined:
         return OutlinedButton(
-          style: OutlinedButton.styleFrom(backgroundColor: TColors.secondary),
+          style: OutlinedButton.styleFrom(),
           onPressed: onPressed,
           child: child,
         );

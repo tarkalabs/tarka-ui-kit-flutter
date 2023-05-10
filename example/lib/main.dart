@@ -32,26 +32,30 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         body: ListView(
             padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 30),
-            children: const [
+            children:  [
           TButton(
             label: "Hello",
-            icon: FluentIcons.access_time_24_regular,
+            icon: FluentIcons.circle_12_filled,
             tButtonType: TButtonType.primary,
+            onPressed: (){},
           ),
-              TButton(
+               TButton(
                 label: "Hello",
-                icon: FluentIcons.access_time_24_regular,
+                icon: FluentIcons.circle_12_filled,
                 tButtonType: TButtonType.secondary,
+                onPressed: (){},
               ),
               TButton(
                 label: "Hello",
-                icon: FluentIcons.access_time_24_regular,
+                icon: FluentIcons.circle_12_filled,
                 tButtonType: TButtonType.outlined,
+                onPressed: (){},
               ),
               TButton(
                 label: "Hello",
-                icon: FluentIcons.access_time_24_regular,
+                icon: FluentIcons.circle_12_filled,
                 tButtonType: TButtonType.ghost,
+                onPressed: (){},
               )
         ]));
   }
