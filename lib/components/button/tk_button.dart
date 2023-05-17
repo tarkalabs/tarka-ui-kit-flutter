@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:tarka_ui/colors/t_colors.dart';
+import 'package:tarka_ui/styles/tk_colors.dart';
 
-enum TButtonType { primary, secondary, outlined, ghost }
+enum TKButtonType { primary, secondary, outlined, ghost, danger }
 
-class TButton extends StatelessWidget {
+class TKButton extends StatelessWidget {
   final String? label;
   final IconData? icon;
-  final TButtonType tButtonType;
+  final TKButtonType tButtonType;
   final VoidCallback? onPressed;
 
-  const TButton({
+  const TKButton({
     super.key,
     required this.label,
     required this.icon,
@@ -32,27 +32,33 @@ class TButton extends StatelessWidget {
       ],
     );
     switch (tButtonType) {
-      case TButtonType.primary:
-        return ElevatedButton(
-          style: ElevatedButton.styleFrom(backgroundColor: TColors.primary),
+      case TKButtonType.primary:
+        return TextButton(
+          style: TextButton.styleFrom(backgroundColor: TKColors.primary),
           onPressed: onPressed,
           child: child,
         );
-      case TButtonType.secondary:
-        return ElevatedButton(
-          style: ElevatedButton.styleFrom(backgroundColor: TColors.secondary),
+      case TKButtonType.secondary:
+        return TextButton(
+          style: TextButton.styleFrom(backgroundColor: TKColors.secondary),
           onPressed: onPressed,
           child: child,
         );
-      case TButtonType.outlined:
+      case TKButtonType.outlined:
         return OutlinedButton(
           style: OutlinedButton.styleFrom(),
           onPressed: onPressed,
           child: child,
         );
-      case TButtonType.ghost:
+      case TKButtonType.ghost:
         return TextButton(
-          style: TextButton.styleFrom(backgroundColor: TColors.background),
+          style: TextButton.styleFrom(backgroundColor: const Color(0x00FFFFFF)),
+          onPressed: onPressed,
+          child: child,
+        );
+      case TKButtonType.danger:
+        return TextButton(
+          style: TextButton.styleFrom(backgroundColor: TKColors.error),
           onPressed: onPressed,
           child: child,
         );

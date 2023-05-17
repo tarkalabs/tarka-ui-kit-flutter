@@ -32,31 +32,51 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         body: ListView(
             padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 30),
-            children:  [
-          TButton(
+            children: [
+          const Text("Heading1", style: TKTextStyle.heading1),
+          const Text("Heading2", style: TKTextStyle.heading2),
+          const Text("Heading3", style: TKTextStyle.heading3),
+          const Text("Heading4", style: TKTextStyle.heading4),
+          const Text("Heading5", style: TKTextStyle.heading5),
+          const Text("Heading6", style: TKTextStyle.heading6),
+          const Text("Heading7", style: TKTextStyle.heading7),
+          const Text("Body5", style: TKTextStyle.body5),
+          const Text("Body6", style: TKTextStyle.body6),
+          const Text("Body7", style: TKTextStyle.body7),
+          const Text("Body8", style: TKTextStyle.body8),
+          const Text("Button6", style: TKTextStyle.button6),
+          const Text("Button7", style: TKTextStyle.button7),
+          const Text("Button8", style: TKTextStyle.button8),
+          TKButton(
             label: "Hello",
             icon: FluentIcons.circle_12_filled,
-            tButtonType: TButtonType.primary,
-            onPressed: (){},
+            tButtonType: TKButtonType.primary,
+            onPressed: () {},
           ),
-               TButton(
-                label: "Hello",
-                icon: FluentIcons.circle_12_filled,
-                tButtonType: TButtonType.secondary,
-                onPressed: (){},
-              ),
-              TButton(
-                label: "Hello",
-                icon: FluentIcons.circle_12_filled,
-                tButtonType: TButtonType.outlined,
-                onPressed: (){},
-              ),
-              TButton(
-                label: "Hello",
-                icon: FluentIcons.circle_12_filled,
-                tButtonType: TButtonType.ghost,
-                onPressed: (){},
-              )
+          TKButton(
+            label: "Hello",
+            icon: FluentIcons.circle_12_filled,
+            tButtonType: TKButtonType.secondary,
+            onPressed: () {},
+          ),
+          TKButton(
+            label: "Hello",
+            icon: FluentIcons.circle_12_filled,
+            tButtonType: TKButtonType.outlined,
+            onPressed: () {},
+          ),
+          TKButton(
+            label: "Hello",
+            icon: FluentIcons.circle_12_filled,
+            tButtonType: TKButtonType.ghost,
+            onPressed: () {},
+          ),
+          TKButton(
+            label: "Hello",
+            icon: FluentIcons.circle_12_filled,
+            tButtonType: TKButtonType.danger,
+            onPressed: () {},
+          )
         ]));
   }
 }
