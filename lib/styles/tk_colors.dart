@@ -44,6 +44,7 @@ class TKColors {
   static const Color disabledContent = Color(0x661A1B1F);
   static const Color link = Color(0xff3381FF);
   static const Color outline = Color(0xff868A92);
+  static const Color transparent = Color(0x00FFFFFF);
 
   // Backgrounds
   static const Color background = Color(0xffEAEBEF);

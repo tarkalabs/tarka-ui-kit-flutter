@@ -34,31 +34,31 @@ class TKButton extends StatelessWidget {
     switch (tButtonType) {
       case TKButtonType.primary:
         return TextButton(
-          style: TextButton.styleFrom(backgroundColor: TKColors.primary),
+          style: TextButton.styleFrom(backgroundColor: TKColors.primary,foregroundColor:TKColors.onPrimary ),
           onPressed: onPressed,
           child: child,
         );
       case TKButtonType.secondary:
         return TextButton(
-          style: TextButton.styleFrom(backgroundColor: TKColors.secondary),
+          style: TextButton.styleFrom(backgroundColor: TKColors.secondary,foregroundColor: TKColors.onSecondary),
           onPressed: onPressed,
           child: child,
         );
       case TKButtonType.outlined:
         return OutlinedButton(
-          style: OutlinedButton.styleFrom(),
+          style: OutlinedButton.styleFrom(foregroundColor: TKColors.onSurface),
           onPressed: onPressed,
           child: child,
         );
       case TKButtonType.ghost:
         return TextButton(
-          style: TextButton.styleFrom(backgroundColor: const Color(0x00FFFFFF)),
+          style: TextButton.styleFrom(backgroundColor: TKColors.transparent,foregroundColor: TKColors.secondary),
           onPressed: onPressed,
           child: child,
         );
       case TKButtonType.danger:
         return TextButton(
-          style: TextButton.styleFrom(backgroundColor: TKColors.error),
+          style: TextButton.styleFrom(backgroundColor: TKColors.error,foregroundColor: TKColors.onPrimary),
           onPressed: onPressed,
           child: child,
         );
