@@ -33,6 +33,38 @@ class _HomePageState extends State<HomePage> {
         body: ListView(
             padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 30),
             children: [
+          TKAvatar(
+            avatarSize: TKAvatarSize.XXL,
+            avatarContent: TKAvatarContent(
+              text: "IH",
+              type: TKAvatarContentType.text,
+            ),
+          ),
+          TKAvatar(
+            avatarSize: TKAvatarSize.XL,
+            avatarContent: TKAvatarContent(
+              text: "IH",
+              type: TKAvatarContentType.text,
+            ),
+          ),
+          TKAvatar(
+            avatarSize: TKAvatarSize.M,
+            avatarContent: TKAvatarContent(
+              type: TKAvatarContentType.icon,
+              icon: Icon(Icons.construction),
+            ),
+          ),
+          TKAvatar(
+            avatarSize: TKAvatarSize.XXL,
+            avatarContent: TKAvatarContent(
+              type: TKAvatarContentType.image,
+              image: const TKImage(
+                imageUrl:
+                    "https://avatars.githubusercontent.com/u/16992520?v=4",
+              ),
+            ),
+            isBadged: true,
+          ),
           const Text("Heading1", style: TKTextStyle.heading1),
           const Text("Heading2", style: TKTextStyle.heading2),
           const Text("Heading3", style: TKTextStyle.heading3),
