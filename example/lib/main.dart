@@ -1,6 +1,6 @@
-import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:tarka_ui/tarka_ui.dart';
+import 'symbol.dart';
 
 void main() {
   runApp(const MyApp());
@@ -47,34 +47,39 @@ class _HomePageState extends State<HomePage> {
           const Text("Button6", style: TKTextStyle.button6),
           const Text("Button7", style: TKTextStyle.button7),
           const Text("Button8", style: TKTextStyle.button8),
+          const SizedBox(height: 8),
           TKButton(
             label: "Primary Button",
-            icon: FluentIcons.circle_12_filled,
-            tButtonType: TKButtonType.primary,
+            type: TKButtonType.primary,
+            size: TKButtonSize.xs,
             onPressed: () {},
           ),
           TKButton(
             label: "Secondary Button",
-            icon: FluentIcons.circle_12_filled,
-            tButtonType: TKButtonType.secondary,
+            icon: Symbol.chevronDown.value,
+            type: TKButtonType.secondary,
+            size: TKButtonSize.s,
+            iconAlignment: TKButtonIconAlignment.right,
             onPressed: () {},
           ),
           TKButton(
             label: "Outlined Button",
-            icon: FluentIcons.circle_12_filled,
-            tButtonType: TKButtonType.outlined,
+            icon: Symbol.chevronDown.value,
+            type: TKButtonType.outlined,
+            size: TKButtonSize.m,
             onPressed: () {},
           ),
           TKButton(
             label: "Ghost Button",
-            icon: FluentIcons.circle_12_filled,
-            tButtonType: TKButtonType.ghost,
+            icon: Symbol.chevronDown.value,
+            type: TKButtonType.ghost,
             onPressed: () {},
           ),
           TKButton(
             label: "Danger Button",
-            icon: FluentIcons.circle_12_filled,
-            tButtonType: TKButtonType.danger,
+            icon: Symbol.chevronDown.value,
+            type: TKButtonType.danger,
+            size: TKButtonSize.l,
             onPressed: () {},
           )
         ]));
