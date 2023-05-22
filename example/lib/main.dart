@@ -34,21 +34,21 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 30),
             children: [
           TKAvatar(
-            avatarSize: TKAvatarSize.XXL,
+            avatarSize: TKAvatarSize.xxl,
             avatarContent: TKAvatarContent(
               text: "IH",
               type: TKAvatarContentType.text,
             ),
           ),
           TKAvatar(
-            avatarSize: TKAvatarSize.XL,
+            avatarSize: TKAvatarSize.xl,
             avatarContent: TKAvatarContent(
               text: "IH",
               type: TKAvatarContentType.text,
             ),
           ),
           TKAvatar(
-            avatarSize: TKAvatarSize.M,
+            avatarSize: TKAvatarSize.m,
             avatarContent: TKAvatarContent(
               type: TKAvatarContentType.icon,
               icon: Icon(Icons.construction),
@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
             isBadged: true,
           ),
           TKAvatar(
-            avatarSize: TKAvatarSize.XXL,
+            avatarSize: TKAvatarSize.xxl,
             avatarContent: TKAvatarContent(
               type: TKAvatarContentType.image,
               image: const TKImage(
