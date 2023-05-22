@@ -29,6 +29,21 @@ enum TKAvatarSize {
         return const Size(96, 96);
     }
   }
+
+  Size getBadgeSize() {
+    switch (this) {
+      case TKAvatarSize.XXS:
+      case TKAvatarSize.XS:
+      case TKAvatarSize.S:
+      case TKAvatarSize.M:
+        return const Size(12, 12);
+      case TKAvatarSize.L:
+        return const Size(16, 16);
+      case TKAvatarSize.XL:
+      case TKAvatarSize.XXL:
+        return const Size(24, 24);
+    }
+  }
 }
 
 enum TKAvatarContentType { image, icon, text }
@@ -83,7 +98,60 @@ class TKAvatar extends StatelessWidget {
       child: circleChild,
     );
 
-    return circleAvatar;
+    if (isBadged) {
+      return LayoutBuilder(
+        builder: (context, constraints) {
+          Positioned badge;
+
+          if (constraints.maxHeight != double.infinity) {
+            badge = Positioned(
+              left: constraints.maxWidth / 2 +
+                  avatarSize.getAvatarSize().width / 4,
+              top: constraints.maxHeight / 2 +
+                  avatarSize.getAvatarSize().height / 4,
+              child: Container(
+                height: avatarSize.getBadgeSize().height,
+                width: avatarSize.getBadgeSize().width,
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: TKColors.success,
+                ),
+              ),
+            );
+          } else {
+            badge = Positioned(
+              left: constraints.maxWidth / 2 +
+                  avatarSize.getAvatarSize().width / 4,
+              bottom: 0,
+              child: Container(
+                height: avatarSize.getBadgeSize().height,
+                width: avatarSize.getBadgeSize().width,
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: TKColors.success,
+                ),
+              ),
+            );
+          }
+
+          return Stack(
+            alignment: Alignment.center,
+            children: [
+              Center(
+                child: SizedBox(
+                  width: avatarSize.getAvatarSize().width,
+                  height: avatarSize.getAvatarSize().height,
+                  child: circleAvatar,
+                ),
+              ),
+              badge
+            ],
+          );
+        },
+      );
+    } else {
+      return circleAvatar;
+    }
   }
 
   TextStyle getTextStyleForAvatarSize(TKAvatarSize avatarSize) {

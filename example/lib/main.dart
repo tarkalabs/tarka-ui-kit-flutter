@@ -53,6 +53,7 @@ class _HomePageState extends State<HomePage> {
               type: TKAvatarContentType.icon,
               icon: Icon(Icons.construction),
             ),
+            isBadged: true,
           ),
           TKAvatar(
             avatarSize: TKAvatarSize.XXL,
