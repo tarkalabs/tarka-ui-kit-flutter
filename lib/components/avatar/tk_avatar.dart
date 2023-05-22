@@ -22,11 +22,11 @@ class TKAvatar extends StatelessWidget {
     if (avatarContent.icon != null) {
       circleChild = Icon(
         avatarContent.icon!.icon,
-        size: avatarSize.getAvatarSize() / 2,
+        size: avatarSize._getAvatarSize() / 2,
         color: TKColors.constantLight,
       );
     } else if (avatarContent.text != null) {
-      TextStyle textStyle = avatarSize.getTextStyle().copyWith(
+      TextStyle textStyle = avatarSize._getTextStyle().copyWith(
             color: TKColors.onTertiary,
           );
 
@@ -39,7 +39,7 @@ class TKAvatar extends StatelessWidget {
     }
 
     CircleAvatar circleAvatar = CircleAvatar(
-      radius: avatarSize.getAvatarSize() / 2,
+      radius: avatarSize._getAvatarSize() / 2,
       backgroundColor: TKColors.tertiary,
       child: circleChild,
     );
@@ -51,11 +51,11 @@ class TKAvatar extends StatelessWidget {
 
           if (constraints.maxHeight != double.infinity) {
             badge = Positioned(
-              left: constraints.maxWidth / 2 + avatarSize.getAvatarSize() / 4,
-              top: constraints.maxHeight / 2 + avatarSize.getAvatarSize() / 4,
+              left: constraints.maxWidth / 2 + avatarSize._getAvatarSize() / 4,
+              top: constraints.maxHeight / 2 + avatarSize._getAvatarSize() / 4,
               child: Container(
-                height: avatarSize.getBadgeSize(),
-                width: avatarSize.getBadgeSize(),
+                height: avatarSize._getBadgeSize(),
+                width: avatarSize._getBadgeSize(),
                 decoration: const BoxDecoration(
                   shape: BoxShape.circle,
                   color: TKColors.success,
@@ -64,11 +64,11 @@ class TKAvatar extends StatelessWidget {
             );
           } else {
             badge = Positioned(
-              left: constraints.maxWidth / 2 + avatarSize.getAvatarSize() / 4,
+              left: constraints.maxWidth / 2 + avatarSize._getAvatarSize() / 4,
               bottom: 0,
               child: Container(
-                height: avatarSize.getBadgeSize(),
-                width: avatarSize.getBadgeSize(),
+                height: avatarSize._getBadgeSize(),
+                width: avatarSize._getBadgeSize(),
                 decoration: const BoxDecoration(
                   shape: BoxShape.circle,
                   color: TKColors.success,
@@ -82,8 +82,8 @@ class TKAvatar extends StatelessWidget {
             children: [
               Center(
                 child: SizedBox(
-                  width: avatarSize.getAvatarSize(),
-                  height: avatarSize.getAvatarSize(),
+                  width: avatarSize._getAvatarSize(),
+                  height: avatarSize._getAvatarSize(),
                   child: circleAvatar,
                 ),
               ),
@@ -121,7 +121,7 @@ enum TKAvatarSize {
   xl,
   xxl;
 
-  double getAvatarSize() {
+  double _getAvatarSize() {
     switch (this) {
       case TKAvatarSize.xxs:
         return 24;
@@ -140,7 +140,7 @@ enum TKAvatarSize {
     }
   }
 
-  double getBadgeSize() {
+  double _getBadgeSize() {
     switch (this) {
       case TKAvatarSize.xxs:
       case TKAvatarSize.xs:
@@ -155,7 +155,7 @@ enum TKAvatarSize {
     }
   }
 
-  TextStyle getTextStyle() {
+  TextStyle _getTextStyle() {
     switch (this) {
       case TKAvatarSize.xxs:
         return TKTextStyle.body8;
@@ -177,27 +177,29 @@ enum TKAvatarSize {
 
 /// TKImage is used as an abstraction to handle asset and network image.
 class TKImage extends StatelessWidget {
-  final String? imageUrl;
-  final String? assetPath;
+  final String? _imageUrl;
+  final String? _assetPath;
 
   const TKImage({
     super.key,
-    this.imageUrl,
-    this.assetPath,
-  }) : assert(
+    String? imageUrl,
+    String? assetPath,
+  })  : _assetPath = assetPath,
+        _imageUrl = imageUrl,
+        assert(
           imageUrl != null || assetPath != null,
           'imageUrl or assetPath must be provided.',
         );
 
   @override
   Image build(BuildContext context) {
-    if (assetPath != null) {
+    if (_assetPath != null) {
       return Image.asset(
-        assetPath!,
+        _assetPath!,
       );
     } else {
       return Image.network(
-        imageUrl!,
+        _imageUrl!,
         errorBuilder:
             (BuildContext context, Object exception, StackTrace? stackTrace) {
           return const Text('Failed to load image');
