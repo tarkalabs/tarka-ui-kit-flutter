@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class TKTextStyle {
-  TKTextStyle._();
+class TUITextStyle {
+  TUITextStyle._();
 
   static const TextStyle heading1 = TextStyle(
     fontSize: 30,
