@@ -52,7 +52,7 @@ class TKColors {
   static const Color surface50 = Color(0x80F9FAFB);
   static const Color surfaceVariant = Color(0xffEBEFF4);
   static const Color surfaceHover = Color(0xffF0F2F5);
-
+  static const Color surfaceVariantHover = Color(0xffE1E6EF);
   // Constants
   static const Color constantDark = Color(0xff000000);
   static const Color constantLight = Color(0xffFFFFFF);
