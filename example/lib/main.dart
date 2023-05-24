@@ -33,39 +33,6 @@ class _HomePageState extends State<HomePage> {
         body: ListView(
             padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 30),
             children: [
-          TUIAvatar(
-            avatarSize: TUIAvatarSize.xxl,
-            avatarContent: TUIAvatarContent(
-              text: "IH",
-              type: TUIAvatarContentType.text,
-            ),
-          ),
-          TUIAvatar(
-            avatarSize: TUIAvatarSize.xl,
-            avatarContent: TUIAvatarContent(
-              text: "IH",
-              type: TUIAvatarContentType.text,
-            ),
-          ),
-          TUIAvatar(
-            avatarSize: TUIAvatarSize.m,
-            avatarContent: TUIAvatarContent(
-              type: TUIAvatarContentType.icon,
-              icon: const Icon(Icons.construction),
-            ),
-            isBadged: true,
-          ),
-          TUIAvatar(
-            avatarSize: TUIAvatarSize.xxl,
-            avatarContent: TUIAvatarContent(
-              type: TUIAvatarContentType.image,
-              image: const TUIImage(
-                imageUrl:
-                    "https://avatars.githubusercontent.com/u/16992520?v=4",
-              ),
-            ),
-            isBadged: true,
-          ),
           const Text("Heading1", style: TUITextStyle.heading1),
           const Text("Heading2", style: TUITextStyle.heading2),
           const Text("Heading3", style: TUITextStyle.heading3),
@@ -114,7 +81,53 @@ class _HomePageState extends State<HomePage> {
             type: TUIButtonType.danger,
             size: TUIButtonSize.l,
             onPressed: () {},
-          )
+          ),
+          const SizedBox(height: 8),
+          TUIAvatar(
+            avatarSize: TUIAvatarSize.xxl,
+            avatarContent: TUIAvatarContent(
+              text: "IH",
+              type: TUIAvatarContentType.text,
+            ),
+          ),
+          TUIAvatar(
+            avatarSize: TUIAvatarSize.xl,
+            avatarContent: TUIAvatarContent(
+              text: "IH",
+              type: TUIAvatarContentType.text,
+            ),
+          ),
+          TUIAvatar(
+            avatarSize: TUIAvatarSize.m,
+            avatarContent: TUIAvatarContent(
+              type: TUIAvatarContentType.icon,
+              icon: const Icon(Icons.construction),
+            ),
+            isBadged: true,
+          ),
+          TUIAvatar(
+            avatarSize: TUIAvatarSize.xxl,
+            avatarContent: TUIAvatarContent(
+              type: TUIAvatarContentType.image,
+              image: const TUIImage(
+                imageUrl:
+                    "https://avatars.githubusercontent.com/u/16992520?v=4",
+              ),
+            ),
+            isBadged: true,
+          ),
+          const SizedBox(height: 8),
+          const TUIDivider(horizontalPadding: TUIDividerHorizontalPadding.s),
+          const TUIDivider(horizontalPadding: TUIDividerHorizontalPadding.m),
+          const TUIDivider(horizontalPadding: TUIDividerHorizontalPadding.l),
+          const TUIDivider(horizontalPadding: TUIDividerHorizontalPadding.xl),
+          const SizedBox(
+              height: 80,
+              child: TUIDivider(
+                color: Colors.red,
+                type: TUIDividerType.vertical,
+                verticalPadding: TUIDividerVerticalPadding.s,
+              )),
         ]));
   }
 }
