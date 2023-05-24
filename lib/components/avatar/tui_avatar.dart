@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:tarka_ui/styles/tk_colors.dart';
-import 'package:tarka_ui/styles/tk_text_style.dart';
+import 'package:tarka_ui/styles/tui_colors.dart';
+import 'package:tarka_ui/styles/tui_text_style.dart';
 
-/// TKAvatar is used to create a Avatar with content, size and badge flag.
-class TKAvatar extends StatelessWidget {
-  final TKAvatarSize avatarSize;
-  final TKAvatarContent avatarContent;
+/// TUIAvatar is used to create a Avatar with content, size and badge flag.
+class TUIAvatar extends StatelessWidget {
+  final TUIAvatarSize avatarSize;
+  final TUIAvatarContent avatarContent;
   final bool isBadged;
 
-  const TKAvatar({
+  const TUIAvatar({
     super.key,
     required this.avatarSize,
     required this.avatarContent,
@@ -23,11 +23,11 @@ class TKAvatar extends StatelessWidget {
       circleChild = Icon(
         avatarContent.icon!.icon,
         size: avatarSize._getAvatarSize() / 2,
-        color: TKColors.constantLight,
+        color: TUIColors.constantLight,
       );
     } else if (avatarContent.text != null) {
       TextStyle textStyle = avatarSize._getTextStyle().copyWith(
-            color: TKColors.onTertiary,
+            color: TUIColors.onTertiary,
           );
 
       circleChild = Text(
@@ -40,7 +40,7 @@ class TKAvatar extends StatelessWidget {
 
     CircleAvatar circleAvatar = CircleAvatar(
       radius: avatarSize._getAvatarSize() / 2,
-      backgroundColor: TKColors.tertiary,
+      backgroundColor: TUIColors.tertiary,
       child: circleChild,
     );
 
@@ -58,7 +58,7 @@ class TKAvatar extends StatelessWidget {
                 width: avatarSize._getBadgeSize(),
                 decoration: const BoxDecoration(
                   shape: BoxShape.circle,
-                  color: TKColors.success,
+                  color: TUIColors.success,
                 ),
               ),
             );
@@ -71,7 +71,7 @@ class TKAvatar extends StatelessWidget {
                 width: avatarSize._getBadgeSize(),
                 decoration: const BoxDecoration(
                   shape: BoxShape.circle,
-                  color: TKColors.success,
+                  color: TUIColors.success,
                 ),
               ),
             );
@@ -98,21 +98,21 @@ class TKAvatar extends StatelessWidget {
   }
 }
 
-/// TKAvatarContent stores the content type and the content for the Avatar.
-class TKAvatarContent {
-  final TKAvatarContentType type;
+/// TUIAvatarContent stores the content type and the content for the Avatar.
+class TUIAvatarContent {
+  final TUIAvatarContentType type;
   final Icon? icon;
-  final TKImage? image;
+  final TUIImage? image;
   final String? text;
 
-  TKAvatarContent({required this.type, this.icon, this.image, this.text});
+  TUIAvatarContent({required this.type, this.icon, this.image, this.text});
 }
 
-/// TKAvatarContentType is used to define the content type of Avatar.
-enum TKAvatarContentType { image, icon, text }
+/// TUIAvatarContentType is used to define the content type of Avatar.
+enum TUIAvatarContentType { image, icon, text }
 
-/// TKAvatarSize is used to define the size of Avatar.
-enum TKAvatarSize {
+/// TUIAvatarSize is used to define the size of Avatar.
+enum TUIAvatarSize {
   xxs,
   xs,
   s,
@@ -123,64 +123,64 @@ enum TKAvatarSize {
 
   double _getAvatarSize() {
     switch (this) {
-      case TKAvatarSize.xxs:
+      case TUIAvatarSize.xxs:
         return 24;
-      case TKAvatarSize.xs:
+      case TUIAvatarSize.xs:
         return 32;
-      case TKAvatarSize.s:
+      case TUIAvatarSize.s:
         return 40;
-      case TKAvatarSize.m:
+      case TUIAvatarSize.m:
         return 48;
-      case TKAvatarSize.l:
+      case TUIAvatarSize.l:
         return 64;
-      case TKAvatarSize.xl:
+      case TUIAvatarSize.xl:
         return 80;
-      case TKAvatarSize.xxl:
+      case TUIAvatarSize.xxl:
         return 96;
     }
   }
 
   double _getBadgeSize() {
     switch (this) {
-      case TKAvatarSize.xxs:
-      case TKAvatarSize.xs:
-      case TKAvatarSize.s:
-      case TKAvatarSize.m:
+      case TUIAvatarSize.xxs:
+      case TUIAvatarSize.xs:
+      case TUIAvatarSize.s:
+      case TUIAvatarSize.m:
         return 12;
-      case TKAvatarSize.l:
+      case TUIAvatarSize.l:
         return 16;
-      case TKAvatarSize.xl:
-      case TKAvatarSize.xxl:
+      case TUIAvatarSize.xl:
+      case TUIAvatarSize.xxl:
         return 24;
     }
   }
 
   TextStyle _getTextStyle() {
     switch (this) {
-      case TKAvatarSize.xxs:
-        return TKTextStyle.body8;
-      case TKAvatarSize.xs:
-        return TKTextStyle.heading7;
-      case TKAvatarSize.s:
-        return TKTextStyle.heading6;
-      case TKAvatarSize.m:
-        return TKTextStyle.heading5;
-      case TKAvatarSize.l:
-        return TKTextStyle.heading4;
-      case TKAvatarSize.xl:
-        return TKTextStyle.heading3;
-      case TKAvatarSize.xxl:
-        return TKTextStyle.heading2;
+      case TUIAvatarSize.xxs:
+        return TUITextStyle.body8;
+      case TUIAvatarSize.xs:
+        return TUITextStyle.heading7;
+      case TUIAvatarSize.s:
+        return TUITextStyle.heading6;
+      case TUIAvatarSize.m:
+        return TUITextStyle.heading5;
+      case TUIAvatarSize.l:
+        return TUITextStyle.heading4;
+      case TUIAvatarSize.xl:
+        return TUITextStyle.heading3;
+      case TUIAvatarSize.xxl:
+        return TUITextStyle.heading2;
     }
   }
 }
 
-/// TKImage is used as an abstraction to handle asset and network image.
-class TKImage extends StatelessWidget {
+/// TUIImage is used as an abstraction to handle asset and network image.
+class TUIImage extends StatelessWidget {
   final String? _imageUrl;
   final String? _assetPath;
 
-  const TKImage({
+  const TUIImage({
     super.key,
     String? imageUrl,
     String? assetPath,

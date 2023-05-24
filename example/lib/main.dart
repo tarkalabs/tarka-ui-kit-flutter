@@ -33,83 +33,83 @@ class _HomePageState extends State<HomePage> {
         body: ListView(
             padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 30),
             children: [
-          const Text("Heading1", style: TKTextStyle.heading1),
-          const Text("Heading2", style: TKTextStyle.heading2),
-          const Text("Heading3", style: TKTextStyle.heading3),
-          const Text("Heading4", style: TKTextStyle.heading4),
-          const Text("Heading5", style: TKTextStyle.heading5),
-          const Text("Heading6", style: TKTextStyle.heading6),
-          const Text("Heading7", style: TKTextStyle.heading7),
-          const Text("Body5", style: TKTextStyle.body5),
-          const Text("Body6", style: TKTextStyle.body6),
-          const Text("Body7", style: TKTextStyle.body7),
-          const Text("Body8", style: TKTextStyle.body8),
-          const Text("Button6", style: TKTextStyle.button6),
-          const Text("Button7", style: TKTextStyle.button7),
-          const Text("Button8", style: TKTextStyle.button8),
+          const Text("Heading1", style: TUITextStyle.heading1),
+          const Text("Heading2", style: TUITextStyle.heading2),
+          const Text("Heading3", style: TUITextStyle.heading3),
+          const Text("Heading4", style: TUITextStyle.heading4),
+          const Text("Heading5", style: TUITextStyle.heading5),
+          const Text("Heading6", style: TUITextStyle.heading6),
+          const Text("Heading7", style: TUITextStyle.heading7),
+          const Text("Body5", style: TUITextStyle.body5),
+          const Text("Body6", style: TUITextStyle.body6),
+          const Text("Body7", style: TUITextStyle.body7),
+          const Text("Body8", style: TUITextStyle.body8),
+          const Text("Button6", style: TUITextStyle.button6),
+          const Text("Button7", style: TUITextStyle.button7),
+          const Text("Button8", style: TUITextStyle.button8),
           const SizedBox(height: 8),
-          TKButton(
+          TUIButton(
             label: "Primary Button",
-            type: TKButtonType.primary,
-            size: TKButtonSize.xs,
+            type: TUIButtonType.primary,
+            size: TUIButtonSize.xs,
             onPressed: () {},
           ),
-          TKButton(
+          TUIButton(
             label: "Secondary Button",
             icon: Symbol.chevronDown.value,
-            type: TKButtonType.secondary,
-            size: TKButtonSize.s,
-            iconAlignment: TKButtonIconAlignment.right,
+            type: TUIButtonType.secondary,
+            size: TUIButtonSize.s,
+            iconAlignment: TUIButtonIconAlignment.right,
             onPressed: () {},
           ),
-          TKButton(
+          TUIButton(
             label: "Outlined Button",
             icon: Symbol.chevronDown.value,
-            type: TKButtonType.outlined,
-            size: TKButtonSize.m,
+            type: TUIButtonType.outlined,
+            size: TUIButtonSize.m,
             onPressed: () {},
           ),
-          TKButton(
+          TUIButton(
             label: "Ghost Button",
             icon: Symbol.chevronDown.value,
-            type: TKButtonType.ghost,
+            type: TUIButtonType.ghost,
             onPressed: () {},
           ),
-          TKButton(
+          TUIButton(
             label: "Danger Button",
             icon: Symbol.chevronDown.value,
-            type: TKButtonType.danger,
-            size: TKButtonSize.l,
+            type: TUIButtonType.danger,
+            size: TUIButtonSize.l,
             onPressed: () {},
           ),
           const SizedBox(height: 8),
-          TKAvatar(
-            avatarSize: TKAvatarSize.xxl,
-            avatarContent: TKAvatarContent(
+          TUIAvatar(
+            avatarSize: TUIAvatarSize.xxl,
+            avatarContent: TUIAvatarContent(
               text: "IH",
-              type: TKAvatarContentType.text,
+              type: TUIAvatarContentType.text,
             ),
           ),
-          TKAvatar(
-            avatarSize: TKAvatarSize.xl,
-            avatarContent: TKAvatarContent(
+          TUIAvatar(
+            avatarSize: TUIAvatarSize.xl,
+            avatarContent: TUIAvatarContent(
               text: "IH",
-              type: TKAvatarContentType.text,
+              type: TUIAvatarContentType.text,
             ),
           ),
-          TKAvatar(
-            avatarSize: TKAvatarSize.m,
-            avatarContent: TKAvatarContent(
-              type: TKAvatarContentType.icon,
+          TUIAvatar(
+            avatarSize: TUIAvatarSize.m,
+            avatarContent: TUIAvatarContent(
+              type: TUIAvatarContentType.icon,
               icon: const Icon(Icons.construction),
             ),
             isBadged: true,
           ),
-          TKAvatar(
-            avatarSize: TKAvatarSize.xxl,
-            avatarContent: TKAvatarContent(
-              type: TKAvatarContentType.image,
-              image: const TKImage(
+          TUIAvatar(
+            avatarSize: TUIAvatarSize.xxl,
+            avatarContent: TUIAvatarContent(
+              type: TUIAvatarContentType.image,
+              image: const TUIImage(
                 imageUrl:
                     "https://avatars.githubusercontent.com/u/16992520?v=4",
               ),
@@ -123,7 +123,6 @@ class _HomePageState extends State<HomePage> {
           const TUIDivider(horizontalPadding: TUIDividerHorizontalPadding.xl),
           const SizedBox(
               height: 80,
-
               child: TUIDivider(
                 color: Colors.red,
                 type: TUIDividerType.vertical,
