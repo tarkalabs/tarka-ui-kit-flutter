@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 
-class TKSymbol {
-  TKSymbol._();
+class TUISymbol {
+  TUISymbol._();
 
   static const IconData chevronDown = FluentIcons.chevron_down_48_regular;
   static const IconData chevronRight = FluentIcons.chevron_right_48_regular;

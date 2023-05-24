@@ -1,6 +1,6 @@
 
-class TKSpacing {
-  TKSpacing._();
+class TUISpacing {
+  TUISpacing._();
 
   static const double none = 0;
   static const double baseVertical = 4;
