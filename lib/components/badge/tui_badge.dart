@@ -18,6 +18,28 @@ enum TUIBadgeSize {
     }
   }
 
+  Radius _getBorderRadius() {
+    switch (this) {
+      case xs:
+        return Radius.circular(6);
+      case s:
+        return Radius.circular(8);
+      case l:
+        return Radius.circular(12);
+    }
+  }
+
+  EdgeInsets _getEdgeInsets() {
+    switch (this) {
+      case xs:
+        return const EdgeInsets.fromLTRB(3, 0, 3, 0);
+      case s:
+        return const EdgeInsets.symmetric(horizontal: 5, vertical: 1);
+      case l:
+        return const EdgeInsets.symmetric(horizontal: 8, vertical: 4);
+    }
+  }
+
   TextStyle _getStyle() {
     switch (this) {
       case xs:
@@ -29,17 +51,6 @@ enum TUIBadgeSize {
         return TUITextStyle.button7.copyWith(
           color: TUIColors.onError,
         );
-    }
-  }
-
-  EdgeInsets _getEdgeInsets() {
-    switch (this) {
-      case l:
-        return const EdgeInsets.symmetric(horizontal: 8, vertical: 4);
-      case s:
-        return const EdgeInsets.symmetric(horizontal: 5, vertical: 1);
-      case xs:
-        return const EdgeInsets.fromLTRB(3, 0, 3, 0);
     }
   }
 }
@@ -69,9 +80,10 @@ class TUIBadge extends StatelessWidget {
           maxHeight: badgeSize._getBadgeSize(),
           maxWidth: MediaQuery.of(context).size.width,
         ),
-        decoration: const BoxDecoration(
-            color: TUIColors.error,
-            borderRadius: BorderRadius.all(Radius.circular(20))),
+        decoration: BoxDecoration(
+          color: TUIColors.error,
+          borderRadius: BorderRadius.all(badgeSize._getBorderRadius()),
+        ),
         padding: badgeSize._getEdgeInsets(),
         child: Text(
           content!,
