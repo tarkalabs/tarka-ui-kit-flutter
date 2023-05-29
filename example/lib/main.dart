@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tarka_ui/tarka_ui.dart';
+
 import 'symbol.dart';
 
 void main() {
@@ -30,9 +31,10 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: ListView(
-            padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 30),
-            children: [
+        body: SafeArea(
+      child: ListView(
+        padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 30),
+        children: [
           const Text("Heading1", style: TUITextStyle.heading1),
           const Text("Heading2", style: TUITextStyle.heading2),
           const Text("Heading3", style: TUITextStyle.heading3),
@@ -122,12 +124,79 @@ class _HomePageState extends State<HomePage> {
           const TUIDivider(horizontalPadding: TUIDividerHorizontalPadding.l),
           const TUIDivider(horizontalPadding: TUIDividerHorizontalPadding.xl),
           const SizedBox(
-              height: 80,
-              child: TUIDivider(
-                color: Colors.red,
-                type: TUIDividerType.vertical,
-                verticalPadding: TUIDividerVerticalPadding.s,
-              )),
-        ]));
+            height: 80,
+            child: TUIDivider(
+              color: Colors.red,
+              type: TUIDividerType.vertical,
+              verticalPadding: TUIDividerVerticalPadding.s,
+            ),
+          ),
+          Row(
+            children: const [
+              TUIBadge(
+                isNumbered: true,
+                content: "1",
+                badgeSize: TUIBadgeSize.l,
+              ),
+              TUIBadge(
+                isNumbered: true,
+                content: "1",
+                badgeSize: TUIBadgeSize.s,
+              ),
+              TUIBadge(
+                isNumbered: true,
+                content: "1",
+                badgeSize: TUIBadgeSize.xs,
+              ),
+              TUIBadge(
+                isNumbered: true,
+                content: "123",
+                badgeSize: TUIBadgeSize.l,
+              ),
+              TUIBadge(
+                isNumbered: true,
+                content: "123",
+                badgeSize: TUIBadgeSize.s,
+              ),
+              TUIBadge(
+                isNumbered: true,
+                content: "123",
+                badgeSize: TUIBadgeSize.xs,
+              ),
+              TUIBadge(
+                isNumbered: true,
+                content: "1235",
+                badgeSize: TUIBadgeSize.l,
+              ),
+              TUIBadge(
+                isNumbered: true,
+                content: "1235",
+                badgeSize: TUIBadgeSize.s,
+              ),
+              TUIBadge(
+                isNumbered: true,
+                content: "1235",
+                badgeSize: TUIBadgeSize.xs,
+              ),
+              TUIBadge(
+                isNumbered: false,
+                content: "12345",
+                badgeSize: TUIBadgeSize.l,
+              ),
+              TUIBadge(
+                isNumbered: false,
+                content: "12345",
+                badgeSize: TUIBadgeSize.s,
+              ),
+              TUIBadge(
+                isNumbered: false,
+                content: "12345",
+                badgeSize: TUIBadgeSize.xs,
+              ),
+            ],
+          ),
+        ],
+      ),
+    ));
   }
 }
