@@ -6,12 +6,18 @@ import 'package:tarka_ui/styles/tui_text_style.dart';
 class TUIAvatar extends StatelessWidget {
   final TUIAvatarSize avatarSize;
   final TUIAvatarContent avatarContent;
+  final Color? textColor;
+  final Color? foregroundColor;
+  final Color? backgroundColor;
   final bool isBadged;
 
   const TUIAvatar({
     super.key,
     required this.avatarSize,
     required this.avatarContent,
+    this.textColor = TUIColors.onTertiary,
+    this.foregroundColor = TUIColors.constantLight,
+    this.backgroundColor = TUIColors.tertiary,
     this.isBadged = false,
   });
 
@@ -21,13 +27,13 @@ class TUIAvatar extends StatelessWidget {
 
     if (avatarContent.icon != null) {
       circleChild = Icon(
-        avatarContent.icon!.icon,
+        avatarContent.icon,
         size: avatarSize._getAvatarSize() / 2,
         color: TUIColors.constantLight,
       );
     } else if (avatarContent.text != null) {
       TextStyle textStyle = avatarSize._getTextStyle().copyWith(
-            color: TUIColors.onTertiary,
+            color: textColor,
           );
 
       circleChild = Text(
@@ -40,7 +46,7 @@ class TUIAvatar extends StatelessWidget {
 
     CircleAvatar circleAvatar = CircleAvatar(
       radius: avatarSize._getAvatarSize() / 2,
-      backgroundColor: TUIColors.tertiary,
+      backgroundColor: backgroundColor,
       child: circleChild,
     );
 
@@ -101,7 +107,7 @@ class TUIAvatar extends StatelessWidget {
 /// TUIAvatarContent stores the content type and the content for the Avatar.
 class TUIAvatarContent {
   final TUIAvatarContentType type;
-  final Icon? icon;
+  final IconData? icon;
   final TUIImage? image;
   final String? text;
 

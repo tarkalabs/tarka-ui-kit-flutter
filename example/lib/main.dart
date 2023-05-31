@@ -35,6 +35,8 @@ class _HomePageState extends State<HomePage> {
       child: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 30),
         children: [
+          const Text("Text Style", style: TUITextStyle.heading1),
+          const SizedBox(height: 8),
           const Text("Heading1", style: TUITextStyle.heading1),
           const Text("Heading2", style: TUITextStyle.heading2),
           const Text("Heading3", style: TUITextStyle.heading3),
@@ -49,6 +51,8 @@ class _HomePageState extends State<HomePage> {
           const Text("Button6", style: TUITextStyle.button6),
           const Text("Button7", style: TUITextStyle.button7),
           const Text("Button8", style: TUITextStyle.button8),
+          const SizedBox(height: 8),
+          const Text("Button", style: TUITextStyle.heading1),
           const SizedBox(height: 8),
           TUIButton(
             label: "Primary Button",
@@ -84,18 +88,25 @@ class _HomePageState extends State<HomePage> {
             size: TUIButtonSize.l,
             onPressed: () {},
           ),
+          TUIButton(
+            icon: Symbol.hamburgerMenu.value,
+            type: TUIButtonType.ghost,
+            onPressed: () {},
+          ),
+          const SizedBox(height: 8),
+          const Text("Avatar", style: TUITextStyle.heading1),
           const SizedBox(height: 8),
           TUIAvatar(
             avatarSize: TUIAvatarSize.xxl,
             avatarContent: TUIAvatarContent(
-              text: "IH",
+              text: "TUI",
               type: TUIAvatarContentType.text,
             ),
           ),
           TUIAvatar(
             avatarSize: TUIAvatarSize.xl,
             avatarContent: TUIAvatarContent(
-              text: "IH",
+              text: "TUI",
               type: TUIAvatarContentType.text,
             ),
           ),
@@ -103,21 +114,24 @@ class _HomePageState extends State<HomePage> {
             avatarSize: TUIAvatarSize.m,
             avatarContent: TUIAvatarContent(
               type: TUIAvatarContentType.icon,
-              icon: const Icon(Icons.construction),
+              icon: Symbol.export.value,
             ),
             isBadged: true,
           ),
           TUIAvatar(
             avatarSize: TUIAvatarSize.xxl,
+            backgroundColor: Colors.grey[400],
             avatarContent: TUIAvatarContent(
               type: TUIAvatarContentType.image,
               image: const TUIImage(
                 imageUrl:
-                    "https://avatars.githubusercontent.com/u/16992520?v=4",
+                    "https://avatars.githubusercontent.com/u/8043494?v=4",
               ),
             ),
             isBadged: true,
           ),
+          const SizedBox(height: 8),
+          const Text("Divider", style: TUITextStyle.heading1),
           const SizedBox(height: 8),
           const TUIDivider(horizontalPadding: TUIDividerHorizontalPadding.s),
           const TUIDivider(horizontalPadding: TUIDividerHorizontalPadding.m),
@@ -126,13 +140,16 @@ class _HomePageState extends State<HomePage> {
           const SizedBox(
             height: 80,
             child: TUIDivider(
-              color: Colors.red,
               type: TUIDividerType.vertical,
               verticalPadding: TUIDividerVerticalPadding.s,
             ),
           ),
-          Row(
-            children: const [
+          const SizedBox(height: 8),
+          const Text("Badge", style: TUITextStyle.heading1),
+          const SizedBox(height: 8),
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
               TUIBadge(
                 isNumbered: true,
                 content: "1",
@@ -149,48 +166,15 @@ class _HomePageState extends State<HomePage> {
                 badgeSize: TUIBadgeSize.xs,
               ),
               TUIBadge(
-                isNumbered: true,
-                content: "123",
-                badgeSize: TUIBadgeSize.l,
-              ),
-              TUIBadge(
-                isNumbered: true,
-                content: "123",
-                badgeSize: TUIBadgeSize.s,
-              ),
-              TUIBadge(
-                isNumbered: true,
-                content: "123",
-                badgeSize: TUIBadgeSize.xs,
-              ),
-              TUIBadge(
-                isNumbered: true,
-                content: "1235",
-                badgeSize: TUIBadgeSize.l,
-              ),
-              TUIBadge(
-                isNumbered: true,
-                content: "1235",
-                badgeSize: TUIBadgeSize.s,
-              ),
-              TUIBadge(
-                isNumbered: true,
-                content: "1235",
-                badgeSize: TUIBadgeSize.xs,
-              ),
-              TUIBadge(
                 isNumbered: false,
-                content: "12345",
                 badgeSize: TUIBadgeSize.l,
               ),
               TUIBadge(
                 isNumbered: false,
-                content: "12345",
                 badgeSize: TUIBadgeSize.s,
               ),
               TUIBadge(
                 isNumbered: false,
-                content: "12345",
                 badgeSize: TUIBadgeSize.xs,
               ),
             ],
