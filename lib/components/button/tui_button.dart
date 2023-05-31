@@ -25,7 +25,7 @@ class TUIButton extends StatelessWidget {
   /// Creates a button with the given [label] and [icon].
   const TUIButton({
     super.key,
-    required this.label,
+    this.label,
     this.type = TUIButtonType.primary,
     this.size = TUIButtonSize.m,
     this.icon,
