@@ -21,11 +21,11 @@ enum TUIBadgeSize {
   Radius _getBorderRadius() {
     switch (this) {
       case xs:
-        return Radius.circular(6);
+        return const Radius.circular(6);
       case s:
-        return Radius.circular(8);
+        return const Radius.circular(8);
       case l:
-        return Radius.circular(12);
+        return const Radius.circular(12);
     }
   }
 
@@ -43,6 +43,10 @@ enum TUIBadgeSize {
   TextStyle _getStyle() {
     switch (this) {
       case xs:
+        return TUITextStyle.button8.copyWith(
+          color: TUIColors.onError,
+          fontSize: 10,
+        );
       case s:
         return TUITextStyle.button8.copyWith(
           color: TUIColors.onError,
@@ -69,8 +73,6 @@ class TUIBadge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget badgeContent;
-
     if (content != null && isNumbered) {
       return Container(
         height: badgeSize._getBadgeSize(),
@@ -94,6 +96,7 @@ class TUIBadge extends StatelessWidget {
       return Container(
         height: badgeSize._getBadgeSize(),
         width: badgeSize._getBadgeSize(),
+        padding: badgeSize._getEdgeInsets(),
         decoration: const BoxDecoration(
             color: TUIColors.error,
             borderRadius: BorderRadius.all(Radius.circular(20))),

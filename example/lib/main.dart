@@ -124,8 +124,7 @@ class _HomePageState extends State<HomePage> {
             avatarContent: TUIAvatarContent(
               type: TUIAvatarContentType.image,
               image: const TUIImage(
-                imageUrl:
-                    "https://avatars.githubusercontent.com/u/8043494?v=4",
+                imageUrl: "https://avatars.githubusercontent.com/u/8043494?v=4",
               ),
             ),
             isBadged: true,
@@ -179,6 +178,10 @@ class _HomePageState extends State<HomePage> {
               ),
             ],
           ),
+          const SizedBox(height: 8),
+          const Text("SuccessCheckMark", style: TUITextStyle.heading1),
+          const SizedBox(height: 8),
+          const TUISuccessCheckMark(),
         ],
       ),
     ));
