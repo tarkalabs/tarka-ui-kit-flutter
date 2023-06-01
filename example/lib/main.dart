@@ -178,16 +178,10 @@ class _HomePageState extends State<HomePage> {
               ),
             ],
           ),
+          const SizedBox(height: 8),
           const Text("SuccessCheckMark", style: TUITextStyle.heading1),
           const SizedBox(height: 8),
           const TUISuccessCheckMark(),
-          const SizedBox(height: 8),
-          Center(
-            child: const TUIBadge(
-              isNumbered: false,
-              badgeSize: TUIBadgeSize.s,
-            ),
-          ),
         ],
       ),
     ));

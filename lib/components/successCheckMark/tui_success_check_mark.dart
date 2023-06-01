@@ -10,13 +10,9 @@ class TUISuccessCheckMark extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SizedBox(
-      width: TUISuccessCheckMark.size,
-      height: TUISuccessCheckMark.size,
-      child: Icon(
-        TUISymbol.successCheckMark,
-        color: TUIColors.success,
-      ),
+    return const Icon(
+      TUISymbol.successCheckMark,
+      color: TUIColors.success,
     );
   }
 }
