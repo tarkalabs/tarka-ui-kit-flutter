@@ -43,6 +43,10 @@ enum TUIBadgeSize {
   TextStyle _getStyle() {
     switch (this) {
       case xs:
+        return TUITextStyle.button8.copyWith(
+          color: TUIColors.onError,
+          fontSize: 10,
+        );
       case s:
         return TUITextStyle.button8.copyWith(
           color: TUIColors.onError,
@@ -92,6 +96,7 @@ class TUIBadge extends StatelessWidget {
       return Container(
         height: badgeSize._getBadgeSize(),
         width: badgeSize._getBadgeSize(),
+        padding: badgeSize._getEdgeInsets(),
         decoration: const BoxDecoration(
             color: TUIColors.error,
             borderRadius: BorderRadius.all(Radius.circular(20))),
