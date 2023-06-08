@@ -3,6 +3,20 @@ import 'package:tarka_ui/styles/tui_colors.dart';
 import 'package:tarka_ui/styles/tui_text_style.dart';
 
 /// TUIAvatar is used to create a Avatar with content, size and badge flag.
+/*
+  Example:
+    ```dart
+  TUIAvatar(
+    avatarSize: TUIAvatarSize.xs,
+    avatarContent: TUIAvatarContent(
+      type: TUIAvatarContentType.image,
+      image: TUIImage(
+        imageUrl: 'https://picsum.photos/200/300',
+      ),
+    ),
+    isBadged: true,
+  ),```
+ */
 class TUIAvatar extends StatelessWidget {
   final TUIAvatarSize avatarSize;
   final TUIAvatarContent avatarContent;
@@ -33,8 +47,8 @@ class TUIAvatar extends StatelessWidget {
       );
     } else if (avatarContent.text != null) {
       TextStyle textStyle = avatarSize._textStyle.copyWith(
-            color: textColor,
-          );
+        color: textColor,
+      );
 
       circleChild = Text(
         avatarContent.text!,

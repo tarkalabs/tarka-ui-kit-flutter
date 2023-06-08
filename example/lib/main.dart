@@ -35,7 +35,7 @@ class _HomePageState extends State<HomePage> {
       child: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 30),
         children: [
-          const Text("Text Style", style: TUITextStyle.heading1),
+          const Text("Text Style", style: TUITextStyle.heading6),
           const SizedBox(height: 8),
           const Text("Heading1", style: TUITextStyle.heading1),
           const Text("Heading2", style: TUITextStyle.heading2),
@@ -52,7 +52,7 @@ class _HomePageState extends State<HomePage> {
           const Text("Button7", style: TUITextStyle.button7),
           const Text("Button8", style: TUITextStyle.button8),
           const SizedBox(height: 8),
-          const Text("Button", style: TUITextStyle.heading1),
+          const Text("Button", style: TUITextStyle.heading6),
           const SizedBox(height: 8),
           TUIButton(
             label: "Primary Button",
@@ -94,7 +94,7 @@ class _HomePageState extends State<HomePage> {
             onPressed: () {},
           ),
           const SizedBox(height: 8),
-          const Text("Avatar", style: TUITextStyle.heading1),
+          const Text("Avatar", style: TUITextStyle.heading6),
           const SizedBox(height: 8),
           TUIAvatar(
             avatarSize: TUIAvatarSize.xxl,
@@ -120,7 +120,7 @@ class _HomePageState extends State<HomePage> {
           ),
           TUIAvatar(
             avatarSize: TUIAvatarSize.xxl,
-            backgroundColor: Colors.grey[400],
+            backgroundColor: Colors.grey[200],
             avatarContent: TUIAvatarContent(
               type: TUIAvatarContentType.image,
               image: const TUIImage(
@@ -130,7 +130,7 @@ class _HomePageState extends State<HomePage> {
             isBadged: true,
           ),
           const SizedBox(height: 8),
-          const Text("Divider", style: TUITextStyle.heading1),
+          const Text("Divider", style: TUITextStyle.heading6),
           const SizedBox(height: 8),
           const TUIDivider(horizontalPadding: TUIDividerHorizontalPadding.s),
           const TUIDivider(horizontalPadding: TUIDividerHorizontalPadding.m),
@@ -144,7 +144,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           const SizedBox(height: 8),
-          const Text("Badge", style: TUITextStyle.heading1),
+          const Text("Badge", style: TUITextStyle.heading6),
           const SizedBox(height: 8),
           const Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -179,11 +179,11 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
           const SizedBox(height: 8),
-          const Text("SuccessCheckMark", style: TUITextStyle.heading1),
+          const Text("SuccessCheckMark", style: TUITextStyle.heading6),
           const SizedBox(height: 8),
           const TUISuccessCheckMark(),
           const SizedBox(height: 8),
-          const Text("Tag-Small", style: TUITextStyle.heading1),
+          const Text("Tag-Small", style: TUITextStyle.heading6),
           const SizedBox(height: 8),
           const Row(
             children: [
@@ -205,7 +205,7 @@ class _HomePageState extends State<HomePage> {
                   tagIconType: TUITagIconType.right),
             ],
           ),
-          const Text("Tag-Medium", style: TUITextStyle.heading1),
+          const Text("Tag-Medium", style: TUITextStyle.heading6),
           const SizedBox(height: 8),
           const Row(
             children: [
@@ -227,7 +227,7 @@ class _HomePageState extends State<HomePage> {
                   tagIconType: TUITagIconType.right),
             ],
           ),
-          const Text("Tag-Large", style: TUITextStyle.heading1),
+          const Text("Tag-Large", style: TUITextStyle.heading6),
           const SizedBox(height: 8),
           const Row(
             children: [
