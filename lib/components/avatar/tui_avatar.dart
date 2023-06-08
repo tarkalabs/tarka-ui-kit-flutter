@@ -3,6 +3,20 @@ import 'package:tarka_ui/styles/tui_colors.dart';
 import 'package:tarka_ui/styles/tui_text_style.dart';
 
 /// TUIAvatar is used to create a Avatar with content, size and badge flag.
+/*
+  Example:
+    ```dart
+  TUIAvatar(
+    avatarSize: TUIAvatarSize.xs,
+    avatarContent: TUIAvatarContent(
+      type: TUIAvatarContentType.image,
+      image: TUIImage(
+        imageUrl: 'https://picsum.photos/200/300',
+      ),
+    ),
+    isBadged: true,
+  ),```
+ */
 class TUIAvatar extends StatelessWidget {
   final TUIAvatarSize avatarSize;
   final TUIAvatarContent avatarContent;
@@ -28,13 +42,13 @@ class TUIAvatar extends StatelessWidget {
     if (avatarContent.icon != null) {
       circleChild = Icon(
         avatarContent.icon,
-        size: avatarSize._getAvatarSize() / 2,
+        size: avatarSize._size / 2,
         color: TUIColors.constantLight,
       );
     } else if (avatarContent.text != null) {
-      TextStyle textStyle = avatarSize._getTextStyle().copyWith(
-            color: textColor,
-          );
+      TextStyle textStyle = avatarSize._textStyle.copyWith(
+        color: textColor,
+      );
 
       circleChild = Text(
         avatarContent.text!,
@@ -45,7 +59,7 @@ class TUIAvatar extends StatelessWidget {
     }
 
     CircleAvatar circleAvatar = CircleAvatar(
-      radius: avatarSize._getAvatarSize() / 2,
+      radius: avatarSize._size / 2,
       backgroundColor: backgroundColor,
       child: circleChild,
     );
@@ -57,11 +71,11 @@ class TUIAvatar extends StatelessWidget {
 
           if (constraints.maxHeight != double.infinity) {
             badge = Positioned(
-              left: constraints.maxWidth / 2 + avatarSize._getAvatarSize() / 4,
-              top: constraints.maxHeight / 2 + avatarSize._getAvatarSize() / 4,
+              left: constraints.maxWidth / 2 + avatarSize._size / 4,
+              top: constraints.maxHeight / 2 + avatarSize._size / 4,
               child: Container(
-                height: avatarSize._getBadgeSize(),
-                width: avatarSize._getBadgeSize(),
+                height: avatarSize._badgeSize,
+                width: avatarSize._badgeSize,
                 decoration: const BoxDecoration(
                   shape: BoxShape.circle,
                   color: TUIColors.success,
@@ -70,11 +84,11 @@ class TUIAvatar extends StatelessWidget {
             );
           } else {
             badge = Positioned(
-              left: constraints.maxWidth / 2 + avatarSize._getAvatarSize() / 4,
+              left: constraints.maxWidth / 2 + avatarSize._size / 4,
               bottom: 0,
               child: Container(
-                height: avatarSize._getBadgeSize(),
-                width: avatarSize._getBadgeSize(),
+                height: avatarSize._badgeSize,
+                width: avatarSize._badgeSize,
                 decoration: const BoxDecoration(
                   shape: BoxShape.circle,
                   color: TUIColors.success,
@@ -88,8 +102,8 @@ class TUIAvatar extends StatelessWidget {
             children: [
               Center(
                 child: SizedBox(
-                  width: avatarSize._getAvatarSize(),
-                  height: avatarSize._getAvatarSize(),
+                  width: avatarSize._size,
+                  height: avatarSize._size,
                   child: circleAvatar,
                 ),
               ),
@@ -119,66 +133,25 @@ enum TUIAvatarContentType { image, icon, text }
 
 /// TUIAvatarSize is used to define the size of Avatar.
 enum TUIAvatarSize {
-  xxs,
-  xs,
-  s,
-  m,
-  l,
-  xl,
-  xxl;
+  xxs(size: 24, badgeSize: 12, textStyle: TUITextStyle.body8),
+  xs(size: 32, badgeSize: 12, textStyle: TUITextStyle.heading7),
+  s(size: 40, badgeSize: 12, textStyle: TUITextStyle.heading6),
+  m(size: 48, badgeSize: 12, textStyle: TUITextStyle.heading5),
+  l(size: 64, badgeSize: 16, textStyle: TUITextStyle.heading4),
+  xl(size: 80, badgeSize: 24, textStyle: TUITextStyle.heading3),
+  xxl(size: 96, badgeSize: 24, textStyle: TUITextStyle.heading2);
 
-  double _getAvatarSize() {
-    switch (this) {
-      case TUIAvatarSize.xxs:
-        return 24;
-      case TUIAvatarSize.xs:
-        return 32;
-      case TUIAvatarSize.s:
-        return 40;
-      case TUIAvatarSize.m:
-        return 48;
-      case TUIAvatarSize.l:
-        return 64;
-      case TUIAvatarSize.xl:
-        return 80;
-      case TUIAvatarSize.xxl:
-        return 96;
-    }
-  }
+  const TUIAvatarSize(
+      {required double size,
+      required double badgeSize,
+      required TextStyle textStyle})
+      : _size = size,
+        _badgeSize = badgeSize,
+        _textStyle = textStyle;
 
-  double _getBadgeSize() {
-    switch (this) {
-      case TUIAvatarSize.xxs:
-      case TUIAvatarSize.xs:
-      case TUIAvatarSize.s:
-      case TUIAvatarSize.m:
-        return 12;
-      case TUIAvatarSize.l:
-        return 16;
-      case TUIAvatarSize.xl:
-      case TUIAvatarSize.xxl:
-        return 24;
-    }
-  }
-
-  TextStyle _getTextStyle() {
-    switch (this) {
-      case TUIAvatarSize.xxs:
-        return TUITextStyle.body8;
-      case TUIAvatarSize.xs:
-        return TUITextStyle.heading7;
-      case TUIAvatarSize.s:
-        return TUITextStyle.heading6;
-      case TUIAvatarSize.m:
-        return TUITextStyle.heading5;
-      case TUIAvatarSize.l:
-        return TUITextStyle.heading4;
-      case TUIAvatarSize.xl:
-        return TUITextStyle.heading3;
-      case TUIAvatarSize.xxl:
-        return TUITextStyle.heading2;
-    }
-  }
+  final double _size;
+  final double _badgeSize;
+  final TextStyle _textStyle;
 }
 
 /// TUIImage is used as an abstraction to handle asset and network image.

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tarka_ui/styles/tui_colors.dart';
 import 'package:tarka_ui/styles/tui_text_style.dart';
 
+/// TUIBadge is used to create a Badge with content, size and badge flag.
 enum TUIBadgeSize {
   xs,
   s,
@@ -21,11 +22,11 @@ enum TUIBadgeSize {
   Radius _getBorderRadius() {
     switch (this) {
       case xs:
-        return Radius.circular(6);
+        return const Radius.circular(6);
       case s:
-        return Radius.circular(8);
+        return const Radius.circular(8);
       case l:
-        return Radius.circular(12);
+        return const Radius.circular(12);
     }
   }
 
@@ -43,6 +44,10 @@ enum TUIBadgeSize {
   TextStyle _getStyle() {
     switch (this) {
       case xs:
+        return TUITextStyle.button8.copyWith(
+          color: TUIColors.onError,
+          fontSize: 10,
+        );
       case s:
         return TUITextStyle.button8.copyWith(
           color: TUIColors.onError,
@@ -55,6 +60,17 @@ enum TUIBadgeSize {
   }
 }
 
+/// TUIBadge is used to create a Badge with content, size and badge flag.
+/*
+  Example:
+  ```dart
+  TUIBadge(
+    badgeSize: TUIBadgeSize.xs,
+    content: '1',
+    isNumbered: true,
+  ),
+  ```
+ */
 class TUIBadge extends StatelessWidget {
   final TUIBadgeSize badgeSize;
   final String? content;
@@ -69,8 +85,6 @@ class TUIBadge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget badgeContent;
-
     if (content != null && isNumbered) {
       return Container(
         height: badgeSize._getBadgeSize(),
@@ -94,6 +108,7 @@ class TUIBadge extends StatelessWidget {
       return Container(
         height: badgeSize._getBadgeSize(),
         width: badgeSize._getBadgeSize(),
+        padding: badgeSize._getEdgeInsets(),
         decoration: const BoxDecoration(
             color: TUIColors.error,
             borderRadius: BorderRadius.all(Radius.circular(20))),

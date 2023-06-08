@@ -4,12 +4,27 @@ import 'package:tarka_ui/styles/tui_text_style.dart';
 
 /// TUIButtonType is used to define the type of button.
 enum TUIButtonType { primary, secondary, outlined, ghost, danger }
+
 /// TUIButtonSize is used to define the size of button.
 enum TUIButtonSize { xs, s, m, l }
+
 /// TUIButtonIconAlignment is used to define the alignment of icon in button.
 enum TUIButtonIconAlignment { left, right, none }
 
 /// TUIButton is used to create a button with different types, sizes and icon alignment.
+/*
+  Example:
+  ```dart
+  TUIButton(
+    label: 'Button',
+    type: TUIButtonType.primary,
+    size: TUIButtonSize.m,
+    icon: Icons.add,
+    iconAlignment: TUIButtonIconAlignment.left,
+    onPressed: () {},
+  )
+  ```
+ */
 class TUIButton extends StatelessWidget {
   final String? label;
   final TUIButtonType type;
