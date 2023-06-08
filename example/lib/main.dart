@@ -182,6 +182,73 @@ class _HomePageState extends State<HomePage> {
           const Text("SuccessCheckMark", style: TUITextStyle.heading1),
           const SizedBox(height: 8),
           const TUISuccessCheckMark(),
+          const SizedBox(height: 8),
+          const Text("Tag-Small", style: TUITextStyle.heading1),
+          const SizedBox(height: 8),
+          const Row(
+            children: [
+              TUITag(
+                  tagSize: TUITagSize.s,
+                  tagText: "Label",
+                  tagIconType: TUITagIconType.none),
+              SizedBox(width: 8),
+              TUITag(
+                  tagSize: TUITagSize.s,
+                  tagText: "Label",
+                  tagContrast: TUITagContrast.high,
+                  tagIconType: TUITagIconType.left),
+              SizedBox(width: 8),
+              TUITag(
+                  tagSize: TUITagSize.s,
+                  tagText: "Label",
+                  tagContrast: TUITagContrast.high,
+                  tagIconType: TUITagIconType.right),
+            ],
+          ),
+          const Text("Tag-Medium", style: TUITextStyle.heading1),
+          const SizedBox(height: 8),
+          const Row(
+            children: [
+              TUITag(
+                  tagSize: TUITagSize.m,
+                  tagText: "Label",
+                  tagIconType: TUITagIconType.none),
+              SizedBox(width: 8),
+              TUITag(
+                  tagSize: TUITagSize.m,
+                  tagText: "Label",
+                  tagContrast: TUITagContrast.high,
+                  tagIconType: TUITagIconType.left),
+              SizedBox(width: 8),
+              TUITag(
+                  tagSize: TUITagSize.m,
+                  tagText: "Label",
+                  tagContrast: TUITagContrast.high,
+                  tagIconType: TUITagIconType.right),
+            ],
+          ),
+          const Text("Tag-Large", style: TUITextStyle.heading1),
+          const SizedBox(height: 8),
+          const Row(
+            children: [
+              TUITag(
+                  tagSize: TUITagSize.l,
+                  tagText: "Label",
+                  tagIconType: TUITagIconType.none),
+              SizedBox(width: 8),
+              TUITag(
+                  tagSize: TUITagSize.l,
+                  tagText: "Label",
+                  tagContrast: TUITagContrast.high,
+                  tagIconType: TUITagIconType.left),
+              SizedBox(width: 8),
+              TUITag(
+                  tagSize: TUITagSize.l,
+                  tagText: "Label",
+                  tagContrast: TUITagContrast.high,
+                  tagIconType: TUITagIconType.right),
+            ],
+          ),
         ],
       ),
     ));
