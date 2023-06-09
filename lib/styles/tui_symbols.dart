@@ -10,5 +10,5 @@ class TUISymbol {
   static const IconData reorderDots =
       FluentIcons.re_order_dots_vertical_24_regular;
   static const IconData successCheckMark =
-      FluentIcons.checkmark_circle_16_filled;
+      FluentIcons.checkmark_circle_20_filled;
 }
