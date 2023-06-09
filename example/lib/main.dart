@@ -249,6 +249,18 @@ class _HomePageState extends State<HomePage> {
                   tagIconType: TUITagIconType.right),
             ],
           ),
+          const SizedBox(height: 8),
+          const Text("Text Field", style: TUITextStyle.heading6),
+          const SizedBox(height: 8),
+          const  TUITextField( labelText: "Label",
+              prefixIcon: Icon(TUISymbol.successCheckMark),
+              suffixIcon: Icon(TUISymbol.chevronDown),
+              helperText: "Helper / hint message goes here.",),
+          const SizedBox(height: 8),
+          const  TUITextField(
+            hintText: "Label",
+            labelText: "Hello World",
+            errorText: "Error message goes here.",),
         ],
       ),
     ));
