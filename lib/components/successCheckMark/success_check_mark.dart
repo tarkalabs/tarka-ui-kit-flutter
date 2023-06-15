@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tarka_ui/styles/colors.dart';
+import 'package:tarka_ui/styles/default_colors.dart';
 import 'package:tarka_ui/styles/symbols.dart';
 
 /// TUISuccessCheckMark is used to create a success check mark.
@@ -18,7 +18,7 @@ class TUISuccessCheckMark extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Icon(
       TUISymbol.successCheckMark,
-      color: TUIColors.success,
+      color: TUIDefaultColors.success,
     );
   }
 }

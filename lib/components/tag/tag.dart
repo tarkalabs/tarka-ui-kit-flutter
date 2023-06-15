@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tarka_ui/styles/colors.dart';
+import 'package:tarka_ui/styles/default_colors.dart';
 import 'package:tarka_ui/styles/text_style.dart';
 
 /// TUITag is used to create a tag with contrast, icon type, size and text content.
@@ -109,18 +109,18 @@ enum TUITagContrast {
   Color _getColor() {
     switch (this) {
       case low:
-        return TUIColors.secondary;
+        return TUIDefaultColors.secondary;
       case high:
-        return TUIColors.secondaryAlt;
+        return TUIDefaultColors.secondaryAlt;
     }
   }
 
   Color _getTextColor() {
     switch (this) {
       case low:
-        return TUIColors.onSecondary;
+        return TUIDefaultColors.onSecondary;
       case high:
-        return TUIColors.onSecondaryAlt;
+        return TUIDefaultColors.onSecondaryAlt;
     }
   }
 }

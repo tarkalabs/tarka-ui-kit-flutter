@@ -9,6 +9,7 @@ export 'package:tarka_ui/components/successCheckMark/success_check_mark.dart';
 export 'package:tarka_ui/components/tag/tag.dart';
 
 // exports component
+export 'package:tarka_ui/styles/default_colors.dart';
 export 'package:tarka_ui/styles/colors.dart';
 export 'package:tarka_ui/styles/symbols.dart';
 export 'package:tarka_ui/styles/text_style.dart';

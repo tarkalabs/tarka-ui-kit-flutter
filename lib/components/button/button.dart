@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tarka_ui/styles/colors.dart';
+import 'package:tarka_ui/styles/default_colors.dart';
 import 'package:tarka_ui/styles/text_style.dart';
 
 /// TUIButtonType is used to define the type of button.
@@ -95,7 +95,7 @@ class TUIButton extends StatelessWidget {
               foregroundColor: foregroundColor ?? _getForegroundColor(),
               textStyle: _getTextStyle(),
               shape: const StadiumBorder(),
-              side: BorderSide(color: borderSideColor ?? TUIColors.onSurface)),
+              side: BorderSide(color: borderSideColor ?? TUIDefaultColors.onSurface)),
           onPressed: onPressed,
           onLongPress: onLongPressed,
           child: child,
@@ -150,30 +150,30 @@ class TUIButton extends StatelessWidget {
   Color _getForegroundColor() {
     switch (type) {
       case TUIButtonType.primary:
-        return TUIColors.onPrimary;
+        return TUIDefaultColors.onPrimary;
       case TUIButtonType.secondary:
-        return TUIColors.onSecondary;
+        return TUIDefaultColors.onSecondary;
       case TUIButtonType.outlined:
-        return TUIColors.onSurface;
+        return TUIDefaultColors.onSurface;
       case TUIButtonType.ghost:
-        return TUIColors.secondary;
+        return TUIDefaultColors.secondary;
       case TUIButtonType.danger:
-        return TUIColors.onPrimary;
+        return TUIDefaultColors.onPrimary;
     }
   }
 
   Color _getBackgroundColor() {
     switch (type) {
       case TUIButtonType.primary:
-        return TUIColors.primary;
+        return TUIDefaultColors.primary;
       case TUIButtonType.secondary:
-        return TUIColors.secondary;
+        return TUIDefaultColors.secondary;
       case TUIButtonType.outlined:
-        return TUIColors.surfaceHover;
+        return TUIDefaultColors.surfaceHover;
       case TUIButtonType.ghost:
-        return TUIColors.transparent;
+        return TUIDefaultColors.transparent;
       case TUIButtonType.danger:
-        return TUIColors.error;
+        return TUIDefaultColors.error;
     }
   }
 
