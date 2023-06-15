@@ -45,7 +45,7 @@ class ButtonStyles with Diagnosticable {
                 BorderSide(color: colors.onSurface, width: 1.5))),
         outlined = ButtonColorStyle(
             backgroundColor:
-            _createStateProperty(colors.surfaceHover,Colors.transparent),
+            _createStateProperty(Colors.transparent,colors.surfaceHover),
             foregroundColor: colors.onSurface,
             borderSide: _createStateProperty(
                 BorderSide(color: colors.onSurface, width: 1.5),
