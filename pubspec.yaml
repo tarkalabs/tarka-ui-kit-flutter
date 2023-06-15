@@ -4,7 +4,7 @@ version: 0.0.1
 homepage: https://github.com/tarkalabs/tarka-ui-kit-flutter.git
 
 environment:
-  sdk: '>=2.19.6 <4.0.0'
+  sdk: '>=3.0.0 <4.0.0'
   flutter: ">=1.17.0"
 
 dependencies:
