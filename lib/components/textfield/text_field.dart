@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tarka_ui/styles/tui_colors.dart';
-import 'package:tarka_ui/styles/tui_text_style.dart';
+import 'package:tarka_ui/styles/colors.dart';
+import 'package:tarka_ui/styles/text_style.dart';
 
 /// TUITextField is a text input field that allows users to enter text.
 /*
