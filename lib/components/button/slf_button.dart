@@ -1,0 +1,128 @@
+import 'package:flutter/material.dart';
+import 'package:tarka_ui/components/button/style.dart';
+import 'package:tarka_ui/styles/theme.dart';
+
+class SlfButton extends StatelessWidget {
+
+  const SlfButton({
+    Key? key,
+    required this.type,
+    required this.size,
+    this.label,
+    this.iconData,
+    this.iconPosition = IconPosition.left,
+    required this.onPressed,
+    this.onLongPress,
+    this.height,
+  })  : assert(label != null || iconData != null),
+        super(key: key);
+
+  final TUIButtonType type;
+  final TUIButtonSize size;
+  final String? label;
+  final IconData? iconData;
+  final IconPosition? iconPosition;
+  final double? height;
+
+  /// Called when the button is tapped or otherwise activated.
+  ///
+  /// If this callback and [onLongPress] are null, then the button will be disabled.
+  ///
+  /// See also:
+  ///
+  ///  * [enabled], which is true if the button is enabled.
+  final VoidCallback? onPressed;
+
+  /// Called when the button is long-pressed.
+  ///
+  /// If this callback and [onPressed] are null, then the button will be disabled.
+  ///
+  /// See also:
+  ///
+  ///  * [enabled], which is true if the button is enabled.
+  final VoidCallback? onLongPress;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = TUITheme.of(context);
+    final buttonStyles = theme.buttonStyles;
+    final ButtonColorStyle colorStyle = switch (type) {
+      TUIButtonType.primary => buttonStyles.primary,
+      TUIButtonType.secondary => buttonStyles.secondary,
+      TUIButtonType.outlined => buttonStyles.outlined,
+      TUIButtonType.ghost => buttonStyles.ghost,
+      TUIButtonType.danger => buttonStyles.ghost,
+    };
+
+    final ButtonSizeStyle sizeStyle = switch (size) {
+      TUIButtonSize.xs => buttonStyles.xs,
+      TUIButtonSize.s => buttonStyles.s,
+      TUIButtonSize.m => buttonStyles.m,
+      TUIButtonSize.l => buttonStyles.l,
+    };
+
+    final buttonStyle = ButtonStyle(
+        overlayColor: MaterialStateProperty.all(Colors.transparent),
+        backgroundColor: colorStyle.backgroundColor,
+        foregroundColor: MaterialStateProperty.all(colorStyle.foregroundColor),
+        side: colorStyle.borderSide,
+        //Required to remove excess padding. i.e. By default button tries to size itself to min 48. (MaterialTapTargetSize.padding)
+        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        shape: MaterialStateProperty.all(
+            label != null ? const StadiumBorder() : const CircleBorder()),
+        //Ensure - No ripple effect.
+        splashFactory: NoSplash.splashFactory,
+        fixedSize: MaterialStateProperty.all(Size.fromHeight(height ?? size.height)),
+        minimumSize: MaterialStateProperty.all(const Size(0, 0)),
+        alignment: Alignment.center,
+        padding: MaterialStateProperty.all(EdgeInsets.fromLTRB(
+            label == null
+                ? sizeStyle.paddingVertical
+                : (iconData != null && iconPosition == IconPosition.left)
+                    ? sizeStyle.paddingIconToBorder
+                    : sizeStyle.paddingTextToBorder,
+            sizeStyle.paddingVertical,
+            label == null
+                ? sizeStyle.paddingVertical
+                : (iconData != null && iconPosition == IconPosition.right)
+                    ? sizeStyle.paddingIconToBorder
+                    : sizeStyle.paddingTextToBorder,
+            sizeStyle.paddingVertical)),
+        textStyle: MaterialStateProperty.all(sizeStyle.textStyle),
+        iconColor: MaterialStateProperty.all(colorStyle.foregroundColor),
+        iconSize: MaterialStateProperty.all(sizeStyle.iconSize));
+
+    final Widget buttonChild;
+    if (label != null && iconData != null) {
+      buttonChild = Row(
+        textDirection: iconPosition == IconPosition.left
+            ? TextDirection.ltr
+            : TextDirection.rtl,
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Icon(iconData),
+          SizedBox(width: sizeStyle.paddingTextToIcon),
+          Text(label!),
+        ],
+      );
+    } else if (label != null) {
+      buttonChild = Text(label!);
+    } else {
+      buttonChild = Icon(iconData);
+    }
+
+    return ElevatedButton(
+      onPressed: onPressed,
+      onLongPress: onLongPress,
+      style: buttonStyle,
+      child: buttonChild,
+    );
+  }
+}
+
+enum IconPosition {
+  left,
+  right;
+}
