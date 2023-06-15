@@ -5,7 +5,7 @@ homepage: https://github.com/tarkalabs/tarka-ui-kit-flutter.git
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
-  flutter: ">=1.17.0"
+  flutter: ">=3.10.0"
 
 dependencies:
   flutter:
@@ -24,14 +24,6 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-  # To add assets to your package, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
-  #
-  assets:
-    - assets/images/
-    - assets/icons/
   # For details regarding assets in packages, see
   # https://flutter.dev/assets-and-images/#from-packages
   #
