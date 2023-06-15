@@ -10,6 +10,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
   fluentui_system_icons: ^1.1.202
 
 dev_dependencies:

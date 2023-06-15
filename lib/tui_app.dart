@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart' as m;
 import 'package:flutter/widgets.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:tarka_ui/styles/theme.dart';
 import 'package:tarka_ui/tarka_ui.dart';
 
@@ -289,6 +290,19 @@ class _TUIAppState extends State<TUIApp> {
   bool get _usesRouter =>
       widget.routerDelegate != null || widget.routerConfig != null;
 
+  // Combine the Localizations for Material with the ones contributed
+  // by the localizationsDelegates parameter, if any. Only the first delegate
+  // of a particular LocalizationsDelegate.type is loaded so the
+  // localizationsDelegate parameter can be used to override
+  // _FluentLocalizationsDelegate.
+  Iterable<LocalizationsDelegate<dynamic>> get _localizationsDelegates sync* {
+    if (widget.localizationsDelegates != null) {
+      yield* widget.localizationsDelegates!;
+    }
+    yield GlobalMaterialLocalizations.delegate;
+    yield GlobalWidgetsLocalizations.delegate;
+  }
+
   @override
   Widget build(BuildContext context) {
     return _buildApp(context);
@@ -357,7 +371,7 @@ class _TUIAppState extends State<TUIApp> {
         shortcuts: widget.shortcuts,
         actions: widget.actions,
         restorationScopeId: widget.restorationScopeId,
-        localizationsDelegates: widget.localizationsDelegates,
+        localizationsDelegates: _localizationsDelegates,
       );
     }
 
@@ -387,7 +401,7 @@ class _TUIAppState extends State<TUIApp> {
       shortcuts: widget.shortcuts,
       actions: widget.actions,
       restorationScopeId: widget.restorationScopeId,
-      localizationsDelegates: widget.localizationsDelegates,
+      localizationsDelegates: _localizationsDelegates,
       pageRouteBuilder: <T>(RouteSettings settings, WidgetBuilder builder) {
         return m.MaterialPageRoute<T>(settings: settings, builder: builder);
       },
