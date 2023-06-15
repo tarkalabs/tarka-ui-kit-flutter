@@ -31,6 +31,8 @@ dependencies:
   flutter:
     sdk: flutter
   fluentui_system_icons: ^1.1.200
+  tarka_ui:
+    path: ../
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -39,8 +41,6 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  tarka_ui:
-    path: ../
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
