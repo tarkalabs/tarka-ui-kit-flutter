@@ -1,59 +1,160 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 
-class TUIColors {
-  TUIColors._();
-  // Base
-  static const Color primary = Color(0xff0052D6);
-  static const Color secondary = Color(0xff4D80B3);
-  static const Color tertiary = Color(0xff924F92);
-  static const Color success = Color(0xff148F47);
-  static const Color warning = Color(0xffFFB938);
-  static const Color error = Color(0xffCD1D32);
+class TUIColors with Diagnosticable {
+  final Color primary;
+  final Color onPrimary;
+  final Color primaryAlt;
+  final Color onPrimaryAlt;
+  final Color primaryHover;
+  final Color primaryAltHover;
 
-  //Base - Alt
-  static const Color primaryAlt = Color(0xffD5E2F6);
-  static const Color secondaryAlt = Color(0xffD2DEE9);
-  static const Color tertiaryAlt = Color(0xffF3CEF3);
-  static const Color success10 = Color(0x33148F47);
-  static const Color success20 = Color(0x33148F47);
-  static const Color warning10 = Color(0x1AFFB938);
-  static const Color error10 = Color(0x1ACD1D32);
+  final Color secondary;
+  final Color onSecondary;
+  final Color secondaryAlt;
+  final Color onSecondaryAlt;
+  final Color secondaryHover;
+  final Color secondaryAltHover;
 
-  // On Colors
-  static const Color onPrimary = Color(0xffF5F8FF);
-  static const Color onSecondary = Color(0xffEFF7FF);
-  static const Color onTertiary = Color(0xffFFF5FF);
-  static const Color onSuccess = Color(0xffF1FCF6);
-  static const Color onError = Color(0xffFDFAFA);
-  static const Color onWarning = Color(0xff231D0F);
-  static const Color onSurface = Color(0xff1A1B1F);
-  static const Color onBackground = Color(0xff161B20);
+  final Color tertiary;
+  final Color onTertiary;
+  final Color tertiaryAlt;
+  final Color onTertiaryAlt;
+  final Color tertiaryHover;
+  final Color tertiaryAltHover;
 
-  // On Colors - Alt
-  static const Color onPrimaryAlt = Color(0xff002766);
-  static const Color onSecondaryAlt = Color(0xff003366);
-  static const Color onTertiaryAlt = Color(0xff530953);
+  final Color success;
+  final Color onSuccess;
+  final Color success10;
+  final Color success20;
 
-  // Input
-  static const Color inputBackground = Color(0xD9EAEBEF);
-  static const Color inputText = Color(0xff1A1B1F);
-  static const Color inputTextDim = Color(0xB31A1B1F);
+  final Color error;
+  final Color onError;
+  final Color error10;
+  final Color errorHover;
 
-  // Utility
-  static const Color disabledBackground = Color(0x0D1A1B1F);
-  static const Color disabledContent = Color(0x661A1B1F);
-  static const Color link = Color(0xff3381FF);
-  static const Color outline = Color(0xff868A92);
-  static const Color transparent = Color(0x00FFFFFF);
+  final Color warning;
+  final Color onWarning;
+  final Color warning10;
+  final Color warningHover;
 
-  // Backgrounds
-  static const Color background = Color(0xffEAEBEF);
-  static const Color surface = Color(0xffF8F9FA);
-  static const Color surface50 = Color(0x80F9FAFB);
-  static const Color surfaceVariant = Color(0xffEBEFF4);
-  static const Color surfaceHover = Color(0xffF0F2F5);
-  static const Color surfaceVariantHover = Color(0xffE1E6EF);
-  // Constants
-  static const Color constantDark = Color(0xff000000);
-  static const Color constantLight = Color(0xffFFFFFF);
+  final Color background;
+  final Color onBackground;
+
+  final Color outline;
+  final Color disabledContent;
+  final Color disabledBackground;
+  final Color disabledBackgroundHover;
+  final Color link;
+
+  final Color inputText;
+  final Color inputBackground;
+  final Color inputTextDim;
+
+  final Color surface;
+  final Color surface50;
+  final Color onSurface;
+  final Color surfaceVariant;
+  final Color surfaceHover;
+  final Color surfaceVariantHover;
+
+  TUIColors(
+      this.primary,
+      this.onPrimary,
+      this.primaryAlt,
+      this.onPrimaryAlt,
+      this.primaryHover,
+      this.primaryAltHover,
+      this.secondary,
+      this.onSecondary,
+      this.secondaryAlt,
+      this.onSecondaryAlt,
+      this.secondaryHover,
+      this.secondaryAltHover,
+      this.tertiary,
+      this.onTertiary,
+      this.tertiaryAlt,
+      this.onTertiaryAlt,
+      this.tertiaryHover,
+      this.tertiaryAltHover,
+      this.success,
+      this.onSuccess,
+      this.success10,
+      this.success20,
+      this.error,
+      this.onError,
+      this.error10,
+      this.errorHover,
+      this.warning,
+      this.onWarning,
+      this.warning10,
+      this.warningHover,
+      this.background,
+      this.onBackground,
+      this.outline,
+      this.disabledContent,
+      this.disabledBackground,
+      this.disabledBackgroundHover,
+      this.link,
+      this.inputText,
+      this.inputBackground,
+      this.inputTextDim,
+      this.surface,
+      this.surface50,
+      this.onSurface,
+      this.surfaceVariant,
+      this.surfaceHover,
+      this.surfaceVariantHover);
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(ColorProperty("primary", primary))
+      ..add(ColorProperty("onPrimary", onPrimary))
+      ..add(ColorProperty("primaryAlt", primaryAlt))
+      ..add(ColorProperty("onPrimaryAlt", onPrimaryAlt))
+      ..add(ColorProperty("primaryHover", primaryHover))
+      ..add(ColorProperty("primaryAltHover", primaryAltHover))
+      ..add(ColorProperty("secondary", secondary))
+      ..add(ColorProperty("onSecondary", onSecondary))
+      ..add(ColorProperty("secondaryAlt", secondaryAlt))
+      ..add(ColorProperty("onSecondaryAlt", onSecondaryAlt))
+      ..add(ColorProperty("secondaryHover", secondaryHover))
+      ..add(ColorProperty("secondaryAltHover", secondaryAltHover))
+      ..add(ColorProperty("tertiary", tertiary))
+      ..add(ColorProperty("onTertiary", onTertiary))
+      ..add(ColorProperty("tertiaryAlt", tertiaryAlt))
+      ..add(ColorProperty("onTertiaryAlt", onTertiaryAlt))
+      ..add(ColorProperty("tertiaryHover", tertiaryHover))
+      ..add(ColorProperty("tertiaryAltHover", tertiaryAltHover))
+      ..add(ColorProperty("success", success))
+      ..add(ColorProperty("onSuccess", onSuccess))
+      ..add(ColorProperty("success10", success10))
+      ..add(ColorProperty("success20", success20))
+      ..add(ColorProperty("error", error))
+      ..add(ColorProperty("onError", onError))
+      ..add(ColorProperty("error10", error10))
+      ..add(ColorProperty("errorHover", errorHover))
+      ..add(ColorProperty("warning", warning))
+      ..add(ColorProperty("onWarning", onWarning))
+      ..add(ColorProperty("warning10", warning10))
+      ..add(ColorProperty("warningHover", warningHover))
+      ..add(ColorProperty("background", background))
+      ..add(ColorProperty("onBackground", onBackground))
+      ..add(ColorProperty("outline", outline))
+      ..add(ColorProperty("disabledContent", disabledContent))
+      ..add(ColorProperty("disabledBackground", disabledBackground))
+      ..add(ColorProperty("disabledBackgroundHover", disabledBackgroundHover))
+      ..add(ColorProperty("link", link))
+      ..add(ColorProperty("inputText", inputText))
+      ..add(ColorProperty("inputBackground", inputBackground))
+      ..add(ColorProperty("inputTextDim", inputTextDim))
+      ..add(ColorProperty("surface", surface))
+      ..add(ColorProperty("surface50", surface50))
+      ..add(ColorProperty("onSurface", onSurface))
+      ..add(ColorProperty("surfaceVariant", surfaceVariant))
+      ..add(ColorProperty("surfaceHover", surfaceHover))
+      ..add(ColorProperty("surfaceVariantHover", surfaceVariantHover));
+  }
 }
