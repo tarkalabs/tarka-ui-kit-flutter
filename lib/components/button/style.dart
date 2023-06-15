@@ -45,14 +45,14 @@ class ButtonStyles with Diagnosticable {
                 BorderSide(color: colors.onSurface, width: 1.5))),
         outlined = ButtonColorStyle(
             backgroundColor:
-            _createStateProperty(Colors.transparent, colors.surfaceHover),
+            _createStateProperty(colors.surfaceHover,Colors.transparent),
             foregroundColor: colors.onSurface,
             borderSide: _createStateProperty(
                 BorderSide(color: colors.onSurface, width: 1.5),
                 BorderSide(color: colors.onSurface, width: 2))),
         ghost = ButtonColorStyle(
             backgroundColor:
-            _createStateProperty(Colors.transparent, colors.surfaceHover),
+            _createStateProperty(Colors.transparent,colors.surfaceHover),
             foregroundColor: colors.secondary,
             borderSide: _createStateProperty(BorderSide.none, BorderSide.none)),
         danger = ButtonColorStyle(

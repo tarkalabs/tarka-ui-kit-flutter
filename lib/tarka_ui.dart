@@ -34,7 +34,7 @@ export 'package:tarka_ui/components/divider/divider.dart';
 export 'package:tarka_ui/components/textfield/text_field.dart';
 export 'package:tarka_ui/components/successCheckMark/success_check_mark.dart';
 export 'package:tarka_ui/components/tag/tag.dart';
-export 'package:tarka_ui/TUIApp.dart';
+export 'package:tarka_ui/tui_app.dart';
 
 // exports component
 export 'package:tarka_ui/styles/default_colors.dart';

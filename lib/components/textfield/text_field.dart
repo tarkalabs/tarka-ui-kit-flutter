@@ -100,7 +100,8 @@ class TUITextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return Material(
+        child: TextField(
         onChanged: onChanged,
         onEditingComplete: onEditingComplete,
         onSubmitted: onSubmitted,
@@ -155,6 +156,6 @@ class TUITextField extends StatelessWidget {
           focusedErrorBorder: const UnderlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(8)),
               borderSide: BorderSide(color: TUIDefaultColors.error)),
-        ));
+        )));
   }
 }
