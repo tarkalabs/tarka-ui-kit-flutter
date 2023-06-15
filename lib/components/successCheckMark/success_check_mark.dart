@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tarka_ui/styles/tui_colors.dart';
-import 'package:tarka_ui/styles/tui_symbols.dart';
+import 'package:tarka_ui/styles/colors.dart';
+import 'package:tarka_ui/styles/symbols.dart';
 
 /// TUISuccessCheckMark is used to create a success check mark.
 /*
