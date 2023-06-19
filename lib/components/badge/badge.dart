@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tarka_ui/styles/tui_colors.dart';
-import 'package:tarka_ui/styles/tui_text_style.dart';
+import 'package:tarka_ui/styles/default_colors.dart';
+import 'package:tarka_ui/styles/text_style.dart';
 
 /// TUIBadge is used to create a Badge with content, size and badge flag.
 enum TUIBadgeSize {
@@ -45,16 +45,16 @@ enum TUIBadgeSize {
     switch (this) {
       case xs:
         return TUITextStyle.button8.copyWith(
-          color: TUIColors.onError,
+          color: TUIDefaultColors.onError,
           fontSize: 10,
         );
       case s:
         return TUITextStyle.button8.copyWith(
-          color: TUIColors.onError,
+          color: TUIDefaultColors.onError,
         );
       case l:
         return TUITextStyle.button7.copyWith(
-          color: TUIColors.onError,
+          color: TUIDefaultColors.onError,
         );
     }
   }
@@ -95,7 +95,7 @@ class TUIBadge extends StatelessWidget {
           maxWidth: MediaQuery.of(context).size.width,
         ),
         decoration: BoxDecoration(
-          color: TUIColors.error,
+          color: TUIDefaultColors.error,
           borderRadius: BorderRadius.all(badgeSize._getBorderRadius()),
         ),
         padding: badgeSize._getEdgeInsets(),
@@ -110,7 +110,7 @@ class TUIBadge extends StatelessWidget {
         width: badgeSize._getBadgeSize(),
         padding: badgeSize._getEdgeInsets(),
         decoration: const BoxDecoration(
-            color: TUIColors.error,
+            color: TUIDefaultColors.error,
             borderRadius: BorderRadius.all(Radius.circular(20))),
       );
     }

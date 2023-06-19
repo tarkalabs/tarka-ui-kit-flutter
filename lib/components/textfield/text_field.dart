@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tarka_ui/styles/tui_colors.dart';
-import 'package:tarka_ui/styles/tui_text_style.dart';
+import 'package:tarka_ui/styles/default_colors.dart';
+import 'package:tarka_ui/styles/text_style.dart';
 
 /// TUITextField is a text input field that allows users to enter text.
 /*
@@ -73,9 +73,9 @@ class TUITextField extends StatelessWidget {
     this.expands = false,
     this.maxLength,
     this.prefixIcon,
-    this.prefixIconColor = TUIColors.inputText,
+    this.prefixIconColor = TUIDefaultColors.inputText,
     this.suffixIcon,
-    this.suffixIconColor = TUIColors.inputText,
+    this.suffixIconColor = TUIDefaultColors.inputText,
     this.obscureText = false,
     this.obscuringCharacter = '*',
     this.controller,
@@ -100,7 +100,8 @@ class TUITextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return Material(
+        child: TextField(
         onChanged: onChanged,
         onEditingComplete: onEditingComplete,
         onSubmitted: onSubmitted,
@@ -121,40 +122,40 @@ class TUITextField extends StatelessWidget {
         maxLength: maxLength,
         decoration: InputDecoration(
           filled: true,
-          fillColor: TUIColors.inputBackground,
+          fillColor: TUIDefaultColors.inputBackground,
           hintText: hintText,
-          hintStyle: TUITextStyle.body6.copyWith(color: TUIColors.inputTextDim),
+          hintStyle: TUITextStyle.body6.copyWith(color: TUIDefaultColors.inputTextDim),
           labelText: labelText,
           labelStyle:
-              TUITextStyle.body6.copyWith(color: TUIColors.inputTextDim),
+              TUITextStyle.body6.copyWith(color: TUIDefaultColors.inputTextDim),
           suffixText: suffixText,
           prefixText: prefixText,
           prefixIconColor: prefixIconColor,
           prefixIcon: prefixIcon ?? prefixIcon,
-          suffixIconColor: TUIColors.inputText,
+          suffixIconColor: TUIDefaultColors.inputText,
           suffixIcon: suffixIcon ?? suffixIcon,
           errorText: errorText,
           helperText: helperText,
-          errorStyle: TUITextStyle.body7.copyWith(color: TUIColors.inputText),
-          helperStyle: TUITextStyle.body7.copyWith(color: TUIColors.inputText),
+          errorStyle: TUITextStyle.body7.copyWith(color: TUIDefaultColors.inputText),
+          helperStyle: TUITextStyle.body7.copyWith(color: TUIDefaultColors.inputText),
           focusedBorder: const UnderlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(8)),
-              borderSide: BorderSide(color: TUIColors.primary)),
+              borderSide: BorderSide(color: TUIDefaultColors.primary)),
           disabledBorder: const UnderlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(8)),
-              borderSide: BorderSide(color: TUIColors.inputBackground)),
+              borderSide: BorderSide(color: TUIDefaultColors.inputBackground)),
           enabledBorder: const UnderlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(8)),
-              borderSide: BorderSide(color: TUIColors.inputBackground)),
+              borderSide: BorderSide(color: TUIDefaultColors.inputBackground)),
           border: const UnderlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(8)),
-              borderSide: BorderSide(color: TUIColors.inputBackground)),
+              borderSide: BorderSide(color: TUIDefaultColors.inputBackground)),
           errorBorder: const UnderlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(8)),
-              borderSide: BorderSide(color: TUIColors.error)),
+              borderSide: BorderSide(color: TUIDefaultColors.error)),
           focusedErrorBorder: const UnderlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(8)),
-              borderSide: BorderSide(color: TUIColors.error)),
-        ));
+              borderSide: BorderSide(color: TUIDefaultColors.error)),
+        )));
   }
 }

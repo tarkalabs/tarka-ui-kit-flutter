@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tarka_ui/styles/tui_colors.dart';
-import 'package:tarka_ui/styles/tui_text_style.dart';
+import 'package:tarka_ui/styles/default_colors.dart';
+import 'package:tarka_ui/styles/text_style.dart';
 
 /// TUIAvatar is used to create a Avatar with content, size and badge flag.
 /*
@@ -29,9 +29,9 @@ class TUIAvatar extends StatelessWidget {
     super.key,
     required this.avatarSize,
     required this.avatarContent,
-    this.textColor = TUIColors.onTertiary,
-    this.foregroundColor = TUIColors.constantLight,
-    this.backgroundColor = TUIColors.tertiary,
+    this.textColor = TUIDefaultColors.onTertiary,
+    this.foregroundColor = TUIDefaultColors.constantLight,
+    this.backgroundColor = TUIDefaultColors.tertiary,
     this.isBadged = false,
   });
 
@@ -43,7 +43,7 @@ class TUIAvatar extends StatelessWidget {
       circleChild = Icon(
         avatarContent.icon,
         size: avatarSize._size / 2,
-        color: TUIColors.constantLight,
+        color: TUIDefaultColors.constantLight,
       );
     } else if (avatarContent.text != null) {
       TextStyle textStyle = avatarSize._textStyle.copyWith(
@@ -78,7 +78,7 @@ class TUIAvatar extends StatelessWidget {
                 width: avatarSize._badgeSize,
                 decoration: const BoxDecoration(
                   shape: BoxShape.circle,
-                  color: TUIColors.success,
+                  color: TUIDefaultColors.success,
                 ),
               ),
             );
@@ -91,7 +91,7 @@ class TUIAvatar extends StatelessWidget {
                 width: avatarSize._badgeSize,
                 decoration: const BoxDecoration(
                   shape: BoxShape.circle,
-                  color: TUIColors.success,
+                  color: TUIDefaultColors.success,
                 ),
               ),
             );

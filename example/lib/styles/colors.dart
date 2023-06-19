@@ -1,8 +1,6 @@
-import 'package:flutter/material.dart';
+import 'dart:ui';
 
-class TUIColors {
-  TUIColors._();
-  // Base
+class AppColors {
   static const Color primary = Color(0xff0052D6);
   static const Color secondary = Color(0xff4D80B3);
   static const Color tertiary = Color(0xff924F92);
@@ -56,4 +54,14 @@ class TUIColors {
   // Constants
   static const Color constantDark = Color(0xff000000);
   static const Color constantLight = Color(0xffFFFFFF);
+
+  static const Color primaryHover = Color(0xff005CF0);
+  static const Color primaryAltHover = Color(0xffC4D6F3);
+  static const Color secondaryHover = Color(0xff5E8CBA);
+  static const Color secondaryAltHover = Color(0xffC1D1E1);
+  static const Color tertiaryHover = Color(0xffA257A2);
+  static const Color tertiaryAltHover = Color(0xffEFBEEF);
+  static const Color errorHover = Color(0xffDF2036);
+  static const Color warningHover = Color(0xffFFAD14);
+  static const Color disabledBackgroundHover = Color(0x331A1B1F);
 }
