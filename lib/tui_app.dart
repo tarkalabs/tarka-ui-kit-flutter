@@ -315,6 +315,7 @@ class _TUIAppState extends State<TUIApp> {
     return m.AnimatedTheme(
       data: mTheme?.data ??
           m.ThemeData(
+            splashFactory: m.NoSplash.splashFactory,
             brightness: brightness,
             canvasColor: themeData.colors.background,
             textSelectionTheme: m.TextSelectionThemeData(
