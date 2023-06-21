@@ -4,10 +4,14 @@ import '../../styles/default_colors.dart';
 import '../../styles/text_style.dart';
 
 class BreadCrumb extends StatelessWidget {
-  const BreadCrumb({Key? key, required this.titles, required this.onTap})
-      : super(key: key);
   final Function(int) onTap;
   final List<String> titles;
+
+  const BreadCrumb({
+    Key? key,
+    required this.titles,
+    required this.onTap,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
