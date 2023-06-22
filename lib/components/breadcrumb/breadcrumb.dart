@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../styles/default_colors.dart';
-import '../../styles/text_style.dart';
+import '../../styles/theme.dart';
 
 class BreadCrumb extends StatelessWidget {
   final Function(int) onTap;
@@ -15,6 +15,10 @@ class BreadCrumb extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = TUITheme.of(context);
+    final textStyle = theme.typography;
+    final colors = theme.colors;
+
     return Wrap(
       alignment: WrapAlignment.start,
       spacing: 8,
@@ -35,23 +39,21 @@ class BreadCrumb extends StatelessWidget {
                   children: [
                     Text(
                       titles[index],
-                      style: TUITextStyle.button6.copyWith(
-                        color: TUIDefaultColors.disabledBackground
-                            .withOpacity(0.7),
+                      style: textStyle.button6.copyWith(
+                        color: colors.inputTextDim,
                       ),
                     ),
                     Text(
                       "/",
-                      style: TUITextStyle.button6.copyWith(
-                        color: TUIDefaultColors.disabledBackground
-                            .withOpacity(0.7),
+                      style: textStyle.button6.copyWith(
+                        color: colors.inputTextDim,
                       ),
                     )
                   ]);
             } else {
               return Text(
                 titles[index],
-                style: TUITextStyle.button6.copyWith(
+                style: textStyle.button6.copyWith(
                   color: TUIDefaultColors.onSurface,
                 ),
               );
