@@ -1,0 +1,1 @@
+test/golden_test/goldens/*.png filter=lfs diff=lfs merge=lfs -text
