@@ -1,5 +1,13 @@
+import 'package:flutter/widgets.dart';
 import 'package:tarka_ui/styles/theme.dart';
 import 'package:tarka_ui/tarka_ui.dart';
+
+Widget wrapApp({required Widget child}) {
+  return TUIApp(
+    home: child,
+    theme: defaultTheme(),
+  );
+}
 
 TUIThemeData defaultTheme() {
   return TUIThemeData(
