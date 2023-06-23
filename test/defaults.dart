@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:golden_toolkit/golden_toolkit.dart';
 import 'package:tarka_ui/styles/theme.dart';
 import 'package:tarka_ui/tarka_ui.dart';
 
@@ -6,6 +7,24 @@ Widget wrapApp({required Widget child}) {
   return TUIApp(
     home: child,
     theme: defaultTheme(),
+  );
+}
+
+WidgetWrapper tuiAppWrapper({
+  Iterable<LocalizationsDelegate<dynamic>>? localizations,
+  NavigatorObserver? navigatorObserver,
+  Iterable<Locale>? localeOverrides,
+  TUIThemeData? theme,
+}) {
+  return (child) => TUIApp(
+    localizationsDelegates: localizations,
+    supportedLocales: localeOverrides ?? const [Locale('en')],
+    theme: theme ?? defaultTheme(),
+    debugShowCheckedModeBanner: false,
+    home: child,
+    navigatorObservers: [
+      if (navigatorObserver != null) navigatorObserver,
+    ],
   );
 }
 
