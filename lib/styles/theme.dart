@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:tarka_ui/components/button/style.dart';
-import 'package:tarka_ui/components/flaoting_action_button/floating_action_button.dart';
+import 'package:tarka_ui/components/floating_action_button/floating_action_button.dart';
 import 'package:tarka_ui/styles/colors.dart';
 import 'package:tarka_ui/styles/typography.dart';
 
