@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:tarka_ui/components/button/style.dart';
+import 'package:tarka_ui/components/flaoting_action_button/floating_action_button.dart';
 import 'package:tarka_ui/styles/colors.dart';
 import 'package:tarka_ui/styles/typography.dart';
 
@@ -69,9 +70,12 @@ class TUIThemeData with Diagnosticable {
   final TUIColors colors;
   final TUITypography typography;
   final ButtonStyles buttonStyles;
+  final FloatingActionButtonThemeData floatingActionButtonThemeData;
 
   TUIThemeData(this.colors, this.typography)
-      : buttonStyles = ButtonStyles.from(colors, typography);
+      : buttonStyles = ButtonStyles.from(colors, typography),
+        floatingActionButtonThemeData =
+            _generateFloatingActionButtonTheme(colors);
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
@@ -80,5 +84,23 @@ class TUIThemeData with Diagnosticable {
       ..add(DiagnosticsProperty<TUIColors>("colors", colors))
       ..add(DiagnosticsProperty<TUITypography>("typography", typography))
       ..add(DiagnosticsProperty<ButtonStyles>("buttonStyles", buttonStyles));
+  }
+
+  static FloatingActionButtonThemeData _generateFloatingActionButtonTheme(
+      TUIColors colors) {
+    return FloatingActionButtonThemeData(
+      sizeConstraints: BoxConstraints.tightFor(
+        width: TUIFloatingActionButtonSize.regular.size,
+        height: TUIFloatingActionButtonSize.regular.size,
+      ),
+      smallSizeConstraints: BoxConstraints.tightFor(
+        width: TUIFloatingActionButtonSize.small.size,
+        height: TUIFloatingActionButtonSize.small.size,
+      ),
+      largeSizeConstraints: BoxConstraints.tightFor(
+        width: TUIFloatingActionButtonSize.large.size,
+        height: TUIFloatingActionButtonSize.large.size,
+      ),
+    );
   }
 }
