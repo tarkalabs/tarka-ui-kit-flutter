@@ -33,6 +33,7 @@ export 'package:tarka_ui/components/floating_action_button/floating_action_butto
 export 'package:tarka_ui/components/successCheckMark/success_check_mark.dart';
 export 'package:tarka_ui/components/tag/tag.dart';
 export 'package:tarka_ui/components/textfield/text_field.dart';
+export 'package:tarka_ui/components/button/icon_button.dart';
 export 'package:tarka_ui/styles/colors.dart';
 
 // exports component

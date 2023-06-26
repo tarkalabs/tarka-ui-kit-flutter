@@ -70,12 +70,14 @@ class TUIThemeData with Diagnosticable {
   final TUIColors colors;
   final TUITypography typography;
   final ButtonStyles buttonStyles;
+  final IconButtonStyles iconButtonStyles;
   final FloatingActionButtonThemeData floatingActionButtonThemeData;
 
   TUIThemeData(this.colors, this.typography)
       : buttonStyles = ButtonStyles.from(colors, typography),
         floatingActionButtonThemeData =
-            _generateFloatingActionButtonTheme(colors);
+            _generateFloatingActionButtonTheme(colors),
+        iconButtonStyles = IconButtonStyles.from(colors);
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
