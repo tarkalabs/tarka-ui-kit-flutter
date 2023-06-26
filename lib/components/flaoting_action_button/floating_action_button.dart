@@ -15,7 +15,7 @@ enum TUIFloatingActionButtonSize {
 class TUIFloatingActionButton extends StatefulWidget {
   const TUIFloatingActionButton({
     Key? key,
-    this.size = TUIFloatingActionButtonSize.large,
+    this.size = TUIFloatingActionButtonSize.regular,
     required this.iconData,
     this.onPressed,
   }) : super(key: key);
