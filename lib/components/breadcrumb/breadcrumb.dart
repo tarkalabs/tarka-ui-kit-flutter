@@ -32,16 +32,19 @@ class BreadCrumb extends StatelessWidget {
           child: (() {
             // your code here
             if (shouldAddSlash) {
-              return Wrap(
-                  alignment: WrapAlignment.start,
-                  direction: Axis.horizontal,
-                  spacing: 4,
+              return Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
                       titles[index],
                       style: textStyle.button6.copyWith(
                         color: colors.inputTextDim,
                       ),
+                    ),
+                    const SizedBox(
+                      width: 4,
                     ),
                     Text(
                       "/",
@@ -62,5 +65,9 @@ class BreadCrumb extends StatelessWidget {
         );
       }),
     );
+  }
+
+  List<Text> getNavigationElements() {
+    return [Text("")];
   }
 }
