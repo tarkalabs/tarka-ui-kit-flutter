@@ -47,7 +47,7 @@ class TUIIconButton extends StatelessWidget {
     final buttonStyle = ButtonStyle(
         overlayColor: MaterialStateProperty.all(Colors.transparent),
         backgroundColor: colorStyle.backgroundColor,
-        foregroundColor: MaterialStateProperty.all(colorStyle.foregroundColor),
+        foregroundColor: colorStyle.foregroundColor,
         side: colorStyle.borderSide,
         //Required to remove excess padding. i.e. By default button tries to size itself to min 48. (MaterialTapTargetSize.padding)
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
@@ -58,7 +58,7 @@ class TUIIconButton extends StatelessWidget {
         fixedSize: MaterialStateProperty.all(Size.square(size.size)),
         minimumSize: MaterialStateProperty.all(const Size(0, 0)),
         alignment: Alignment.center,
-        iconColor: MaterialStateProperty.all(colorStyle.foregroundColor),
+        iconColor: colorStyle.foregroundColor,
         iconSize: MaterialStateProperty.all(size.iconSize));
 
     final Widget buttonChild = Icon(iconData);
