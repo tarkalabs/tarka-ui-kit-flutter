@@ -30,6 +30,14 @@ void main() {
         await screenMatchesGolden(
             tester, 'icon_button_${type.name}_all_size_state_pressed');
       });
+
+      testGoldens('state = Disabled', (tester) async {
+        final builder = _buildButton(type, null);
+        await tester.pumpWidgetBuilder(builder.build(),
+            wrapper: tuiAppWrapper());
+        await screenMatchesGolden(
+            tester, 'icon_button_${type.name}_all_size_state_disabled');
+      });
     }
   });
 }
