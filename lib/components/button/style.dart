@@ -209,15 +209,15 @@ class IconButtonStyles with Diagnosticable {
               colors.disabledContent,
             ),
             borderSide: _createStateProperty(
-                BorderSide(color: colors.onSurface, width: 1.5),
+                BorderSide(color: colors.outline, width: 1.5),
                 BorderSide(color: colors.onSurface, width: 2),
                 BorderSide(color: colors.disabledContent, width: 1.5))),
         ghost = ButtonColorStyle(
             backgroundColor: _createStateProperty(
                 Colors.transparent, colors.surfaceHover, Colors.transparent),
             foregroundColor: _createStateProperty(
-              colors.secondary,
-              colors.secondary,
+              colors.onSurface,
+              colors.onSurface,
               colors.disabledContent,
             ),
             borderSide: _createStateProperty(
