@@ -75,7 +75,7 @@ class TUIButton extends StatelessWidget {
     final buttonStyle = ButtonStyle(
         overlayColor: MaterialStateProperty.all(Colors.transparent),
         backgroundColor: colorStyle.backgroundColor,
-        foregroundColor: MaterialStateProperty.all(colorStyle.foregroundColor),
+        foregroundColor: colorStyle.foregroundColor,
         side: colorStyle.borderSide,
         //Required to remove excess padding. i.e. By default button tries to size itself to min 48. (MaterialTapTargetSize.padding)
         tapTargetSize: MaterialTapTargetSize.shrinkWrap,
@@ -103,7 +103,7 @@ class TUIButton extends StatelessWidget {
                     : sizeStyle.paddingTextToBorder,
             sizeStyle.paddingVertical)),
         textStyle: MaterialStateProperty.all(sizeStyle.textStyle),
-        iconColor: MaterialStateProperty.all(colorStyle.foregroundColor),
+        iconColor: colorStyle.foregroundColor,
         iconSize: MaterialStateProperty.all(sizeStyle.iconSize));
 
     final Widget buttonChild;
