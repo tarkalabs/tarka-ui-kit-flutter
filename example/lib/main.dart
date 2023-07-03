@@ -1,4 +1,5 @@
 import 'package:example/styles/colors.dart';
+import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:tarka_ui/components/button/style.dart';
 import 'package:tarka_ui/components/chip/chip.dart';
@@ -103,6 +104,8 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: TUIFloatingActionButton(iconData: FluentIcons.fluent_20_filled, onPressed: () {
+      },),
         body: SafeArea(
       child: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 30),
