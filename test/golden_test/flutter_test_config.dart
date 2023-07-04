@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:golden_toolkit/golden_toolkit.dart';
+import 'package:tarka_ui/styles/default_colors.dart';
 
 Future<void> testExecutable(FutureOr<void> Function() testMain) async {
   return GoldenToolkit.runWithConfiguration(
@@ -15,3 +16,12 @@ Future<void> testExecutable(FutureOr<void> Function() testMain) async {
         enableRealShadows: true),
   );
 }
+
+goldenGridBuilder({
+  required int columns,
+  required double widthToHeightRatio,
+}) =>
+    GoldenBuilder.grid(
+        columns: columns,
+        widthToHeightRatio: widthToHeightRatio,
+        bgColor: TUIDefaultColors.background);

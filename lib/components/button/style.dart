@@ -7,10 +7,38 @@ enum TUIButtonType { primary, secondary, outlined, ghost, danger }
 
 /// TUIButtonSize is used to define the size of button.
 enum TUIButtonSize {
-  xs(24), s(32), m(40), l(48);
-  const TUIButtonSize(this.height);
+  xs(24),
+  s(32),
+  m(40),
+  l(48);
+
+  const TUIButtonSize(
+    this.height,
+  );
 
   final double height;
+}
+
+// TUIIconButtonType is used to define the type of button.
+enum TUIIconButtonType {
+  primary,
+  secondary,
+  outlined,
+  ghost,
+}
+
+/// TUIIconButtonSize is used to define the size of button.
+enum TUIIconButtonSize {
+  px20(20, 12),
+  px24(24, 12),
+  px32(32, 24),
+  px40(40, 24),
+  px48(48, 24);
+
+  const TUIIconButtonSize(this.size, this.iconSize);
+
+  final double size;
+  final double iconSize;
 }
 
 /// TUIButtonIconAlignment is used to define the alignment of icon in button.
@@ -118,21 +146,6 @@ class ButtonStyles with Diagnosticable {
             paddingIconToBorder: 16,
             paddingTextToIcon: 8);
 
-  static MaterialStateProperty<T?> _createStateProperty<T>(
-      T? normal, T? pressed, T? disabled) {
-    return MaterialStateProperty.resolveWith<T?>(
-      (states) {
-        if (states.isDisabled) {
-          return disabled;
-        } else if (states.isPressed || states.isFocused || states.isHovered) {
-          return pressed;
-        } else {
-          return normal;
-        }
-      },
-    );
-  }
-
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
@@ -146,6 +159,78 @@ class ButtonStyles with Diagnosticable {
       ..add(DiagnosticsProperty<ButtonSizeStyle>("s", s))
       ..add(DiagnosticsProperty<ButtonSizeStyle>("m", m))
       ..add(DiagnosticsProperty<ButtonSizeStyle>("l", l));
+  }
+}
+
+class IconButtonStyles with Diagnosticable {
+  final ButtonColorStyle primary;
+  final ButtonColorStyle secondary;
+  final ButtonColorStyle outlined;
+  final ButtonColorStyle ghost;
+
+  IconButtonStyles(
+    this.primary,
+    this.secondary,
+    this.outlined,
+    this.ghost,
+  );
+
+  IconButtonStyles.from(tui.TUIColors colors)
+      : primary = ButtonColorStyle(
+            backgroundColor: _createStateProperty(
+                colors.primary, colors.primaryHover, colors.disabledBackground),
+            foregroundColor: _createStateProperty(
+              colors.onPrimary,
+              colors.onPrimary,
+              colors.disabledContent,
+            ),
+            borderSide: _createStateProperty(
+                BorderSide.none,
+                BorderSide(color: colors.onSurface, width: 1.5),
+                BorderSide.none)),
+        secondary = ButtonColorStyle(
+            backgroundColor: _createStateProperty(colors.secondary,
+                colors.secondaryHover, colors.disabledBackground),
+            foregroundColor: _createStateProperty(
+              colors.onSecondary,
+              colors.onSecondary,
+              colors.disabledContent,
+            ),
+            borderSide: _createStateProperty(
+                BorderSide.none,
+                BorderSide(color: colors.onSurface, width: 1.5),
+                BorderSide.none)),
+        outlined = ButtonColorStyle(
+            backgroundColor: _createStateProperty(
+                Colors.transparent, colors.surfaceHover, Colors.transparent),
+            foregroundColor: _createStateProperty(
+              colors.onSurface,
+              colors.onSurface,
+              colors.disabledContent,
+            ),
+            borderSide: _createStateProperty(
+                BorderSide(color: colors.outline, width: 1.5),
+                BorderSide(color: colors.onSurface, width: 2),
+                BorderSide(color: colors.disabledContent, width: 1.5))),
+        ghost = ButtonColorStyle(
+            backgroundColor: _createStateProperty(
+                Colors.transparent, colors.surfaceHover, Colors.transparent),
+            foregroundColor: _createStateProperty(
+              colors.onSurface,
+              colors.onSurface,
+              colors.disabledContent,
+            ),
+            borderSide: _createStateProperty(
+                BorderSide.none, BorderSide.none, BorderSide.none));
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty<ButtonColorStyle>("primary", primary))
+      ..add(DiagnosticsProperty<ButtonColorStyle>("secondary", secondary))
+      ..add(DiagnosticsProperty<ButtonColorStyle>("outlined", outlined))
+      ..add(DiagnosticsProperty<ButtonColorStyle>("ghost", ghost));
   }
 }
 
@@ -201,6 +286,21 @@ class ButtonColorStyle with Diagnosticable {
       ..add(
           DiagnosticsProperty<MaterialStateProperty>("borderSide", borderSide));
   }
+}
+
+MaterialStateProperty<T?> _createStateProperty<T>(
+    T? normal, T? pressed, T? disabled) {
+  return MaterialStateProperty.resolveWith<T?>(
+    (states) {
+      if (states.isDisabled) {
+        return disabled;
+      } else if (states.isPressed || states.isFocused || states.isHovered) {
+        return pressed;
+      } else {
+        return normal;
+      }
+    },
+  );
 }
 
 extension MaterialStateSet on Set<MaterialState> {
