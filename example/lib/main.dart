@@ -395,6 +395,26 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             const SizedBox(height: 8),
+            const Text("Breadcrumb", style: TUITextStyle.heading6),
+            const SizedBox(height: 8),
+            BreadCrumb(
+              titles: const [
+                "one",
+                "two",
+                "three",
+                "four",
+                "five",
+                "six",
+                "seven",
+                "eight",
+                "nine",
+                "ten"
+              ],
+              onTap: (index) {
+                print("The tapped index is ${index}");
+              },
+            ),
+            const SizedBox(height: 8),
             const Text("Icon Button", style: TUITextStyle.heading6),
             const SizedBox(height: 8),
             Column(
