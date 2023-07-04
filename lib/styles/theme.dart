@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:tarka_ui/components/button/style.dart';
-import 'package:tarka_ui/components/flaoting_action_button/floating_action_button.dart';
+import 'package:tarka_ui/components/floating_action_button/floating_action_button.dart';
 import 'package:tarka_ui/styles/colors.dart';
 import 'package:tarka_ui/styles/typography.dart';
 
@@ -70,12 +70,14 @@ class TUIThemeData with Diagnosticable {
   final TUIColors colors;
   final TUITypography typography;
   final ButtonStyles buttonStyles;
+  final IconButtonStyles iconButtonStyles;
   final FloatingActionButtonThemeData floatingActionButtonThemeData;
 
   TUIThemeData(this.colors, this.typography)
       : buttonStyles = ButtonStyles.from(colors, typography),
         floatingActionButtonThemeData =
-            _generateFloatingActionButtonTheme(colors);
+            _generateFloatingActionButtonTheme(colors),
+        iconButtonStyles = IconButtonStyles.from(colors);
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {

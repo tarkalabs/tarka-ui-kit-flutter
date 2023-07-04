@@ -6,6 +6,7 @@ import 'package:tarka_ui/tarka_ui.dart';
 
 import '../defaults.dart';
 import '../utils.dart';
+import 'flutter_test_config.dart';
 
 void main() {
   group("FAB button design all sizes", () {
@@ -27,8 +28,7 @@ void main() {
 }
 
 GoldenBuilder _buildButton(VoidCallback? onPress) {
-  final builder = GoldenBuilder.grid(
-      columns: 2, widthToHeightRatio: 2, bgColor: TUIDefaultColors.background);
+  final builder = goldenGridBuilder(columns: 2, widthToHeightRatio: 2);
   for (final size in TUIFloatingActionButtonSize.values) {
     builder.addScenario(
       size.name.capitalize(),

@@ -90,13 +90,15 @@ class TUIButton extends StatelessWidget {
         padding: MaterialStateProperty.all(EdgeInsets.fromLTRB(
             label == null
                 ? sizeStyle.paddingVertical
-                : (iconData != null && iconPosition == TUIButtonIconPosition.left)
+                : (iconData != null &&
+                        iconPosition == TUIButtonIconPosition.left)
                     ? sizeStyle.paddingIconToBorder
                     : sizeStyle.paddingTextToBorder,
             sizeStyle.paddingVertical,
             label == null
                 ? sizeStyle.paddingVertical
-                : (iconData != null && iconPosition == TUIButtonIconPosition.right)
+                : (iconData != null &&
+                        iconPosition == TUIButtonIconPosition.right)
                     ? sizeStyle.paddingIconToBorder
                     : sizeStyle.paddingTextToBorder,
             sizeStyle.paddingVertical)),
