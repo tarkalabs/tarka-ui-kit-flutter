@@ -66,8 +66,4 @@ class BreadCrumb extends StatelessWidget {
       }),
     );
   }
-
-  List<Text> getNavigationElements() {
-    return [Text("")];
-  }
 }
