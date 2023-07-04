@@ -32,65 +32,99 @@ class ButtonStyles with Diagnosticable {
 
   ButtonStyles.from(tui.TUIColors colors, tui.TUITypography typography)
       : primary = ButtonColorStyle(
-      backgroundColor:
-      _createStateProperty(colors.primary, colors.primaryHover),
-      foregroundColor: colors.onPrimary,
-      borderSide: _createStateProperty(
-          BorderSide.none, BorderSide(color: colors.onSurface, width: 1.5))),
+            backgroundColor: _createStateProperty(
+                colors.primary, colors.primaryHover, colors.disabledBackground),
+            foregroundColor: _createStateProperty(
+              colors.onPrimary,
+              colors.onPrimary,
+              colors.disabledContent,
+            ),
+            borderSide: _createStateProperty(
+                BorderSide.none,
+                BorderSide(color: colors.onSurface, width: 1.5),
+                BorderSide.none)),
         secondary = ButtonColorStyle(
-            backgroundColor:
-            _createStateProperty(colors.secondary, colors.secondaryHover),
-            foregroundColor: colors.onSecondary,
-            borderSide: _createStateProperty(BorderSide.none,
-                BorderSide(color: colors.onSurface, width: 1.5))),
+            backgroundColor: _createStateProperty(colors.secondary,
+                colors.secondaryHover, colors.disabledBackground),
+            foregroundColor: _createStateProperty(
+              colors.onSecondary,
+              colors.onSecondary,
+              colors.disabledContent,
+            ),
+            borderSide: _createStateProperty(
+                BorderSide.none,
+                BorderSide(color: colors.onSurface, width: 1.5),
+                BorderSide.none)),
         outlined = ButtonColorStyle(
-            backgroundColor:
-            _createStateProperty(Colors.transparent,colors.surfaceHover),
-            foregroundColor: colors.onSurface,
+            backgroundColor: _createStateProperty(
+                Colors.transparent, colors.surfaceHover, Colors.transparent),
+            foregroundColor: _createStateProperty(
+              colors.onSurface,
+              colors.onSurface,
+              colors.disabledContent,
+            ),
             borderSide: _createStateProperty(
                 BorderSide(color: colors.onSurface, width: 1.5),
-                BorderSide(color: colors.onSurface, width: 2))),
+                BorderSide(color: colors.onSurface, width: 2),
+                BorderSide(color: colors.disabledContent, width: 1.5))),
         ghost = ButtonColorStyle(
-            backgroundColor:
-            _createStateProperty(Colors.transparent,colors.surfaceHover),
-            foregroundColor: colors.secondary,
-            borderSide: _createStateProperty(BorderSide.none, BorderSide.none)),
+            backgroundColor: _createStateProperty(
+                Colors.transparent, colors.surfaceHover, Colors.transparent),
+            foregroundColor: _createStateProperty(
+              colors.secondary,
+              colors.secondary,
+              colors.disabledContent,
+            ),
+            borderSide: _createStateProperty(
+                BorderSide.none, BorderSide.none, BorderSide.none)),
         danger = ButtonColorStyle(
-            backgroundColor:
-            _createStateProperty(colors.error, colors.errorHover),
-            foregroundColor: colors.onPrimary,
-            borderSide: _createStateProperty(BorderSide.none,
-                BorderSide(color: colors.onSurface, width: 1.5))),
-        xs = ButtonSizeStyle(textStyle: typography.button8,
+            backgroundColor: _createStateProperty(
+                colors.error, colors.errorHover, colors.disabledBackground),
+            foregroundColor: _createStateProperty(
+              colors.onPrimary,
+              colors.onPrimary,
+              colors.disabledContent,
+            ),
+            borderSide: _createStateProperty(
+                BorderSide.none,
+                BorderSide(color: colors.onSurface, width: 1.5),
+                BorderSide.none)),
+        xs = ButtonSizeStyle(
+            textStyle: typography.button8,
             iconSize: 16,
             paddingVertical: 5,
             paddingTextToBorder: 8,
             paddingIconToBorder: 4,
             paddingTextToIcon: 4),
-        s = ButtonSizeStyle(textStyle: typography.button7,
+        s = ButtonSizeStyle(
+            textStyle: typography.button7,
             iconSize: 16,
             paddingVertical: 7,
             paddingTextToBorder: 16,
             paddingIconToBorder: 8,
             paddingTextToIcon: 4),
-        m = ButtonSizeStyle(textStyle: typography.button6,
+        m = ButtonSizeStyle(
+            textStyle: typography.button6,
             iconSize: 24,
             paddingVertical: 10,
             paddingTextToBorder: 24,
             paddingIconToBorder: 16,
             paddingTextToIcon: 8),
-        l = ButtonSizeStyle(textStyle: typography.button6,
+        l = ButtonSizeStyle(
+            textStyle: typography.button6,
             iconSize: 24,
             paddingVertical: 14,
             paddingTextToBorder: 24,
             paddingIconToBorder: 16,
             paddingTextToIcon: 8);
 
-  static MaterialStateProperty<T?> _createStateProperty<T>(T? normal,
-      T? pressed) {
+  static MaterialStateProperty<T?> _createStateProperty<T>(
+      T? normal, T? pressed, T? disabled) {
     return MaterialStateProperty.resolveWith<T?>(
-          (states) {
-        if (states.isPressed || states.isFocused || states.isHovered) {
+      (states) {
+        if (states.isDisabled) {
+          return disabled;
+        } else if (states.isPressed || states.isFocused || states.isHovered) {
           return pressed;
         } else {
           return normal;
@@ -102,16 +136,16 @@ class ButtonStyles with Diagnosticable {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(
-        DiagnosticsProperty<ButtonColorStyle>("primary", primary))..add(
-        DiagnosticsProperty<ButtonColorStyle>("secondary", secondary))..add(
-        DiagnosticsProperty<ButtonColorStyle>("outlined", outlined))..add(
-        DiagnosticsProperty<ButtonColorStyle>("ghost", ghost))..add(
-        DiagnosticsProperty<ButtonColorStyle>("danger", danger))..add(
-        DiagnosticsProperty<ButtonSizeStyle>("xs", xs))..add(
-        DiagnosticsProperty<ButtonSizeStyle>("s", s))..add(
-        DiagnosticsProperty<ButtonSizeStyle>("m", m))..add(
-        DiagnosticsProperty<ButtonSizeStyle>("l", l));
+    properties
+      ..add(DiagnosticsProperty<ButtonColorStyle>("primary", primary))
+      ..add(DiagnosticsProperty<ButtonColorStyle>("secondary", secondary))
+      ..add(DiagnosticsProperty<ButtonColorStyle>("outlined", outlined))
+      ..add(DiagnosticsProperty<ButtonColorStyle>("ghost", ghost))
+      ..add(DiagnosticsProperty<ButtonColorStyle>("danger", danger))
+      ..add(DiagnosticsProperty<ButtonSizeStyle>("xs", xs))
+      ..add(DiagnosticsProperty<ButtonSizeStyle>("s", s))
+      ..add(DiagnosticsProperty<ButtonSizeStyle>("m", m))
+      ..add(DiagnosticsProperty<ButtonSizeStyle>("l", l));
   }
 }
 
@@ -135,13 +169,13 @@ class ButtonSizeStyle with Diagnosticable {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(
-        DiagnosticsProperty<TextStyle>("textStyle", textStyle))..add(
-        DoubleProperty("iconSize", iconSize))..add(
-        DoubleProperty("paddingVertical", paddingVertical))..add(
-        DoubleProperty("paddingTextToBorder", paddingTextToBorder))..add(
-        DoubleProperty("paddingIconToBorder", paddingIconToBorder))..add(
-        DoubleProperty("paddingTextToIcon", paddingTextToIcon));
+    properties
+      ..add(DiagnosticsProperty<TextStyle>("textStyle", textStyle))
+      ..add(DoubleProperty("iconSize", iconSize))
+      ..add(DoubleProperty("paddingVertical", paddingVertical))
+      ..add(DoubleProperty("paddingTextToBorder", paddingTextToBorder))
+      ..add(DoubleProperty("paddingIconToBorder", paddingIconToBorder))
+      ..add(DoubleProperty("paddingTextToIcon", paddingTextToIcon));
   }
 }
 
@@ -153,16 +187,19 @@ class ButtonColorStyle with Diagnosticable {
   });
 
   final MaterialStateProperty<Color?> backgroundColor;
-  final Color foregroundColor;
+  final MaterialStateProperty<Color?> foregroundColor;
   final MaterialStateProperty<BorderSide?> borderSide;
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty<MaterialStateProperty>(
-        "backgroundColor", backgroundColor))..add(
-        ColorProperty("foregroundColor", foregroundColor))..add(
-        DiagnosticsProperty<MaterialStateProperty>("borderSide", borderSide));
+    properties
+      ..add(DiagnosticsProperty<MaterialStateProperty>(
+          "backgroundColor", backgroundColor))
+      ..add(DiagnosticsProperty<MaterialStateProperty>(
+          "foregroundColor", foregroundColor))
+      ..add(
+          DiagnosticsProperty<MaterialStateProperty>("borderSide", borderSide));
   }
 }
 
