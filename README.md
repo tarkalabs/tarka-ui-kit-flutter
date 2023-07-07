@@ -11,4 +11,20 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-Flutter package for Tarka Kit Design System
+# Tarka UI Kit Flutter
+Tarka UI Kit is a reusable component library for building Flutter apps, based on a design system using Atomic Design principles
+
+# List of components
+- TUITextStyle
+- TUIAvatar
+- TUIBadge
+- BreadCrumb
+- TUIButton
+- TUIIconButton
+- TUIFloatingActionButton
+- TUIChip
+- TUIDivider
+- TUISuccessCheckMark
+- TUITag
+- TUITextField
+
