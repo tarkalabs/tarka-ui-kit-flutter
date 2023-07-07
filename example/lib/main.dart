@@ -1,5 +1,4 @@
 import 'package:example/styles/colors.dart';
-import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:tarka_ui/components/button/style.dart';
 import 'package:tarka_ui/components/chip/chip.dart';
@@ -105,7 +104,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: TUIFloatingActionButton(
-        iconData: FluentIcons.fluent_20_filled,
+        iconData: Symbol.map.value,
         onPressed: () {},
       ),
       body: SafeArea(
@@ -425,9 +424,76 @@ class _HomePageState extends State<HomePage> {
                                 type: type,
                                 size: size,
                                 onPressed: () {},
-                                iconData: FluentIcons.fluent_24_filled))
+                                iconData: Symbol.documentDownload.value))
                             .toList(growable: false)))
                     .toList(growable: false)),
+            const SizedBox(height: 8),
+            const Text("Snackbar", style: TUITextStyle.heading6),
+            const SizedBox(height: 8),
+            Row(
+              children: [
+                TUIIconButton(
+                    type: TUIIconButtonType.primary,
+                    size: TUIIconButtonSize.px48,
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).showSnackBar(TUISnackBar(
+                        type: TUISnackBarType.success,
+                        message: "This is an success snackbar with action",
+                        action: true,
+                        actionLabel: "Dismiss",
+                        onPressed: () {
+                          print("Snackbar action onPressed");
+                        },
+                      ).call());
+                    },
+                    iconData: Symbol.refresh.value),
+                TUIIconButton(
+                    type: TUIIconButtonType.primary,
+                    size: TUIIconButtonSize.px48,
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).showSnackBar(TUISnackBar(
+                        type: TUISnackBarType.information,
+                        message: "This is an information snackbar with action",
+                        action: true,
+                        actionLabel: "Dismiss",
+                        onPressed: () {
+                          print("Snackbar action onPressed");
+                        },
+                      ).call());
+                    },
+                    iconData: Symbol.refresh.value),
+                TUIIconButton(
+                    type: TUIIconButtonType.primary,
+                    size: TUIIconButtonSize.px48,
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).showSnackBar(TUISnackBar(
+                        type: TUISnackBarType.warning,
+                        message: "This is an warning snackbar with action",
+                        action: true,
+                        actionLabel: "Dismiss",
+                        onPressed: () {
+                          print("Snackbar action onPressed");
+                        },
+                      ).call());
+                    },
+                    iconData: Symbol.refresh.value),
+                TUIIconButton(
+                    type: TUIIconButtonType.primary,
+                    size: TUIIconButtonSize.px48,
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).showSnackBar(TUISnackBar(
+                        type: TUISnackBarType.error,
+                        message: "This is an error snackbar with action",
+                        action: true,
+                        actionLabel: "Dismiss",
+                        onPressed: () {
+                          print("Snackbar action onPressed");
+                        },
+                      ).call());
+                    },
+                    iconData: Symbol.refresh.value)
+              ],
+            )
           ],
         ),
       ),

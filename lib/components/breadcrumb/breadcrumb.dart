@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import '../../styles/default_colors.dart';
-import '../../styles/theme.dart';
+import 'package:tarka_ui/styles/default_colors.dart';
+import 'package:tarka_ui/styles/theme.dart';
 
 class BreadCrumb extends StatelessWidget {
   final Function(int) onTap;
