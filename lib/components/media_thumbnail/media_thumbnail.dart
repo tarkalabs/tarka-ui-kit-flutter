@@ -56,21 +56,7 @@ class TUIMediaThumbnail extends StatelessWidget {
               width: size.width,
             ),
             getBackgroundImage(),
-            Padding(
-              padding: const EdgeInsets.only(top: 4, right: 4),
-              child: Container(
-                decoration: decorateIcon(),
-                width: 20,
-                height: 20,
-                child: Center(
-                  child: Icon(
-                    getTopRightIcon(),
-                    color: Colors.white,
-                    size: 12,
-                  ),
-                ),
-              ),
-            ),
+            getTopRightWidget(),
             getCenterIconWidget()
           ].whereType<Widget>().toList(),
         )
@@ -135,6 +121,28 @@ class TUIMediaThumbnail extends StatelessWidget {
     }
 
     return null;
+  }
+
+  Widget? getTopRightWidget() {
+    if (isSelectable == false) {
+      return null;
+    } else {
+      return Padding(
+        padding: const EdgeInsets.only(top: 4, right: 4),
+        child: Container(
+          decoration: decorateIcon(),
+          width: 20,
+          height: 20,
+          child: Center(
+            child: Icon(
+              getTopRightIcon(),
+              color: Colors.white,
+              size: 12,
+            ),
+          ),
+        ),
+      );
+    }
   }
 
   IconData getTopRightIcon() {
