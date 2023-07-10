@@ -398,16 +398,69 @@ class _HomePageState extends State<HomePage> {
             const Text("Icon Button", style: TUITextStyle.heading6),
             const SizedBox(height: 8),
             Column(
-                children: TUIIconButtonType.values
-                    .map((type) => Row(
-                        children: TUIIconButtonSize.values
-                            .map((size) => TUIIconButton(
-                                type: type,
-                                size: size,
-                                onPressed: () {},
-                                iconData: FluentIcons.fluent_24_filled))
-                            .toList(growable: false)))
-                    .toList(growable: false)),
+              children: TUIIconButtonType.values
+                  .map((type) => Row(
+                      children: TUIIconButtonSize.values
+                          .map((size) => TUIIconButton(
+                              type: type,
+                              size: size,
+                              onPressed: () {},
+                              iconData: FluentIcons.fluent_24_filled))
+                          .toList(growable: false)))
+                  .toList(growable: false),
+            ),
+            const SizedBox(height: 8),
+            const Text("Media Thumbnail", style: TUITextStyle.heading6),
+            const SizedBox(height: 8),
+            Wrap(
+              direction: Axis.horizontal,
+              spacing: 4,
+              runSpacing: 10,
+              children: [
+                TUIMediaThumbnail(
+                  size: TUIMediaThumbnailSize.large,
+                  mediaType: TUIMediaThumbnailType.video,
+                  onPressed: () {
+                    print("Video thumbnail tapped.");
+                  },
+                  customThumbnailImage: TUIImage(
+                    imageUrl:
+                        "https://images.unsplash.com/photo-1579353977828-2a4eab540b9a",
+                    height: TUIMediaThumbnailSize.large.height,
+                    width: TUIMediaThumbnailSize.large.width,
+                    fit: BoxFit.fill,
+                  ),
+                ),
+                TUIMediaThumbnail(
+                  size: TUIMediaThumbnailSize.large,
+                  mediaType: TUIMediaThumbnailType.audio,
+                  onPressed: () {
+                    print("Audio thumbnail tapped.");
+                  },
+                ),
+                TUIMediaThumbnail(
+                  size: TUIMediaThumbnailSize.large,
+                  mediaType: TUIMediaThumbnailType.document,
+                  onPressed: () {
+                    print("Document thumbnail tapped.");
+                  },
+                ),
+                TUIMediaThumbnail(
+                  size: TUIMediaThumbnailSize.large,
+                  mediaType: TUIMediaThumbnailType.photo,
+                  onPressed: () {
+                    print("Photo thumbnail tapped.");
+                  },
+                  customThumbnailImage: TUIImage(
+                    imageUrl:
+                        "https://images.unsplash.com/photo-1579353977828-2a4eab540b9a",
+                    height: TUIMediaThumbnailSize.large.height,
+                    width: TUIMediaThumbnailSize.large.width,
+                    fit: BoxFit.fill,
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
