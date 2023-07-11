@@ -72,12 +72,15 @@ class TUIThemeData with Diagnosticable {
   final ButtonStyles buttonStyles;
   final IconButtonStyles iconButtonStyles;
   final FloatingActionButtonThemeData floatingActionButtonThemeData;
+  final BottomNavigationBarThemeData bottomNavigationBarTheme;
 
   TUIThemeData(this.colors, this.typography)
       : buttonStyles = ButtonStyles.from(colors, typography),
         floatingActionButtonThemeData =
             _generateFloatingActionButtonTheme(colors),
-        iconButtonStyles = IconButtonStyles.from(colors);
+        iconButtonStyles = IconButtonStyles.from(colors),
+        bottomNavigationBarTheme =
+            _generateBottomNavBarTheme(colors, typography);
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
@@ -86,6 +89,19 @@ class TUIThemeData with Diagnosticable {
       ..add(DiagnosticsProperty<TUIColors>("colors", colors))
       ..add(DiagnosticsProperty<TUITypography>("typography", typography))
       ..add(DiagnosticsProperty<ButtonStyles>("buttonStyles", buttonStyles));
+  }
+
+  static BottomNavigationBarThemeData _generateBottomNavBarTheme(
+      TUIColors colors, TUITypography typography) {
+    return BottomNavigationBarThemeData(
+        backgroundColor: colors.surface,
+        selectedItemColor: colors.secondary,
+        unselectedItemColor: colors.onSurface,
+        selectedLabelStyle: typography.button8,
+        unselectedLabelStyle: typography.button8,
+        type: BottomNavigationBarType.fixed,
+        showSelectedLabels: false,
+        showUnselectedLabels: false);
   }
 
   static FloatingActionButtonThemeData _generateFloatingActionButtonTheme(
