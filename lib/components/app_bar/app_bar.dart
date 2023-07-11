@@ -45,7 +45,6 @@ class TUIAppBar extends StatefulWidget {
 class _TUIAppBar extends State<TUIAppBar> {
   @override
   Widget build(BuildContext context) {
-    print("Show label :${widget.showLabels}");
     TUIThemeData themeData = TUITheme.of(context);
     return Column(
       mainAxisSize: MainAxisSize.min,
