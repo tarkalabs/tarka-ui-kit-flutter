@@ -14,7 +14,11 @@ class TUIAppBar extends StatefulWidget {
     required this.items,
     this.onTap,
     this.currentIndex = 0,
-  })  : _bnbItems = _convertToBnbItems(items),
+  })  : assert(
+            (items.every((element) => element.label?.isEmpty == false) ||
+                items.every((element) => element.label == null || element.label?.trim().isEmpty == true)),
+            "Either all items should have label or none."),
+        _bnbItems = _convertToBnbItems(items),
         showLabels = items.any((element) =>
             element.label != null && element.label?.trim().isEmpty == false);
 
@@ -41,6 +45,7 @@ class TUIAppBar extends StatefulWidget {
 class _TUIAppBar extends State<TUIAppBar> {
   @override
   Widget build(BuildContext context) {
+    print("Show label :${widget.showLabels}");
     TUIThemeData themeData = TUITheme.of(context);
     return Column(
       mainAxisSize: MainAxisSize.min,
