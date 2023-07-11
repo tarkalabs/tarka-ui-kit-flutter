@@ -17,7 +17,7 @@ Future<void> testExecutable(FutureOr<void> Function() testMain) async {
   );
 }
 
-goldenGridBuilder({
+GoldenBuilder goldenGridBuilder({
   required int columns,
   required double widthToHeightRatio,
 }) =>
@@ -25,3 +25,7 @@ goldenGridBuilder({
         columns: columns,
         widthToHeightRatio: widthToHeightRatio,
         bgColor: TUIDefaultColors.background);
+
+
+GoldenBuilder goldenColumnBuilder() =>
+    GoldenBuilder.column(bgColor: TUIDefaultColors.background);
