@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tarka_ui/styles/theme.dart';
 
 class TUIAppBar extends StatefulWidget {
   final List<TUIAppBarItem> items;
@@ -40,14 +41,24 @@ class TUIAppBar extends StatefulWidget {
 class _TUIAppBar extends State<TUIAppBar> {
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(
-      items: widget._bnbItems,
-      onTap: widget.onTap,
-      // Design says, Icon size should be 24px
-      iconSize: 24,
-      currentIndex: widget.currentIndex,
-      showSelectedLabels: widget.showLabels,
-      showUnselectedLabels: widget.showLabels,
+    TUIThemeData themeData = TUITheme.of(context);
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Container(
+          color: themeData.colors.surfaceVariantHover,
+          height: 1,
+        ),
+        BottomNavigationBar(
+          items: widget._bnbItems,
+          onTap: widget.onTap,
+          // Design says, Icon size should be 24px
+          iconSize: 24,
+          currentIndex: widget.currentIndex,
+          showSelectedLabels: widget.showLabels,
+          showUnselectedLabels: widget.showLabels,
+        )
+      ],
     );
   }
 }
