@@ -64,6 +64,7 @@ class _TUICheckBoxState extends State<TUICheckBox> {
     return GestureDetector(
       onTap: () {
         if (widget.isEnabled) {
+          widget.onPressed?.call();
           _setState();
         }
       },

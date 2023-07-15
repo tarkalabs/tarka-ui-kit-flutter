@@ -506,21 +506,33 @@ class _HomePageState extends State<HomePage> {
                 TUICheckBox(
                   isEnabled: true,
                   enableMixedState: true,
+                  onPressed: () {
+                    print("Pressed");
+                  },
                 ),
-                SizedBox(width: 20),
+                const SizedBox(width: 20),
                 TUICheckBox(
                   isEnabled: false,
                   state: TUICheckBoxState.unchecked,
+                  onPressed: () {
+                    print("Pressed");
+                  },
                 ),
-                SizedBox(width: 20),
+                const SizedBox(width: 20),
                 TUICheckBox(
                   isEnabled: false,
                   state: TUICheckBoxState.mixed,
+                  onPressed: () {
+                    print("Pressed");
+                  },
                 ),
-                SizedBox(width: 20),
+                const SizedBox(width: 20),
                 TUICheckBox(
                   isEnabled: false,
                   state: TUICheckBoxState.checked,
+                  onPressed: () {
+                    print("Pressed");
+                  },
                 )
               ],
             )
