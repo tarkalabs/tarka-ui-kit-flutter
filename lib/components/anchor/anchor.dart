@@ -19,7 +19,6 @@ class _TUIAnchor extends State<TUIAnchor> {
   bool isPressed = false;
 
   _setPressed(bool pressed) {
-    widget.onPressed;
     setState(() {
       isPressed = pressed;
     });
