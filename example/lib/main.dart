@@ -491,6 +491,13 @@ class _HomePageState extends State<HomePage> {
                 print("Anchor tapped");
               },
             )
+            const Text("Media Thumbnail", style: TUITextStyle.heading6),
+            TUIAnchor(
+              title: "Link Text",
+              onPressed: () {
+                print("Anchor tapped");
+              },
+            )
           ],
         ),
       ),
