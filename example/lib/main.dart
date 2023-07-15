@@ -397,7 +397,7 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 8),
             const Text("Breadcrumb", style: TUITextStyle.heading6),
             const SizedBox(height: 8),
-            BreadCrumb(
+            TUIBreadCrumb(
               titles: const [
                 "one",
                 "two",
@@ -481,6 +481,14 @@ class _HomePageState extends State<HomePage> {
                 ),
               ],
             ),
+            const SizedBox(height: 8),
+            const Text("Media Thumbnail", style: TUITextStyle.heading6),
+            TUIAnchor(
+              title: "Link Text",
+              onPressed: () {
+                print("Anchor tapped");
+              },
+            )
           ],
         ),
       ),
