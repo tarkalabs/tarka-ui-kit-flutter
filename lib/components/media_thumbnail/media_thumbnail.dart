@@ -56,21 +56,7 @@ class TUIMediaThumbnail extends StatelessWidget {
               width: size.width,
             ),
             getBackgroundImage(),
-            Padding(
-              padding: const EdgeInsets.only(top: 4, right: 4),
-              child: Container(
-                decoration: decorateIcon(),
-                width: 20,
-                height: 20,
-                child: Center(
-                  child: Icon(
-                    getTopRightIcon(),
-                    color: Colors.white,
-                    size: 12,
-                  ),
-                ),
-              ),
-            ),
+            getIsSelectableIcon(),
             getCenterIconWidget()
           ].whereType<Widget>().toList(),
         )
@@ -137,7 +123,29 @@ class TUIMediaThumbnail extends StatelessWidget {
     return null;
   }
 
-  IconData getTopRightIcon() {
+  Widget? getIsSelectableIcon() {
+    if (isSelectable == false) {
+      return null;
+    } else {
+      return Padding(
+        padding: const EdgeInsets.only(top: 4, right: 4),
+        child: Container(
+          decoration: decorateIcon(),
+          width: 20,
+          height: 20,
+          child: Center(
+            child: Icon(
+              getIsSelectableIconImage(),
+              color: Colors.white,
+              size: 12,
+            ),
+          ),
+        ),
+      );
+    }
+  }
+
+  IconData getIsSelectableIconImage() {
     return (mediaType == TUIMediaThumbnailType.audio)
         ? FluentIcons.play_12_regular
         : FluentIcons.eye_12_filled;
