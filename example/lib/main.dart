@@ -484,7 +484,7 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             const SizedBox(height: 8),
-            const Text("Media Thumbnail", style: TUITextStyle.heading6),
+            const Text("Anchor", style: TUITextStyle.heading6),
             TUIAnchor(
               title: "Link Text",
               onPressed: () {
