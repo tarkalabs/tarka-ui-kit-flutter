@@ -58,10 +58,11 @@ class _TUIAnchor extends State<TUIAnchor> {
     );
 
     return GestureDetector(
-        onTap: () {
-          _setPressed(!isPressed);
-          widget.onPressed?.call();
-        },
-        child: child);
+      onTap: () {
+        _setPressed(!isPressed);
+        widget.onPressed?.call();
+      },
+      child: child,
+    );
   }
 }
