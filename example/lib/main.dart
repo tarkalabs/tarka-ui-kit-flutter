@@ -484,22 +484,6 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             const SizedBox(height: 8),
-            const Text("Media Thumbnail", style: TUITextStyle.heading6),
-            TUIAnchor(
-              title: "Link Text",
-              onPressed: () {
-                print("Anchor tapped");
-              },
-            ),
-            const SizedBox(height: 8),
-            const Text("Anchor", style: TUITextStyle.heading6),
-            TUIAnchor(
-              title: "Link Text",
-              onPressed: () {
-                print("Anchor tapped");
-              },
-            ),
-            const SizedBox(height: 8),
             const Text("Checkbox", style: TUITextStyle.heading6),
             Row(
               children: [

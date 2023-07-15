@@ -25,7 +25,6 @@ export 'package:flutter/material.dart'
         ThemeExtension,
         TextMagnifier,
         AdaptiveTextSelectionToolbar;
-export 'package:tarka_ui/components/anchor/anchor.dart';
 export 'package:tarka_ui/components/avatar/avatar.dart';
 export 'package:tarka_ui/components/badge/badge.dart';
 export 'package:tarka_ui/components/breadcrumb/breadcrumb.dart';

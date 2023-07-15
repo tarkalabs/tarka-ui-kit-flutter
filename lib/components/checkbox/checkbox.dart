@@ -28,6 +28,12 @@ class TUICheckBox extends StatefulWidget {
 class _TUICheckBoxState extends State<TUICheckBox> {
   TUICheckBoxState state = TUICheckBoxState.unchecked;
 
+  @override
+  initState() {
+    super.initState();
+    state = widget.state;
+  }
+
   _setState() {
     setState(() {
       if (widget.enableMixedState == true) {
@@ -45,10 +51,6 @@ class _TUICheckBoxState extends State<TUICheckBox> {
 
   @override
   Widget build(BuildContext context) {
-    if (widget.isEnabled == false) {
-      state = widget.state;
-    }
-
     Widget child = Row(
       mainAxisSize: MainAxisSize.min,
       children: [
