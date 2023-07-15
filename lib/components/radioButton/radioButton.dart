@@ -19,7 +19,14 @@ class TUIRadioButton extends StatefulWidget {
 }
 
 class _TUIRadioButtonState extends State<TUIRadioButton> {
-  bool isSelected = true;
+  bool isSelected = false;
+
+  @override
+  initState() {
+    super.initState();
+    // Add listeners to this class
+    isSelected = widget.isSelected;
+  }
 
   _setState() {
     setState(() {
@@ -34,10 +41,6 @@ class _TUIRadioButtonState extends State<TUIRadioButton> {
   @override
   Widget build(BuildContext context) {
     Widget child;
-
-    if (!widget.isEnabled) {
-      isSelected = widget.isSelected;
-    }
 
     child = Container(
       width: 22,
