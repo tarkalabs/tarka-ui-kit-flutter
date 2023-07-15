@@ -490,13 +490,39 @@ class _HomePageState extends State<HomePage> {
               onPressed: () {
                 print("Anchor tapped");
               },
-            )
-            const Text("Media Thumbnail", style: TUITextStyle.heading6),
+            ),
+            const SizedBox(height: 8),
+            const Text("Anchor", style: TUITextStyle.heading6),
             TUIAnchor(
               title: "Link Text",
               onPressed: () {
                 print("Anchor tapped");
               },
+            ),
+            const SizedBox(height: 8),
+            const Text("Checkbox", style: TUITextStyle.heading6),
+            Row(
+              children: [
+                TUICheckBox(
+                  isEnabled: true,
+                  enableMixedState: true,
+                ),
+                SizedBox(width: 20),
+                TUICheckBox(
+                  isEnabled: false,
+                  state: TUICheckBoxState.unchecked,
+                ),
+                SizedBox(width: 20),
+                TUICheckBox(
+                  isEnabled: false,
+                  state: TUICheckBoxState.mixed,
+                ),
+                SizedBox(width: 20),
+                TUICheckBox(
+                  isEnabled: false,
+                  state: TUICheckBoxState.checked,
+                )
+              ],
             )
           ],
         ),
