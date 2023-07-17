@@ -36,6 +36,7 @@ export 'package:tarka_ui/components/media_thumbnail/media_thumbnail.dart';
 export 'package:tarka_ui/components/successCheckMark/success_check_mark.dart';
 export 'package:tarka_ui/components/tag/tag.dart';
 export 'package:tarka_ui/components/textfield/text_field.dart';
+export 'package:tarka_ui/components/slider/slider.dart';
 export 'package:tarka_ui/styles/colors.dart';
 // exports component
 export 'package:tarka_ui/styles/default_colors.dart';

@@ -101,6 +101,23 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  TUIRangeValues rangeSliderValue = const TUIRangeValues(0.05, 0.9);
+  double sliderValue = 0.1;
+
+  updateRangeSliderValue(TUIRangeValues newValue) {
+    if (rangeSliderValue == newValue) return;
+    setState(() {
+      rangeSliderValue = newValue;
+    });
+  }
+
+  updateSliderValue(double newValue) {
+    if (sliderValue == newValue) return;
+    setState(() {
+      sliderValue = newValue;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -482,6 +499,24 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ],
+            ),
+            TUIRangeSlider(
+              values: rangeSliderValue,
+              onChanged: (value) {
+                updateRangeSliderValue(value);
+              },
+              onChangeStart: (value) => {print("Range change Started $value")},
+              onChangeEnd: (value) => {print("Range change Ended $value")},
+              max: 1,
+              min: 0,
+            ),
+            TUISlider(
+              value: sliderValue,
+              onChanged: (value) {
+                updateSliderValue(value);
+              },
+              max: 1,
+              min: 0,
             ),
           ],
         ),
