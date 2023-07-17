@@ -9,7 +9,7 @@ class TUICheckBox extends StatefulWidget {
     this.isEnabled = true,
     this.enableMixedState = false,
     this.state = TUICheckBoxState.unchecked,
-    required this.onChange,
+    required this.onChanged,
   }) : super(key: key) {
     if (state == TUICheckBoxState.mixed) {
       enableMixedState = true;
@@ -19,7 +19,7 @@ class TUICheckBox extends StatefulWidget {
   final bool isEnabled;
   late bool enableMixedState;
   final TUICheckBoxState state;
-  final Function(TUICheckBoxState) onChange;
+  final Function(TUICheckBoxState) onChanged;
 
   @override
   State<TUICheckBox> createState() => _TUICheckBoxState();
@@ -66,7 +66,7 @@ class _TUICheckBoxState extends State<TUICheckBox> {
     return GestureDetector(
       onTap: () {
         if (widget.isEnabled) {
-          widget.onChange.call(state);
+          widget.onChanged.call(state);
           _setState();
         }
       },
