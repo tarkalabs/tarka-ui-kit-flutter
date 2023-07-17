@@ -490,32 +490,32 @@ class _HomePageState extends State<HomePage> {
                 TUICheckBox(
                   isEnabled: true,
                   enableMixedState: true,
-                  onPressed: () {
-                    print("Pressed");
+                  onChange: (state) {
+                    print("The tapped index is ${state}");
                   },
                 ),
                 const SizedBox(width: 20),
                 TUICheckBox(
                   isEnabled: false,
                   state: TUICheckBoxState.unchecked,
-                  onPressed: () {
-                    print("Pressed");
+                  onChange: (state) {
+                    print("The tapped index is ${state}");
                   },
                 ),
                 const SizedBox(width: 20),
                 TUICheckBox(
                   isEnabled: false,
                   state: TUICheckBoxState.mixed,
-                  onPressed: () {
-                    print("Pressed");
+                  onChange: (state) {
+                    print("The tapped index is ${state}");
                   },
                 ),
                 const SizedBox(width: 20),
                 TUICheckBox(
                   isEnabled: false,
                   state: TUICheckBoxState.checked,
-                  onPressed: () {
-                    print("Pressed");
+                  onChange: (state) {
+                    print("The tapped index is ${state}");
                   },
                 )
               ],
