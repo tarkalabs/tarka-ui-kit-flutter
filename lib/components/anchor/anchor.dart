@@ -44,12 +44,17 @@ class _TUIAnchor extends State<TUIAnchor> {
           width: 4.0,
           color: rectangleColor,
         ),
-        Padding(
-          padding: const EdgeInsets.fromLTRB(6, 10, 10, 10),
-          child: Text(
-            widget.title,
-            style: theme.typography.body6.copyWith(
-              color: theme.colors.inputTextDim,
+        Flexible(
+          fit: FlexFit.loose,
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(6, 10, 10, 10),
+            child: Text(
+              widget.title,
+              style: theme.typography.body6.copyWith(
+                color: theme.colors.inputTextDim,
+              ),
+              softWrap: false,
+              overflow: TextOverflow.ellipsis,
             ),
           ),
         ),

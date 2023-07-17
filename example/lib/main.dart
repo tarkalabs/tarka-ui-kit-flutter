@@ -490,6 +490,22 @@ class _HomePageState extends State<HomePage> {
               onPressed: () {
                 print("Anchor tapped");
               },
+            ),
+            const SizedBox(height: 8),
+            TUIAnchor(
+              title:
+                  "This is an anchor with some very long test. This should hopefully overflow the text to the next line.",
+              onPressed: () {
+                print("Anchor tapped");
+              },
+            ),
+            const SizedBox(height: 8),
+            TUIAnchor(
+              title:
+                  "This is an anchor with some very long test.\n\n This should hopefully overflow the text to the next line.",
+              onPressed: () {
+                print("Anchor tapped");
+              },
             )
           ],
         ),
