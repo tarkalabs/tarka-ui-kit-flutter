@@ -36,13 +36,16 @@ class _TUIAnchor extends State<TUIAnchor> {
 
     Widget child = Row(
       mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Container(
-          height: 24.0,
-          width: 4.0,
-          color: rectangleColor,
+        Padding(
+          padding: const EdgeInsets.only(top: 8),
+          child: Container(
+            height: 24.0,
+            width: 4.0,
+            color: rectangleColor,
+          ),
         ),
         Flexible(
           fit: FlexFit.loose,
