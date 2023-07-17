@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tarka_ui/styles/theme.dart';
 
 class TUISlider extends StatelessWidget {
   final double value;
