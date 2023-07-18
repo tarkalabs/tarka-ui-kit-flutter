@@ -101,12 +101,31 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int selectedBottomNavBarItem = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: TUIFloatingActionButton(
         iconData: FluentIcons.fluent_20_filled,
         onPressed: () {},
+      ),
+      bottomNavigationBar: TUIAppBar(
+        items: [
+          TUIAppBarItem(iconData: FluentIcons.bookmark_24_regular, label: "Saved"),
+          TUIAppBarItem(iconData: FluentIcons.search_24_regular, label: "Discover"),
+          TUIAppBarItem(iconData: FluentIcons.home_24_regular, label: "Home"),
+          TUIAppBarItem(
+              iconData: FluentIcons.person_24_regular, label: "Profile"),
+          TUIAppBarItem(iconData: FluentIcons.settings_24_regular, label: "Settings"),
+        ],
+        currentIndex: selectedBottomNavBarItem,
+        onTap: (value) => {
+          setState(() {
+            print("On tap, item selected: $value");
+            selectedBottomNavBarItem = value;
+          })
+        },
       ),
       body: SafeArea(
         child: ListView(
