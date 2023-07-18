@@ -1,221 +1,0 @@
-00:00 +0: loading /Users/kalpeshpatel/Flutter Projects/tarka-ui-kit-flutter/test/golden_test/sliders_test.dart                                                                                         00:01 +0: loading /Users/kalpeshpatel/Flutter Projects/tarka-ui-kit-flutter/test/golden_test/sliders_test.dart                                                                                         00:01 +0: loading /Users/kalpeshpatel/Flutter Projects/tarka-ui-kit-flutter/test/golden_test/sliders_test.dart                                                                                         
-Warning: A tag was used that wasn't specified in dart_test.yaml.
-  golden was used in the test "Slider test"
-
-00:01 +0: /Users/kalpeshpatel/Flutter Projects/tarka-ui-kit-flutter/test/golden_test/sliders_test.dart: Slider test                                                                                    00:01 +0: loading /Users/kalpeshpatel/Flutter Projects/tarka-ui-kit-flutter/test/golden_test/floating_action_button_test.dart                                                                          
-Warning: A tag was used that wasn't specified in dart_test.yaml.
-  golden was used in:
-    the test "FAB button design all sizes state = Default"
-    the test "FAB button design all sizes state = Pressed"
-
-00:01 +0: /Users/kalpeshpatel/Flutter Projects/tarka-ui-kit-flutter/test/golden_test/sliders_test.dart: Slider test                                                                                    00:01 +0: loading /Users/kalpeshpatel/Flutter Projects/tarka-ui-kit-flutter/test/golden_test/icon_button_test.dart                                                                                     
-Warning: A tag was used that wasn't specified in dart_test.yaml.
-  golden was used in:
-    the test "Icon button design all sizes state = Default"
-    the test "Icon button design all sizes state = Pressed"
-    the test "Icon button design all sizes state = Disabled"
-    the test "Icon button design all sizes state = Default"
-    the test "Icon button design all sizes state = Pressed"
-    the test "Icon button design all sizes state = Disabled"
-    the test "Icon button design all sizes state = Default"
-    the test "Icon button design all sizes state = Pressed"
-    the test "Icon button design all sizes state = Disabled"
-    the test "Icon button design all sizes state = Default"
-    the test "Icon button design all sizes state = Pressed"
-    the test "Icon button design all sizes state = Disabled"
-
-00:01 +0: /Users/kalpeshpatel/Flutter Projects/tarka-ui-kit-flutter/test/golden_test/sliders_test.dart: Slider test                                                                                    00:01 +0: /Users/kalpeshpatel/Flutter Projects/tarka-ui-kit-flutter/test/golden_test/sliders_test.dart: Slider test                                                                                    
-AutomatedTestWidgetsFlutterBinding - DEBUG MODE
-[root](renderObject: RenderView#c752f)
-└View-[GlobalObjectKey TestFlutterView#c5e02]
- └_ViewScope
-  └_MediaQueryFromView(state: _MediaQueryFromViewState#184c1)
-   └MediaQuery(MediaQueryData(size: Size(800.0, 600.0), devicePixelRatio: 1.0, textScaleFactor: 1.0, platformBrightness: Brightness.light, padding: EdgeInsets.zero, viewPadding: EdgeInsets.zero, viewInsets: EdgeInsets.zero, systemGestureInsets: EdgeInsets.zero, alwaysUse24HourFormat: false, accessibleNavigation: false, highContrast: false, disableAnimations: false, invertColors: false, boldText: false, navigationMode: traditional, gestureSettings: DeviceGestureSettings(touchSlop: null), displayFeatures: []))
-    └DefaultAssetBundle
-     └TUIApp(state: _TUIAppState#6ff27)
-      └WidgetsApp-[GlobalObjectKey _TUIAppState#6ff27](state: _WidgetsAppState#8bab1)
-       └RootRestorationScope(state: _RootRestorationScopeState#36e0c)
-        └UnmanagedRestorationScope
-         └RestorationScope(dependencies: [UnmanagedRestorationScope], state: _RestorationScopeState#86a09)
-          └UnmanagedRestorationScope
-           └SharedAppData(state: _SharedAppDataState#62336)
-            └_SharedAppModel
-             └Shortcuts(shortcuts: <Default WidgetsApp Shortcuts>, state: _ShortcutsState#19ad9)
-              └Focus(debugLabel: "Shortcuts", state: _FocusState#58698)
-               └_FocusInheritedScope
-                └Semantics(container: false, properties: SemanticsProperties, tooltip: null, renderObject: RenderSemanticsAnnotations#ef8f2)
-                 └DefaultTextEditingShortcuts
-                  └Shortcuts(shortcuts: <Default Text Editing Shortcuts>, state: _ShortcutsState#dee28)
-                   └Focus(debugLabel: "Shortcuts", dependencies: [_FocusInheritedScope], state: _FocusState#c2a77)
-                    └_FocusInheritedScope
-                     └Semantics(container: false, properties: SemanticsProperties, tooltip: null, renderObject: RenderSemanticsAnnotations#c59d5)
-                      └Actions(dispatcher: null, actions: {DoNothingIntent: DoNothingAction#756dc, DoNothingAndStopPropagationIntent: DoNothingAction#35392, RequestFocusIntent: RequestFocusAction#2422a, NextFocusIntent: NextFocusAction#c1172, PreviousFocusIntent: PreviousFocusAction#ddb2b, DirectionalFocusIntent: DirectionalFocusAction#3b227, ScrollIntent: _OverridableAction<ScrollIntent>#2772c(defaultAction: ScrollAction#472f7), PrioritizedIntents: PrioritizedAction#240e3, VoidCallbackIntent: VoidCallbackAction#b4e7d}, state: _ActionsState#b19e3)
-                       └_ActionsScope
-                        └FocusTraversalGroup(policy: ReadingOrderTraversalPolicy#17822, state: _FocusTraversalGroupState#486ad)
-                         └Focus(debugLabel: "FocusTraversalGroup", focusNode: _FocusTraversalGroupNode#2f530(FocusTraversalGroup [IN FOCUS PATH]), dependencies: [_FocusInheritedScope], state: _FocusState#ab892)
-                          └_FocusInheritedScope
-                           └TapRegionSurface(renderObject: RenderTapRegionSurface#eb362)
-                            └ShortcutRegistrar(state: _ShortcutRegistrarState#c2293)
-                             └_ShortcutRegistrarScope
-                              └Shortcuts(manager: ShortcutManager#5da4f(shortcuts: {}), shortcuts: {}, state: _ShortcutsState#c0489)
-                               └Focus(debugLabel: "Shortcuts", dependencies: [_FocusInheritedScope], state: _FocusState#7300e)
-                                └_FocusInheritedScope
-                                 └Semantics(container: false, properties: SemanticsProperties, tooltip: null, renderObject: RenderSemanticsAnnotations#30a13)
-                                  └Localizations(locale: en, delegates: [GlobalMaterialLocalizations.delegate(79 locales), GlobalWidgetsLocalizations.delegate(79 locales), DefaultWidgetsLocalizations.delegate(en_US)], state: _LocalizationsState#f0e68)
-                                   └Semantics(container: false, properties: SemanticsProperties, tooltip: null, textDirection: ltr, renderObject: RenderSemanticsAnnotations#401ab)
-                                    └_LocalizationsScope-[GlobalKey#dcd3a]
-                                     └Directionality(textDirection: ltr)
-                                      └Title(color: Color(0xff0052d6))
-                                       └Builder(dependencies: [MediaQuery])
-                                        └AnimatedTheme(duration: 200ms, state: _AnimatedThemeState#ac030(ticker inactive, ThemeDataTween(ThemeData#f6f3a → ThemeData#f6f3a)))
-                                         └Theme(ThemeData#f6f3a)
-                                          └_InheritedTheme
-                                           └CupertinoTheme(brightness: light, primaryColor: MaterialColor(primary value: Color(0xff2196f3)), primaryContrastingColor: Color(0xffffffff), scaffoldBackgroundColor: Color(0xffeaebef), actionTextStyle: TextStyle(inherit: false, color: MaterialColor(primary value: Color(0xff2196f3)), family: .SF Pro Text, size: 17.0, letterSpacing: -0.4, decoration: TextDecoration.none), navActionTextStyle: TextStyle(inherit: false, color: MaterialColor(primary value: Color(0xff2196f3)), family: .SF Pro Text, size: 17.0, letterSpacing: -0.4, decoration: TextDecoration.none))
-                                            └_InheritedCupertinoTheme
-                                             └IconTheme(color: MaterialColor(primary value: Color(0xff2196f3)))
-                                              └IconTheme(color: Color(0xdd000000))
-                                               └DefaultSelectionStyle
-                                                └TUITheme
-                                                 └_TUITheme
-                                                  └DefaultTextStyle(inherit: true, color: Color(0xff1a1b1f), family: Inter, size: 16.0, weight: 400, softWrap: wrapping at box width, overflow: clip)
-                                                   └FocusScope(debugLabel: "Navigator Scope", AUTOFOCUS, dependencies: [_FocusInheritedScope], state: _FocusScopeState#38f1a)
-                                                    └Semantics(container: false, properties: SemanticsProperties, tooltip: null, renderObject: RenderSemanticsAnnotations#530b3)
-                                                     └_FocusInheritedScope
-                                                      └Navigator-[GlobalObjectKey<NavigatorState> _WidgetsAppState#8bab1](dependencies: [UnmanagedRestorationScope], state: NavigatorState#abd68(tickers: tracking 1 ticker))
-                                                       └HeroControllerScope
-                                                        └Listener(listeners: [down, up, cancel], behavior: deferToChild, renderObject: RenderPointerListener#05413)
-                                                         └AbsorbPointer(absorbing: false, renderObject: RenderAbsorbPointer#a30fd)
-                                                          └FocusTraversalGroup(policy: ReadingOrderTraversalPolicy#17822, state: _FocusTraversalGroupState#74d75)
-                                                           └Focus(debugLabel: "FocusTraversalGroup", focusNode: _FocusTraversalGroupNode#1aa85(FocusTraversalGroup [IN FOCUS PATH]), dependencies: [_FocusInheritedScope], state: _FocusState#f09a4)
-                                                            └_FocusInheritedScope
-                                                             └Focus(debugLabel: "Navigator", AUTOFOCUS, focusNode: FocusNode#52480(Navigator [IN FOCUS PATH]), dependencies: [_FocusInheritedScope], state: _FocusState#b89c2)
-                                                              └_FocusInheritedScope
-                                                               └UnmanagedRestorationScope
-                                                                └Overlay-[LabeledGlobalKey<OverlayState>#9e7cd](dirty, state: OverlayState#b6510(entries: [OverlayEntry#c5e36(opaque: true; maintainState: false), OverlayEntry#f135a(opaque: false; maintainState: true), OverlayEntry#340a3(opaque: false; maintainState: false)]))
-                                                                 └_Theater(skipCount: 0, dependencies: [Directionality], renderObject: _RenderTheater#25a19)
-                                                                  ├_OverlayEntryWidget-[LabeledGlobalKey<_OverlayEntryWidgetState>#52463](state: _OverlayEntryWidgetState#78b8b)
-                                                                  │└TickerMode(state: _TickerModeState#77f87(requested mode: enabled))
-                                                                  │ └_EffectiveTickerMode(effective mode: enabled)
-                                                                  │  └_RenderTheaterMarker
-                                                                  │   └IgnorePointer(ignoring: false, renderObject: RenderIgnorePointer#0c2fe)
-                                                                  │    └ModalBarrier
-                                                                  │     └BlockSemantics(blocking: true, renderObject: RenderBlockSemantics#f8e37)
-                                                                  │      └ExcludeSemantics(excluding: true, renderObject: RenderExcludeSemantics#966a2)
-                                                                  │       └_ModalBarrierGestureDetector
-                                                                  │        └RawGestureDetector(state: RawGestureDetectorState#34457(gestures: [any tap], behavior: opaque))
-                                                                  │         └_GestureSemantics(renderObject: RenderSemanticsGestureHandler#14e99)
-                                                                  │          └Listener(listeners: [down, panZoomStart], behavior: opaque, renderObject: RenderPointerListener#73197)
-                                                                  │           └Semantics(container: false, properties: SemanticsProperties, tooltip: null, renderObject: RenderSemanticsAnnotations#e9dbb)
-                                                                  │            └MouseRegion(listeners: <none>, cursor: SystemMouseCursor(basic), renderObject: RenderMouseRegion#726f5)
-                                                                  │             └ConstrainedBox(BoxConstraints(biggest), renderObject: RenderConstrainedBox#bde9f)
-                                                                  └_OverlayEntryWidget-[LabeledGlobalKey<_OverlayEntryWidgetState>#92d89](state: _OverlayEntryWidgetState#ac81c)
-                                                                   └TickerMode(state: _TickerModeState#d6f37(requested mode: enabled))
-                                                                    └_EffectiveTickerMode(effective mode: enabled)
-                                                                     └_RenderTheaterMarker
-                                                                      └Semantics(container: false, properties: SemanticsProperties, tooltip: null, sortKey: OrdinalSortKey#fbc5c(order: 0.0), renderObject: RenderSemanticsAnnotations#e130d)
-                                                                       └_ModalScope<dynamic>-[LabeledGlobalKey<_ModalScopeState<dynamic>>#de816](state: _ModalScopeState<dynamic>#0e2b9)
-                                                                        └AnimatedBuilder(listenable: ValueNotifier<String?>#c7c22(null), state: _AnimatedState#ed6d0)
-                                                                         └RestorationScope(dependencies: [UnmanagedRestorationScope], state: _RestorationScopeState#8df2a)
-                                                                          └UnmanagedRestorationScope
-                                                                           └_ModalScopeStatus(active)
-                                                                            └Offstage(offstage: false, renderObject: RenderOffstage#b131b)
-                                                                             └PageStorage
-                                                                              └Builder
-                                                                               └Actions(dispatcher: null, actions: {DismissIntent: _DismissModalAction#97410}, state: _ActionsState#4fd60)
-                                                                                └_ActionsScope
-                                                                                 └PrimaryScrollController(ScrollController#2c251(no clients))
-                                                                                  └FocusScope(debugLabel: "_ModalScopeState<dynamic> Focus Scope", focusNode: FocusScopeNode#1e0c8(_ModalScopeState<dynamic> Focus Scope [PRIMARY FOCUS]), dependencies: [_FocusInheritedScope], state: _FocusScopeState#881f7)
-                                                                                   └Semantics(container: false, properties: SemanticsProperties, tooltip: null, renderObject: RenderSemanticsAnnotations#144f1)
-                                                                                    └_FocusInheritedScope
-                                                                                     └RepaintBoundary(renderObject: RenderRepaintBoundary#7db28)
-                                                                                      └AnimatedBuilder(listenable: Listenable.merge([AnimationController#34642(⏭ 1.000; paused; for MaterialPageRoute<dynamic>(/))➩ProxyAnimation, kAlwaysDismissedAnimation➩ProxyAnimation➩ProxyAnimation]), dependencies: [_InheritedTheme, _LocalizationsScope-[GlobalKey#dcd3a]], state: _AnimatedState#78e1d)
-                                                                                       └_ZoomPageTransition
-                                                                                        └DualTransitionBuilder(state: _DualTransitionBuilderState#7b4cf)
-                                                                                         └_ZoomEnterTransition(state: _ZoomEnterTransitionState#c3ca0)
-                                                                                          └SnapshotWidget(dependencies: [MediaQuery], renderObject: _RenderSnapshotWidget#ae4f6)
-                                                                                           └_ZoomExitTransition(state: _ZoomExitTransitionState#061b8)
-                                                                                            └SnapshotWidget(dependencies: [MediaQuery], renderObject: _RenderSnapshotWidget#e938c)
-                                                                                             └DualTransitionBuilder(state: _DualTransitionBuilderState#f7d20)
-                                                                                              └_ZoomEnterTransition(state: _ZoomEnterTransitionState#a20ab)
-                                                                                               └SnapshotWidget(dependencies: [MediaQuery], renderObject: _RenderSnapshotWidget#c75cb)
-                                                                                                └_ZoomExitTransition(state: _ZoomExitTransitionState#68e25)
-                                                                                                 └SnapshotWidget(dependencies: [MediaQuery], renderObject: _RenderSnapshotWidget#ebe0c)
-                                                                                                  └AnimatedBuilder(listenable: ValueNotifier<bool>#6ba2d(false), state: _AnimatedState#88713)
-                                                                                                   └IgnorePointer(ignoring: false, renderObject: RenderIgnorePointer#4fc2b)
-                                                                                                    └RepaintBoundary-[GlobalKey#45072](renderObject: RenderRepaintBoundary#da8a1)
-                                                                                                     └Builder
-                                                                                                      └Semantics(container: false, properties: SemanticsProperties, tooltip: null, renderObject: RenderSemanticsAnnotations#9ee64)
-                                                                                                       └Scaffold(dependencies: [Directionality, MediaQuery, UnmanagedRestorationScope, _InheritedTheme, _LocalizationsScope-[GlobalKey#dcd3a]], state: ScaffoldState#886e9(tickers: tracking 2 tickers))
-                                                                                                        └_ScaffoldScope
-                                                                                                         └ScrollNotificationObserver(state: ScrollNotificationObserverState#e05d3)
-                                                                                                          └NotificationListener<ScrollMetricsNotification>
-                                                                                                           └NotificationListener<ScrollNotification>
-                                                                                                            └_ScrollNotificationObserverScope
-                                                                                                             └Material(type: canvas, color: Color(0xffeaebef), dependencies: [_InheritedTheme, _LocalizationsScope-[GlobalKey#dcd3a]], state: _MaterialState#cbb9b)
-                                                                                                              └AnimatedPhysicalModel(duration: 200ms, shape: rectangle, borderRadius: BorderRadius.zero, elevation: 0.0, color: Color(0xffeaebef), animateColor: false, shadowColor: Color(0xff000000), animateShadowColor: true, state: _AnimatedPhysicalModelState#dfb17(ticker inactive))
-                                                                                                               └PhysicalModel(shape: rectangle, borderRadius: BorderRadius.zero, elevation: 0.0, color: Color(0xffeaebef), shadowColor: Color(0xff000000), renderObject: RenderPhysicalModel#81465)
-                                                                                                                └NotificationListener<LayoutChangedNotification>
-                                                                                                                 └_InkFeatures-[GlobalKey#3e8bc ink renderer](renderObject: _RenderInkFeatures#567cb)
-                                                                                                                  └AnimatedDefaultTextStyle(duration: 200ms, debugLabel: (englishLike bodyMedium 2014).merge(blackMountainView bodyMedium), inherit: false, color: Color(0xdd000000), family: Roboto, size: 14.0, weight: 400, baseline: alphabetic, decoration: TextDecoration.none, softWrap: wrapping at box width, overflow: clip, state: _AnimatedDefaultTextStyleState#d2552(ticker inactive))
-                                                                                                                   └DefaultTextStyle(debugLabel: (englishLike bodyMedium 2014).merge(blackMountainView bodyMedium), inherit: false, color: Color(0xdd000000), family: Roboto, size: 14.0, weight: 400, baseline: alphabetic, decoration: TextDecoration.none, softWrap: wrapping at box width, overflow: clip)
-                                                                                                                    └AnimatedBuilder(listenable: AnimationController#c350d(⏭ 1.000; paused), state: _AnimatedState#58f79)
-                                                                                                                     └Actions(dispatcher: null, actions: {DismissIntent: _DismissDrawerAction#4c910}, state: _ActionsState#b8e87)
-                                                                                                                      └_ActionsScope
-                                                                                                                       └CustomMultiChildLayout(renderObject: RenderCustomMultiChildLayoutBox#e80f4)
-                                                                                                                        ├LayoutId-[<_ScaffoldSlot.body>](id: _ScaffoldSlot.body)
-                                                                                                                        │└MediaQuery(MediaQueryData(size: Size(800.0, 600.0), devicePixelRatio: 1.0, textScaleFactor: 1.0, platformBrightness: Brightness.light, padding: EdgeInsets.zero, viewPadding: EdgeInsets.zero, viewInsets: EdgeInsets.zero, systemGestureInsets: EdgeInsets.zero, alwaysUse24HourFormat: false, accessibleNavigation: false, highContrast: false, disableAnimations: false, invertColors: false, boldText: false, navigationMode: traditional, gestureSettings: DeviceGestureSettings(touchSlop: null), displayFeatures: []))
-                                                                                                                        │ └_BodyBuilder
-                                                                                                                        │  └KeyedSubtree-[GlobalKey#29d00]
-                                                                                                                        │   └StatefulBuilder(state: _StatefulBuilderState#615d4)
-                                                                                                                        │    └Align(alignment: Alignment.topLeft, dependencies: [Directionality], renderObject: RenderPositionedBox#63627 relayoutBoundary=up1)
-                                                                                                                        │     └Container(padding: EdgeInsets.all(8.0), bg: Color(0xffeaebef))
-                                                                                                                        │      └ColoredBox(color: Color(0xffeaebef), renderObject: _RenderColoredBox#f333a relayoutBoundary=up2)
-                                                                                                                        │       └Padding(padding: EdgeInsets.all(8.0), dependencies: [Directionality], renderObject: RenderPadding#de266 relayoutBoundary=up3)
-                                                                                                                        │        └Column(direction: vertical, mainAxisAlignment: start, mainAxisSize: min, crossAxisAlignment: center, renderObject: RenderFlex#6ca12 relayoutBoundary=up4)
-                                                                                                                        │         ├_Scenario
-                                                                                                                        │         │└Padding(padding: EdgeInsets(0.0, 8.0, 0.0, 8.0), dependencies: [Directionality], renderObject: RenderPadding#1c393 relayoutBoundary=up5)
-                                                                                                                        │         │ └Column(direction: vertical, mainAxisAlignment: start, mainAxisSize: min, crossAxisAlignment: start, dependencies: [Directionality], renderObject: RenderFlex#a0b14 relayoutBoundary=up6)
-                                                                                                                        │         │  ├Text("Slider", inherit: true, size: 18.0, dependencies: [DefaultSelectionStyle, DefaultTextStyle, MediaQuery])
-                                                                                                                        │         │  │└RichText(softWrap: wrapping at box width, maxLines: unlimited, text: "Slider", dependencies: [Directionality, _LocalizationsScope-[GlobalKey#dcd3a]], renderObject: RenderParagraph#a60b5 relayoutBoundary=up7)
-                                                                                                                        │         │  ├SizedBox(height: 4.0, renderObject: RenderConstrainedBox#afc6f relayoutBoundary=up7)
-                                                                                                                        │         │  └TUISlider
-                                                                                                                        │         │   └Slider(value: 0.5, secondaryTrackValue: null, min: 0.0, max: 1.0, divisions: null, label: null, activeColor: null, inactiveColor: null, secondaryActiveColor: null, dependencies: [MediaQuery, _InheritedTheme, _LocalizationsScope-[GlobalKey#dcd3a]], state: _SliderState#a4615(tickers: tracking 4 tickers))
-                                                                                                                        │         │    └Semantics(container: true, properties: SemanticsProperties, tooltip: null, renderObject: RenderSemanticsAnnotations#06a44 relayoutBoundary=up7)
-                                                                                                                        │         │     └FocusableActionDetector(dependencies: [MediaQuery], state: _FocusableActionDetectorState#6ce0c)
-                                                                                                                        │         │      └Shortcuts(shortcuts: {{Arrow Up}: _AdjustSliderIntent#b2dc7, {Arrow Down}: _AdjustSliderIntent#ba7ef, {Arrow Left}: _AdjustSliderIntent#830a1, {Arrow Right}: _AdjustSliderIntent#e1f43}, state: _ShortcutsState#df4a4)
-                                                                                                                        │         │       └Focus(debugLabel: "Shortcuts", dependencies: [_FocusInheritedScope], state: _FocusState#76397)
-                                                                                                                        │         │        └_FocusInheritedScope
-                                                                                                                        │         │         └Semantics(container: false, properties: SemanticsProperties, tooltip: null, renderObject: RenderSemanticsAnnotations#22870 relayoutBoundary=up8)
-                                                                                                                        │         │          └Actions(dispatcher: null, actions: {_AdjustSliderIntent: CallbackAction<_AdjustSliderIntent>#31e4a}, state: _ActionsState#80a39)
-                                                                                                                        │         │           └_ActionsScope
-                                                                                                                        │         │            └MouseRegion-[GlobalKey#a9502](listeners: [enter, exit], cursor: SystemMouseCursor(click), renderObject: RenderMouseRegion#9878e relayoutBoundary=up9)
-                                                                                                                        │         │             └Focus(focusNode: FocusNode#54dab, dependencies: [_FocusInheritedScope], state: _FocusState#488df)
-                                                                                                                        │         │              └_FocusInheritedScope
-                                                                                                                        │         │               └Semantics(container: false, properties: SemanticsProperties, tooltip: null, renderObject: RenderSemanticsAnnotations#c072b relayoutBoundary=up10)
-                                                                                                                        │         │                └CompositedTransformTarget(renderObject: RenderLeaderLayer#2c928 relayoutBoundary=up11)
-                                                                                                                        │         │                 └_SliderRenderObjectWidget-[GlobalKey#85c52](dependencies: [Directionality, MediaQuery, _InheritedTheme, _LocalizationsScope-[GlobalKey#dcd3a]], renderObject: _RenderSlider#7f5ba)
-                                                                                                                        │         └_Scenario
-                                                                                                                        │          └Padding(padding: EdgeInsets(0.0, 8.0, 0.0, 8.0), dependencies: [Directionality], renderObject: RenderPadding#e4b47 relayoutBoundary=up5)
-                                                                                                                        │           └Column(direction: vertical, mainAxisAlignment: start, mainAxisSize: min, crossAxisAlignment: start, dependencies: [Directionality], renderObject: RenderFlex#0bd21 relayoutBoundary=up6)
-                                                                                                                        │            ├Text("Range Slider", inherit: true, size: 18.0, dependencies: [DefaultSelectionStyle, DefaultTextStyle, MediaQuery])
-                                                                                                                        │            │└RichText(softWrap: wrapping at box width, maxLines: unlimited, text: "Range Slider", dependencies: [Directionality, _LocalizationsScope-[GlobalKey#dcd3a]], renderObject: RenderParagraph#22cf7 relayoutBoundary=up7)
-                                                                                                                        │            ├SizedBox(height: 4.0, renderObject: RenderConstrainedBox#2fb93 relayoutBoundary=up7)
-                                                                                                                        │            └TUIRangeSlider
-                                                                                                                        │             └RangeSlider(valueStart: 0.1, valueEnd: 0.9, min: 0.0, max: 1.0, divisions: null, labelStart: null, labelEnd: null, activeColor: null, inactiveColor: null, dependencies: [MediaQuery, _InheritedTheme, _LocalizationsScope-[GlobalKey#dcd3a]], state: _RangeSliderState#aa090(tickers: tracking 5 tickers))
-                                                                                                                        │              └FocusableActionDetector(dependencies: [MediaQuery], state: _FocusableActionDetectorState#70570)
-                                                                                                                        │               └MouseRegion-[GlobalKey#0ab36](listeners: [enter, exit], cursor: SystemMouseCursor(click), renderObject: RenderMouseRegion#a1dac relayoutBoundary=up7)
-                                                                                                                        │                └Focus(dependencies: [_FocusInheritedScope], state: _FocusState#0a155)
-                                                                                                                        │                 └_FocusInheritedScope
-                                                                                                                        │                  └CompositedTransformTarget(renderObject: RenderLeaderLayer#489e9 relayoutBoundary=up8)
-                                                                                                                        │                   └_RangeSliderRenderObjectWidget(dependencies: [Directionality, MediaQuery, _InheritedTheme, _LocalizationsScope-[GlobalKey#dcd3a]], renderObject: _RenderRangeSlider#ef19f)
-                                                                                                                        └LayoutId-[<_ScaffoldSlot.floatingActionButton>](id: _ScaffoldSlot.floatingActionButton)
-                                                                                                                         └MediaQuery(MediaQueryData(size: Size(800.0, 600.0), devicePixelRatio: 1.0, textScaleFactor: 1.0, platformBrightness: Brightness.light, padding: EdgeInsets.zero, viewPadding: EdgeInsets.zero, viewInsets: EdgeInsets.zero, systemGestureInsets: EdgeInsets.zero, alwaysUse24HourFormat: false, accessibleNavigation: false, highContrast: false, disableAnimations: false, invertColors: false, boldText: false, navigationMode: traditional, gestureSettings: DeviceGestureSettings(touchSlop: null), displayFeatures: []))
-                                                                                                                          └_FloatingActionButtonTransition(state: _FloatingActionButtonTransitionState#857da(tickers: tracking 1 ticker))
-                                                                                                                           └Stack(alignment: Alignment.centerRight, fit: loose, dependencies: [Directionality], renderObject: RenderStack#8a8e5 relayoutBoundary=up1)
-                                                                                                                            └ScaleTransition(listenable: AnimationMin<double>(_AnimationSwap<double>(AnimationController#c350d(⏭ 1.000; paused)➩CurveTween(curve: FlippedCurve(Interval(0.5⋯1.0)➩Cubic(0.25, 0.10, 0.25, 1.00)))➩1.0➪ReverseAnimation, AnimationController#c350d(⏭ 1.000; paused)➩CurveTween(curve: Interval(0.5⋯1.0)➩Cubic(0.25, 0.10, 0.25, 1.00))➩1.0), AnimationController#03405(⏮ 0.000; paused)➩Cubic(0.42, 0.00, 1.00, 1.00)), state: _AnimatedState#f67f3)
-                                                                                                                             └Transform(dependencies: [Directionality], renderObject: RenderTransform#88421 relayoutBoundary=up2)
-                                                                                                                              └RotationTransition(listenable: AnimationController#03405(⏮ 0.000; paused)➩CurveTween(curve: Cubic(0.42, 0.00, 1.00, 1.00))➩Tween<double>(0.875 → 1.0)➩0.875➩TrainHoppingAnimation(next: _AnimationSwap<double>(AnimationController#c350d(⏭ 1.000; paused)➩Tween<double>(0.75 → 1.0)➩1.0, AnimationController#c350d(⏭ 1.000; paused)➩CurveTween(curve: Threshold)➩1.0➪ReverseAnimation)), state: _AnimatedState#c7585)
-                                                                                                                               └Transform(dependencies: [Directionality], renderObject: RenderTransform#f3c37 relayoutBoundary=up3 NEEDS-PAINT)
-
-
-00:01 +1: /Users/kalpeshpatel/Flutter Projects/tarka-ui-kit-flutter/test/golden_test/floating_action_button_test.dart: FAB button design all sizes state = Default                                     00:01 +2: /Users/kalpeshpatel/Flutter Projects/tarka-ui-kit-flutter/test/golden_test/icon_button_test.dart: Icon button design all sizes state = Default                                               00:01 +3: /Users/kalpeshpatel/Flutter Projects/tarka-ui-kit-flutter/test/golden_test/icon_button_test.dart: Icon button design all sizes state = Default                                               00:01 +4: /Users/kalpeshpatel/Flutter Projects/tarka-ui-kit-flutter/test/golden_test/icon_button_test.dart: Icon button design all sizes state = Default                                               00:01 +5: /Users/kalpeshpatel/Flutter Projects/tarka-ui-kit-flutter/test/widget_test/floating_action_button_test.dart: FAB trigger click event                                                         00:02 +5: /Users/kalpeshpatel/Flutter Projects/tarka-ui-kit-flutter/test/widget_test/floating_action_button_test.dart: FAB trigger click event                                                         00:02 +6: /Users/kalpeshpatel/Flutter Projects/tarka-ui-kit-flutter/test/widget_test/icon_button_test.dart: Icon Button trigger click event                                                            00:02 +7: /Users/kalpeshpatel/Flutter Projects/tarka-ui-kit-flutter/test/widget_test/icon_button_test.dart: Icon Button trigger click event                                                            00:02 +8: /Users/kalpeshpatel/Flutter Projects/tarka-ui-kit-flutter/test/golden_test/icon_button_test.dart: Icon button design all sizes state = Disabled                                              00:02 +9: /Users/kalpeshpatel/Flutter Projects/tarka-ui-kit-flutter/test/widget_test/icon_button_test.dart: Icon Button trigger long click event                                                       00:02 +10: /Users/kalpeshpatel/Flutter Projects/tarka-ui-kit-flutter/test/golden_test/icon_button_test.dart: Icon button design all sizes state = Default                                              00:02 +11: /Users/kalpeshpatel/Flutter Projects/tarka-ui-kit-flutter/test/golden_test/icon_button_test.dart: Icon button design all sizes state = Default                                              00:02 +11: /Users/kalpeshpatel/Flutter Projects/tarka-ui-kit-flutter/test/golden_test/icon_button_test.dart: Icon button design all sizes state = Pressed                                              00:02 +12: /Users/kalpeshpatel/Flutter Projects/tarka-ui-kit-flutter/test/golden_test/icon_button_test.dart: Icon button design all sizes state = Pressed                                              00:02 +12: /Users/kalpeshpatel/Flutter Projects/tarka-ui-kit-flutter/test/golden_test/icon_button_test.dart: Icon button design all sizes state = Disabled                                             00:02 +13: /Users/kalpeshpatel/Flutter Projects/tarka-ui-kit-flutter/test/golden_test/icon_button_test.dart: Icon button design all sizes state = Disabled                                             00:02 +13: /Users/kalpeshpatel/Flutter Projects/tarka-ui-kit-flutter/test/golden_test/icon_button_test.dart: Icon button design all sizes state = Default                                              00:02 +14: /Users/kalpeshpatel/Flutter Projects/tarka-ui-kit-flutter/test/golden_test/icon_button_test.dart: Icon button design all sizes state = Default                                              00:02 +14: /Users/kalpeshpatel/Flutter Projects/tarka-ui-kit-flutter/test/golden_test/icon_button_test.dart: Icon button design all sizes state = Pressed                                              00:02 +15: /Users/kalpeshpatel/Flutter Projects/tarka-ui-kit-flutter/test/golden_test/icon_button_test.dart: Icon button design all sizes state = Pressed                                              00:02 +15: /Users/kalpeshpatel/Flutter Projects/tarka-ui-kit-flutter/test/golden_test/icon_button_test.dart: Icon button design all sizes state = Disabled                                             00:02 +16: /Users/kalpeshpatel/Flutter Projects/tarka-ui-kit-flutter/test/golden_test/icon_button_test.dart: Icon button design all sizes state = Disabled                                             00:02 +16: /Users/kalpeshpatel/Flutter Projects/tarka-ui-kit-flutter/test/golden_test/icon_button_test.dart: Icon button design all sizes state = Default                                              00:02 +17: /Users/kalpeshpatel/Flutter Projects/tarka-ui-kit-flutter/test/golden_test/icon_button_test.dart: Icon button design all sizes state = Default                                              00:02 +17: /Users/kalpeshpatel/Flutter Projects/tarka-ui-kit-flutter/test/golden_test/icon_button_test.dart: Icon button design all sizes state = Pressed                                              00:02 +18: /Users/kalpeshpatel/Flutter Projects/tarka-ui-kit-flutter/test/golden_test/icon_button_test.dart: Icon button design all sizes state = Pressed                                              00:02 +18: /Users/kalpeshpatel/Flutter Projects/tarka-ui-kit-flutter/test/golden_test/icon_button_test.dart: Icon button design all sizes state = Disabled                                             00:02 +19: /Users/kalpeshpatel/Flutter Projects/tarka-ui-kit-flutter/test/golden_test/icon_button_test.dart: Icon button design all sizes state = Disabled                                             00:02 +19: All tests passed!                                                                                                                                                                           
