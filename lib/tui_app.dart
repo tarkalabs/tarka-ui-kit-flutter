@@ -318,6 +318,7 @@ class _TUIAppState extends State<TUIApp> {
             splashFactory: m.NoSplash.splashFactory,
             brightness: brightness,
             floatingActionButtonTheme: themeData.floatingActionButtonThemeData,
+            bottomNavigationBarTheme: themeData.bottomNavigationBarTheme,
             sliderTheme: themeData.sliderThemeData,
             canvasColor: themeData.colors.background,
             textSelectionTheme: m.TextSelectionThemeData(
@@ -353,6 +354,7 @@ class _TUIAppState extends State<TUIApp> {
     if (_usesRouter) {
       return WidgetsApp.router(
         key: GlobalObjectKey(this),
+        debugShowWidgetInspector: true,
         routeInformationProvider: widget.routeInformationProvider,
         routeInformationParser: widget.routeInformationParser,
         routerDelegate: widget.routerDelegate,
