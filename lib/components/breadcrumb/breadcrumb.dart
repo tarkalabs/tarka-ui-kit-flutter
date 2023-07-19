@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:tarka_ui/styles/default_colors.dart';
 import 'package:tarka_ui/styles/theme.dart';
 
-class BreadCrumb extends StatelessWidget {
+class TUIBreadCrumb extends StatelessWidget {
   final Function(int) onTap;
   final List<String> titles;
 
-  const BreadCrumb({
+  const TUIBreadCrumb({
     Key? key,
     required this.titles,
     required this.onTap,

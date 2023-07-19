@@ -323,7 +323,6 @@ class _TUIAppState extends State<TUIApp> {
   Widget _builder(BuildContext context, Widget? child) {
     final (themeData, brightness) = theme(context);
     final mTheme = context.findAncestorWidgetOfExactType<m.Theme>();
-
     return ScaffoldMessenger(
         key: widget.scaffoldMessengerKey,
         child: m.AnimatedTheme(
@@ -367,6 +366,7 @@ class _TUIAppState extends State<TUIApp> {
     if (_usesRouter) {
       return WidgetsApp.router(
         key: GlobalObjectKey(this),
+        debugShowWidgetInspector: true,
         routeInformationProvider: widget.routeInformationProvider,
         routeInformationParser: widget.routeInformationParser,
         routerDelegate: widget.routerDelegate,

@@ -1,4 +1,5 @@
 import 'package:example/styles/colors.dart';
+import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:tarka_ui/components/button/style.dart';
 import 'package:tarka_ui/components/chip/chip.dart';
@@ -100,12 +101,34 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int selectedBottomNavBarItem = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: TUIFloatingActionButton(
         iconData: Symbol.map.value,
         onPressed: () {},
+      ),
+      bottomNavigationBar: TUIAppBar(
+        items: [
+          TUIAppBarItem(
+              iconData: FluentIcons.bookmark_24_regular, label: "Saved"),
+          TUIAppBarItem(
+              iconData: FluentIcons.search_24_regular, label: "Discover"),
+          TUIAppBarItem(iconData: FluentIcons.home_24_regular, label: "Home"),
+          TUIAppBarItem(
+              iconData: FluentIcons.person_24_regular, label: "Profile"),
+          TUIAppBarItem(
+              iconData: FluentIcons.settings_24_regular, label: "Settings"),
+        ],
+        currentIndex: selectedBottomNavBarItem,
+        onTap: (value) => {
+          setState(() {
+            print("On tap, item selected: $value");
+            selectedBottomNavBarItem = value;
+          })
+        },
       ),
       body: SafeArea(
         child: ListView(
@@ -396,7 +419,7 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 8),
             const Text("Breadcrumb", style: TUITextStyle.heading6),
             const SizedBox(height: 8),
-            BreadCrumb(
+            TUIBreadCrumb(
               titles: const [
                 "one",
                 "two",
@@ -493,7 +516,61 @@ class _HomePageState extends State<HomePage> {
                     },
                     iconData: Symbol.refresh.value)
               ],
-            )
+            ),
+            const SizedBox(height: 8),
+            const Text("Media Thumbnail", style: TUITextStyle.heading6),
+            const SizedBox(height: 8),
+            Wrap(
+              direction: Axis.horizontal,
+              spacing: 4,
+              runSpacing: 10,
+              children: [
+                TUIMediaThumbnail(
+                  size: TUIMediaThumbnailSize.large,
+                  mediaType: TUIMediaThumbnailType.video,
+                  onPressed: () {
+                    print("Video thumbnail tapped.");
+                  },
+                  customThumbnailImage: TUIImage(
+                    imageUrl:
+                        "https://images.unsplash.com/photo-1579353977828-2a4eab540b9a",
+                    height: TUIMediaThumbnailSize.large.height,
+                    width: TUIMediaThumbnailSize.large.width,
+                    fit: BoxFit.fill,
+                  ),
+                ),
+                TUIMediaThumbnail(
+                  size: TUIMediaThumbnailSize.large,
+                  mediaType: TUIMediaThumbnailType.audio,
+                  isSelectable: false,
+                  onPressed: () {
+                    print("Audio thumbnail tapped.");
+                  },
+                ),
+                TUIMediaThumbnail(
+                  size: TUIMediaThumbnailSize.large,
+                  mediaType: TUIMediaThumbnailType.document,
+                  onPressed: () {
+                    print("Document thumbnail tapped.");
+                  },
+                ),
+                TUIMediaThumbnail(
+                  size: TUIMediaThumbnailSize.large,
+                  mediaType: TUIMediaThumbnailType.photo,
+                  isSelectable: false,
+                  onPressed: () {
+                    print("Photo thumbnail tapped.");
+                  },
+                  customThumbnailImage: TUIImage(
+                    imageUrl:
+                        "https://images.unsplash.com/photo-1579353977828-2a4eab540b9a",
+                    height: TUIMediaThumbnailSize.large.height,
+                    width: TUIMediaThumbnailSize.large.width,
+                    fit: BoxFit.fill,
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
