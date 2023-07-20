@@ -14,12 +14,11 @@ void main() {
           return GestureDetector(
             onTap: () {
               ScaffoldMessenger.of(context).showSnackBar(TUISnackBar(
+                context: context,
                 type: TUISnackBarType.warning,
                 message: "This is an warning snackbar with action",
-                action: true,
-                actionLabel: "Dismiss",
-                onPressed: () {},
-              ).call());
+                action: TUISnackBarAction.dismiss("Dismiss"),
+              ));
             },
             behavior: HitTestBehavior.opaque,
             child: const SizedBox(

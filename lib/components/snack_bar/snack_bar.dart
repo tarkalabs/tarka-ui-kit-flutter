@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:tarka_ui/styles/default_colors.dart';
+import 'package:tarka_ui/styles/colors.dart';
 import 'package:tarka_ui/styles/spacing.dart';
 import 'package:tarka_ui/styles/symbols.dart';
-import 'package:tarka_ui/styles/text_style.dart';
+import 'package:tarka_ui/styles/theme.dart';
 
 enum TUISnackBarType {
   success,
@@ -10,29 +10,29 @@ enum TUISnackBarType {
   warning,
   error;
 
-  Color _getBackgroundColor() {
+  Color _getBackgroundColor(TUIColors colors) {
     switch (this) {
       case success:
-        return TUIDefaultColors.success;
+        return colors.success;
       case information:
-        return TUIDefaultColors.secondary;
+        return colors.secondary;
       case warning:
-        return TUIDefaultColors.warning;
+        return colors.warning;
       case error:
-        return TUIDefaultColors.error;
+        return colors.error;
     }
   }
 
-  Color _getForegroundColor() {
+  Color _getForegroundColor(TUIColors colors) {
     switch (this) {
       case success:
-        return TUIDefaultColors.onSuccess;
+        return colors.onSuccess;
       case information:
-        return TUIDefaultColors.onSecondary;
+        return colors.onSecondary;
       case warning:
-        return TUIDefaultColors.onWarning;
+        return colors.onWarning;
       case error:
-        return TUIDefaultColors.onError;
+        return colors.onError;
     }
   }
 
@@ -50,69 +50,78 @@ enum TUISnackBarType {
   }
 }
 
-class TUISnackBar {
-  const TUISnackBar({
-    this.key,
-    this.type = TUISnackBarType.information,
-    required this.message,
-    this.action = true,
-    this.actionLabel,
-    this.duration,
-    this.onPressed,
-  });
+class TUISnackBarAction {
+  final String label;
+  final VoidCallback onActionPressed;
+  final bool _isDismissed;
 
-  final Key? key;
-  final TUISnackBarType type;
-  final String message;
-  final bool action;
-  final String? actionLabel;
-  final Duration? duration;
-  final VoidCallback? onPressed;
+  TUISnackBarAction({required this.label, required this.onActionPressed}) : _isDismissed = false;
 
-  SnackBar call() {
-    final Widget content = Row(
+  TUISnackBarAction.dismiss(this.label)
+      : onActionPressed = (() => {}),
+        _isDismissed = true;
+}
+
+class TUISnackBar extends SnackBar {
+  TUISnackBar({
+    Key? key,
+    required BuildContext context,
+    TUISnackBarType type = TUISnackBarType.information,
+    required String message,
+    TUISnackBarAction? action,
+    Duration? duration,
+    VoidCallback? onVisible,
+  }) : super(
+            key: key,
+            elevation: 0,
+            duration: duration ?? const Duration(seconds: 4),
+            backgroundColor:
+                type._getBackgroundColor(TUITheme.of(context).colors),
+            behavior: SnackBarBehavior.floating,
+            content: _getWidget(context, type, message, action),
+            onVisible: onVisible,
+            shape: const StadiumBorder());
+
+  static Widget _getWidget(BuildContext context, TUISnackBarType type,
+      String message, TUISnackBarAction? action) {
+    TUIThemeData themeData = TUITheme.of(context);
+    return Row(
       children: [
-        Icon(type._getIconData(), color: type._getForegroundColor()),
+        Icon(type._getIconData(),
+            color: type._getForegroundColor(themeData.colors)),
         const SizedBox(width: TUISpacing.halfHorizontal),
         Expanded(
             child: Text(
           message,
-          style: TUITextStyle.body6.copyWith(color: type._getForegroundColor()),
+          style: themeData.typography.body6
+              .copyWith(color: type._getForegroundColor(themeData.colors)),
         )),
-        if (action) ...[
+        if (action != null) ...[
           const SizedBox(width: TUISpacing.halfHorizontal),
           TextButton(
-              onPressed: onPressed,
+              onPressed: action._isDismissed
+                  ? () {
+                      ScaffoldMessenger.of(context).hideCurrentSnackBar(
+                          reason: SnackBarClosedReason.dismiss);
+                    }
+                  : action.onActionPressed,
               style: ButtonStyle(
                   foregroundColor: MaterialStateProperty.all<Color>(
-                      type._getBackgroundColor()),
+                      type._getBackgroundColor(themeData.colors)),
                   backgroundColor: MaterialStateProperty.all<Color>(
-                      type._getForegroundColor()),
+                      type._getForegroundColor(themeData.colors)),
                   padding: MaterialStateProperty.all(
                       const EdgeInsets.only(left: 18, right: 18)),
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16.0),
-                  ))),
+                  shape: MaterialStateProperty.all<OutlinedBorder>(
+                      const StadiumBorder())),
               child: Text(
-                actionLabel ?? "",
+                action.label,
                 textAlign: TextAlign.center,
-                style: TUITextStyle.button7
-                    .copyWith(color: type._getBackgroundColor()),
+                style: themeData.typography.button7.copyWith(
+                    color: type._getBackgroundColor(themeData.colors)),
               ))
         ]
       ],
-    );
-
-    return SnackBar(
-      key: key,
-      elevation: 0,
-      duration: duration ?? const Duration(seconds: 4),
-      backgroundColor: type._getBackgroundColor(),
-      behavior: SnackBarBehavior.floating,
-      content: content,
-      shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(32))),
     );
   }
 }
