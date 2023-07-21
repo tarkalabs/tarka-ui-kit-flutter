@@ -502,6 +502,34 @@ class _HomePageState extends State<HomePage> {
                 ),
               ],
             ),
+            const SizedBox(height: 8),
+            const Text("Anchor", style: TUITextStyle.heading6),
+            TUIAnchor(
+              title: "Link Text",
+              onPressed: () {
+                print("Anchor tapped");
+              },
+            ),
+            const Text("Anchor with truncating text",
+                style: TUITextStyle.heading6),
+            const SizedBox(height: 8),
+            TUIAnchor(
+              title:
+                  "This is an anchor with some very long test. This should hopefully overflow the text to the next line.",
+              onPressed: () {
+                print("Anchor tapped");
+              },
+            ),
+            const SizedBox(height: 8),
+            const Text("Anchor text with newlines",
+                style: TUITextStyle.heading6),
+            TUIAnchor(
+              title:
+                  "This is an anchor with some very long test.\n\n This should hopefully overflow the text to the next line.",
+              onPressed: () {
+                print("Anchor tapped");
+              },
+            )
           ],
         ),
       ),
