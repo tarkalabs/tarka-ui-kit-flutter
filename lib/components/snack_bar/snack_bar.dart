@@ -55,7 +55,8 @@ class TUISnackBarAction {
   final VoidCallback onActionPressed;
   final bool _isDismissed;
 
-  TUISnackBarAction({required this.label, required this.onActionPressed}) : _isDismissed = false;
+  TUISnackBarAction({required this.label, required this.onActionPressed})
+      : _isDismissed = false;
 
   TUISnackBarAction.dismiss(this.label)
       : onActionPressed = (() => {}),

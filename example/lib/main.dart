@@ -462,8 +462,7 @@ class _HomePageState extends State<HomePage> {
                       ScaffoldMessenger.of(context).showSnackBar(TUISnackBar(
                         context: context,
                         type: TUISnackBarType.success,
-                        message: "This is an success snackbar with action 0",
-                        action: TUISnackBarAction.dismiss("Dismiss"),
+                        message: "This is an success snackbar",
                       ));
                     },
                     iconData: Symbol.refresh.value),
@@ -474,7 +473,7 @@ class _HomePageState extends State<HomePage> {
                       ScaffoldMessenger.of(context).showSnackBar(TUISnackBar(
                         context: context,
                         type: TUISnackBarType.information,
-                        message: "This is an information snackbar with action",
+                        message: "This is an information Snackbar with action",
                         action: TUISnackBarAction.dismiss("Dismiss"),
                       ));
                     },
@@ -486,7 +485,8 @@ class _HomePageState extends State<HomePage> {
                       ScaffoldMessenger.of(context).showSnackBar(TUISnackBar(
                         context: context,
                         type: TUISnackBarType.warning,
-                        message: "This is an warning snackbar with action",
+                        message:
+                            "This is an warning Snackbar with TUISnackBarAction.dismiss",
                         action: TUISnackBarAction.dismiss("Dismiss"),
                       ));
                     },
@@ -498,7 +498,7 @@ class _HomePageState extends State<HomePage> {
                       ScaffoldMessenger.of(context).showSnackBar(TUISnackBar(
                         context: context,
                         type: TUISnackBarType.error,
-                        message: "This is an error snackbar with action",
+                        message: "This is an error Snackbar with action",
                         action: TUISnackBarAction(
                             label: "Retry",
                             onActionPressed: () {
@@ -563,6 +563,34 @@ class _HomePageState extends State<HomePage> {
                 ),
               ],
             ),
+            const SizedBox(height: 8),
+            const Text("Anchor", style: TUITextStyle.heading6),
+            TUIAnchor(
+              title: "Link Text",
+              onPressed: () {
+                print("Anchor tapped");
+              },
+            ),
+            const Text("Anchor with truncating text",
+                style: TUITextStyle.heading6),
+            const SizedBox(height: 8),
+            TUIAnchor(
+              title:
+                  "This is an anchor with some very long test. This should hopefully overflow the text to the next line.",
+              onPressed: () {
+                print("Anchor tapped");
+              },
+            ),
+            const SizedBox(height: 8),
+            const Text("Anchor text with newlines",
+                style: TUITextStyle.heading6),
+            TUIAnchor(
+              title:
+                  "This is an anchor with some very long test.\n\n This should hopefully overflow the text to the next line.",
+              onPressed: () {
+                print("Anchor tapped");
+              },
+            )
           ],
         ),
       ),

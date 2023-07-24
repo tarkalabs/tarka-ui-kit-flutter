@@ -6,32 +6,48 @@ import 'package:tarka_ui/components/snack_bar/snack_bar.dart';
 import '../defaults.dart';
 
 void main() {
-  group("Snackbar designs", () {
-    testGoldens('state = Default', (tester) async {
-      const Key tapTarget = Key('tap-target');
-      await tester.pumpWidgetBuilder(Builder(builder: (BuildContext context) {
-        return Scaffold(body: Builder(builder: (BuildContext context) {
-          return GestureDetector(
-            onTap: () {
-              ScaffoldMessenger.of(context).showSnackBar(TUISnackBar(
-                context: context,
-                type: TUISnackBarType.warning,
-                message: "This is an warning snackbar with action",
-                action: TUISnackBarAction.dismiss("Dismiss"),
-              ));
-            },
-            behavior: HitTestBehavior.opaque,
-            child: const SizedBox(
-              height: 100.0,
-              width: 100.0,
-              key: tapTarget,
-            ),
-          );
-        }));
-      }), wrapper: tuiAppWrapper());
-      await tester.tap(find.byKey(tapTarget));
-      await tester.pump();
-      await screenMatchesGolden(tester, 'snackbar_all_size_state_default');
-    });
+  group("Snackbar all types", () {
+    for (final type in TUISnackBarType.values) {
+      testGoldens('Without Action, Type =${type.name}', (tester) async {
+        Key tapTarget = Key(type.name);
+        final builder = _buildSnackBar(type, tapTarget, false);
+        await tester.pumpWidgetBuilder(Scaffold(body: builder),
+            wrapper: tuiAppWrapper());
+        await tester.tap(find.byKey(tapTarget), warnIfMissed: false);
+        await screenMatchesGolden(
+            tester, 'snack_bar_${type.name}_without_action');
+      });
+    }
+    for (final type in TUISnackBarType.values) {
+      testGoldens('With Action, Type =${type.name} ', (tester) async {
+        Key tapTarget = Key(type.name);
+        final builder = _buildSnackBar(type, tapTarget, true);
+        await tester.pumpWidgetBuilder(Scaffold(body: builder),
+            wrapper: tuiAppWrapper());
+        await tester.tap(find.byKey(tapTarget), warnIfMissed: false);
+        await screenMatchesGolden(tester, 'snack_bar_${type.name}_with_action');
+      });
+    }
+  });
+}
+
+Widget _buildSnackBar(TUISnackBarType type, Key tapTarget, bool action) {
+  return Builder(builder: (BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        ScaffoldMessenger.of(context).showSnackBar(TUISnackBar(
+          context: context,
+          type: type,
+          message: "This is a ${type.name} Snackbar",
+          action: action ? TUISnackBarAction.dismiss("Dismiss") : null,
+        ));
+      },
+      behavior: HitTestBehavior.opaque,
+      child: SizedBox(
+        height: 100.0,
+        width: 100.0,
+        key: tapTarget,
+      ),
+    );
   });
 }
