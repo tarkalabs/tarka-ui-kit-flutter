@@ -6,7 +6,7 @@ import 'package:tarka_ui/components/snack_bar/snack_bar.dart';
 import '../defaults.dart';
 
 void main() {
-  group("Snackbar all types", () {
+  group("SnackBar all types", () {
     for (final type in TUISnackBarType.values) {
       testGoldens('Without Action, Type =${type.name}', (tester) async {
         Key tapTarget = Key(type.name);
@@ -38,7 +38,7 @@ Widget _buildSnackBar(TUISnackBarType type, Key tapTarget, bool action) {
         ScaffoldMessenger.of(context).showSnackBar(TUISnackBar(
           context: context,
           type: type,
-          message: "This is a ${type.name} Snackbar",
+          message: "This is ${type.name} SnackBar",
           action: action ? TUISnackBarAction.dismiss("Dismiss") : null,
         ));
       },
