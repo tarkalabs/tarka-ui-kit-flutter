@@ -101,12 +101,34 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int selectedBottomNavBarItem = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: TUIFloatingActionButton(
         iconData: FluentIcons.fluent_20_filled,
         onPressed: () {},
+      ),
+      bottomNavigationBar: TUIAppBar(
+        items: [
+          TUIAppBarItem(
+              iconData: FluentIcons.bookmark_24_regular, label: "Saved"),
+          TUIAppBarItem(
+              iconData: FluentIcons.search_24_regular, label: "Discover"),
+          TUIAppBarItem(iconData: FluentIcons.home_24_regular, label: "Home"),
+          TUIAppBarItem(
+              iconData: FluentIcons.person_24_regular, label: "Profile"),
+          TUIAppBarItem(
+              iconData: FluentIcons.settings_24_regular, label: "Settings"),
+        ],
+        currentIndex: selectedBottomNavBarItem,
+        onTap: (value) => {
+          setState(() {
+            print("On tap, item selected: $value");
+            selectedBottomNavBarItem = value;
+          })
+        },
       ),
       body: SafeArea(
         child: ListView(
@@ -488,35 +510,51 @@ class _HomePageState extends State<HomePage> {
             Row(
               children: [
                 TUIRadioButton(
+                  onPressed: () {
+                    print("Anchor tapped");
+                  },
+                ),
+                const SizedBox(width: 8),
+                const TUIRadioButton(
+                  isSelected: true,
+                ),
+                const SizedBox(width: 8),
+                TUIRadioButton(
                   isSelected: true,
                   onPressed: () {
                     print("Anchor tapped");
                   },
                 ),
                 const SizedBox(width: 8),
-                TUIRadioButton(
-                  isEnabled: false,
-                  isSelected: true,
-                  onPressed: () {
-                    print("Anchor tapped");
-                  },
-                ),
-                const SizedBox(width: 8),
-                TUIRadioButton(
-                  isSelected: false,
-                  onPressed: () {
-                    print("Anchor tapped");
-                  },
-                ),
-                const SizedBox(width: 8),
-                TUIRadioButton(
-                  isEnabled: false,
-                  isSelected: false,
-                  onPressed: () {
-                    print("Anchor tapped");
-                  },
-                )
+                const TUIRadioButton()
               ],
+            ),
+            const Text("Anchor", style: TUITextStyle.heading6),
+            TUIAnchor(
+              title: "Link Text",
+              onPressed: () {
+                print("Anchor tapped");
+              },
+            ),
+            const Text("Anchor with truncating text",
+                style: TUITextStyle.heading6),
+            const SizedBox(height: 8),
+            TUIAnchor(
+              title:
+                  "This is an anchor with some very long test. This should hopefully overflow the text to the next line.",
+              onPressed: () {
+                print("Anchor tapped");
+              },
+            ),
+            const SizedBox(height: 8),
+            const Text("Anchor text with newlines",
+                style: TUITextStyle.heading6),
+            TUIAnchor(
+              title:
+                  "This is an anchor with some very long test.\n\n This should hopefully overflow the text to the next line.",
+              onPressed: () {
+                print("Anchor tapped");
+              },
             )
           ],
         ),

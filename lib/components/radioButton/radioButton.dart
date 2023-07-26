@@ -6,13 +6,11 @@ class TUIRadioButton extends StatefulWidget {
   const TUIRadioButton({
     Key? key,
     this.onPressed,
-    this.isEnabled = true,
     this.isSelected = false,
   }) : super(key: key);
 
   final VoidCallback? onPressed;
   final bool isSelected;
-  final bool isEnabled;
 
   @override
   State<TUIRadioButton> createState() => _TUIRadioButtonState();
@@ -65,7 +63,7 @@ class _TUIRadioButtonState extends State<TUIRadioButton> {
 
     return GestureDetector(
       onTap: () {
-        if (widget.isEnabled) {
+        if (widget.onPressed != null) {
           _setState();
           widget.onPressed?.call();
         }
@@ -78,7 +76,7 @@ class _TUIRadioButtonState extends State<TUIRadioButton> {
     final theme = TUITheme.of(context);
 
     return (isSelected)
-        ? (widget.isEnabled
+        ? (widget.onPressed != null
             ? theme.colors.onPrimary
             : theme.colors.disabledContent)
         : null;
@@ -88,7 +86,7 @@ class _TUIRadioButtonState extends State<TUIRadioButton> {
     final theme = TUITheme.of(context);
 
     return isSelected
-        ? (widget.isEnabled
+        ? (widget.onPressed != null
             ? theme.colors.primary
             : theme.colors.disabledBackground)
         : null;
@@ -105,7 +103,7 @@ class _TUIRadioButtonState extends State<TUIRadioButton> {
   Color getOuterBorderColor(BuildContext context) {
     final theme = TUITheme.of(context);
 
-    return (widget.isEnabled)
+    return (widget.onPressed != null)
         ? theme.colors.outline
         : theme.colors.disabledContent;
   }
