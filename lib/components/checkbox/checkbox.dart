@@ -6,20 +6,18 @@ import '../../styles/theme.dart';
 class TUICheckBox extends StatefulWidget {
   TUICheckBox({
     Key? key,
-    this.isEnabled = true,
     this.enableMixedState = false,
     this.state = TUICheckBoxState.unchecked,
-    required this.onChanged,
+    this.onChanged,
   }) : super(key: key) {
     if (state == TUICheckBoxState.mixed) {
       enableMixedState = true;
     }
   }
 
-  final bool isEnabled;
   late bool enableMixedState;
   final TUICheckBoxState state;
-  final Function(TUICheckBoxState) onChanged;
+  final Function(TUICheckBoxState)? onChanged;
 
   @override
   State<TUICheckBox> createState() => _TUICheckBoxState();
@@ -64,14 +62,13 @@ class _TUICheckBoxState extends State<TUICheckBox> {
     );
 
     return GestureDetector(
-      onTap: () {
-        if (widget.isEnabled) {
-          widget.onChanged.call(state);
-          _setState();
-        }
-      },
-      child: child,
-    );
+        onTap: () {
+          if (widget.onChanged != null) {
+            _setState();
+            widget.onChanged?.call(state);
+          }
+        },
+        child: child);
   }
 
   Icon getIcon(BuildContext context) {
@@ -85,7 +82,7 @@ class _TUICheckBoxState extends State<TUICheckBox> {
   Color getIconColor(BuildContext context) {
     final theme = TUITheme.of(context);
 
-    return (widget.isEnabled == true)
+    return (widget.onChanged != null)
         ? theme.colors.onPrimary
         : theme.colors.disabledContent;
   }
@@ -109,7 +106,7 @@ class _TUICheckBoxState extends State<TUICheckBox> {
   Border? getCheckboxBorder(BuildContext context) {
     final theme = TUITheme.of(context);
 
-    Color borderColor = (widget.isEnabled == true)
+    Color borderColor = (widget.onChanged != null)
         ? theme.colors.outline
         : theme.colors.disabledContent;
 
@@ -123,7 +120,7 @@ class _TUICheckBoxState extends State<TUICheckBox> {
 
     return (state == TUICheckBoxState.unchecked)
         ? null
-        : ((widget.isEnabled == true)
+        : ((widget.onChanged != null)
             ? theme.colors.primary
             : theme.colors.disabledBackground);
   }
