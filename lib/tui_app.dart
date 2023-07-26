@@ -332,6 +332,7 @@ class _TUIAppState extends State<TUIApp> {
                 brightness: brightness,
                 floatingActionButtonTheme:
                     themeData.floatingActionButtonThemeData,
+                bottomNavigationBarTheme: themeData.bottomNavigationBarTheme,
                 canvasColor: themeData.colors.background,
                 textSelectionTheme: m.TextSelectionThemeData(
                   selectionColor: themeData.colors.onPrimary,
