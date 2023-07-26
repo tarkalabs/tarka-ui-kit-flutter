@@ -107,17 +107,20 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: TUIFloatingActionButton(
-        iconData: FluentIcons.fluent_20_filled,
+        iconData: Symbol.map.value,
         onPressed: () {},
       ),
       bottomNavigationBar: TUIAppBar(
         items: [
-          TUIAppBarItem(iconData: FluentIcons.bookmark_24_regular, label: "Saved"),
-          TUIAppBarItem(iconData: FluentIcons.search_24_regular, label: "Discover"),
+          TUIAppBarItem(
+              iconData: FluentIcons.bookmark_24_regular, label: "Saved"),
+          TUIAppBarItem(
+              iconData: FluentIcons.search_24_regular, label: "Discover"),
           TUIAppBarItem(iconData: FluentIcons.home_24_regular, label: "Home"),
           TUIAppBarItem(
               iconData: FluentIcons.person_24_regular, label: "Profile"),
-          TUIAppBarItem(iconData: FluentIcons.settings_24_regular, label: "Settings"),
+          TUIAppBarItem(
+              iconData: FluentIcons.settings_24_regular, label: "Settings"),
         ],
         currentIndex: selectedBottomNavBarItem,
         onTap: (value) => {
@@ -437,16 +440,72 @@ class _HomePageState extends State<HomePage> {
             const Text("Icon Button", style: TUITextStyle.heading6),
             const SizedBox(height: 8),
             Column(
-              children: TUIIconButtonType.values
-                  .map((type) => Row(
-                      children: TUIIconButtonSize.values
-                          .map((size) => TUIIconButton(
-                              type: type,
-                              size: size,
-                              onPressed: () {},
-                              iconData: FluentIcons.fluent_24_filled))
-                          .toList(growable: false)))
-                  .toList(growable: false),
+                children: TUIIconButtonType.values
+                    .map((type) => Row(
+                        children: TUIIconButtonSize.values
+                            .map((size) => TUIIconButton(
+                                type: type,
+                                size: size,
+                                onPressed: () {},
+                                iconData: Symbol.documentDownload.value))
+                            .toList(growable: false)))
+                    .toList(growable: false)),
+            const SizedBox(height: 8),
+            const Text("Snackbar", style: TUITextStyle.heading6),
+            const SizedBox(height: 8),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                TUIButton(
+                    type: TUIButtonType.outlined,
+                    label: "Success",
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).showSnackBar(TUISnackBar(
+                        context: context,
+                        type: TUISnackBarType.success,
+                        message: "This is an success Snackbar",
+                      ));
+                    }),
+                TUIButton(
+                    type: TUIButtonType.outlined,
+                    label: "Information",
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).showSnackBar(TUISnackBar(
+                        context: context,
+                        type: TUISnackBarType.information,
+                        message: "This is an information Snackbar with action",
+                        action: TUISnackBarAction.dismiss("Dismiss"),
+                      ));
+                    }),
+                TUIButton(
+                    type: TUIButtonType.outlined,
+                    label: "Warning",
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).showSnackBar(TUISnackBar(
+                        context: context,
+                        type: TUISnackBarType.warning,
+                        message:
+                            "This is an warning Snackbar with TUISnackBarAction",
+                        action: TUISnackBarAction.dismiss("Dismiss"),
+                      ));
+                    }),
+                TUIButton(
+                    type: TUIButtonType.outlined,
+                    label: "Error",
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).showSnackBar(TUISnackBar(
+                        context: context,
+                        type: TUISnackBarType.error,
+                        message: "This is an error Snackbar with action",
+                        action: TUISnackBarAction(
+                            label: "Retry",
+                            onActionPressed: () {
+                              print("Snackbar Retry onPressed");
+                            }),
+                      ));
+                    })
+              ],
             ),
             const SizedBox(height: 8),
             const Text("Media Thumbnail", style: TUITextStyle.heading6),

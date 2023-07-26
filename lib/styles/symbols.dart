@@ -11,4 +11,7 @@ class TUISymbol {
       FluentIcons.re_order_dots_vertical_24_regular;
   static const IconData successCheckMark =
       FluentIcons.checkmark_circle_20_filled;
+  static const IconData information = FluentIcons.info_20_filled;
+  static const IconData warning = FluentIcons.warning_20_filled;
+  static const IconData error = FluentIcons.error_circle_20_filled;
 }

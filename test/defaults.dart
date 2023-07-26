@@ -14,18 +14,19 @@ WidgetWrapper tuiAppWrapper({
   Iterable<LocalizationsDelegate<dynamic>>? localizations,
   NavigatorObserver? navigatorObserver,
   Iterable<Locale>? localeOverrides,
+  WidgetWrapper? wrapper,
   TUIThemeData? theme,
 }) {
   return (child) => TUIApp(
-    localizationsDelegates: localizations,
-    supportedLocales: localeOverrides ?? const [Locale('en')],
-    theme: theme ?? defaultTheme(),
-    debugShowCheckedModeBanner: false,
-    home: child,
-    navigatorObservers: [
-      if (navigatorObserver != null) navigatorObserver,
-    ],
-  );
+        localizationsDelegates: localizations,
+        supportedLocales: localeOverrides ?? const [Locale('en')],
+        theme: theme ?? defaultTheme(),
+        debugShowCheckedModeBanner: false,
+        home: wrapper != null ? wrapApp(child: child) : child,
+        navigatorObservers: [
+          if (navigatorObserver != null) navigatorObserver,
+        ],
+      );
 }
 
 TUIThemeData defaultTheme() {

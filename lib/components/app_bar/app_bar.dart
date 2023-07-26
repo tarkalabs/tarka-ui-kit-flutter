@@ -16,7 +16,9 @@ class TUIAppBar extends StatefulWidget {
     this.currentIndex = 0,
   })  : assert(
             (items.every((element) => element.label?.isEmpty == false) ||
-                items.every((element) => element.label == null || element.label?.trim().isEmpty == true)),
+                items.every((element) =>
+                    element.label == null ||
+                    element.label?.trim().isEmpty == true)),
             "Either all items should have label or none."),
         _bnbItems = _convertToBnbItems(items),
         showLabels = items.any((element) =>
