@@ -453,22 +453,23 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 8),
             const Text("Snackbar", style: TUITextStyle.heading6),
             const SizedBox(height: 8),
-            Row(
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                TUIIconButton(
-                    type: TUIIconButtonType.primary,
-                    size: TUIIconButtonSize.px48,
+                TUIButton(
+                    type: TUIButtonType.outlined,
+                    label: "Success",
                     onPressed: () {
                       ScaffoldMessenger.of(context).showSnackBar(TUISnackBar(
                         context: context,
                         type: TUISnackBarType.success,
-                        message: "This is an success snackbar",
+                        message: "This is an success Snackbar",
                       ));
-                    },
-                    iconData: Symbol.refresh.value),
-                TUIIconButton(
-                    type: TUIIconButtonType.primary,
-                    size: TUIIconButtonSize.px48,
+                    }),
+                TUIButton(
+                    type: TUIButtonType.outlined,
+                    label: "Information",
                     onPressed: () {
                       ScaffoldMessenger.of(context).showSnackBar(TUISnackBar(
                         context: context,
@@ -476,24 +477,22 @@ class _HomePageState extends State<HomePage> {
                         message: "This is an information Snackbar with action",
                         action: TUISnackBarAction.dismiss("Dismiss"),
                       ));
-                    },
-                    iconData: Symbol.refresh.value),
-                TUIIconButton(
-                    type: TUIIconButtonType.primary,
-                    size: TUIIconButtonSize.px48,
+                    }),
+                TUIButton(
+                    type: TUIButtonType.outlined,
+                    label: "Warning",
                     onPressed: () {
                       ScaffoldMessenger.of(context).showSnackBar(TUISnackBar(
                         context: context,
                         type: TUISnackBarType.warning,
                         message:
-                            "This is an warning Snackbar with TUISnackBarAction.dismiss",
+                            "This is an warning Snackbar with TUISnackBarAction",
                         action: TUISnackBarAction.dismiss("Dismiss"),
                       ));
-                    },
-                    iconData: Symbol.refresh.value),
-                TUIIconButton(
-                    type: TUIIconButtonType.primary,
-                    size: TUIIconButtonSize.px48,
+                    }),
+                TUIButton(
+                    type: TUIButtonType.outlined,
+                    label: "Error",
                     onPressed: () {
                       ScaffoldMessenger.of(context).showSnackBar(TUISnackBar(
                         context: context,
@@ -505,8 +504,7 @@ class _HomePageState extends State<HomePage> {
                               print("Snackbar Retry onPressed");
                             }),
                       ));
-                    },
-                    iconData: Symbol.refresh.value)
+                    })
               ],
             ),
             const SizedBox(height: 8),
