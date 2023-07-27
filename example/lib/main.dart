@@ -562,6 +562,29 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             const SizedBox(height: 8),
+            const Text("Radio Button", style: TUITextStyle.heading6),
+            Row(
+              children: [
+                TUIRadioButton(
+                  onPressed: () {
+                    print("Anchor tapped");
+                  },
+                ),
+                const SizedBox(width: 8),
+                const TUIRadioButton(
+                  isSelected: true,
+                ),
+                const SizedBox(width: 8),
+                TUIRadioButton(
+                  isSelected: true,
+                  onPressed: () {
+                    print("Anchor tapped");
+                  },
+                ),
+                const SizedBox(width: 8),
+                const TUIRadioButton()
+              ],
+            ),
             const Text("Anchor", style: TUITextStyle.heading6),
             TUIAnchor(
               title: "Link Text",
