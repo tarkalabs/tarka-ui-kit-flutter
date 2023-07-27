@@ -32,6 +32,7 @@ export 'package:tarka_ui/components/badge/badge.dart';
 export 'package:tarka_ui/components/breadcrumb/breadcrumb.dart';
 export 'package:tarka_ui/components/button/button.dart';
 export 'package:tarka_ui/components/button/icon_button.dart';
+export 'package:tarka_ui/components/checkbox/checkbox.dart';
 export 'package:tarka_ui/components/divider/divider.dart';
 export 'package:tarka_ui/components/floating_action_button/floating_action_button.dart';
 export 'package:tarka_ui/components/media_thumbnail/media_thumbnail.dart';

@@ -562,6 +562,29 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             const SizedBox(height: 8),
+            const Text("Checkbox", style: TUITextStyle.heading6),
+            Row(
+              children: [
+                TUICheckBox(
+                  enableMixedState: true,
+                  onChanged: (state) {
+                    print("The tapped index is ${state}");
+                  },
+                ),
+                const SizedBox(width: 20),
+                TUICheckBox(
+                  state: TUICheckBoxState.unchecked,
+                ),
+                const SizedBox(width: 20),
+                TUICheckBox(
+                  state: TUICheckBoxState.mixed,
+                ),
+                const SizedBox(width: 20),
+                TUICheckBox(
+                  state: TUICheckBoxState.checked,
+                ),
+              ],
+            ),
             const Text("Radio Button", style: TUITextStyle.heading6),
             Row(
               children: [
