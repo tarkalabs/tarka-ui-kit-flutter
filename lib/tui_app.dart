@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart' as m;
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:tarka_ui/styles/theme.dart';
-import 'package:tarka_ui/tarka_ui.dart';
 
 class TUIApp extends StatefulWidget {
   /// Creates a TUIApp.
@@ -19,6 +18,7 @@ class TUIApp extends StatefulWidget {
   const TUIApp({
     super.key,
     this.navigatorKey,
+    this.scaffoldMessengerKey,
     this.onGenerateRoute,
     this.onGenerateInitialRoutes,
     this.onUnknownRoute,
@@ -45,8 +45,7 @@ class TUIApp extends StatefulWidget {
     this.darkTheme,
     this.themeMode,
     this.restorationScopeId,
-  })
-      : routeInformationProvider = null,
+  })  : routeInformationProvider = null,
         routeInformationParser = null,
         routerDelegate = null,
         backButtonDispatcher = null,
@@ -56,6 +55,7 @@ class TUIApp extends StatefulWidget {
   TUIApp.router({
     super.key,
     required this.theme,
+    this.scaffoldMessengerKey,
     this.darkTheme,
     this.themeMode,
     this.routeInformationProvider,
@@ -79,27 +79,26 @@ class TUIApp extends StatefulWidget {
     this.shortcuts,
     this.actions,
     this.restorationScopeId,
-  })
-      : assert(() {
-    if (routerConfig != null) {
-      assert(
-      (routeInformationProvider ??
-          routeInformationParser ??
-          routerDelegate ??
-          backButtonDispatcher) ==
-          null,
-      'If the routerConfig is provided, all the other router delegates must not be provided',
-      );
-      return true;
-    }
-    assert(routerDelegate != null,
-    'Either one of routerDelegate or routerConfig must be provided');
-    assert(
-    routeInformationProvider == null || routeInformationParser != null,
-    'If routeInformationProvider is provided, routeInformationParser must also be provided',
-    );
-    return true;
-  }()),
+  })  : assert(() {
+          if (routerConfig != null) {
+            assert(
+              (routeInformationProvider ??
+                      routeInformationParser ??
+                      routerDelegate ??
+                      backButtonDispatcher) ==
+                  null,
+              'If the routerConfig is provided, all the other router delegates must not be provided',
+            );
+            return true;
+          }
+          assert(routerDelegate != null,
+              'Either one of routerDelegate or routerConfig must be provided');
+          assert(
+            routeInformationProvider == null || routeInformationParser != null,
+            'If routeInformationProvider is provided, routeInformationParser must also be provided',
+          );
+          return true;
+        }()),
         navigatorObservers = null,
         navigatorKey = null,
         onGenerateRoute = null,
@@ -180,6 +179,14 @@ class TUIApp extends StatefulWidget {
 
   /// {@macro flutter.widgets.widgetsApp.navigatorKey}
   final GlobalKey<NavigatorState>? navigatorKey;
+
+  /// A key to use when building the [ScaffoldMessenger].
+  ///
+  /// If a [scaffoldMessengerKey] is specified, the [ScaffoldMessenger] can be
+  /// directly manipulated without first obtaining it from a [BuildContext] via
+  /// [ScaffoldMessenger.of]: from the [scaffoldMessengerKey], use the
+  /// [GlobalKey.currentState] getter.
+  final GlobalKey<ScaffoldMessengerState>? scaffoldMessengerKey;
 
   /// {@macro flutter.widgets.widgetsApp.home}
   final Widget? home;
@@ -284,7 +291,12 @@ class _TUIAppState extends State<TUIApp> {
       }
       return result;
     }();
-    return (data, usedarkStyle && widget.darkTheme != null ? Brightness.dark : Brightness.light);
+    return (
+      data,
+      usedarkStyle && widget.darkTheme != null
+          ? Brightness.dark
+          : Brightness.light
+    );
   }
 
   bool get _usesRouter =>
@@ -311,42 +323,44 @@ class _TUIAppState extends State<TUIApp> {
   Widget _builder(BuildContext context, Widget? child) {
     final (themeData, brightness) = theme(context);
     final mTheme = context.findAncestorWidgetOfExactType<m.Theme>();
-
-    return m.AnimatedTheme(
-      data: mTheme?.data ??
-          m.ThemeData(
-            splashFactory: m.NoSplash.splashFactory,
-            brightness: brightness,
-            floatingActionButtonTheme: themeData.floatingActionButtonThemeData,
-            bottomNavigationBarTheme: themeData.bottomNavigationBarTheme,
-            canvasColor: themeData.colors.background,
-            textSelectionTheme: m.TextSelectionThemeData(
-              selectionColor: themeData.colors.onPrimary,
-              cursorColor: themeData.colors.inputText,
-            ),
+    return ScaffoldMessenger(
+        key: widget.scaffoldMessengerKey,
+        child: m.AnimatedTheme(
+          data: mTheme?.data ??
+              m.ThemeData(
+                splashFactory: m.NoSplash.splashFactory,
+                brightness: brightness,
+                floatingActionButtonTheme:
+                    themeData.floatingActionButtonThemeData,
+                bottomNavigationBarTheme: themeData.bottomNavigationBarTheme,
+                canvasColor: themeData.colors.background,
+                textSelectionTheme: m.TextSelectionThemeData(
+                  selectionColor: themeData.colors.onPrimary,
+                  cursorColor: themeData.colors.inputText,
+                ),
+              ),
+          child: TUITheme(
+            data: themeData,
+            child: widget.builder != null
+                ? Builder(
+                    builder: (BuildContext context) {
+                      // Why are we surrounding a builder with a builder?
+                      //
+                      // The widget.builder may contain code that invokes
+                      // Theme.of(), which should return the theme we selected
+                      // above in AnimatedTheme. However, if we invoke
+                      // widget.builder() directly as the child of AnimatedTheme
+                      // then there is no Context separating them, and the
+                      // widget.builder() will not find the theme. Therefore, we
+                      // surround widget.builder with yet another builder so that
+                      // a context separates them and Theme.of() correctly
+                      // resolves to the theme we passed to AnimatedTheme.
+                      return widget.builder!(context, child);
+                    },
+                  )
+                : child ?? const SizedBox.shrink(),
           ),
-      child: TUITheme(
-        data: themeData,
-        child: widget.builder != null
-            ? Builder(
-          builder: (BuildContext context) {
-            // Why are we surrounding a builder with a builder?
-            //
-            // The widget.builder may contain code that invokes
-            // Theme.of(), which should return the theme we selected
-            // above in AnimatedTheme. However, if we invoke
-            // widget.builder() directly as the child of AnimatedTheme
-            // then there is no Context separating them, and the
-            // widget.builder() will not find the theme. Therefore, we
-            // surround widget.builder with yet another builder so that
-            // a context separates them and Theme.of() correctly
-            // resolves to the theme we passed to AnimatedTheme.
-            return widget.builder!(context, child);
-          },
-        )
-            : child ?? const SizedBox.shrink(),
-      ),
-    );
+        ));
   }
 
   Widget _buildApp(BuildContext context) {

@@ -1,9 +1,8 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:tarka_ui/styles/default_colors.dart';
 import 'package:tarka_ui/styles/text_style.dart';
-
-import '../../styles/default_colors.dart';
-import '../../subcomponents/image.dart';
+import 'package:tarka_ui/subcomponents/image.dart';
 
 class TUIChip extends StatelessWidget {
   final String title;
