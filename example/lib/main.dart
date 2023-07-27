@@ -583,9 +583,8 @@ class _HomePageState extends State<HomePage> {
                 TUICheckBox(
                   state: TUICheckBoxState.checked,
                 ),
-                ],
-              ).
-                
+              ],
+            ),
             const Text("Radio Button", style: TUITextStyle.heading6),
             Row(
               children: [
