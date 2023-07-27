@@ -36,11 +36,11 @@ export 'package:tarka_ui/components/divider/divider.dart';
 export 'package:tarka_ui/components/floating_action_button/floating_action_button.dart';
 export 'package:tarka_ui/components/media_thumbnail/media_thumbnail.dart';
 export 'package:tarka_ui/components/radio_button/radio_button.dart';
-export 'package:tarka_ui/components/successCheckMark/success_check_mark.dart';
+export 'package:tarka_ui/components/snack_bar/snack_bar.dart';
+export 'package:tarka_ui/components/success_check_mark/success_check_mark.dart';
 export 'package:tarka_ui/components/tag/tag.dart';
 export 'package:tarka_ui/components/textfield/text_field.dart';
 export 'package:tarka_ui/styles/colors.dart';
-// exports component
 export 'package:tarka_ui/styles/default_colors.dart';
 export 'package:tarka_ui/styles/symbols.dart';
 export 'package:tarka_ui/styles/text_style.dart';
