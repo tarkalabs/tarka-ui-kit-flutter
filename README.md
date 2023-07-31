@@ -15,7 +15,6 @@ and the Flutter guide for
 Tarka UI Kit is a reusable component library for building Flutter apps, based on a design system using Atomic Design principles
 
 # List of components
-- TUIAccordion
 - TUIAnchor
 - TUIAppBar
 - TUIAvatar
