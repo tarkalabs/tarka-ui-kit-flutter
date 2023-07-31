@@ -58,6 +58,9 @@ class TUIColors with Diagnosticable {
   final Color surfaceHover;
   final Color surfaceVariantHover;
 
+  final Color constantLight;
+  final Color constantDark;
+
   TUIColors(
       this.primary,
       this.onPrimary,
@@ -104,7 +107,9 @@ class TUIColors with Diagnosticable {
       this.onSurface,
       this.surfaceVariant,
       this.surfaceHover,
-      this.surfaceVariantHover);
+      this.surfaceVariantHover,
+      this.constantLight,
+      this.constantDark);
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
