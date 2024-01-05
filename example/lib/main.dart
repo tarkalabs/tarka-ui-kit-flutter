@@ -1,6 +1,7 @@
 import 'package:example/styles/colors.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:tarka_ui/components/accordion/accordion.dart';
 import 'package:tarka_ui/components/button/style.dart';
 import 'package:tarka_ui/components/chip/chip.dart';
 import 'package:tarka_ui/styles/theme.dart';
@@ -637,6 +638,12 @@ class _HomePageState extends State<HomePage> {
                 print("Anchor tapped");
               },
             ),
+            const SizedBox(height: 8),
+            const Text("Accordion", style: TUITextStyle.heading6),
+            const TUIAccordion(
+                title: "Is this an accordion row?",
+                subtitle:
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
             const SizedBox(height: 8),
             const Text("Switch", style: TUITextStyle.heading6),
             Row(
