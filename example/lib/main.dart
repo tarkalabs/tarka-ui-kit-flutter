@@ -1,7 +1,6 @@
 import 'package:example/styles/colors.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:tarka_ui/components/accordion/accordion.dart';
 import 'package:tarka_ui/components/button/style.dart';
 import 'package:tarka_ui/components/chip/chip.dart';
 import 'package:tarka_ui/styles/theme.dart';
