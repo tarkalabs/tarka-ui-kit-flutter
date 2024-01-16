@@ -112,7 +112,7 @@ class _HomePageState extends State<HomePage> {
         iconData: Symbol.map.value,
         onPressed: () {},
       ),
-      bottomNavigationBar: TUIAppBar(
+      bottomNavigationBar: TUIAppTopBar(
         items: [
           TUIAppBarItem(
               iconData: FluentIcons.bookmark_24_regular, label: "Saved"),
@@ -356,14 +356,14 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 8),
             const Text("Text Field", style: TUITextStyle.heading6),
             const SizedBox(height: 8),
-            const TUITextField(
+            const TUIInputField(
               labelText: "Label",
               prefixIcon: Icon(TUISymbol.successCheckMark),
               suffixIcon: Icon(TUISymbol.chevronDown),
               helperText: "Helper / hint message goes here.",
             ),
             const SizedBox(height: 8),
-            const TUITextField(
+            const TUIInputField(
               hintText: "Label",
               labelText: "Hello World",
               errorText: "Error message goes here.",
