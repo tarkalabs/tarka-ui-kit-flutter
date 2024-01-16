@@ -27,13 +27,12 @@ void main() {
     builder.addScenario("With Label", appBarWithLabel);
     builder.addScenario("Without Label", appBarWithoutLabel);
     await tester.pumpWidgetBuilder(builder.build(), wrapper: tuiAppWrapper());
-    await screenMatchesGolden(
-        tester, 'app_bar_all_types');
+    await screenMatchesGolden(tester, 'app_bar_all_types');
   });
 }
 
-TUIAppBar buildAppBar(List<TUIAppBarItem> items) {
-  return TUIAppBar(
+TUIAppTopBar buildAppBar(List<TUIAppBarItem> items) {
+  return TUIAppTopBar(
     items: items,
     currentIndex: 2,
     onTap: (value) => {},
