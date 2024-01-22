@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tarka_ui/styles/theme.dart';
 
-class TUIAppBar extends StatefulWidget {
+class TUIAppTopBar extends StatefulWidget {
   final List<TUIAppBarItem> items;
   final List<BottomNavigationBarItem> _bnbItems;
 
@@ -9,14 +9,16 @@ class TUIAppBar extends StatefulWidget {
   final int currentIndex;
   final bool showLabels;
 
-  TUIAppBar({
+  TUIAppTopBar({
     super.key,
     required this.items,
     this.onTap,
     this.currentIndex = 0,
   })  : assert(
             (items.every((element) => element.label?.isEmpty == false) ||
-                items.every((element) => element.label == null || element.label?.trim().isEmpty == true)),
+                items.every((element) =>
+                    element.label == null ||
+                    element.label?.trim().isEmpty == true)),
             "Either all items should have label or none."),
         _bnbItems = _convertToBnbItems(items),
         showLabels = items.any((element) =>
@@ -42,7 +44,7 @@ class TUIAppBar extends StatefulWidget {
   }
 }
 
-class _TUIAppBar extends State<TUIAppBar> {
+class _TUIAppBar extends State<TUIAppTopBar> {
   @override
   Widget build(BuildContext context) {
     TUIThemeData themeData = TUITheme.of(context);

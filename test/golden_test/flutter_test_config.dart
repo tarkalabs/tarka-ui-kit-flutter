@@ -26,5 +26,6 @@ GoldenBuilder goldenGridBuilder({
         widthToHeightRatio: widthToHeightRatio,
         bgColor: TUIDefaultColors.background);
 
-GoldenBuilder goldenColumnBuilder({WidgetWrapper? wrap}) =>
-    GoldenBuilder.column(bgColor: TUIDefaultColors.background, wrap: wrap);
+GoldenBuilder goldenColumnBuilder({WidgetWrapper? widgetWrapper}) =>
+    GoldenBuilder.column(
+        bgColor: TUIDefaultColors.background, wrap: widgetWrapper);

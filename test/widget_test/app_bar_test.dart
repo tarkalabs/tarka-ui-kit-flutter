@@ -18,7 +18,7 @@ main() {
     1. Snapshot testing, But Snapshot did not have System nav bar and I could not find a way to include System Nav bar in snapshot.
     2. I tried to find absolute position of widget and make sure that, its above safe area bottom, using some pixels calculation. But I got some wierd numbers that did not make any sense to me.
     */
-    final appBar = TUIAppBar(
+    final appBar = TUIAppTopBar(
       items: [
         TUIAppBarItem(
             iconData: FluentIcons.bookmark_24_regular, label: "Saved"),
@@ -32,14 +32,15 @@ main() {
     await widgetTester.pumpWidgetBuilder(appBar, wrapper: tuiAppWrapper());
     //Since we know that, `BottomNavigationBar` will always be displayed on top of SystemNavBar, we can be assured that TUIAppBar will also be displayed above System Nav Bar.
     var bottomNavBarFinder = find.descendant(
-        of: find.byType(TUIAppBar), matching: find.byType(BottomNavigationBar));
+        of: find.byType(TUIAppTopBar),
+        matching: find.byType(BottomNavigationBar));
     expect(bottomNavBarFinder, findsOneWidget);
   });
 
   testWidgets("When user clicks on App bar item, A Callback is passed.",
       (widgetTester) async {
     final completer = Completer<int>();
-    final appBar = TUIAppBar(
+    final appBar = TUIAppTopBar(
       items: [
         TUIAppBarItem(
             iconData: FluentIcons.bookmark_24_regular, label: "Saved"),

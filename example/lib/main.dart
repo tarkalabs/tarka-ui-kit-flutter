@@ -20,53 +20,54 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     var tuiThemeData = TUIThemeData(
         TUIColors(
-          AppColors.primary,
-          AppColors.onPrimary,
-          AppColors.primaryAlt,
-          AppColors.onPrimaryAlt,
-          AppColors.primaryHover,
-          AppColors.primaryAltHover,
-          AppColors.secondary,
-          AppColors.onSecondary,
-          AppColors.secondaryAlt,
-          AppColors.onSecondaryAlt,
-          AppColors.secondaryHover,
-          AppColors.secondaryAltHover,
-          AppColors.tertiary,
-          AppColors.onTertiary,
-          AppColors.tertiaryAlt,
-          AppColors.onTertiaryAlt,
-          AppColors.tertiaryHover,
-          AppColors.tertiaryAltHover,
-          AppColors.success,
-          AppColors.onSuccess,
-          AppColors.success10,
-          AppColors.success20,
-          AppColors.error,
-          AppColors.onError,
-          AppColors.error10,
-          AppColors.errorHover,
-          AppColors.warning,
-          AppColors.onWarning,
-          AppColors.warning10,
-          AppColors.warningHover,
-          AppColors.background,
-          AppColors.onBackground,
-          AppColors.outline,
-          AppColors.disabledContent,
-          AppColors.disabledBackground,
-          AppColors.disabledBackgroundHover,
-          AppColors.link,
-          AppColors.inputText,
-          AppColors.inputBackground,
-          AppColors.inputTextDim,
-          AppColors.surface,
-          AppColors.surface50,
-          AppColors.onSurface,
-          AppColors.surfaceVariant,
-          AppColors.surfaceHover,
-          AppColors.surfaceVariantHover,
-        ),
+            AppColors.primary,
+            AppColors.onPrimary,
+            AppColors.primaryAlt,
+            AppColors.onPrimaryAlt,
+            AppColors.primaryHover,
+            AppColors.primaryAltHover,
+            AppColors.secondary,
+            AppColors.onSecondary,
+            AppColors.secondaryAlt,
+            AppColors.onSecondaryAlt,
+            AppColors.secondaryHover,
+            AppColors.secondaryAltHover,
+            AppColors.tertiary,
+            AppColors.onTertiary,
+            AppColors.tertiaryAlt,
+            AppColors.onTertiaryAlt,
+            AppColors.tertiaryHover,
+            AppColors.tertiaryAltHover,
+            AppColors.success,
+            AppColors.onSuccess,
+            AppColors.success10,
+            AppColors.success20,
+            AppColors.error,
+            AppColors.onError,
+            AppColors.error10,
+            AppColors.errorHover,
+            AppColors.warning,
+            AppColors.onWarning,
+            AppColors.warning10,
+            AppColors.warningHover,
+            AppColors.background,
+            AppColors.onBackground,
+            AppColors.outline,
+            AppColors.disabledContent,
+            AppColors.disabledBackground,
+            AppColors.disabledBackgroundHover,
+            AppColors.link,
+            AppColors.inputText,
+            AppColors.inputBackground,
+            AppColors.inputTextDim,
+            AppColors.surface,
+            AppColors.surface50,
+            AppColors.onSurface,
+            AppColors.surfaceVariant,
+            AppColors.surfaceHover,
+            AppColors.surfaceVariantHover,
+            AppColors.constantLight,
+            AppColors.constantDark),
         TUITypography(
           TUITextStyle.heading1,
           TUITextStyle.heading2,
@@ -117,23 +118,28 @@ class _HomePageState extends State<HomePage> {
       sliderValue = newValue;
     });
   }
+
   int selectedBottomNavBarItem = 0;
+  bool _enable = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: TUIFloatingActionButton(
-        iconData: FluentIcons.fluent_20_filled,
+        iconData: Symbol.map.value,
         onPressed: () {},
       ),
-      bottomNavigationBar: TUIAppBar(
+      bottomNavigationBar: TUIAppTopBar(
         items: [
-          TUIAppBarItem(iconData: FluentIcons.bookmark_24_regular, label: "Saved"),
-          TUIAppBarItem(iconData: FluentIcons.search_24_regular, label: "Discover"),
+          TUIAppBarItem(
+              iconData: FluentIcons.bookmark_24_regular, label: "Saved"),
+          TUIAppBarItem(
+              iconData: FluentIcons.search_24_regular, label: "Discover"),
           TUIAppBarItem(iconData: FluentIcons.home_24_regular, label: "Home"),
           TUIAppBarItem(
               iconData: FluentIcons.person_24_regular, label: "Profile"),
-          TUIAppBarItem(iconData: FluentIcons.settings_24_regular, label: "Settings"),
+          TUIAppBarItem(
+              iconData: FluentIcons.settings_24_regular, label: "Settings"),
         ],
         currentIndex: selectedBottomNavBarItem,
         onTap: (value) => {
@@ -367,14 +373,14 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 8),
             const Text("Text Field", style: TUITextStyle.heading6),
             const SizedBox(height: 8),
-            const TUITextField(
+            const TUIInputField(
               labelText: "Label",
               prefixIcon: Icon(TUISymbol.successCheckMark),
               suffixIcon: Icon(TUISymbol.chevronDown),
               helperText: "Helper / hint message goes here.",
             ),
             const SizedBox(height: 8),
-            const TUITextField(
+            const TUIInputField(
               hintText: "Label",
               labelText: "Hello World",
               errorText: "Error message goes here.",
@@ -453,16 +459,72 @@ class _HomePageState extends State<HomePage> {
             const Text("Icon Button", style: TUITextStyle.heading6),
             const SizedBox(height: 8),
             Column(
-              children: TUIIconButtonType.values
-                  .map((type) => Row(
-                      children: TUIIconButtonSize.values
-                          .map((size) => TUIIconButton(
-                              type: type,
-                              size: size,
-                              onPressed: () {},
-                              iconData: FluentIcons.fluent_24_filled))
-                          .toList(growable: false)))
-                  .toList(growable: false),
+                children: TUIIconButtonType.values
+                    .map((type) => Row(
+                        children: TUIIconButtonSize.values
+                            .map((size) => TUIIconButton(
+                                type: type,
+                                size: size,
+                                onPressed: () {},
+                                iconData: Symbol.documentDownload.value))
+                            .toList(growable: false)))
+                    .toList(growable: false)),
+            const SizedBox(height: 8),
+            const Text("Snackbar", style: TUITextStyle.heading6),
+            const SizedBox(height: 8),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                TUIButton(
+                    type: TUIButtonType.outlined,
+                    label: "Success",
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).showSnackBar(TUISnackBar(
+                        context: context,
+                        type: TUISnackBarType.success,
+                        message: "This is an success Snackbar",
+                      ));
+                    }),
+                TUIButton(
+                    type: TUIButtonType.outlined,
+                    label: "Information",
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).showSnackBar(TUISnackBar(
+                        context: context,
+                        type: TUISnackBarType.information,
+                        message: "This is an information Snackbar with action",
+                        action: TUISnackBarAction.dismiss("Dismiss"),
+                      ));
+                    }),
+                TUIButton(
+                    type: TUIButtonType.outlined,
+                    label: "Warning",
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).showSnackBar(TUISnackBar(
+                        context: context,
+                        type: TUISnackBarType.warning,
+                        message:
+                            "This is an warning Snackbar with TUISnackBarAction",
+                        action: TUISnackBarAction.dismiss("Dismiss"),
+                      ));
+                    }),
+                TUIButton(
+                    type: TUIButtonType.outlined,
+                    label: "Error",
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).showSnackBar(TUISnackBar(
+                        context: context,
+                        type: TUISnackBarType.error,
+                        message: "This is an error Snackbar with action",
+                        action: TUISnackBarAction(
+                            label: "Retry",
+                            onActionPressed: () {
+                              print("Snackbar Retry onPressed");
+                            }),
+                      ));
+                    })
+              ],
             ),
             const SizedBox(height: 8),
             const Text("Media Thumbnail", style: TUITextStyle.heading6),
@@ -536,6 +598,107 @@ class _HomePageState extends State<HomePage> {
               max: 1,
               min: 0,
             ),
+            const SizedBox(height: 8),
+            const Text("Checkbox", style: TUITextStyle.heading6),
+            Row(
+              children: [
+                TUICheckBox(
+                  enableMixedState: true,
+                  onChanged: (state) {
+                    print("The tapped index is ${state}");
+                  },
+                ),
+                const SizedBox(width: 20),
+                TUICheckBox(
+                  state: TUICheckBoxState.unchecked,
+                ),
+                const SizedBox(width: 20),
+                TUICheckBox(
+                  state: TUICheckBoxState.mixed,
+                ),
+                const SizedBox(width: 20),
+                TUICheckBox(
+                  state: TUICheckBoxState.checked,
+                ),
+              ],
+            ),
+            const Text("Radio Button", style: TUITextStyle.heading6),
+            Row(
+              children: [
+                TUIRadioButton(
+                  onPressed: () {
+                    print("Anchor tapped");
+                  },
+                ),
+                const SizedBox(width: 8),
+                const TUIRadioButton(
+                  isSelected: true,
+                ),
+                const SizedBox(width: 8),
+                TUIRadioButton(
+                  isSelected: true,
+                  onPressed: () {
+                    print("Anchor tapped");
+                  },
+                ),
+                const SizedBox(width: 8),
+                const TUIRadioButton()
+              ],
+            ),
+            const Text("Anchor", style: TUITextStyle.heading6),
+            TUIAnchor(
+              title: "Link Text",
+              onPressed: () {
+                print("Anchor tapped");
+              },
+            ),
+            const Text("Anchor with truncating text",
+                style: TUITextStyle.heading6),
+            const SizedBox(height: 8),
+            TUIAnchor(
+              title:
+                  "This is an anchor with some very long test. This should hopefully overflow the text to the next line.",
+              onPressed: () {
+                print("Anchor tapped");
+              },
+            ),
+            const SizedBox(height: 8),
+            const Text("Anchor text with newlines",
+                style: TUITextStyle.heading6),
+            TUIAnchor(
+              title:
+                  "This is an anchor with some very long test.\n\n This should hopefully overflow the text to the next line.",
+              onPressed: () {
+                print("Anchor tapped");
+              },
+            ),
+            const SizedBox(height: 8),
+            const Text("Accordion", style: TUITextStyle.heading6),
+            const TUIAccordion(
+                title: "Is this an accordion row?",
+                subtitle:
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
+            const SizedBox(height: 8),
+            const Text("Switch", style: TUITextStyle.heading6),
+            Row(
+              children: [
+                TUISwitch(
+                  value: _enable,
+                  onChanged: (bool val) {
+                    setState(() {
+                      _enable = val;
+                    });
+                  },
+                ),
+                const SizedBox(
+                  width: 40,
+                ),
+                TUISwitch(
+                  value: _enable,
+                ),
+              ],
+            ),
+            // TUISwitch
           ],
         ),
       ),
