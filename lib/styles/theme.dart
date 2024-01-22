@@ -73,6 +73,7 @@ class TUIThemeData with Diagnosticable {
   final IconButtonStyles iconButtonStyles;
   final FloatingActionButtonThemeData floatingActionButtonThemeData;
   final BottomNavigationBarThemeData bottomNavigationBarTheme;
+  final SliderThemeData sliderThemeData;
 
   TUIThemeData(this.colors, this.typography)
       : buttonStyles = ButtonStyles.from(colors, typography),
@@ -80,7 +81,8 @@ class TUIThemeData with Diagnosticable {
             _generateFloatingActionButtonTheme(colors),
         iconButtonStyles = IconButtonStyles.from(colors),
         bottomNavigationBarTheme =
-            _generateBottomNavBarTheme(colors, typography);
+            _generateBottomNavBarTheme(colors, typography),
+        sliderThemeData = _generateSliderTheme(colors);
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
@@ -119,6 +121,20 @@ class TUIThemeData with Diagnosticable {
         width: TUIFloatingActionButtonSize.large.size,
         height: TUIFloatingActionButtonSize.large.size,
       ),
+    );
+  }
+
+  static SliderThemeData _generateSliderTheme(TUIColors colors) {
+    return SliderThemeData(
+      trackHeight: 4,
+      activeTrackColor: colors.primary,
+      rangeThumbShape: const RoundRangeSliderThumbShape(
+          enabledThumbRadius: 8, disabledThumbRadius: 8),
+      thumbColor: colors.primary,
+      thumbShape: const RoundSliderThumbShape(
+          enabledThumbRadius: 8, disabledThumbRadius: 8),
+      overlayColor: colors.primaryAlt,
+      overlayShape: const RoundSliderOverlayShape(overlayRadius: 20),
     );
   }
 }

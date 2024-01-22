@@ -78,6 +78,8 @@ TUIThemeData defaultTheme() {
         TUIDefaultColors.surfaceVariant,
         TUIDefaultColors.surfaceHover,
         TUIDefaultColors.surfaceVariantHover,
+        TUIDefaultColors.constantLight,
+        TUIDefaultColors.constantDark
       ),
       TUITypography(
         TUITextStyle.heading1,
