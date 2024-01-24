@@ -646,9 +646,7 @@ class _HomePageState extends State<HomePage> {
               enableMixedState: true,
               title: "Title",
               description: "Description",
-              onChanged: (state) {
-                print("The tapped index is $state");
-              },
+              state: TUICheckBoxRowState.checked,
             ),
             TUICheckBoxRow(
               enableMixedState: true,
@@ -663,9 +661,6 @@ class _HomePageState extends State<HomePage> {
               enableMixedState: true,
               title: "Title",
               state: TUICheckBoxRowState.checked,
-              onChanged: (state) {
-                print("The tapped index is $state");
-              },
             ),
             TUICheckBoxRow(
               enableMixedState: true,
@@ -680,10 +675,7 @@ class _HomePageState extends State<HomePage> {
               enableMixedState: true,
               title: "Title",
               description: "Description",
-              state: TUICheckBoxRowState.checked,
-              onChanged: (state) {
-                print("The tapped index is $state");
-              },
+              state: TUICheckBoxRowState.mixed,
             ),
             TUICheckBoxRow(
               enableMixedState: true,
