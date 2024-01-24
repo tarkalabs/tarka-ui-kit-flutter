@@ -50,15 +50,3 @@ class TUIDraggableCard extends StatelessWidget {
     );
   }
 }
-
-// enum TUIDraggableCardState {
-//   unchecked(0),
-//   checked(1);
-//
-//   const TUIDraggableCardState(this.value);
-//   final num value;
-//
-//   static TUIDraggableCardState getByValue(num i) {
-//     return TUIDraggableCardState.values.firstWhere((x) => x.value == i);
-//   }
-// }
