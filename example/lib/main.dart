@@ -3,6 +3,7 @@ import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:tarka_ui/components/button/style.dart';
 import 'package:tarka_ui/components/chip/chip.dart';
+import 'package:tarka_ui/components/draggable_card/draggable_card.dart';
 import 'package:tarka_ui/styles/theme.dart';
 import 'package:tarka_ui/subcomponents/image.dart';
 import 'package:tarka_ui/tarka_ui.dart';
@@ -698,6 +699,13 @@ class _HomePageState extends State<HomePage> {
                 ),
               ],
             ),
+            const SizedBox(height: 8),
+            const Text("Draggable Card", style: TUITextStyle.heading6),
+            const SizedBox(height: 8),
+            TUIDraggableCard(
+              child: Container(child: const Text("Hello")),
+            ),
+            const SizedBox(height: 8),
             // TUISwitch
           ],
         ),
