@@ -1,3 +1,4 @@
+import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 
 import '../../styles/theme.dart';
@@ -54,9 +55,34 @@ class TUIAttachmentUpload extends StatefulWidget {
 class _TUIAttachmentUploadState extends State<TUIAttachmentUpload> {
   @override
   Widget build(BuildContext context) {
+    final theme = TUITheme.of(context);
+
     return Row(
-      mainAxisSize: MainAxisSize.max,
-      children: [getImageIcon(context, widget.image, widget.icon)],
+      children: [
+        getImageIcon(context, widget.image, widget.icon),
+        SizedBox(
+          width: 16,
+        ),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Text("title"),
+            Text("subtitle, subtitle, subtitle, subtitle, subtitle")
+          ],
+        ),
+        Expanded(child: Container()),
+        Icon(
+          FluentIcons.arrow_download_16_filled,
+          color: theme.colors.disabledContent,
+        ),
+        SizedBox(
+          width: 16,
+        ),
+        Icon(
+          FluentIcons.delete_16_regular,
+          color: theme.colors.disabledContent,
+        ),
+      ],
     );
   }
 
