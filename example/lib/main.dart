@@ -2,6 +2,7 @@ import 'package:example/styles/colors.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:tarka_ui/components/button/style.dart';
+import 'package:tarka_ui/components/checkboxrow/checkboxrow.dart';
 import 'package:tarka_ui/components/chip/chip.dart';
 import 'package:tarka_ui/components/draggable_card/draggable_card.dart';
 import 'package:tarka_ui/styles/theme.dart';
@@ -623,6 +624,24 @@ class _HomePageState extends State<HomePage> {
                 ),
               ],
             ),
+            const SizedBox(height: 5.0),
+            const Text("CheckBoxRow", style: TUITextStyle.heading6),
+            const SizedBox(height: 5.0),
+            Row(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                TUICheckBoxRow(
+                  enableMixedState: true,
+                  title: "Test",
+                  description: "Test description",
+                  backgroundDark: true,
+                  onChanged: (state) {
+                    print("The tapped index is $state");
+                  },
+                ),
+              ],
+            ),
+            const SizedBox(height: 5.0),
             const Text("Radio Button", style: TUITextStyle.heading6),
             Row(
               children: [
