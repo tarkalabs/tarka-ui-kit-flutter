@@ -61,8 +61,7 @@ class _TUICheckBoxRowState extends State<TUICheckBoxRow> {
     final showDescription = widget.description.isNotEmpty;
     Widget child = Row(
       mainAxisSize: MainAxisSize.max,
-      // mainAxisAlignment: MainAxisAlignment.spaceAround,
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: getRowCrossAxisAlignment(widget.description),
       children: [
         Container(
           width: 24,
@@ -76,8 +75,6 @@ class _TUICheckBoxRowState extends State<TUICheckBoxRow> {
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          // mainAxisAlignment: MainAxisAlignment.end,
-          // mainAxisSize: MainAxisSize.max,
           children: [
             Text(
               widget.title,
@@ -111,6 +108,11 @@ class _TUICheckBoxRowState extends State<TUICheckBoxRow> {
     );
   }
 
+  CrossAxisAlignment getRowCrossAxisAlignment(String description) {
+    if (description.isNotEmpty) return CrossAxisAlignment.start;
+    return CrossAxisAlignment.center;
+  }
+
   EdgeInsets getMarginIfDescription(context, String descrption) {
     if (descrption.isNotEmpty) return const EdgeInsets.only(top: 3.0);
     return const EdgeInsets.only(top: 0.0);
@@ -119,7 +121,6 @@ class _TUICheckBoxRowState extends State<TUICheckBoxRow> {
   BoxDecoration getBoxDecorationRow(context) {
     final theme = TUITheme.of(context);
     Color backgroundColor = Colors.transparent;
-    print(widget.backgroundDark);
     if (widget.backgroundDark) {
       backgroundColor = theme.colors.background;
     }

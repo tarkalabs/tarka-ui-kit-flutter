@@ -626,19 +626,73 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 5.0),
             const Text("CheckBoxRow", style: TUITextStyle.heading6),
             const SizedBox(height: 5.0),
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                TUICheckBoxRow(
-                  enableMixedState: true,
-                  title: "Test",
-                  description: "Test description",
-                  backgroundDark: true,
-                  onChanged: (state) {
-                    print("The tapped index is $state");
-                  },
-                ),
-              ],
+            TUICheckBoxRow(
+              enableMixedState: true,
+              title: "Title",
+              onChanged: (state) {
+                print("The tapped index is $state");
+              },
+            ),
+            TUICheckBoxRow(
+              enableMixedState: true,
+              title: "Title",
+              backgroundDark: true,
+              onChanged: (state) {
+                print("The tapped index is $state");
+              },
+            ),
+            TUICheckBoxRow(
+              enableMixedState: true,
+              title: "Title",
+              description: "Description",
+              onChanged: (state) {
+                print("The tapped index is $state");
+              },
+            ),
+            TUICheckBoxRow(
+              enableMixedState: true,
+              title: "Title",
+              description: "Description",
+              backgroundDark: true,
+              onChanged: (state) {
+                print("The tapped index is $state");
+              },
+            ),
+            TUICheckBoxRow(
+              enableMixedState: true,
+              title: "Title",
+              state: TUICheckBoxRowState.checked,
+              onChanged: (state) {
+                print("The tapped index is $state");
+              },
+            ),
+            TUICheckBoxRow(
+              enableMixedState: true,
+              title: "Title",
+              backgroundDark: true,
+              state: TUICheckBoxRowState.checked,
+              onChanged: (state) {
+                print("The tapped index is $state");
+              },
+            ),
+            TUICheckBoxRow(
+              enableMixedState: true,
+              title: "Title",
+              description: "Description",
+              state: TUICheckBoxRowState.checked,
+              onChanged: (state) {
+                print("The tapped index is $state");
+              },
+            ),
+            TUICheckBoxRow(
+              enableMixedState: true,
+              title: "Title",
+              description: "Description",
+              backgroundDark: true,
+              state: TUICheckBoxRowState.checked,
+              onChanged: (state) {
+                print("The tapped index is $state");
+              },
             ),
             const SizedBox(height: 5.0),
             const Text("Radio Button", style: TUITextStyle.heading6),
