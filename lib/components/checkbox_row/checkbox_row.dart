@@ -123,6 +123,7 @@ class _TUICheckBoxRowState extends State<TUICheckBoxRow> {
   BoxDecoration getBoxDecorationRow(context) {
     final theme = TUITheme.of(context);
     Color backgroundColor = Colors.transparent;
+
     if (widget.backgroundDark) {
       backgroundColor = theme.colors.background;
     }
