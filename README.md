@@ -36,3 +36,14 @@ Tarka UI Kit is a reusable component library for building Flutter apps, based on
 - TUIInputField
 - TUISlider
 - TUIRangeSlider
+
+## How run kitchen sink app
+
+### From Android Studio
+
+Open `main.dart` file in `example/` directory rest will be handled by Android Studio.
+
+### From Terminal
+
+Change directory to `example/` and execute `flutter run`
+
