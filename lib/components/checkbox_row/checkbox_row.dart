@@ -109,13 +109,15 @@ class _TUICheckBoxRowState extends State<TUICheckBoxRow> {
   }
 
   CrossAxisAlignment getRowCrossAxisAlignment(String description) {
-    if (description.isNotEmpty) return CrossAxisAlignment.start;
-    return CrossAxisAlignment.center;
+    return description.isNotEmpty
+        ? CrossAxisAlignment.start
+        : CrossAxisAlignment.center;
   }
 
   EdgeInsets getMarginIfDescription(context, String descrption) {
-    if (descrption.isNotEmpty) return const EdgeInsets.only(top: 3.0);
-    return const EdgeInsets.only(top: 0.0);
+    return descrption.isNotEmpty
+        ? const EdgeInsets.only(top: 3.0)
+        : const EdgeInsets.only(top: 0.0);
   }
 
   BoxDecoration getBoxDecorationRow(context) {
@@ -124,6 +126,7 @@ class _TUICheckBoxRowState extends State<TUICheckBoxRow> {
     if (widget.backgroundDark) {
       backgroundColor = theme.colors.background;
     }
+
     return BoxDecoration(
       color: backgroundColor,
       borderRadius: const BorderRadius.all(
