@@ -767,8 +767,12 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 8),
             const Text("Draggable Card", style: TUITextStyle.heading6),
             const SizedBox(height: 8),
-            TUIDraggableCard(
-              child: Container(child: const Text("Hello")),
+            const TUIDraggableCard(
+              child: Text("Hello"),
+            ),
+            const TUIDraggableCard(
+              backgroundDark: true,
+              child: Text("Hello"),
             ),
             const SizedBox(height: 8),
             // TUISwitch
