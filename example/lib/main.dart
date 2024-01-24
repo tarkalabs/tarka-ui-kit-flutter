@@ -622,6 +622,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ],
             ),
+            const SizedBox(height: 8.0),
             const Text("Radio Button", style: TUITextStyle.heading6),
             Row(
               children: [
@@ -698,7 +699,23 @@ class _HomePageState extends State<HomePage> {
                 ),
               ],
             ),
-            // TUISwitch
+            const SizedBox(height: 8),
+            const Text("Attachment Upload", style: TUITextStyle.heading6),
+            TUIAttachmentUpload(
+              isIconUsed: false,
+              image: TUIImage(
+                imageUrl:
+                    "https://images.unsplash.com/photo-1579353977828-2a4eab540b9a",
+                height: TUIMediaThumbnailSize.large.height,
+                width: TUIMediaThumbnailSize.large.width,
+                fit: BoxFit.fill,
+              ),
+            ),
+            const Text("Attachment Upload", style: TUITextStyle.heading6),
+            TUIAttachmentUpload(
+              isIconUsed: true,
+              icon: FluentIcons.access_time_20_filled,
+            ),
           ],
         ),
       ),
