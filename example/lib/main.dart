@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:tarka_ui/components/button/style.dart';
 import 'package:tarka_ui/components/checkbox_row/checkbox_row.dart';
 import 'package:tarka_ui/components/chip/chip.dart';
+import 'package:tarka_ui/components/email_field/email_field.dart';
 import 'package:tarka_ui/styles/theme.dart';
 import 'package:tarka_ui/subcomponents/image.dart';
 import 'package:tarka_ui/tarka_ui.dart';
@@ -126,10 +127,10 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: TUIFloatingActionButton(
-        iconData: Symbol.map.value,
-        onPressed: () {},
-      ),
+      // floatingActionButton: TUIFloatingActionButton(
+      //   iconData: Symbol.map.value,
+      //   onPressed: () {},
+      // ),
       bottomNavigationBar: TUIAppTopBar(
         items: [
           TUIAppBarItem(
@@ -763,7 +764,17 @@ class _HomePageState extends State<HomePage> {
                 ),
               ],
             ),
+            const SizedBox(height: 8),
+            const Text("Email Field", style: TUITextStyle.heading6),
+            const SizedBox(height: 8),
             // TUISwitch
+            TUIEmailField(
+              emails: ["example@example.com", "example@example.com"],
+              onAdd: () {
+                print("Hello");
+              },
+            ),
+            const SizedBox(height: 8),
           ],
         ),
       ),
