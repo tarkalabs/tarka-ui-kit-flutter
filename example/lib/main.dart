@@ -748,7 +748,7 @@ class _HomePageState extends State<HomePage> {
             const Text("Switch", style: TUITextStyle.heading6),
             Row(
               children: [
-                TUISwitch(
+                TUIToggleSwitch(
                   value: _enable,
                   onChanged: (bool val) {
                     setState(() {
@@ -759,12 +759,38 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(
                   width: 40,
                 ),
-                TUISwitch(
+                TUIToggleSwitch(
                   value: _enable,
                 ),
               ],
             ),
             const SizedBox(height: 8),
+            const Text("Attachment Upload With Description",
+                style: TUITextStyle.heading6),
+            TUIAttachmentUpload(
+              title: "Title",
+              description: "This is a long description to test overflow.",
+              isIconUsed: true,
+              icon: FluentIcons.access_time_20_filled,
+              downloadTapped: () {
+                print("download tapped");
+              },
+              deleteTapped: () {
+                print("delete tapped");
+              },
+            ),
+            const Text("Attachment Upload", style: TUITextStyle.heading6),
+            TUIAttachmentUpload(
+              title: "Title",
+              isIconUsed: false,
+              image: TUIImage(
+                imageUrl:
+                    "https://images.unsplash.com/photo-1579353977828-2a4eab540b9a",
+                height: TUIMediaThumbnailSize.large.height,
+                width: TUIMediaThumbnailSize.large.width,
+                fit: BoxFit.fill,
+              ),
+            ),
             const Text("Draggable Card", style: TUITextStyle.heading6),
             const SizedBox(height: 8),
             const TUIDraggableCard(
