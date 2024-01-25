@@ -6,25 +6,26 @@ import '../../subcomponents/image.dart';
 
 class TUIAttachmentUpload extends StatelessWidget {
   final String title;
-  late String description;
-
   final bool isIconUsed;
+
   late IconData? icon;
   late TUIImage? image;
+
+  late String description;
 
   late Function()? deleteTapped;
   late Function()? downloadTapped;
 
-  TUIAttachmentUpload(
-      {Key? key,
-      required this.title,
-      this.description = "",
-      this.downloadTapped,
-      this.deleteTapped,
-      this.icon,
-      this.image,
-      required this.isIconUsed})
-      : super(key: key) {
+  TUIAttachmentUpload({
+    Key? key,
+    required this.title,
+    required this.isIconUsed,
+    this.icon,
+    this.image,
+    this.description = "",
+    this.downloadTapped,
+    this.deleteTapped,
+  }) : super(key: key) {
     if (isIconUsed == true) {
       image = null;
     } else {
