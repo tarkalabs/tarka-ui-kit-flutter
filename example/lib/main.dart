@@ -801,7 +801,14 @@ class _HomePageState extends State<HomePage> {
               child: Text("Hello"),
             ),
             const SizedBox(height: 8),
-            // TUISwitch
+            const Text("Email Subject Field", style: TUITextStyle.heading6),
+            const SizedBox(height: 8),
+            TUIEmailSubjectField(
+              onTextChanged: (String text) {
+                print("text changed: ${text}");
+              },
+            ),
+            const SizedBox(height: 100),
           ],
         ),
       ),
