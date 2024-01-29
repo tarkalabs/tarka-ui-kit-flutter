@@ -127,10 +127,10 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // floatingActionButton: TUIFloatingActionButton(
-      //   iconData: Symbol.map.value,
-      //   onPressed: () {},
-      // ),
+      floatingActionButton: TUIFloatingActionButton(
+        iconData: Symbol.map.value,
+        onPressed: () {},
+      ),
       bottomNavigationBar: TUIAppTopBar(
         items: [
           TUIAppBarItem(
@@ -769,7 +769,16 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 8),
             // TUISwitch
             TUIEmailField(
+              emails: [],
+              showSuffix: true,
+              onAdd: () {
+                print("Hello");
+              },
+            ),
+            const SizedBox(height: 8),
+            TUIEmailField(
               emails: ["example@example.com", "example@example.com"],
+              showSuffix: true,
               onAdd: () {
                 print("Hello");
               },
