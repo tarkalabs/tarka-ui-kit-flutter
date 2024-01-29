@@ -19,9 +19,7 @@ class TUIMenuItem extends StatefulWidget {
     this.backgroundDark = false,
     this.onLeftTap,
     this.onRightTap,
-  }) : super(key: key) {
-    print(state);
-  }
+  }) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => _TUIMenuItemState();
@@ -41,12 +39,31 @@ class _TUIMenuItemState extends State<TUIMenuItem> {
     // if both icon are displayed
     if (widget.style == TUIMenuItemStyle.both) {
       setState(() {
-        if (state == TUIMenuItemState.leftChecked) {
-          state = TUIMenuItemState.unchecked;
-        } else {
-          state = TUIMenuItemState.leftChecked;
+        if (state == TUIMenuItemState.unchecked) {
+          if (tapped == TUIMenuItemTapped.left) {
+            state = TUIMenuItemState.leftChecked;
+          } else if (tapped == TUIMenuItemTapped.right) {
+            state = TUIMenuItemState.rightChecked;
+          }
+        } else if (state == TUIMenuItemState.leftChecked) {
+          if (tapped == TUIMenuItemTapped.left) {
+            state = TUIMenuItemState.unchecked;
+          } else if (tapped == TUIMenuItemTapped.right) {
+            state = TUIMenuItemState.bothChecked;
+          }
+        } else if (state == TUIMenuItemState.rightChecked) {
+          if (tapped == TUIMenuItemTapped.right) {
+            state = TUIMenuItemState.unchecked;
+          } else if (tapped == TUIMenuItemTapped.left) {
+            state = TUIMenuItemState.bothChecked;
+          }
+        } else if (state == TUIMenuItemState.bothChecked) {
+          if (tapped == TUIMenuItemTapped.left) {
+            state = TUIMenuItemState.rightChecked;
+          } else if (tapped == TUIMenuItemTapped.right) {
+            state = TUIMenuItemState.leftChecked;
+          }
         }
-        tapped = tapped;
       });
     }
 
@@ -59,7 +76,6 @@ class _TUIMenuItemState extends State<TUIMenuItem> {
         } else {
           state = TUIMenuItemState.leftChecked;
         }
-        tapped = tapped;
       });
     }
 
@@ -72,7 +88,6 @@ class _TUIMenuItemState extends State<TUIMenuItem> {
         } else {
           state = TUIMenuItemState.rightChecked;
         }
-        tapped = tapped;
       });
     }
   }
@@ -155,18 +170,71 @@ class _TUIMenuItemState extends State<TUIMenuItem> {
     return const EdgeInsets.all(0.0);
   }
 
-  getIcon(TUIThemeData theme) {
-    if (state != TUIMenuItemState.unchecked) {
-      return Icon(
-        FluentIcons.checkmark_24_filled,
-        color: theme.colors.success,
-      );
+  List<Icon> getIcon(TUIThemeData theme) {
+    List<Icon> iconList = [
+      Icon(
+        FluentIcons.circle_24_regular,
+        color: theme.colors.onSurface,
+      ),
+      Icon(
+        FluentIcons.circle_24_regular,
+        color: theme.colors.onSurface,
+      ),
+    ];
+
+    if (state == TUIMenuItemState.unchecked) {
+      iconList = [
+        Icon(
+          FluentIcons.circle_24_regular,
+          color: theme.colors.onSurface,
+        ),
+        Icon(
+          FluentIcons.circle_24_regular,
+          color: theme.colors.onSurface,
+        ),
+      ];
     }
 
-    return Icon(
-      FluentIcons.circle_24_regular,
-      color: theme.colors.onSurface,
-    );
+    if (state == TUIMenuItemState.leftChecked) {
+      iconList = [
+        Icon(
+          FluentIcons.checkmark_24_filled,
+          color: theme.colors.success,
+        ),
+        Icon(
+          FluentIcons.circle_24_regular,
+          color: theme.colors.onSurface,
+        ),
+      ];
+    }
+
+    if (state == TUIMenuItemState.rightChecked) {
+      iconList = [
+        Icon(
+          FluentIcons.circle_24_regular,
+          color: theme.colors.onSurface,
+        ),
+        Icon(
+          FluentIcons.checkmark_24_filled,
+          color: theme.colors.success,
+        ),
+      ];
+    }
+
+    if (state == TUIMenuItemState.bothChecked) {
+      iconList = [
+        Icon(
+          FluentIcons.checkmark_24_filled,
+          color: theme.colors.success,
+        ),
+        Icon(
+          FluentIcons.checkmark_24_filled,
+          color: theme.colors.success,
+        ),
+      ];
+    }
+
+    return iconList;
   }
 
   getLeftIcon(TUIThemeData theme) {
@@ -179,7 +247,7 @@ class _TUIMenuItemState extends State<TUIMenuItem> {
         },
         child: Container(
           padding: const EdgeInsets.only(right: 16.0),
-          child: getIcon(theme),
+          child: getIcon(theme)[0],
         ),
       );
     }
@@ -197,7 +265,7 @@ class _TUIMenuItemState extends State<TUIMenuItem> {
         },
         child: Container(
           padding: EdgeInsets.zero,
-          child: getIcon(theme),
+          child: getIcon(theme)[1],
         ),
       );
     }

@@ -868,8 +868,8 @@ class _HomePageState extends State<HomePage> {
             TUIMenuItem(
               title: "Item",
               style: TUIMenuItemStyle.onlyRight,
-              backgroundDark: true,
               state: TUIMenuItemState.rightChecked,
+              backgroundDark: true,
             ),
             const SizedBox(height: 8),
             TUIMenuItem(
@@ -884,6 +884,19 @@ class _HomePageState extends State<HomePage> {
             TUIMenuItem(
               title: "Item",
               style: TUIMenuItemStyle.onlyLeft,
+              state: TUIMenuItemState.leftChecked,
+              backgroundDark: true,
+            ),
+            const SizedBox(height: 8),
+            TUIMenuItem(
+              title: "Item",
+              style: TUIMenuItemStyle.both,
+              state: TUIMenuItemState.leftChecked,
+            ),
+            const SizedBox(height: 8),
+            TUIMenuItem(
+              title: "Item",
+              style: TUIMenuItemStyle.both,
               state: TUIMenuItemState.leftChecked,
               backgroundDark: true,
             ),
