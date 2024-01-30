@@ -123,34 +123,31 @@ class _TUIMenuItemState extends State<TUIMenuItem> {
       }
     }
 
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
-      decoration: BoxDecoration(color: color),
-      child: Material(
-        color: Colors.transparent,
+    return Material(
+      child: Ink(
         child: InkWell(
           onTap: () {
-            print("tapped");
             widget.action?.call(state);
           },
-          child: Row(
-            mainAxisAlignment: getMainAxisAlignment(),
-            children: [
-              getLeftIcon(theme),
-              Expanded(
-                child: Container(
+          child: Container(
+            padding:
+                const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+            decoration: BoxDecoration(color: color),
+            child: Row(
+              mainAxisAlignment: getMainAxisAlignment(),
+              children: [
+                getLeftIcon(theme),
+                Container(
                   padding: getTextPadding(),
                   child: Text(
                     widget.item.title,
                     style: theme.typography.body6,
-                    overflow: TextOverflow.ellipsis,
-                    maxLines: 1,
                   ),
                 ),
-              ),
-              getSpacer(),
-              getRightIcon(theme),
-            ],
+                getSpacer(),
+                getRightIcon(theme),
+              ],
+            ),
           ),
         ),
       ),
