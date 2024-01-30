@@ -3,22 +3,32 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:tarka_ui/styles/theme.dart';
 
+class TUIMenuItemProperties {
+  late String title;
+  late TUIMenuItemStyle style;
+  late TUIMenuItemState state;
+
+  TUIMenuItemProperties({
+    required this.title,
+    required this.style,
+    this.state = TUIMenuItemState.unchecked,
+  });
+}
+
 class TUIMenuItem extends StatefulWidget {
-  final String title;
-  TUIMenuItemStyle style;
-  TUIMenuItemState state;
+  late TUIMenuItemProperties item;
   bool backgroundDark; // for hover
+  final Function(TUIMenuItemState)? action;
   final Function(TUIMenuItemState)? onLeftTap;
   final Function(TUIMenuItemState)? onRightTap;
 
   TUIMenuItem({
     Key? key,
-    required this.title,
-    required this.style,
-    this.state = TUIMenuItemState.unchecked,
+    required this.item,
     this.backgroundDark = false,
     this.onLeftTap,
     this.onRightTap,
+    this.action,
   }) : super(key: key);
 
   @override
@@ -31,13 +41,13 @@ class _TUIMenuItemState extends State<TUIMenuItem> {
   @override
   void initState() {
     super.initState();
-    state = widget.state;
+    state = widget.item.state;
     _setState(TUIMenuItemTapped.none);
   }
 
   _setState(TUIMenuItemTapped tapped) {
     // if both icon are displayed
-    if (widget.style == TUIMenuItemStyle.both) {
+    if (widget.item.style == TUIMenuItemStyle.both) {
       setState(() {
         if (state == TUIMenuItemState.unchecked) {
           if (tapped == TUIMenuItemTapped.left) {
@@ -69,7 +79,7 @@ class _TUIMenuItemState extends State<TUIMenuItem> {
 
     // if only left is displayed
     if (tapped == TUIMenuItemTapped.left &&
-        widget.style == TUIMenuItemStyle.onlyLeft) {
+        widget.item.style == TUIMenuItemStyle.onlyLeft) {
       setState(() {
         if (state == TUIMenuItemState.leftChecked) {
           state = TUIMenuItemState.unchecked;
@@ -81,7 +91,7 @@ class _TUIMenuItemState extends State<TUIMenuItem> {
 
     // if only right is displayed
     if (tapped == TUIMenuItemTapped.right &&
-        widget.style == TUIMenuItemStyle.onlyRight) {
+        widget.item.style == TUIMenuItemStyle.onlyRight) {
       setState(() {
         if (state == TUIMenuItemState.rightChecked) {
           state = TUIMenuItemState.unchecked;
@@ -116,26 +126,39 @@ class _TUIMenuItemState extends State<TUIMenuItem> {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
       decoration: BoxDecoration(color: color),
-      child: Row(
-        mainAxisAlignment: getMainAxisAlignment(),
-        children: [
-          getLeftIcon(theme),
-          Container(
-            padding: getTextPadding(),
-            child: Text(
-              widget.title,
-              style: theme.typography.body6,
-            ),
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: () {
+            print("tapped");
+            widget.action?.call(state);
+          },
+          child: Row(
+            mainAxisAlignment: getMainAxisAlignment(),
+            children: [
+              getLeftIcon(theme),
+              Expanded(
+                child: Container(
+                  padding: getTextPadding(),
+                  child: Text(
+                    widget.item.title,
+                    style: theme.typography.body6,
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 1,
+                  ),
+                ),
+              ),
+              getSpacer(),
+              getRightIcon(theme),
+            ],
           ),
-          getSpacer(),
-          getRightIcon(theme),
-        ],
+        ),
       ),
     );
   }
 
   getTextPadding() {
-    if (widget.style == TUIMenuItemStyle.onlyRight) {
+    if (widget.item.style == TUIMenuItemStyle.onlyRight) {
       return const EdgeInsets.only(left: 24.0);
     }
 
@@ -143,8 +166,8 @@ class _TUIMenuItemState extends State<TUIMenuItem> {
   }
 
   getSpacer() {
-    if (widget.style == TUIMenuItemStyle.both ||
-        widget.style == TUIMenuItemStyle.onlyRight) {
+    if (widget.item.style == TUIMenuItemStyle.both ||
+        widget.item.style == TUIMenuItemStyle.onlyRight) {
       return const Spacer();
     }
 
@@ -154,7 +177,7 @@ class _TUIMenuItemState extends State<TUIMenuItem> {
   }
 
   getMainAxisAlignment() {
-    return switch (widget.style) {
+    return switch (widget.item.style) {
       TUIMenuItemStyle.none => MainAxisAlignment.center,
       TUIMenuItemStyle.both => MainAxisAlignment.start,
       TUIMenuItemStyle.onlyLeft => MainAxisAlignment.start,
@@ -163,7 +186,7 @@ class _TUIMenuItemState extends State<TUIMenuItem> {
   }
 
   getPadding() {
-    if (widget.style == TUIMenuItemStyle.none) {
+    if (widget.item.style == TUIMenuItemStyle.none) {
       return const EdgeInsets.symmetric(vertical: 9.0, horizontal: 0.0);
     }
 
@@ -238,8 +261,8 @@ class _TUIMenuItemState extends State<TUIMenuItem> {
   }
 
   getLeftIcon(TUIThemeData theme) {
-    if (widget.style == TUIMenuItemStyle.onlyLeft ||
-        widget.style == TUIMenuItemStyle.both) {
+    if (widget.item.style == TUIMenuItemStyle.onlyLeft ||
+        widget.item.style == TUIMenuItemStyle.both) {
       return GestureDetector(
         onTap: () {
           _setState(TUIMenuItemTapped.left);
@@ -256,8 +279,8 @@ class _TUIMenuItemState extends State<TUIMenuItem> {
   }
 
   getRightIcon(TUIThemeData theme) {
-    if (widget.style == TUIMenuItemStyle.onlyRight ||
-        widget.style == TUIMenuItemStyle.both) {
+    if (widget.item.style == TUIMenuItemStyle.onlyRight ||
+        widget.item.style == TUIMenuItemStyle.both) {
       return GestureDetector(
         onTap: () {
           _setState(TUIMenuItemTapped.right);
