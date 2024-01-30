@@ -5,6 +5,7 @@ import 'package:tarka_ui/components/button/style.dart';
 import 'package:tarka_ui/components/checkbox_row/checkbox_row.dart';
 import 'package:tarka_ui/components/chip/chip.dart';
 import 'package:tarka_ui/components/draggable_card/draggable_card.dart';
+import 'package:tarka_ui/components/menu_item/menu_item.dart';
 import 'package:tarka_ui/styles/theme.dart';
 import 'package:tarka_ui/subcomponents/image.dart';
 import 'package:tarka_ui/tarka_ui.dart';
@@ -809,6 +810,129 @@ class _HomePageState extends State<HomePage> {
               },
             ),
             const SizedBox(height: 8),
+            const Text("Menu Item", style: TUITextStyle.heading6),
+            const SizedBox(height: 8),
+            TUIMenuItem(
+              item: TUIMenuItemProperties(
+                title: "Item",
+                style: TUIMenuItemStyle.none,
+              ),
+              action: (state) {
+                print("hello");
+              },
+            ),
+            const SizedBox(height: 8),
+            TUIMenuItem(
+              item: TUIMenuItemProperties(
+                title: "Item",
+                style: TUIMenuItemStyle.none,
+              ),
+              backgroundDark: true,
+            ),
+            const SizedBox(height: 8),
+            TUIMenuItem(
+              item: TUIMenuItemProperties(
+                title: "Item",
+                style: TUIMenuItemStyle.onlyRight,
+              ),
+            ),
+            const SizedBox(height: 8),
+            TUIMenuItem(
+              item: TUIMenuItemProperties(
+                title: "Item",
+                style: TUIMenuItemStyle.onlyRight,
+              ),
+              backgroundDark: true,
+            ),
+            const SizedBox(height: 8),
+            TUIMenuItem(
+              item: TUIMenuItemProperties(
+                title: "Item",
+                style: TUIMenuItemStyle.onlyLeft,
+              ),
+              onLeftTap: (state) {
+                print("left tapped");
+              },
+            ),
+            const SizedBox(height: 8),
+            TUIMenuItem(
+              item: TUIMenuItemProperties(
+                title: "Item",
+                style: TUIMenuItemStyle.onlyLeft,
+              ),
+              backgroundDark: true,
+            ),
+            const SizedBox(height: 8),
+            TUIMenuItem(
+              item: TUIMenuItemProperties(
+                title: "Item",
+                style: TUIMenuItemStyle.both,
+              ),
+            ),
+            const SizedBox(height: 8),
+            TUIMenuItem(
+              item: TUIMenuItemProperties(
+                title: "Item",
+                style: TUIMenuItemStyle.both,
+              ),
+              backgroundDark: true,
+            ),
+            const SizedBox(height: 8),
+            TUIMenuItem(
+              item: TUIMenuItemProperties(
+                title: "Item",
+                style: TUIMenuItemStyle.onlyRight,
+                state: TUIMenuItemState.rightChecked,
+              ),
+            ),
+            const SizedBox(height: 8),
+            TUIMenuItem(
+              item: TUIMenuItemProperties(
+                title: "Item",
+                style: TUIMenuItemStyle.onlyRight,
+                state: TUIMenuItemState.rightChecked,
+              ),
+              backgroundDark: true,
+            ),
+            const SizedBox(height: 8),
+            TUIMenuItem(
+              item: TUIMenuItemProperties(
+                title: "Item",
+                style: TUIMenuItemStyle.onlyLeft,
+                state: TUIMenuItemState.leftChecked,
+              ),
+              onLeftTap: (state) {
+                print("left tapped");
+              },
+            ),
+            const SizedBox(height: 8),
+            TUIMenuItem(
+              item: TUIMenuItemProperties(
+                title: "Item",
+                style: TUIMenuItemStyle.onlyLeft,
+                state: TUIMenuItemState.leftChecked,
+              ),
+              backgroundDark: true,
+            ),
+            const SizedBox(height: 8),
+            TUIMenuItem(
+              item: TUIMenuItemProperties(
+                title: "Item",
+                style: TUIMenuItemStyle.both,
+                state: TUIMenuItemState.leftChecked,
+              ),
+            ),
+            const SizedBox(height: 8),
+            TUIMenuItem(
+              item: TUIMenuItemProperties(
+                title: "Item",
+                style: TUIMenuItemStyle.both,
+                state: TUIMenuItemState.leftChecked,
+              ),
+              backgroundDark: true,
+            ),
+            const SizedBox(height: 8),
+            const Text("Navigation Row", style: TUITextStyle.heading6),
             SizedBox(
               height: 40,
               child: TUINavigationRow(
