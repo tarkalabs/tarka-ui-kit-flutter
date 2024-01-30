@@ -124,9 +124,11 @@ class _TUIMenuItemState extends State<TUIMenuItem> {
     }
 
     return Material(
+      color: Colors.transparent,
       child: Ink(
         child: InkWell(
           onTap: () {
+            setBgOnAction();
             widget.action?.call(state);
           },
           child: Container(
@@ -137,14 +139,17 @@ class _TUIMenuItemState extends State<TUIMenuItem> {
               mainAxisAlignment: getMainAxisAlignment(),
               children: [
                 getLeftIcon(theme),
-                Container(
-                  padding: getTextPadding(),
-                  child: Text(
-                    widget.item.title,
-                    style: theme.typography.body6,
+                Expanded(
+                  child: Container(
+                    padding: getTextPadding(),
+                    child: Text(
+                      widget.item.title,
+                      style: theme.typography.body6,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ),
                 ),
-                getSpacer(),
+                // getSpacer(),
                 getRightIcon(theme),
               ],
             ),
@@ -152,6 +157,30 @@ class _TUIMenuItemState extends State<TUIMenuItem> {
         ),
       ),
     );
+  }
+
+  void setBgOnAction() {
+    setState(() {
+      if (widget.item.style == TUIMenuItemStyle.onlyLeft) {
+        if (state == TUIMenuItemState.leftChecked) {
+          state = TUIMenuItemState.unchecked;
+        } else {
+          state = TUIMenuItemState.leftChecked;
+        }
+      } else if (widget.item.style == TUIMenuItemStyle.onlyRight) {
+        if (state == TUIMenuItemState.rightChecked) {
+          state = TUIMenuItemState.unchecked;
+        } else {
+          state = TUIMenuItemState.rightChecked;
+        }
+      } else {
+        if (state == TUIMenuItemState.unchecked) {
+          state = TUIMenuItemState.bothChecked;
+        } else {
+          state = TUIMenuItemState.unchecked;
+        }
+      }
+    });
   }
 
   getTextPadding() {
