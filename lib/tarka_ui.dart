@@ -39,6 +39,7 @@ export 'package:tarka_ui/components/divider/divider.dart';
 export 'package:tarka_ui/components/email_subject_field/email_subject_field.dart';
 export 'package:tarka_ui/components/floating_action_button/floating_action_button.dart';
 export 'package:tarka_ui/components/media_thumbnail/media_thumbnail.dart';
+export 'package:tarka_ui/components/navigation_row/navigation_row.dart';
 export 'package:tarka_ui/components/radio_button/radio_button.dart';
 export 'package:tarka_ui/components/slider/slider.dart';
 export 'package:tarka_ui/components/snack_bar/snack_bar.dart';

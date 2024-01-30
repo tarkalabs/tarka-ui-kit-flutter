@@ -931,9 +931,27 @@ class _HomePageState extends State<HomePage> {
               ),
               backgroundDark: true,
             ),
-            const SizedBox(
-              height: 100,
-            )
+            const SizedBox(height: 8),
+            const Text("Navigation Row", style: TUITextStyle.heading6),
+            SizedBox(
+              height: 40,
+              child: TUINavigationRow(
+                title:
+                    "hello world, hello world, hello world, hello world, hello world, hello world, hello world, ",
+                icon: FluentIcons.fluent_20_filled,
+                accessoryView: Container(
+                  width: 80,
+                  height: 60,
+                  clipBehavior: Clip.hardEdge,
+                  decoration: BoxDecoration(
+                    color: Colors.yellow, // Set your desired background color
+                    borderRadius:
+                        BorderRadius.circular(8.0), // Set the border radius
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 8),
           ],
         ),
       ),
