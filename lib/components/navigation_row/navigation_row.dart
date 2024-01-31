@@ -19,7 +19,6 @@ class TUINavigationRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
-      print(constraints.maxHeight);
       _height = constraints.maxHeight;
       return Row(children: [getLeftView(context, icon, title)]);
     });
