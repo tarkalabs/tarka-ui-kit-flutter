@@ -776,14 +776,6 @@ class _HomePageState extends State<HomePage> {
               },
             ),
             const SizedBox(height: 8),
-            TUIEmailField(
-              emails: ["example@example.com", "example@example.com"],
-              showSuffix: true,
-              onAdd: () {
-                print("Hello");
-              },
-            ),
-            const SizedBox(height: 8),
           ],
         ),
       ),

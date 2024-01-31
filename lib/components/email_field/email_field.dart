@@ -73,6 +73,23 @@ class _TUIEmailFieldState extends State<TUIEmailField> {
     }
   }
 
+  void onSubmitted(String text) {
+    String email;
+    if (text.contains(" ")) {
+      email = text.trim();
+      _emails.add(email);
+      setState(() {
+        _emails = _emails;
+      });
+    } else {
+      _emails.add(text);
+      setState(() {
+        _emails = _emails;
+      });
+      _emailController.text = "";
+    }
+  }
+
   void onFocusChange() {
     if (_focusNode.hasFocus) {
       setState(() {
@@ -139,6 +156,7 @@ class _TUIEmailFieldState extends State<TUIEmailField> {
                   controller: _emailController,
                   keyboardType: TextInputType.emailAddress,
                   decoration: getTextFieldDecoration(theme, context),
+                  onSubmitted: onSubmitted,
                 ),
               ],
             ),
