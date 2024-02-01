@@ -28,6 +28,7 @@ Tarka UI Kit is a reusable component library for building Flutter apps, based on
 - TUIChip
 - TUIDivider
 - TUIDraggableCard
+- TUIEmailField
 - TUIEmailSubjectField
 - TUIFloatingActionButton
 - TUIIconButton

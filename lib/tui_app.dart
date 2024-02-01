@@ -313,6 +313,7 @@ class _TUIAppState extends State<TUIApp> {
     }
     yield GlobalMaterialLocalizations.delegate;
     yield GlobalWidgetsLocalizations.delegate;
+    yield GlobalCupertinoLocalizations.delegate;
   }
 
   @override

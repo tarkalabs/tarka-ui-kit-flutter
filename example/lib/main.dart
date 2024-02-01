@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:tarka_ui/components/button/style.dart';
 import 'package:tarka_ui/components/checkbox_row/checkbox_row.dart';
 import 'package:tarka_ui/components/chip/chip.dart';
+import 'package:tarka_ui/components/email_field/email_field.dart';
 import 'package:tarka_ui/components/draggable_card/draggable_card.dart';
 import 'package:tarka_ui/components/menu_item/menu_item.dart';
 import 'package:tarka_ui/styles/theme.dart';
@@ -764,6 +765,17 @@ class _HomePageState extends State<HomePage> {
                   value: _enable,
                 ),
               ],
+            ),
+            const SizedBox(height: 8),
+            const Text("Email Field", style: TUITextStyle.heading6),
+            const SizedBox(height: 8),
+            // TUISwitch
+            TUIEmailField(
+              emails: [],
+              showSuffix: true,
+              onAdd: () {
+                print("Hello");
+              },
             ),
             const SizedBox(height: 8),
             const Text("Attachment Upload With Description",
