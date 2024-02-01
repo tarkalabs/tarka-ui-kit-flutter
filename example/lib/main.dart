@@ -952,6 +952,62 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             const SizedBox(height: 8),
+            const SizedBox(height: 8),
+            const Text("Button Block", style: TUITextStyle.heading6),
+            TUIMobileButtonBlock(
+              style: TUIMobileButtonBlockStyle(
+                style: Style.one,
+                button: TUIButton(
+                    type: TUIButtonType.outlined,
+                    label: "Error",
+                    onPressed: () {
+                      ScaffoldMessenger.of(context).showSnackBar(TUISnackBar(
+                        context: context,
+                        type: TUISnackBarType.error,
+                        message: "This is an error Snackbar with action",
+                        action: TUISnackBarAction(
+                            label: "Retry",
+                            onActionPressed: () {
+                              print("Snackbar Retry onPressed");
+                            }),
+                      ));
+                    }),
+              ),
+            ),
+            TUIMobileButtonBlock(
+              style: TUIMobileButtonBlockStyle(
+                style: Style.flexible,
+                left: TUIButton(
+                  label: "Button",
+                  type: TUIButtonType.outlined,
+                  size: TUIButtonSize.l,
+                  onPressed: () {},
+                ),
+                right: TUIButton(
+                  label: "Button",
+                  type: TUIButtonType.outlined,
+                  size: TUIButtonSize.l,
+                  onPressed: () {},
+                ),
+              ),
+            ),
+            TUIMobileButtonBlock(
+              style: TUIMobileButtonBlockStyle(
+                style: Style.two,
+                left: TUIButton(
+                  label: "Button",
+                  type: TUIButtonType.outlined,
+                  size: TUIButtonSize.l,
+                  onPressed: () {},
+                ),
+                right: TUIButton(
+                  label: "Button",
+                  type: TUIButtonType.outlined,
+                  size: TUIButtonSize.l,
+                  onPressed: () {},
+                ),
+              ),
+            )
           ],
         ),
       ),

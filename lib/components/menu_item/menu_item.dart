@@ -1,6 +1,5 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:tarka_ui/styles/theme.dart';
 
 class TUIMenuItemProperties {
@@ -16,7 +15,7 @@ class TUIMenuItemProperties {
 }
 
 class TUIMenuItem extends StatefulWidget {
-  late TUIMenuItemProperties item;
+  final TUIMenuItemProperties item;
   bool backgroundDark; // for hover
   final Function(TUIMenuItemState)? action;
   final Function(TUIMenuItemState)? onLeftTap;
