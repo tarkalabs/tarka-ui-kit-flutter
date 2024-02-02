@@ -3,21 +3,21 @@ import 'package:flutter/material.dart';
 
 import '../../styles/theme.dart';
 
-class TUIToggleSwitch extends StatefulWidget {
+class TUISwitch extends StatefulWidget {
   final bool value;
   final ValueChanged<bool>? onChanged;
 
-  TUIToggleSwitch({
+  TUISwitch({
     Key? key,
     required this.value,
     this.onChanged,
   }) : super(key: key);
 
   @override
-  _TUIToggleSwitchState createState() => _TUIToggleSwitchState();
+  _TUISwitchState createState() => _TUISwitchState();
 }
 
-class _TUIToggleSwitchState extends State<TUIToggleSwitch>
+class _TUISwitchState extends State<TUISwitch>
     with SingleTickerProviderStateMixin {
   Animation? _circleAnimation;
   AnimationController? _animationController;
