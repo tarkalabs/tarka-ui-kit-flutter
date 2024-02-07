@@ -75,6 +75,7 @@ class _TUIToggleRowState extends State<TUIToggleRow> {
     if (widget.icon == null && widget.description.isEmpty) {
       return const Spacer();
     }
+
     return const SizedBox(
       width: 0,
     );
@@ -103,6 +104,7 @@ class _TUIToggleRowState extends State<TUIToggleRow> {
         style: theme.typography.body7,
       );
     }
+
     return Container();
   }
 
@@ -113,6 +115,7 @@ class _TUIToggleRowState extends State<TUIToggleRow> {
         child: widget.icon,
       );
     }
+
     return Container();
   }
 }
