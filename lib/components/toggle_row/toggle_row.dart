@@ -30,7 +30,6 @@ class _TUIToggleRowState extends State<TUIToggleRow> {
   @override
   void initState() {
     super.initState();
-    print("value ${widget.value}");
     setState(() {
       _value = widget.value;
     });
@@ -59,7 +58,7 @@ class _TUIToggleRowState extends State<TUIToggleRow> {
           getTitleDescription(theme),
           getSpacer(),
           TUISwitch(
-            value: true,
+            value: widget.value,
             onChanged: (value) {
               setState(() {
                 _value = !_value;

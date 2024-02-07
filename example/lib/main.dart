@@ -1056,7 +1056,7 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 8),
             TUIToggleRow(
               title: "Title",
-              value: true,
+              value: _enable,
               onChanged: (value) {
                 setState(() {
                   _enable = value;
@@ -1068,30 +1068,21 @@ class _HomePageState extends State<HomePage> {
               title: "Title",
               value: true,
               backgroundDark: true,
-              onChanged: (value) {
-                setState(() {
-                  _enable = value;
-                });
-              },
+              onChanged: (value) {},
             ),
             const SizedBox(height: 8),
             TUIToggleRow(
               title: "Title",
               description:
                   "Descrption for this menu item that goes upto two lines",
-              value: true,
-              onChanged: (value) {
-                setState(() {
-                  _enable = value;
-                });
-              },
+              value: false,
             ),
             const SizedBox(height: 8),
             TUIToggleRow(
               title: "Title",
               description:
                   "Descrption for this menu item that goes upto two lines",
-              value: true,
+              value: false,
               backgroundDark: true,
               onChanged: (value) {
                 setState(() {
@@ -1102,7 +1093,7 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 8),
             TUIToggleRow(
               title: "Hello",
-              value: true,
+              value: false,
               icon: const Icon(FluentIcons.guest_24_filled),
               onChanged: (value) {
                 setState(() {
@@ -1113,7 +1104,7 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 8),
             TUIToggleRow(
               title: "Hello",
-              value: true,
+              value: false,
               icon: const Icon(FluentIcons.guest_24_filled),
               backgroundDark: true,
               onChanged: (value) {
@@ -1127,7 +1118,7 @@ class _HomePageState extends State<HomePage> {
               title: "Hello",
               description:
                   "Descrption for this menu item that goes upto two lines",
-              value: true,
+              value: false,
               icon: const Icon(FluentIcons.guest_24_filled),
               onChanged: (value) {
                 setState(() {
@@ -1140,7 +1131,7 @@ class _HomePageState extends State<HomePage> {
               title: "Hello",
               description:
                   "Descrption for this menu item that goes upto two lines",
-              value: true,
+              value: false,
               icon: const Icon(FluentIcons.guest_24_filled),
               backgroundDark: true,
               onChanged: (value) {
