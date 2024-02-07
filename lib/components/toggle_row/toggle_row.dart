@@ -57,7 +57,7 @@ class _TUIToggleRowState extends State<TUIToggleRow> {
           getIcon(),
           getTitleDescription(theme),
           getSpacer(),
-          TUISwitch(
+          TUIToggleSwitch(
             value: widget.value,
             onChanged: (value) {
               setState(() {
