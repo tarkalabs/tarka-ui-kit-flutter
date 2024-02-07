@@ -1055,6 +1055,88 @@ class _HomePageState extends State<HomePage> {
             const Text("Toggle Row", style: TUITextStyle.heading6),
             const SizedBox(height: 8),
             TUIToggleRow(
+              title: "Title",
+              value: true,
+              onChanged: (value) {
+                setState(() {
+                  _enable = value;
+                });
+              },
+            ),
+            const SizedBox(height: 8),
+            TUIToggleRow(
+              title: "Title",
+              value: true,
+              backgroundDark: true,
+              onChanged: (value) {
+                setState(() {
+                  _enable = value;
+                });
+              },
+            ),
+            const SizedBox(height: 8),
+            TUIToggleRow(
+              title: "Title",
+              description:
+                  "Descrption for this menu item that goes upto two lines",
+              value: true,
+              onChanged: (value) {
+                setState(() {
+                  _enable = value;
+                });
+              },
+            ),
+            const SizedBox(height: 8),
+            TUIToggleRow(
+              title: "Title",
+              description:
+                  "Descrption for this menu item that goes upto two lines",
+              value: true,
+              backgroundDark: true,
+              onChanged: (value) {
+                setState(() {
+                  _enable = value;
+                });
+              },
+            ),
+            const SizedBox(height: 8),
+            TUIToggleRow(
+              title: "Hello",
+              value: true,
+              icon: const Icon(FluentIcons.guest_24_filled),
+              onChanged: (value) {
+                setState(() {
+                  _enable = value;
+                });
+              },
+            ),
+            const SizedBox(height: 8),
+            TUIToggleRow(
+              title: "Hello",
+              value: true,
+              icon: const Icon(FluentIcons.guest_24_filled),
+              backgroundDark: true,
+              onChanged: (value) {
+                setState(() {
+                  _enable = value;
+                });
+              },
+            ),
+            const SizedBox(height: 8),
+            TUIToggleRow(
+              title: "Hello",
+              description:
+                  "Descrption for this menu item that goes upto two lines",
+              value: true,
+              icon: const Icon(FluentIcons.guest_24_filled),
+              onChanged: (value) {
+                setState(() {
+                  _enable = value;
+                });
+              },
+            ),
+            const SizedBox(height: 8),
+            TUIToggleRow(
               title: "Hello",
               description:
                   "Descrption for this menu item that goes upto two lines",

@@ -73,7 +73,7 @@ class _TUIToggleRowState extends State<TUIToggleRow> {
   }
 
   getSpacer() {
-    if (widget.icon == null) {
+    if (widget.icon == null && widget.description.isEmpty) {
       return const Spacer();
     }
     return const SizedBox(
