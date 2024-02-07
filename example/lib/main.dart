@@ -7,6 +7,7 @@ import 'package:tarka_ui/components/chip/chip.dart';
 import 'package:tarka_ui/components/draggable_card/draggable_card.dart';
 import 'package:tarka_ui/components/email_field/email_field.dart';
 import 'package:tarka_ui/components/menu_item/menu_item.dart';
+import 'package:tarka_ui/components/toggle_row/toggle_row.dart';
 import 'package:tarka_ui/styles/theme.dart';
 import 'package:tarka_ui/subcomponents/image.dart';
 import 'package:tarka_ui/tarka_ui.dart';
@@ -1049,6 +1050,22 @@ class _HomePageState extends State<HomePage> {
                   action: () {
                     print("right icon tapped");
                   }),
+            ),
+            const SizedBox(height: 8),
+            const Text("Toggle Row", style: TUITextStyle.heading6),
+            const SizedBox(height: 8),
+            TUIToggleRow(
+              title: "Hello",
+              description:
+                  "Descrption for this menu item that goes upto two lines",
+              value: true,
+              icon: const Icon(FluentIcons.guest_24_filled),
+              backgroundDark: true,
+              onChanged: (value) {
+                setState(() {
+                  _enable = value;
+                });
+              },
             ),
             const SizedBox(height: 100),
           ],
