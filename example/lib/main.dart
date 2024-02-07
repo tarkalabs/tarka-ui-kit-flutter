@@ -750,7 +750,7 @@ class _HomePageState extends State<HomePage> {
             const Text("Switch", style: TUITextStyle.heading6),
             Row(
               children: [
-                TUISwitch(
+                TUIToggleSwitch(
                   value: _enable,
                   onChanged: (bool val) {
                     setState(() {
@@ -761,7 +761,7 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(
                   width: 40,
                 ),
-                TUISwitch(
+                TUIToggleSwitch(
                   value: _enable,
                 ),
               ],
