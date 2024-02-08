@@ -7,6 +7,7 @@ import 'package:tarka_ui/components/chip/chip.dart';
 import 'package:tarka_ui/components/draggable_card/draggable_card.dart';
 import 'package:tarka_ui/components/email_field/email_field.dart';
 import 'package:tarka_ui/components/menu_item/menu_item.dart';
+import 'package:tarka_ui/components/selection_card/selection_card.dart';
 import 'package:tarka_ui/styles/theme.dart';
 import 'package:tarka_ui/subcomponents/image.dart';
 import 'package:tarka_ui/tarka_ui.dart';
@@ -1050,6 +1051,20 @@ class _HomePageState extends State<HomePage> {
                     print("right icon tapped");
                   }),
             ),
+            const SizedBox(height: 8),
+            const Text("Selection Card", style: TUITextStyle.heading6),
+            const SizedBox(height: 8),
+            TUISelectionCard(
+                style: TUISelectionCardStyle(
+                  title: "Label",
+                  description: ["Description", "Description"],
+                  footer: "Label",
+                ),
+                icon: const Icon(FluentIcons.guest_24_regular),
+                badgeCount: 1,
+                action: () {
+                  print("hello");
+                }),
             const SizedBox(height: 100),
           ],
         ),
