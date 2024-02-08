@@ -20,7 +20,7 @@ class TUISelectionCard extends StatelessWidget {
   final bool isSelected;
   final bool showChevron;
   final TUISelectionCardStyle style;
-  final Icon? icon;
+  final IconData? icon;
   final int? badgeCount;
   final Color? badgeColor;
   final bool isHovered;
@@ -49,7 +49,7 @@ class TUISelectionCard extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 16.0),
         decoration: BoxDecoration(
-          color: theme.colors.background,
+          color: getBackgroundColor(theme),
           borderRadius: const BorderRadius.all(
             Radius.circular(16.0),
           ),
@@ -66,13 +66,31 @@ class TUISelectionCard extends StatelessWidget {
     );
   }
 
+  getBackgroundColor(TUIThemeData theme) {
+    if (!isSelected && !isHovered) {
+      return theme.colors.surface;
+    }
+
+    if (!isSelected && !isHovered) {
+      return theme.colors.surfaceHover;
+    }
+
+    if (isSelected && !isHovered) {
+      return theme.colors.primaryAlt;
+    }
+
+    if (isSelected && isHovered) {
+      return theme.colors.primaryAltHover;
+    }
+  }
+
   Row getLeftSide(TUIThemeData theme) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
           margin: const EdgeInsets.only(right: 16.0),
-          child: getIcon(),
+          child: getIcon(theme),
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -118,8 +136,11 @@ class TUISelectionCard extends StatelessWidget {
     return badgeColor ?? theme.colors.tertiary;
   }
 
-  getIcon() {
-    return icon ?? const Icon(FluentIcons.guest_24_regular);
+  getIcon(TUIThemeData theme) {
+    return Icon(
+      icon ?? FluentIcons.guest_24_regular,
+      color: theme.colors.secondary,
+    );
   }
 
   getFooter(TUIThemeData theme) {

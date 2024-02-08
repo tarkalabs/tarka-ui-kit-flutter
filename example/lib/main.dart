@@ -1055,16 +1055,60 @@ class _HomePageState extends State<HomePage> {
             const Text("Selection Card", style: TUITextStyle.heading6),
             const SizedBox(height: 8),
             TUISelectionCard(
-                style: TUISelectionCardStyle(
-                  title: "Label",
-                  description: ["Description", "Description"],
-                  footer: "Label",
-                ),
-                icon: const Icon(FluentIcons.guest_24_regular),
-                badgeCount: 1,
-                action: () {
-                  print("hello");
-                }),
+              style: TUISelectionCardStyle(
+                title: "Label",
+                description: ["Description", "Description"],
+                footer: "Label",
+              ),
+              icon: FluentIcons.guest_24_regular,
+              badgeCount: 4,
+              action: () {
+                print("hello");
+              },
+            ),
+            const SizedBox(height: 8),
+            TUISelectionCard(
+              style: TUISelectionCardStyle(
+                title: "Label",
+                description: ["Description", "Description"],
+                footer: "Label",
+              ),
+              icon: FluentIcons.guest_24_regular,
+              badgeCount: 4,
+              isHovered: true,
+              action: () {
+                print("hello");
+              },
+            ),
+            const SizedBox(height: 8),
+            TUISelectionCard(
+              style: TUISelectionCardStyle(
+                title: "Label",
+                description: ["Description", "Description"],
+                footer: "Label",
+              ),
+              icon: FluentIcons.guest_24_regular,
+              badgeCount: 4,
+              isSelected: true,
+              action: () {
+                print("hello");
+              },
+            ),
+            const SizedBox(height: 8),
+            TUISelectionCard(
+              style: TUISelectionCardStyle(
+                title: "Label",
+                description: ["Description", "Description"],
+                footer: "Label",
+              ),
+              icon: FluentIcons.guest_24_regular,
+              badgeCount: 4,
+              isSelected: true,
+              isHovered: true,
+              action: () {
+                print("hello");
+              },
+            ),
             const SizedBox(height: 100),
           ],
         ),
