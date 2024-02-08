@@ -8,6 +8,7 @@ import 'package:tarka_ui/components/draggable_card/draggable_card.dart';
 import 'package:tarka_ui/components/email_field/email_field.dart';
 import 'package:tarka_ui/components/menu_item/menu_item.dart';
 import 'package:tarka_ui/components/selection_card/selection_card.dart';
+import 'package:tarka_ui/components/toggle_row/toggle_row.dart';
 import 'package:tarka_ui/styles/theme.dart';
 import 'package:tarka_ui/subcomponents/image.dart';
 import 'package:tarka_ui/tarka_ui.dart';
@@ -751,7 +752,7 @@ class _HomePageState extends State<HomePage> {
             const Text("Switch", style: TUITextStyle.heading6),
             Row(
               children: [
-                TUISwitch(
+                TUIToggleSwitch(
                   value: _enable,
                   onChanged: (bool val) {
                     setState(() {
@@ -762,7 +763,7 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(
                   width: 40,
                 ),
-                TUISwitch(
+                TUIToggleSwitch(
                   value: _enable,
                 ),
               ],
@@ -1107,6 +1108,95 @@ class _HomePageState extends State<HomePage> {
               isHovered: true,
               action: () {
                 print("hello");
+              },
+            ),
+            const SizedBox(height: 8),
+            const Text("Toggle Row", style: TUITextStyle.heading6),
+            const SizedBox(height: 8),
+            TUIToggleRow(
+              title: "Title",
+              value: _enable,
+              onChanged: (value) {
+                setState(() {
+                  _enable = value;
+                });
+              },
+            ),
+            const SizedBox(height: 8),
+            TUIToggleRow(
+              title: "Title",
+              value: true,
+              backgroundDark: true,
+              onChanged: (value) {},
+            ),
+            const SizedBox(height: 8),
+            TUIToggleRow(
+              title: "Title",
+              description:
+                  "Descrption for this menu item that goes upto two lines",
+              value: false,
+            ),
+            const SizedBox(height: 8),
+            TUIToggleRow(
+              title: "Title",
+              description:
+                  "Descrption for this menu item that goes upto two lines",
+              value: false,
+              backgroundDark: true,
+              onChanged: (value) {
+                setState(() {
+                  _enable = value;
+                });
+              },
+            ),
+            const SizedBox(height: 8),
+            TUIToggleRow(
+              title: "Hello",
+              value: false,
+              icon: const Icon(FluentIcons.guest_24_filled),
+              onChanged: (value) {
+                setState(() {
+                  _enable = value;
+                });
+              },
+            ),
+            const SizedBox(height: 8),
+            TUIToggleRow(
+              title: "Hello",
+              value: false,
+              icon: const Icon(FluentIcons.guest_24_filled),
+              backgroundDark: true,
+              onChanged: (value) {
+                setState(() {
+                  _enable = value;
+                });
+              },
+            ),
+            const SizedBox(height: 8),
+            TUIToggleRow(
+              title: "Hello",
+              description:
+                  "Descrption for this menu item that goes upto two lines",
+              value: false,
+              icon: const Icon(FluentIcons.guest_24_filled),
+              onChanged: (value) {
+                setState(() {
+                  _enable = value;
+                });
+              },
+            ),
+            const SizedBox(height: 8),
+            TUIToggleRow(
+              title: "Hello",
+              description:
+                  "Descrption for this menu item that goes upto two lines",
+              value: false,
+              icon: const Icon(FluentIcons.guest_24_filled),
+              backgroundDark: true,
+              onChanged: (value) {
+                setState(() {
+                  _enable = value;
+                });
               },
             ),
             const SizedBox(height: 100),
