@@ -7,6 +7,7 @@ import 'package:tarka_ui/components/chip/chip.dart';
 import 'package:tarka_ui/components/draggable_card/draggable_card.dart';
 import 'package:tarka_ui/components/email_field/email_field.dart';
 import 'package:tarka_ui/components/menu_item/menu_item.dart';
+import 'package:tarka_ui/components/search_bar/search_bar.dart';
 import 'package:tarka_ui/components/toggle_row/toggle_row.dart';
 import 'package:tarka_ui/styles/theme.dart';
 import 'package:tarka_ui/subcomponents/image.dart';
@@ -1022,36 +1023,36 @@ class _HomePageState extends State<HomePage> {
             ),
             const SizedBox(height: 8),
             const Text("Mobile Overlay Header", style: TUITextStyle.heading6),
-            const SizedBox(height: 8),
-            TUIMobileOverlayHeader(
-                style: TUIOverlayMobileStyle(
-              style: TUIOverlayMobileStyleType.handle,
-            )),
-            const SizedBox(height: 8),
-            TUIMobileOverlayHeader(
-              style: TUIOverlayMobileStyle(
-                  style: TUIOverlayMobileStyleType.left,
-                  title: "Hello",
-                  action: () {
-                    print("hello tapped");
-                  }),
-            ),
-            const SizedBox(height: 8),
-            TUIMobileOverlayHeader(
-              style: TUIOverlayMobileStyle(
-                  style: TUIOverlayMobileStyleType.onlyTitle, title: "Hello"),
-            ),
-            const SizedBox(height: 8),
-            TUIMobileOverlayHeader(
-              style: TUIOverlayMobileStyle(
-                  style: TUIOverlayMobileStyleType.right,
-                  title: "right",
-                  icon: FluentIcons.access_time_20_filled,
-                  action: () {
-                    print("right icon tapped");
-                  }),
-            ),
-            const SizedBox(height: 8),
+            // const SizedBox(height: 8),
+            // TUIMobileOverlayHeader(
+            //     style: TUIOverlayMobileStyle(
+            //   style: TUIOverlayMobileStyleType.handle,
+            // )),
+            // const SizedBox(height: 8),
+            // TUIMobileOverlayHeader(
+            //   style: TUIOverlayMobileStyle(
+            //       style: TUIOverlayMobileStyleType.left,
+            //       title: "Hello",
+            //       action: () {
+            //         print("hello tapped");
+            //       }),
+            // ),
+            // const SizedBox(height: 8),
+            // TUIMobileOverlayHeader(
+            //   style: TUIOverlayMobileStyle(
+            //       style: TUIOverlayMobileStyleType.onlyTitle, title: "Hello"),
+            // ),
+            // const SizedBox(height: 8),
+            // TUIMobileOverlayHeader(
+            //   style: TUIOverlayMobileStyle(
+            //       style: TUIOverlayMobileStyleType.right,
+            //       title: "right",
+            //       icon: FluentIcons.access_time_20_filled,
+            //       action: () {
+            //         print("right icon tapped");
+            //       }),
+            // ),
+            // const SizedBox(height: 8),
             const Text("Toggle Row", style: TUITextStyle.heading6),
             const SizedBox(height: 8),
             TUIToggleRow(
@@ -1139,6 +1140,24 @@ class _HomePageState extends State<HomePage> {
                   _enable = value;
                 });
               },
+            ),
+            const SizedBox(height: 8),
+            const Text("Search Bar", style: TUITextStyle.heading6),
+            const SizedBox(height: 8),
+            TUISearchBar(
+              showBackIcon: true,
+            ),
+            const SizedBox(height: 8),
+            TUISearchBar(
+              showBackIcon: true,
+              showTrailingIcon: true,
+            ),
+            const SizedBox(height: 8),
+            TUISearchBar(
+              showBackIcon: false,
+              showTrailingIcon: true,
+              onChanged: (String value) {},
+              autofocus: true,
             ),
             const SizedBox(height: 100),
           ],
