@@ -71,21 +71,29 @@ class TUIMobileOverlayHeader extends StatelessWidget {
 
   Widget? getRightView(BuildContext context) {
     return (style.style == TUIOverlayMobileStyleType.right)
-        ? Flexible(
-            child: Row(
-              children: [
-                const Spacer(),
-                Center(
-                  child: TUIIconButton(
-                    type: TUIIconButtonType.ghost,
-                    size: TUIIconButtonSize.px40,
-                    iconData: style.getIcon(),
-                    onPressed: style.action,
-                  ),
+        ? Positioned(
+      top: 0,
+      right: 0,
+      child: Container(
+        width: MediaQuery.of(context).size.width, // Set the width to the screen width
+        child: Row(
+          children: [
+            Spacer(),
+            Flexible(
+              fit: FlexFit.loose,
+              child: Center(
+                child: TUIIconButton(
+                  type: TUIIconButtonType.ghost,
+                  size: TUIIconButtonSize.px40,
+                  iconData: style.getIcon(),
+                  onPressed: style.action,
                 ),
-              ],
+              ),
             ),
-          )
+          ],
+        ),
+      ),
+    )
         : null;
   }
 
