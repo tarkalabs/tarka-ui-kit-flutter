@@ -3,15 +3,14 @@ import 'package:tarka_ui/styles/text_style.dart';
 import 'package:tarka_ui/styles/theme.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 
-
 class TUIEmailField extends StatefulWidget {
-  late final TUIEmailFieldLabel label;
-  late List<String> emails;
-  bool showSuffix;
+  final TUIEmailFieldLabel label;
+  final List<String> emails;
+  final bool showSuffix;
   final VoidCallback? onAdd;
   final VoidCallback? onRemove;
 
-  TUIEmailField({
+  const TUIEmailField({
     super.key,
     this.label = TUIEmailFieldLabel.to,
     required this.emails,

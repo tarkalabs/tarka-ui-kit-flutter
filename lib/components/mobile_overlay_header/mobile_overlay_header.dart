@@ -73,11 +73,11 @@ class TUIMobileOverlayHeader extends StatelessWidget {
         ? Positioned(
       top: 0,
       right: 0,
-      child: Container(
+      child: SizedBox(
         width: MediaQuery.of(context).size.width, // Set the width to the screen width
         child: Row(
           children: [
-            Spacer(),
+            const Spacer(),
             Flexible(
               fit: FlexFit.loose,
               child: Center(

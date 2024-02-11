@@ -4,10 +4,10 @@ import 'package:tarka_ui/components/button/button.dart';
 class TUIMobileButtonBlock extends StatefulWidget {
   final TUIMobileButtonBlockStyle style;
 
-  TUIMobileButtonBlock({
+  const TUIMobileButtonBlock({
     super.key,
     required this.style,
-  }) {}
+  });
 
   @override
   State<TUIMobileButtonBlock> createState() => _TUIMobileButtonBlockState();

@@ -92,8 +92,6 @@ class _TUIRadioButtonState extends State<TUIRadioButton> {
   }
 
   Border? getOuterBorder(BuildContext context) {
-    final theme = TUITheme.of(context);
-
     return (!isSelected)
         ? Border.all(width: 1.5, color: getOuterBorderColor(context))
         : null;

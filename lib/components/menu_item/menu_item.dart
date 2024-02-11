@@ -16,12 +16,12 @@ class TUIMenuItemProperties {
 
 class TUIMenuItem extends StatefulWidget {
   final TUIMenuItemProperties item;
-  bool backgroundDark; // for hover
+  final bool backgroundDark; // for hover
   final Function(TUIMenuItemState)? action;
   final Function(TUIMenuItemState)? onLeftTap;
   final Function(TUIMenuItemState)? onRightTap;
 
-  TUIMenuItem({
+  const TUIMenuItem({
     super.key,
     required this.item,
     this.backgroundDark = false,
