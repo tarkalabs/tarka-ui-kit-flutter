@@ -6,7 +6,6 @@ import 'package:tarka_ui/styles/theme.dart';
 
 class TUIMobileOverlayHeader extends StatelessWidget {
   final TUIOverlayMobileStyle style;
-
   const TUIMobileOverlayHeader({super.key, required this.style});
 
   @override

@@ -27,13 +27,7 @@ class _TUIAnchor extends State<TUIAnchor> {
   @override
   Widget build(BuildContext context) {
     final theme = TUITheme.of(context);
-
     Color? rectangleColor = (isPressed == true) ? theme.colors.secondary : null;
-
-    TextStyle textStyle = theme.typography.body6.copyWith(
-      color: theme.colors.inputTextDim,
-    );
-
     Widget child = Row(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.start,

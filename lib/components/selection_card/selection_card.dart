@@ -97,11 +97,9 @@ class TUISelectionCard extends StatelessWidget {
               style.title,
               style: theme.typography.body7,
             ),
-            ...style.description!
-                .map(
-                  (e) => Text(e, style: theme.typography.heading6),
-                )
-                .toList(),
+            ...style.description!.map(
+              (e) => Text(e, style: theme.typography.heading6),
+            ),
             getFooter(theme),
           ],
         ),
