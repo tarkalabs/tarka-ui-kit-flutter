@@ -8,10 +8,10 @@ class TUIAccordion extends StatefulWidget {
   final String subtitle;
 
   const TUIAccordion({
-    Key? key,
+    super.key,
     required this.title,
     required this.subtitle,
-  }) : super(key: key);
+  });
 
   @override
   State<TUIAccordion> createState() => _TUIAccordionState();

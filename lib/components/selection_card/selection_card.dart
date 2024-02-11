@@ -1,8 +1,6 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:tarka_ui/components/badge/badge.dart';
-import '../../styles/theme.dart';
+import 'package:tarka_ui/styles/theme.dart';
 
 class TUISelectionCardStyle {
   final String title;
@@ -26,8 +24,8 @@ class TUISelectionCard extends StatelessWidget {
   final bool isHovered;
   final Function? action;
 
-  TUISelectionCard({
-    Key? key,
+  const TUISelectionCard({
+    super.key,
     required this.style,
     this.isSelected = false,
     this.showChevron = false,
@@ -36,7 +34,7 @@ class TUISelectionCard extends StatelessWidget {
     this.badgeColor,
     this.isHovered = false,
     this.action,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -10,15 +10,15 @@ class TUIToggleRow extends StatefulWidget {
   final ValueChanged<bool>? onChanged;
   final bool backgroundDark;
 
-  TUIToggleRow({
-    Key? key,
+  const TUIToggleRow({
+    super.key,
     required this.title,
     this.description = "",
     this.icon,
     required this.value,
     this.onChanged,
     this.backgroundDark = false,
-  }) : super(key: key);
+  });
 
   @override
   State<StatefulWidget> createState() => _TUIToggleRowState();

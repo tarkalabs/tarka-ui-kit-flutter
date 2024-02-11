@@ -7,10 +7,10 @@ class TUIBreadCrumb extends StatelessWidget {
   final List<String> titles;
 
   const TUIBreadCrumb({
-    Key? key,
+    super.key,
     required this.titles,
     required this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

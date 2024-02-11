@@ -3,3 +3,6 @@ bin/
 example/.fvm/
 example/build/
 example/.dart_tool/
+/test/widget/failures
+/test/golden_test/failures
+/.ssh/

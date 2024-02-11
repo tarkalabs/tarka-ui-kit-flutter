@@ -16,7 +16,7 @@ import 'package:tarka_ui/styles/theme.dart';
  */
 class TUIButton extends StatelessWidget {
   const TUIButton({
-    Key? key,
+    super.key,
     required this.type,
     this.size = TUIButtonSize.m,
     this.label,
@@ -25,8 +25,7 @@ class TUIButton extends StatelessWidget {
     required this.onPressed,
     this.onLongPress,
     this.height,
-  })  : assert(label != null || iconData != null),
-        super(key: key);
+  })  : assert(label != null || iconData != null);
 
   final TUIButtonType type;
   final TUIButtonSize size;

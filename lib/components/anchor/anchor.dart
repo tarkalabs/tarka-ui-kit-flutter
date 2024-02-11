@@ -3,10 +3,10 @@ import 'package:tarka_ui/styles/theme.dart';
 
 class TUIAnchor extends StatefulWidget {
   const TUIAnchor({
-    Key? key,
+    super.key,
     required this.title,
     this.onPressed,
-  }) : super(key: key);
+  });
 
   final VoidCallback? onPressed;
   final String title;

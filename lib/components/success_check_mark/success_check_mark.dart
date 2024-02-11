@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tarka_ui/styles/symbols.dart';
-
-import '../../styles/theme.dart';
+import 'package:tarka_ui/styles/theme.dart';
 
 /// TUISuccessCheckMark is used to create a success check mark.
 /*
@@ -11,7 +10,7 @@ import '../../styles/theme.dart';
   ```
  */
 class TUISuccessCheckMark extends StatelessWidget {
-  const TUISuccessCheckMark({Key? key}) : super(key: key);
+  const TUISuccessCheckMark({super.key});
 
   static const double size = 16;
 

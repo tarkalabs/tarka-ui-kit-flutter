@@ -1,8 +1,6 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:tarka_ui/styles/default_colors.dart';
-
-import '../../styles/theme.dart';
+import 'package:tarka_ui/styles/theme.dart';
 
 class TUICheckBoxRow extends StatefulWidget {
   final String title;
@@ -10,14 +8,14 @@ class TUICheckBoxRow extends StatefulWidget {
   final bool backgroundDark;
 
   TUICheckBoxRow({
-    Key? key,
+    super.key,
     this.enableMixedState = false,
     this.state = TUICheckBoxRowState.unchecked,
     required this.title,
     this.description = "",
     this.onChanged,
     this.backgroundDark = false,
-  }) : super(key: key) {
+  }) {
     if (state == TUICheckBoxRowState.mixed) {
       enableMixedState = true;
     }
@@ -197,6 +195,7 @@ enum TUICheckBoxRowState {
   checked(2);
 
   const TUICheckBoxRowState(this.value);
+
   final num value;
 
   static TUICheckBoxRowState getByValue(num i) {

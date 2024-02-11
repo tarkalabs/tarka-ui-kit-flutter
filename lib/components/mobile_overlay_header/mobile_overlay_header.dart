@@ -1,12 +1,12 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:tarka_ui/components/button/icon_button.dart';
-
-import '../../styles/theme.dart';
-import '../button/style.dart';
+import 'package:tarka_ui/components/button/style.dart';
+import 'package:tarka_ui/styles/theme.dart';
 
 class TUIMobileOverlayHeader extends StatelessWidget {
   final TUIOverlayMobileStyle style;
+
   const TUIMobileOverlayHeader({super.key, required this.style});
 
   @override

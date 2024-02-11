@@ -206,16 +206,12 @@ enum TUIChipSize {
       required double badgeSize,
       required TextStyle badgeTextStyle})
       : _height = height,
-        _textStyle = textStyle,
         _rightIconSize = rightIconSize,
         _rightIconPadding = rightIconPadding,
-        _badgeSize = badgeSize,
         _badgeTextStyle = badgeTextStyle;
 
   final double _height;
-  final TextStyle _textStyle;
   final double _rightIconSize;
   final double _rightIconPadding;
-  final double _badgeSize;
   final TextStyle _badgeTextStyle;
 }

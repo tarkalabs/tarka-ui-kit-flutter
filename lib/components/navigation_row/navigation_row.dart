@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
-
-import '../../styles/theme.dart';
+import 'package:tarka_ui/styles/theme.dart';
 
 class TUINavigationRow extends StatelessWidget {
   final String title;
@@ -9,11 +8,11 @@ class TUINavigationRow extends StatelessWidget {
   late double? _height;
 
   TUINavigationRow({
-    Key? key,
+    super.key,
     required this.title,
     this.icon,
     this.accessoryView,
-  }) : super(key: key) {}
+  });
 
   @override
   Widget build(BuildContext context) {

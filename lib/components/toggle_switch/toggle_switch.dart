@@ -1,20 +1,19 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
-
-import '../../styles/theme.dart';
+import 'package:tarka_ui/styles/theme.dart';
 
 class TUIToggleSwitch extends StatefulWidget {
   final bool value;
   final ValueChanged<bool>? onChanged;
 
-  TUIToggleSwitch({
-    Key? key,
+  const TUIToggleSwitch({
+    super.key,
     required this.value,
     this.onChanged,
-  }) : super(key: key);
+  });
 
   @override
-  _TUIToggleSwitchState createState() => _TUIToggleSwitchState();
+  State<StatefulWidget> createState() => _TUIToggleSwitchState();
 }
 
 class _TUIToggleSwitchState extends State<TUIToggleSwitch>

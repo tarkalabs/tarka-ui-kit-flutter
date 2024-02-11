@@ -1,15 +1,14 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
-
-import '../../styles/theme.dart';
+import 'package:tarka_ui/styles/theme.dart';
 
 class TUICheckBox extends StatefulWidget {
   TUICheckBox({
-    Key? key,
+    super.key,
     this.enableMixedState = false,
     this.state = TUICheckBoxState.unchecked,
     this.onChanged,
-  }) : super(key: key) {
+  }) {
     if (state == TUICheckBoxState.mixed) {
       enableMixedState = true;
     }
@@ -132,6 +131,7 @@ enum TUICheckBoxState {
   checked(2);
 
   const TUICheckBoxState(this.value);
+
   final num value;
 
   static TUICheckBoxState getByValue(num i) {

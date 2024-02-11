@@ -5,9 +5,9 @@ class TUIMobileButtonBlock extends StatefulWidget {
   final TUIMobileButtonBlockStyle style;
 
   TUIMobileButtonBlock({
-    Key? key,
+    super.key,
     required this.style,
-  }) : super(key: key) {}
+  }) {}
 
   @override
   State<TUIMobileButtonBlock> createState() => _TUIMobileButtonBlockState();
@@ -22,7 +22,7 @@ class _TUIMobileButtonBlockState extends State<TUIMobileButtonBlock> {
         builder: (BuildContext context, BoxConstraints constraints) {
       _width = constraints.maxWidth;
 
-      return Container(
+      return SizedBox(
         width: _width ?? 0,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,

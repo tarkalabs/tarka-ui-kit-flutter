@@ -4,7 +4,6 @@ import 'package:tarka_ui/styles/theme.dart';
 class TUIAppTopBar extends StatefulWidget {
   final List<TUIAppBarItem> items;
   final List<BottomNavigationBarItem> _bnbItems;
-
   final ValueChanged<int>? onTap;
   final int currentIndex;
   final bool showLabels;

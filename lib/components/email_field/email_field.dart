@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:tarka_ui/styles/text_style.dart';
 import 'package:tarka_ui/styles/theme.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 
-import '../../styles/text_style.dart';
 
 class TUIEmailField extends StatefulWidget {
   late final TUIEmailFieldLabel label;
@@ -13,13 +12,13 @@ class TUIEmailField extends StatefulWidget {
   final VoidCallback? onRemove;
 
   TUIEmailField({
-    Key? key,
+    super.key,
     this.label = TUIEmailFieldLabel.to,
     required this.emails,
     this.showSuffix = false,
     this.onAdd,
     this.onRemove,
-  }) : super(key: key);
+  });
 
   @override
   State<StatefulWidget> createState() => _TUIEmailFieldState();
@@ -147,7 +146,7 @@ class _TUIEmailFieldState extends State<TUIEmailField> {
                     ) {
                       int idx = _emails.indexOf(email);
                       return getChip(email, theme, idx);
-                    }).toList(),
+                    }),
                   ],
                 ),
                 TextField(

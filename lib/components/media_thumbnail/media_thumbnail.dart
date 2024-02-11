@@ -11,13 +11,13 @@ class TUIMediaThumbnail extends StatelessWidget {
   final TUIImage? customThumbnailImage;
 
   const TUIMediaThumbnail({
-    Key? key,
+    super.key,
     this.onPressed,
     this.isSelectable = true,
     required this.size,
     required this.mediaType,
     this.customThumbnailImage,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

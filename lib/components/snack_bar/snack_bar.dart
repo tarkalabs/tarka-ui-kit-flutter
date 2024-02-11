@@ -65,22 +65,20 @@ class TUISnackBarAction {
 
 class TUISnackBar extends SnackBar {
   TUISnackBar({
-    Key? key,
+    super.key,
     required BuildContext context,
     TUISnackBarType type = TUISnackBarType.information,
     required String message,
     TUISnackBarAction? action,
     Duration? duration,
-    VoidCallback? onVisible,
+    super.onVisible,
   }) : super(
-            key: key,
             elevation: 0,
             duration: duration ?? const Duration(seconds: 4),
             backgroundColor:
                 type._getBackgroundColor(TUITheme.of(context).colors),
             behavior: SnackBarBehavior.floating,
             content: _getWidget(context, type, message, action),
-            onVisible: onVisible,
             shape: const StadiumBorder());
 
   static Widget _getWidget(BuildContext context, TUISnackBarType type,

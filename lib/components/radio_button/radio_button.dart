@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-
-import '../../styles/theme.dart';
+import 'package:tarka_ui/styles/theme.dart';
 
 class TUIRadioButton extends StatefulWidget {
   const TUIRadioButton({
-    Key? key,
+    super.key,
     this.onPressed,
     this.isSelected = false,
-  }) : super(key: key);
+  });
 
   final VoidCallback? onPressed;
   final bool isSelected;

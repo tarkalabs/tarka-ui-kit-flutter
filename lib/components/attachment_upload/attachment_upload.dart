@@ -1,8 +1,7 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
-
-import '../../styles/theme.dart';
-import '../../subcomponents/image.dart';
+import 'package:tarka_ui/styles/theme.dart';
+import 'package:tarka_ui/subcomponents/image.dart';
 
 class TUIAttachmentUpload extends StatelessWidget {
   final String title;
@@ -17,7 +16,7 @@ class TUIAttachmentUpload extends StatelessWidget {
   late Function()? downloadTapped;
 
   TUIAttachmentUpload({
-    Key? key,
+    super.key,
     required this.title,
     required this.isIconUsed,
     this.icon,
@@ -25,7 +24,7 @@ class TUIAttachmentUpload extends StatelessWidget {
     this.description = "",
     this.downloadTapped,
     this.deleteTapped,
-  }) : super(key: key) {
+  }) {
     if (isIconUsed == true) {
       image = null;
     } else {
@@ -75,16 +74,14 @@ class TUIAttachmentUpload extends StatelessWidget {
     }
 
     return Expanded(
-      child: Container(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: SizedBox(
-            height: 60,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: titleAndDescription,
-            ),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: SizedBox(
+          height: 60,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: titleAndDescription,
           ),
         ),
       ),
@@ -160,7 +157,7 @@ class TUIAttachmentUpload extends StatelessWidget {
         child: Icon(icon),
       );
     } else {
-      return Placeholder();
+      return const Placeholder();
     }
   }
 }
