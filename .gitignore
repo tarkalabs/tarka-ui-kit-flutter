@@ -45,3 +45,4 @@ app.*.map.json
 
 /test/widget/failures
 /test/golden_test/failures
+/.ssh/
