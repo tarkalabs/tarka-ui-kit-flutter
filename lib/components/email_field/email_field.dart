@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:tarka_ui/styles/theme.dart';
+import 'package:tarka_ui/styles/text_style.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 
-import '../../styles/text_style.dart';
-
 class TUIEmailField extends StatefulWidget {
-  late final TUIEmailFieldLabel label;
-  late List<String> emails;
-  bool showSuffix;
+  final TUIEmailFieldLabel label;
+  final List<String> emails;
+  final bool showSuffix;
   final VoidCallback? onAdd;
   final VoidCallback? onRemove;
   final TextEditingController? controller;
 
-  TUIEmailField({
+  const TUIEmailField({
     Key? key,
     this.label = TUIEmailFieldLabel.to,
     required this.emails,

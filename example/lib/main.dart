@@ -1023,36 +1023,36 @@ class _HomePageState extends State<HomePage> {
             ),
             const SizedBox(height: 8),
             const Text("Mobile Overlay Header", style: TUITextStyle.heading6),
-            // const SizedBox(height: 8),
-            // TUIMobileOverlayHeader(
-            //     style: TUIOverlayMobileStyle(
-            //   style: TUIOverlayMobileStyleType.handle,
-            // )),
-            // const SizedBox(height: 8),
-            // TUIMobileOverlayHeader(
-            //   style: TUIOverlayMobileStyle(
-            //       style: TUIOverlayMobileStyleType.left,
-            //       title: "Hello",
-            //       action: () {
-            //         print("hello tapped");
-            //       }),
-            // ),
-            // const SizedBox(height: 8),
-            // TUIMobileOverlayHeader(
-            //   style: TUIOverlayMobileStyle(
-            //       style: TUIOverlayMobileStyleType.onlyTitle, title: "Hello"),
-            // ),
-            // const SizedBox(height: 8),
-            // TUIMobileOverlayHeader(
-            //   style: TUIOverlayMobileStyle(
-            //       style: TUIOverlayMobileStyleType.right,
-            //       title: "right",
-            //       icon: FluentIcons.access_time_20_filled,
-            //       action: () {
-            //         print("right icon tapped");
-            //       }),
-            // ),
-            // const SizedBox(height: 8),
+            const SizedBox(height: 8),
+            TUIMobileOverlayHeader(
+                style: TUIOverlayMobileStyle(
+              style: TUIOverlayMobileStyleType.handle,
+            )),
+            const SizedBox(height: 8),
+            TUIMobileOverlayHeader(
+              style: TUIOverlayMobileStyle(
+                  style: TUIOverlayMobileStyleType.left,
+                  title: "Hello",
+                  action: () {
+                    print("hello tapped");
+                  }),
+            ),
+            const SizedBox(height: 8),
+            TUIMobileOverlayHeader(
+              style: TUIOverlayMobileStyle(
+                  style: TUIOverlayMobileStyleType.onlyTitle, title: "Hello"),
+            ),
+            const SizedBox(height: 8),
+            TUIMobileOverlayHeader(
+              style: TUIOverlayMobileStyle(
+                  style: TUIOverlayMobileStyleType.right,
+                  title: "right",
+                  icon: FluentIcons.access_time_20_filled,
+                  action: () {
+                    print("right icon tapped");
+                  }),
+            ),
+            const SizedBox(height: 8),
             const Text("Toggle Row", style: TUITextStyle.heading6),
             const SizedBox(height: 8),
             TUIToggleRow(
