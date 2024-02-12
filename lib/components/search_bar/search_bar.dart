@@ -12,7 +12,7 @@ class TUISearchBar extends StatefulWidget {
   final TextEditingController? textEditingController;
   final bool autofocus;
 
-  TUISearchBar({
+  const TUISearchBar({
     super.key,
     this.showBackIcon = true,
     this.showTrailingIcon = false,
