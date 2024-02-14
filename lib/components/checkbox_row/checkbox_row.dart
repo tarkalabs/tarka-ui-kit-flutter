@@ -1,15 +1,16 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:tarka_ui/styles/default_colors.dart';
-
-import '../../styles/theme.dart';
+import 'package:tarka_ui/styles/theme.dart';
 
 class TUICheckBoxRow extends StatefulWidget {
   final String title;
   final String description;
   final bool backgroundDark;
+  final bool enableMixedState;
+  final TUICheckBoxRowState state;
+  final Function(TUICheckBoxRowState)? onChanged;
 
-  TUICheckBoxRow({
+  const TUICheckBoxRow({
     Key? key,
     this.enableMixedState = false,
     this.state = TUICheckBoxRowState.unchecked,
@@ -17,15 +18,7 @@ class TUICheckBoxRow extends StatefulWidget {
     this.description = "",
     this.onChanged,
     this.backgroundDark = false,
-  }) : super(key: key) {
-    if (state == TUICheckBoxRowState.mixed) {
-      enableMixedState = true;
-    }
-  }
-
-  late bool enableMixedState;
-  final TUICheckBoxRowState state;
-  final Function(TUICheckBoxRowState)? onChanged;
+  }) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => _TUICheckBoxRowState();
@@ -33,16 +26,20 @@ class TUICheckBoxRow extends StatefulWidget {
 
 class _TUICheckBoxRowState extends State<TUICheckBoxRow> {
   TUICheckBoxRowState state = TUICheckBoxRowState.unchecked;
+  bool _enableMixedState = false;
 
   @override
   initState() {
     super.initState();
     state = widget.state;
+    if (state == TUICheckBoxRowState.mixed) {
+      _enableMixedState = true;
+    }
   }
 
   _setState() {
     setState(() {
-      if (widget.enableMixedState == true) {
+      if (_enableMixedState == true) {
         int rawValue = state.index;
         state = TUICheckBoxRowState.getByValue((rawValue + 1) % 3);
       } else {

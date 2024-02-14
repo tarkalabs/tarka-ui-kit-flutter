@@ -10,7 +10,7 @@ class TUIToggleRow extends StatefulWidget {
   final ValueChanged<bool>? onChanged;
   final bool backgroundDark;
 
-  TUIToggleRow({
+  const TUIToggleRow({
     Key? key,
     required this.title,
     this.description = "",

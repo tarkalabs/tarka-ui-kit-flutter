@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:tarka_ui/styles/theme.dart';
+import 'package:tarka_ui/styles/text_style.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 
-import '../../styles/text_style.dart';
-
 class TUIEmailField extends StatefulWidget {
-  late final TUIEmailFieldLabel label;
-  late List<String> emails;
-  bool showSuffix;
+  final TUIEmailFieldLabel label;
+  final List<String> emails;
+  final bool showSuffix;
   final VoidCallback? onAdd;
   final VoidCallback? onRemove;
+  final TextEditingController? controller;
 
-  TUIEmailField({
+  const TUIEmailField({
     Key? key,
     this.label = TUIEmailFieldLabel.to,
     required this.emails,
     this.showSuffix = false,
     this.onAdd,
     this.onRemove,
+    this.controller,
   }) : super(key: key);
 
   @override
@@ -27,7 +27,7 @@ class TUIEmailField extends StatefulWidget {
 
 class _TUIEmailFieldState extends State<TUIEmailField> {
   late List<String> _emails = [];
-  final TextEditingController _emailController = TextEditingController();
+  TextEditingController _emailController = TextEditingController();
   final FocusNode _focusNode = FocusNode();
   BorderSide borderSide = const BorderSide(
     width: 2.0,
@@ -37,6 +37,7 @@ class _TUIEmailFieldState extends State<TUIEmailField> {
   @override
   void initState() {
     super.initState();
+    _emailController = widget.controller ?? TextEditingController();
     _emails = widget.emails;
     _focusNode.addListener(onFocusChange);
     _emailController.addListener(onTextChanged);
