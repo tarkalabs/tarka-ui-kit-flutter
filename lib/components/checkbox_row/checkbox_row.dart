@@ -6,24 +6,19 @@ class TUICheckBoxRow extends StatefulWidget {
   final String title;
   final String description;
   final bool backgroundDark;
+  final bool enableMixedState;
+  final TUICheckBoxRowState state;
+  final Function(TUICheckBoxRowState)? onChanged;
 
-  TUICheckBoxRow({
-    super.key,
+  const TUICheckBoxRow({
+    Key? key,
     this.enableMixedState = false,
     this.state = TUICheckBoxRowState.unchecked,
     required this.title,
     this.description = "",
     this.onChanged,
     this.backgroundDark = false,
-  }) {
-    if (state == TUICheckBoxRowState.mixed) {
-      enableMixedState = true;
-    }
-  }
-
-  late bool enableMixedState;
-  final TUICheckBoxRowState state;
-  final Function(TUICheckBoxRowState)? onChanged;
+  }) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => _TUICheckBoxRowState();
@@ -31,16 +26,20 @@ class TUICheckBoxRow extends StatefulWidget {
 
 class _TUICheckBoxRowState extends State<TUICheckBoxRow> {
   TUICheckBoxRowState state = TUICheckBoxRowState.unchecked;
+  bool _enableMixedState = false;
 
   @override
   initState() {
     super.initState();
     state = widget.state;
+    if (state == TUICheckBoxRowState.mixed) {
+      _enableMixedState = true;
+    }
   }
 
   _setState() {
     setState(() {
-      if (widget.enableMixedState == true) {
+      if (_enableMixedState == true) {
         int rawValue = state.index;
         state = TUICheckBoxRowState.getByValue((rawValue + 1) % 3);
       } else {
@@ -195,7 +194,6 @@ enum TUICheckBoxRowState {
   checked(2);
 
   const TUICheckBoxRowState(this.value);
-
   final num value;
 
   static TUICheckBoxRowState getByValue(num i) {

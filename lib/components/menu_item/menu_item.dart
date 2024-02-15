@@ -22,13 +22,13 @@ class TUIMenuItem extends StatefulWidget {
   final Function(TUIMenuItemState)? onRightTap;
 
   const TUIMenuItem({
-    super.key,
+    Key? key,
     required this.item,
     this.backgroundDark = false,
     this.onLeftTap,
     this.onRightTap,
     this.action,
-  });
+  }) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => _TUIMenuItemState();
@@ -329,7 +329,6 @@ enum TUIMenuItemStyle {
   both(3);
 
   const TUIMenuItemStyle(this.value);
-
   final num value;
 
   static TUIMenuItemStyle getByValue(num i) {
@@ -344,7 +343,6 @@ enum TUIMenuItemState {
   bothChecked(3);
 
   const TUIMenuItemState(this.value);
-
   final num value;
 
   static TUIMenuItemState getByValue(num i) {
@@ -358,7 +356,6 @@ enum TUIMenuItemTapped {
   none(3);
 
   const TUIMenuItemTapped(this.value);
-
   final num value;
 
   static TUIMenuItemTapped getByValue(num i) {
