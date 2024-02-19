@@ -58,7 +58,7 @@ Tarka UI Kit is a reusable component library for building Flutter apps, based on
 tarka_ui:
     git:
       url: git@github.com:tarkalabs/tarka-ui-kit-flutter.git
-      ref: 1.0.0 # Tag
+      ref: v1.1.0
 ```
 
 ## How to run the kitchen sink app?
