@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:tarka_ui/styles/theme.dart';
 
 class TUICheckBox extends StatefulWidget {
+  late bool enableMixedState;
+  final TUICheckBoxState state;
+  final Function(TUICheckBoxState)? onChanged;
+
   TUICheckBox({
     super.key,
     this.enableMixedState = false,
@@ -13,10 +17,6 @@ class TUICheckBox extends StatefulWidget {
       enableMixedState = true;
     }
   }
-
-  late bool enableMixedState;
-  final TUICheckBoxState state;
-  final Function(TUICheckBoxState)? onChanged;
 
   @override
   State<TUICheckBox> createState() => _TUICheckBoxState();

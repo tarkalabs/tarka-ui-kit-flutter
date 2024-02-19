@@ -3,11 +3,11 @@ import 'package:tarka_ui/styles/theme.dart';
 
 class TUINavigationRow extends StatelessWidget {
   final String title;
-  late IconData? icon;
-  late Widget? accessoryView;
-  late double? _height;
+  late final IconData? icon;
+  late final Widget? accessoryView;
+  late final double? _height;
 
-  TUINavigationRow({
+    TUINavigationRow({
     super.key,
     required this.title,
     this.icon,

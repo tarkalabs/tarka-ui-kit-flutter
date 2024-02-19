@@ -11,14 +11,14 @@ class TUICheckBoxRow extends StatefulWidget {
   final Function(TUICheckBoxRowState)? onChanged;
 
   const TUICheckBoxRow({
-    Key? key,
+    super.key,
     this.enableMixedState = false,
     this.state = TUICheckBoxRowState.unchecked,
     required this.title,
     this.description = "",
     this.onChanged,
     this.backgroundDark = false,
-  }) : super(key: key);
+  });
 
   @override
   State<StatefulWidget> createState() => _TUICheckBoxRowState();

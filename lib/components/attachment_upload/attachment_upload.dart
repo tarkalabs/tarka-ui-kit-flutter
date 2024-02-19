@@ -6,8 +6,8 @@ import 'package:tarka_ui/subcomponents/image.dart';
 class TUIAttachmentUpload extends StatelessWidget {
   final String title;
   final bool isIconUsed;
-  IconData? icon;
-  TUIImage? image;
+  late final IconData? icon;
+  late final TUIImage? image;
   final String description;
   final Function()? deleteTapped;
   final Function()? downloadTapped;

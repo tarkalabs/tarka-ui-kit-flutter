@@ -22,13 +22,13 @@ class TUIMenuItem extends StatefulWidget {
   final Function(TUIMenuItemState)? onRightTap;
 
   const TUIMenuItem({
-    Key? key,
+    super.key,
     required this.item,
     this.backgroundDark = false,
     this.onLeftTap,
     this.onRightTap,
     this.action,
-  }) : super(key: key);
+  });
 
   @override
   State<StatefulWidget> createState() => _TUIMenuItemState();
