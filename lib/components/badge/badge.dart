@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:tarka_ui/styles/default_colors.dart';
 import 'package:tarka_ui/styles/text_style.dart';
 
-/// TUIBadge is used to create a Badge with content, size and badge flag.
 enum TUIBadgeSize {
   xs,
   s,

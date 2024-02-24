@@ -2,12 +2,31 @@ import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:tarka_ui/styles/theme.dart';
 
+/// TUISearchBar widget that can be used to search for items in a list.
+/*
+Example:
+```dart
+TUISearchBar(
+  showBackIcon: true,
+  showTrailingIcon: true,
+  placeholder: "Search",
+  onBackAction: () {
+    print("Back button pressed");
+  },
+  onTrailingButtonAction: () {
+    print("Trailing button pressed");
+  },
+  onChanged: (value) {
+    print("Search value: $value");
+  },
+  autofocus: true,
+ */
 class TUISearchBar extends StatefulWidget {
   final bool showBackIcon;
   final bool showTrailingIcon;
   final String placeholder;
   final Function()? onBackAction;
-  final Function()? onTrainlingButtonAction;
+  final Function()? onTrailingButtonAction;
   final Function(String)? onChanged;
   final TextEditingController? textEditingController;
   final bool autofocus;
@@ -18,7 +37,7 @@ class TUISearchBar extends StatefulWidget {
     this.showTrailingIcon = false,
     this.placeholder = "Search",
     this.onBackAction,
-    this.onTrainlingButtonAction,
+    this.onTrailingButtonAction,
     this.textEditingController,
     this.onChanged,
     this.autofocus = false,
@@ -91,7 +110,7 @@ class _TUISearchBarState extends State<TUISearchBar> {
       return GestureDetector(
         onTap: () {
           _controller.text = "";
-          widget.onTrainlingButtonAction?.call();
+          widget.onTrailingButtonAction?.call();
         },
         child: Container(
           padding: const EdgeInsets.all(8.0),

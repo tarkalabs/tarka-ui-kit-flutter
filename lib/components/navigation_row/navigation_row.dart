@@ -1,6 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:tarka_ui/styles/theme.dart';
 
+/// TUINavigationRow widget to display a navigation row with title, icon and accessory view.
+/*
+Example:
+```dart
+TUINavigationRow(
+  title: "Navigation Row",
+  icon: CupertinoIcons.person,
+  accessoryView: CupertinoButton(
+    child: Text("Button"),
+    onPressed: () {
+      print("Button tapped");
+    },
+  ),
+ */
 class TUINavigationRow extends StatelessWidget {
   final String title;
   late final IconData? icon;

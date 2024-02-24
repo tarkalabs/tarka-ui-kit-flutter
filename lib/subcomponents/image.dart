@@ -1,6 +1,17 @@
 import 'package:flutter/material.dart';
 
 /// TUIImage is used as an abstraction to handle asset and network image.
+/*
+  Example:
+  ```dart
+  TUIImage(
+    imageUrl: 'https://example.com/image.png',
+    width: 100,
+    height: 100,
+    fit: BoxFit.cover,
+  )
+  ```
+ */
 class TUIImage extends StatelessWidget {
   final String? _imageUrl;
   final String? _assetPath;

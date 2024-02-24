@@ -18,7 +18,6 @@ class TUISuccessCheckMark extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = TUITheme.of(context);
     final colors = theme.colors;
-
     return Icon(
       TUISymbol.successCheckMark,
       color: colors.success,

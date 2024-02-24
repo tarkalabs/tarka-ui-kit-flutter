@@ -12,6 +12,17 @@ enum TUIFloatingActionButtonSize {
   final double iconSize;
 }
 
+/// TUIFloatingActionButton is a button that floats on the screen.
+/*
+Example:
+```dart
+TUIFloatingActionButton(
+  size: TUIFloatingActionButtonSize.large,
+  iconData: Icons.add,
+  onPressed: () {
+    print('Pressed');
+  },
+ */
 class TUIFloatingActionButton extends StatefulWidget {
   const TUIFloatingActionButton({
     super.key,

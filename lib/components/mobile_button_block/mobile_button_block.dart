@@ -1,6 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:tarka_ui/components/button/button.dart';
 
+/// TUIMobileButtonBlock is a widget that displays a row of buttons.
+/*
+Example:
+```dart
+TUIMobileButtonBlock(
+  style: TUIMobileButtonBlockStyle(
+    style: Style.flexible,
+    left: TUIButton(
+      label: 'Cancel',
+      onPressed: () {},
+    ),
+    right: TUIButton(
+      label: 'Save',
+      onPressed: () {},
+    ),
+  ),
+ */
 class TUIMobileButtonBlock extends StatefulWidget {
   final TUIMobileButtonBlockStyle style;
 

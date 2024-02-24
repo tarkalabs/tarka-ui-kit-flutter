@@ -3,11 +3,29 @@ import 'package:flutter/material.dart';
 import 'package:tarka_ui/styles/theme.dart';
 import 'package:tarka_ui/subcomponents/image.dart';
 
+/// TUIAttachmentUpload widget to display an attachment upload with title, description and action buttons.
+
+/*
+Example:
+```dart
+TUIAttachmentUpload(
+  title: "Attachment 1",
+  isIconUsed: true,
+  icon: FluentIcons.attach_12_regular,
+  description: "Description of attachment 1",
+  downloadTapped: () {
+    print("Download tapped");
+  },
+  deleteTapped: () {
+    print("Delete tapped");
+  },
+ */
+
 class TUIAttachmentUpload extends StatelessWidget {
   final String title;
   final bool isIconUsed;
-  late final IconData? icon;
-  late final TUIImage? image;
+   IconData? icon;
+   TUIImage? image;
   final String description;
   final Function()? deleteTapped;
   final Function()? downloadTapped;
@@ -28,6 +46,7 @@ class TUIAttachmentUpload extends StatelessWidget {
       icon = null;
     }
   }
+
 
   @override
   Widget build(BuildContext context) {

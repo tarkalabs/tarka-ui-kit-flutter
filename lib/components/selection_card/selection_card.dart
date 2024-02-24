@@ -2,6 +2,26 @@ import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:tarka_ui/styles/theme.dart';
 
+/// TUISelectionCardStyle widget can be used to display a selection of items.
+/*
+Example:
+```dart
+TUISelectionCard(
+  style: TUISelectionCardStyle(
+    title: "Title",
+    description: ["Description 1", "Description 2"],
+    footer: "Footer",
+  ),
+  isSelected: true,
+  showChevron: true,
+  icon: FluentIcons.guest_24_regular,
+  badgeCount: 1,
+  badgeColor: Colors.red,
+  isHovered: true,
+  action: () {
+    print("Card clicked");
+  },
+ */
 class TUISelectionCardStyle {
   final String title;
   final List<String>? description;

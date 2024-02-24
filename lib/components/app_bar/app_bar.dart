@@ -1,6 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:tarka_ui/styles/theme.dart';
 
+/// TUIAppTopBar is a widget that allows you to create a top bar.
+/*
+Example:
+```dart
+TUIAppTopBar(
+  items: [
+    TUIAppBarItem(iconData: Icons.home, label: "Home", tooltip: "Home"),
+    TUIAppBarItem(iconData: Icons.search, label: "Search", tooltip: "Search"),
+    TUIAppBarItem(iconData: Icons.person, label: "Profile", tooltip: "Profile"),
+  ],
+  onTap: (index) {
+    print("TUIAppTopBar: $index");
+  },
+  currentIndex: 0,
+ */
 class TUIAppTopBar extends StatefulWidget {
   final List<TUIAppBarItem> items;
   final List<BottomNavigationBarItem> _bnbItems;

@@ -2,6 +2,18 @@ import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:tarka_ui/styles/theme.dart';
 
+/// TUIToggleSwitch that can be used to toggle between two states.
+/*
+```dart
+Example:
+TUIToggleSwitch(
+  value: _value,
+  onChanged: (value) {
+    setState(() {
+      _value = value;
+    });
+  },
+ */
 class TUIToggleSwitch extends StatefulWidget {
   final bool value;
   final ValueChanged<bool>? onChanged;
