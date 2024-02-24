@@ -1,4 +1,4 @@
-## 1.1.1+1 - 2024-02-24
+## 1.1.2 - 2024-02-24
 
 * Fixes: Adhere to pub.dev package standards and updated documentation.
 
