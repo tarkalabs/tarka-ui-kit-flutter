@@ -1,4 +1,4 @@
-## 1.1.0 - 2024-02-24
+## 1.1.1 - 2024-02-24
 
 * Added components:
 TUIAccordion
