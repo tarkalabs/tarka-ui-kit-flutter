@@ -45,10 +45,10 @@ packages:
     dependency: "direct main"
     description:
       name: cupertino_icons
-      sha256: e35129dc44c9118cee2a5603506d823bab99c68393879edb440e0090d07586be
+      sha256: d57953e10f9f8327ce64a508a355f0b1ec902193f66288e8cb5070e7c47eeb2d
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.5"
+    version: "1.0.6"
   fake_async:
     dependency: transitive
     description:
@@ -61,10 +61,10 @@ packages:
     dependency: "direct main"
     description:
       name: fluentui_system_icons
-      sha256: "8f7a374e71618c101d631bdfded01f0764c882634534e1966046fd7278fec4d0"
+      sha256: bb2dd7b5dc2c14c8a18cab6405a67c4697825d2662553b1b22d1f7ddc1057235
       url: "https://pub.dev"
     source: hosted
-    version: "1.1.205"
+    version: "1.1.229"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -74,10 +74,10 @@ packages:
     dependency: "direct dev"
     description:
       name: flutter_lints
-      sha256: "2118df84ef0c3ca93f96123a616ae8540879991b8b57af2f81b76a7ada49b2a4"
+      sha256: a25a15ebbdfc33ab1cd26c63a6ee519df92338a9c10f122adda92938253bef04
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.2"
+    version: "2.0.3"
   flutter_localizations:
     dependency: transitive
     description: flutter
@@ -179,7 +179,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.0.1"
+    version: "1.1.0"
   term_glyph:
     dependency: transitive
     description:

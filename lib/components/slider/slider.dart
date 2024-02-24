@@ -1,5 +1,21 @@
 import 'package:flutter/material.dart';
 
+/// TUISlider widget for selecting a value from a range of values.
+/*
+  Example:
+  ```dart
+  TUISlider(
+    value: _value,
+    min: 0.0,
+    max: 100.0,
+    onChanged: (double newValue) {
+      setState(() {
+        _value = newValue;
+      });
+    },
+  )
+  ```
+ */
 class TUISlider extends StatelessWidget {
   final double value;
   final ValueChanged<double>? onChanged;

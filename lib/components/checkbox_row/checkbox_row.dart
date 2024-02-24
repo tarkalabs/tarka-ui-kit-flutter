@@ -1,7 +1,18 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:tarka_ui/styles/theme.dart';
-
+/// TUICheckBoxRow is used to create a checkbox with label and checkbox state.
+/*
+  Example:
+    ```dart
+  TUICheckBoxRow(
+    state: TUICheckBoxRowState.unchecked,
+    onChanged: (TUICheckBoxRowState state) {
+      print(state);
+    },
+  ),
+   ```
+  */
 class TUICheckBoxRow extends StatefulWidget {
   final String title;
   final String description;
@@ -11,14 +22,14 @@ class TUICheckBoxRow extends StatefulWidget {
   final Function(TUICheckBoxRowState)? onChanged;
 
   const TUICheckBoxRow({
-    Key? key,
+    super.key,
     this.enableMixedState = false,
     this.state = TUICheckBoxRowState.unchecked,
     required this.title,
     this.description = "",
     this.onChanged,
     this.backgroundDark = false,
-  }) : super(key: key);
+  });
 
   @override
   State<StatefulWidget> createState() => _TUICheckBoxRowState();

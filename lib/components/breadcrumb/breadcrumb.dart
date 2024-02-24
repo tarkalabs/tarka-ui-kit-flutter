@@ -2,15 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:tarka_ui/styles/default_colors.dart';
 import 'package:tarka_ui/styles/theme.dart';
 
+/// TUIBreadCrumb is used to create a BreadCrumb with titles and onTap function.
+/*
+  Example:
+    ```dart
+  TUIBreadCrumb(
+    titles: ['Home', 'Library', 'Data'],
+    onTap: (index) {
+      print('Tapped on index: $index');
+    },
+  ),```
+ */
 class TUIBreadCrumb extends StatelessWidget {
   final Function(int) onTap;
   final List<String> titles;
 
   const TUIBreadCrumb({
-    Key? key,
+    super.key,
     required this.titles,
     required this.onTap,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

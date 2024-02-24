@@ -1,9 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:tarka_ui/styles/theme.dart';
 
-import '../../styles/theme.dart';
-
+/// TUIEmailSubjectField is a text field for entering the subject of an email.
+/*
+Example:
+  ```dart
+  TUIEmailSubjectField(
+    onTextChanged: (text) {
+      print(text);
+    },
+  )
+  ```
+ */
 class TUIEmailSubjectField extends StatefulWidget {
   final Function(String) onTextChanged;
+
   const TUIEmailSubjectField({super.key, required this.onTextChanged});
 
   @override
@@ -11,10 +22,9 @@ class TUIEmailSubjectField extends StatefulWidget {
 }
 
 class _TUIEmailSubjectFieldState extends State<TUIEmailSubjectField> {
-  TextEditingController _controller = TextEditingController();
-  FocusNode _focusNode = FocusNode();
+  final TextEditingController _controller = TextEditingController();
+  final FocusNode _focusNode = FocusNode();
   bool _isEditing = false;
-
   String enteredText = "";
 
   @override

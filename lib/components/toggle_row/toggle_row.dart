@@ -2,6 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:tarka_ui/styles/theme.dart';
 import 'package:tarka_ui/tarka_ui.dart';
 
+/// TUIToggleRow widget row with a title, description and a toggle switch.
+/*
+  Example:
+  ```dart
+  TUIToggleRow(
+    title: 'Title',
+    description: 'Description',
+    icon: Icon(Icons.ac_unit),
+    value: true,
+    onChanged: (value) {
+      print(value);
+    },
+  ),
+  ```
+ */
 class TUIToggleRow extends StatefulWidget {
   final String title;
   final String description;
@@ -11,14 +26,14 @@ class TUIToggleRow extends StatefulWidget {
   final bool backgroundDark;
 
   const TUIToggleRow({
-    Key? key,
+    super.key,
     required this.title,
     this.description = "",
     this.icon,
     required this.value,
     this.onChanged,
     this.backgroundDark = false,
-  }) : super(key: key);
+  });
 
   @override
   State<StatefulWidget> createState() => _TUIToggleRowState();

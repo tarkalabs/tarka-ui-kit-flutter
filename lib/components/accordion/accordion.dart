@@ -3,15 +3,24 @@ import 'package:flutter/material.dart';
 import 'package:tarka_ui/styles/default_colors.dart';
 import 'package:tarka_ui/styles/theme.dart';
 
+/// TUIAccordion is a widget that allows you to show and hide content.
+/*
+  Example:
+    ```dart
+  TUIAccordion(
+    title: 'Accordion Title',
+    subtitle: 'Accordion Subtitle',
+  ),```
+ */
 class TUIAccordion extends StatefulWidget {
   final String title;
   final String subtitle;
 
   const TUIAccordion({
-    Key? key,
+    super.key,
     required this.title,
     required this.subtitle,
-  }) : super(key: key);
+  });
 
   @override
   State<TUIAccordion> createState() => _TUIAccordionState();
@@ -23,7 +32,6 @@ class _TUIAccordionState extends State<TUIAccordion> {
   @override
   Widget build(BuildContext context) {
     final theme = TUITheme.of(context);
-
     return Card(
         elevation: 0,
         shape: RoundedRectangleBorder(

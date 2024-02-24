@@ -1,13 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:tarka_ui/styles/theme.dart';
 
-import '../../styles/theme.dart';
-
+/// TUIRadioButton is a button that can be selected or deselected, and is used to indicate a choice.
+/*
+  Example:
+  ```dart
+  TUIRadioButton(
+    onPressed: () {
+      print('Button pressed');
+    },
+    isSelected: true,
+  ),
+  ```
+ */
 class TUIRadioButton extends StatefulWidget {
   const TUIRadioButton({
-    Key? key,
+    super.key,
     this.onPressed,
     this.isSelected = false,
-  }) : super(key: key);
+  });
 
   final VoidCallback? onPressed;
   final bool isSelected;
@@ -93,8 +104,6 @@ class _TUIRadioButtonState extends State<TUIRadioButton> {
   }
 
   Border? getOuterBorder(BuildContext context) {
-    final theme = TUITheme.of(context);
-
     return (!isSelected)
         ? Border.all(width: 1.5, color: getOuterBorderColor(context))
         : null;

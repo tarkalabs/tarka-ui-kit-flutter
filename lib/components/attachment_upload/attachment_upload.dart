@@ -1,23 +1,36 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:tarka_ui/styles/theme.dart';
+import 'package:tarka_ui/subcomponents/image.dart';
 
-import '../../styles/theme.dart';
-import '../../subcomponents/image.dart';
+/// TUIAttachmentUpload widget to display an attachment upload with title, description and action buttons.
 
+/*
+Example:
+```dart
+TUIAttachmentUpload(
+  title: "Attachment 1",
+  isIconUsed: true,
+  icon: FluentIcons.attach_12_regular,
+  description: "Description of attachment 1",
+  downloadTapped: () {
+    print("Download tapped");
+  },
+  deleteTapped: () {
+    print("Delete tapped");
+  },
+ */
 class TUIAttachmentUpload extends StatelessWidget {
   final String title;
   final bool isIconUsed;
+  final IconData? icon;
+  final TUIImage? image;
+  final String description;
+  final Function()? deleteTapped;
+  final Function()? downloadTapped;
 
-  late IconData? icon;
-  late TUIImage? image;
-
-  late String description;
-
-  late Function()? deleteTapped;
-  late Function()? downloadTapped;
-
-  TUIAttachmentUpload({
-    Key? key,
+  const TUIAttachmentUpload({
+    super.key,
     required this.title,
     required this.isIconUsed,
     this.icon,
@@ -25,18 +38,11 @@ class TUIAttachmentUpload extends StatelessWidget {
     this.description = "",
     this.downloadTapped,
     this.deleteTapped,
-  }) : super(key: key) {
-    if (isIconUsed == true) {
-      image = null;
-    } else {
-      icon = null;
-    }
-  }
+  });
 
   @override
   Widget build(BuildContext context) {
     final theme = TUITheme.of(context);
-
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -75,16 +81,14 @@ class TUIAttachmentUpload extends StatelessWidget {
     }
 
     return Expanded(
-      child: Container(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: SizedBox(
-            height: 60,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: titleAndDescription,
-            ),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: SizedBox(
+          height: 60,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: titleAndDescription,
           ),
         ),
       ),
@@ -153,6 +157,11 @@ class TUIAttachmentUpload extends StatelessWidget {
   }
 
   Widget _getImageOrIcon(TUIImage? image, IconData? icon) {
+    if (isIconUsed) {
+      image = null;
+    } else {
+      icon = null;
+    }
     if (image != null) {
       return image;
     } else if (icon != null) {
@@ -160,7 +169,7 @@ class TUIAttachmentUpload extends StatelessWidget {
         child: Icon(icon),
       );
     } else {
-      return Placeholder();
+      return const Placeholder();
     }
   }
 }

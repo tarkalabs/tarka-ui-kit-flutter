@@ -1,12 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:tarka_ui/styles/theme.dart';
 
+/// TUIAnchor is a component that is used to create a clickable anchor.
+/*
+  Example:
+  ```dart
+  TUIAnchor(
+    title: 'Anchor',
+    onPressed: () {
+      print('Anchor pressed');
+    },
+  )
+  ```
+*/
 class TUIAnchor extends StatefulWidget {
   const TUIAnchor({
-    Key? key,
+    super.key,
     required this.title,
     this.onPressed,
-  }) : super(key: key);
+  });
 
   final VoidCallback? onPressed;
   final String title;
@@ -27,13 +39,7 @@ class _TUIAnchor extends State<TUIAnchor> {
   @override
   Widget build(BuildContext context) {
     final theme = TUITheme.of(context);
-
     Color? rectangleColor = (isPressed == true) ? theme.colors.secondary : null;
-
-    TextStyle textStyle = theme.typography.body6.copyWith(
-      color: theme.colors.inputTextDim,
-    );
-
     Widget child = Row(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.start,
@@ -63,7 +69,6 @@ class _TUIAnchor extends State<TUIAnchor> {
         ),
       ],
     );
-
     return GestureDetector(
       onTap: () {
         _setPressed(!isPressed);

@@ -1,9 +1,27 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:tarka_ui/components/badge/badge.dart';
-import '../../styles/theme.dart';
+import 'package:tarka_ui/styles/theme.dart';
 
+/// TUISelectionCardStyle widget can be used to display a selection of items.
+/*
+Example:
+```dart
+TUISelectionCard(
+  style: TUISelectionCardStyle(
+    title: "Title",
+    description: ["Description 1", "Description 2"],
+    footer: "Footer",
+  ),
+  isSelected: true,
+  showChevron: true,
+  icon: FluentIcons.guest_24_regular,
+  badgeCount: 1,
+  badgeColor: Colors.red,
+  isHovered: true,
+  action: () {
+    print("Card clicked");
+  },
+ */
 class TUISelectionCardStyle {
   final String title;
   final List<String>? description;
@@ -26,8 +44,8 @@ class TUISelectionCard extends StatelessWidget {
   final bool isHovered;
   final Function? action;
 
-  TUISelectionCard({
-    Key? key,
+  const TUISelectionCard({
+    super.key,
     required this.style,
     this.isSelected = false,
     this.showChevron = false,
@@ -36,7 +54,7 @@ class TUISelectionCard extends StatelessWidget {
     this.badgeColor,
     this.isHovered = false,
     this.action,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -99,11 +117,9 @@ class TUISelectionCard extends StatelessWidget {
               style.title,
               style: theme.typography.body7,
             ),
-            ...style.description!
-                .map(
-                  (e) => Text(e, style: theme.typography.heading6),
-                )
-                .toList(),
+            ...style.description!.map(
+              (e) => Text(e, style: theme.typography.heading6),
+            ),
             getFooter(theme),
           ],
         ),

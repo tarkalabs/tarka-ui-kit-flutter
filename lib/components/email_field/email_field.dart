@@ -3,6 +3,14 @@ import 'package:tarka_ui/styles/theme.dart';
 import 'package:tarka_ui/styles/text_style.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 
+/// TUIEmailField is a widget that allows the user to input email addresses.
+/*
+Example:
+```dart
+TUIEmailField(
+  label: TUIEmailFieldLabel.to,
+  emails: ['
+ */
 class TUIEmailField extends StatefulWidget {
   final TUIEmailFieldLabel label;
   final List<String> emails;
@@ -12,14 +20,14 @@ class TUIEmailField extends StatefulWidget {
   final TextEditingController? controller;
 
   const TUIEmailField({
-    Key? key,
+    super.key,
     this.label = TUIEmailFieldLabel.to,
     required this.emails,
     this.showSuffix = false,
     this.onAdd,
     this.onRemove,
     this.controller,
-  }) : super(key: key);
+  });
 
   @override
   State<StatefulWidget> createState() => _TUIEmailFieldState();
@@ -123,7 +131,6 @@ class _TUIEmailFieldState extends State<TUIEmailField> {
       ),
       child: Row(
         mainAxisSize: MainAxisSize.max,
-        // mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: _emails.isEmpty
             ? CrossAxisAlignment.center
             : CrossAxisAlignment.start,
@@ -148,7 +155,7 @@ class _TUIEmailFieldState extends State<TUIEmailField> {
                     ) {
                       int idx = _emails.indexOf(email);
                       return getChip(email, theme, idx);
-                    }).toList(),
+                    }),
                   ],
                 ),
                 TextField(

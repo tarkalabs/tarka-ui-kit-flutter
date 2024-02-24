@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tarka_ui/styles/default_colors.dart';
 import 'package:tarka_ui/styles/text_style.dart';
-
-import '../../subcomponents/image.dart';
+import 'package:tarka_ui/subcomponents/image.dart';
 
 /// TUIAvatar is used to create a Avatar with content, size and badge flag.
 /*

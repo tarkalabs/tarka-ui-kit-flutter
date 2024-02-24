@@ -1,23 +1,30 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:tarka_ui/styles/theme.dart';
 
-import '../../styles/theme.dart';
-
+/// TUICheckBox is used to create a checkbox with label and checkbox state.
+/*
+  Example:
+    ```dart
+  TUICheckBox(
+    state: TUICheckBoxState.unchecked,
+    onChanged: (TUICheckBoxState state) {
+      print(state);
+    },
+  ),
+   ```
+  */
 class TUICheckBox extends StatefulWidget {
-  TUICheckBox({
-    Key? key,
-    this.enableMixedState = false,
-    this.state = TUICheckBoxState.unchecked,
-    this.onChanged,
-  }) : super(key: key) {
-    if (state == TUICheckBoxState.mixed) {
-      enableMixedState = true;
-    }
-  }
-
-  late bool enableMixedState;
+  final bool? enableMixedState;
   final TUICheckBoxState state;
   final Function(TUICheckBoxState)? onChanged;
+
+  const TUICheckBox({
+    super.key,
+    this.state = TUICheckBoxState.unchecked,
+    this.enableMixedState,
+    this.onChanged,
+  });
 
   @override
   State<TUICheckBox> createState() => _TUICheckBoxState();
@@ -25,11 +32,13 @@ class TUICheckBox extends StatefulWidget {
 
 class _TUICheckBoxState extends State<TUICheckBox> {
   TUICheckBoxState state = TUICheckBoxState.unchecked;
+  bool enableMixedState = false;
 
   @override
   initState() {
     super.initState();
     state = widget.state;
+    enableMixedState = (state == TUICheckBoxState.mixed);
   }
 
   _setState() {
@@ -130,7 +139,6 @@ enum TUICheckBoxState {
   unchecked(0),
   mixed(1),
   checked(2);
-
   const TUICheckBoxState(this.value);
   final num value;
 

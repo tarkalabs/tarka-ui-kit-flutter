@@ -63,24 +63,39 @@ class TUISnackBarAction {
         _isDismissed = true;
 }
 
+/// TUISnackBar widget is a lightweight message with an optional action which briefly displays at the bottom of the screen.
+/*
+Example:
+```dart
+TUISnackBar(
+  context: context,
+  type: TUISnackBarType.success,
+  message: 'This is a success message',
+  action: TUISnackBarAction(
+    label: 'Dismiss',
+    onActionPressed: () {
+      ScaffoldMessenger.of(context).hideCurrentSnackBar(
+        reason: SnackBarClosedReason.dismiss,
+      );
+    },
+  ),
+ */
 class TUISnackBar extends SnackBar {
   TUISnackBar({
-    Key? key,
+    super.key,
     required BuildContext context,
     TUISnackBarType type = TUISnackBarType.information,
     required String message,
     TUISnackBarAction? action,
     Duration? duration,
-    VoidCallback? onVisible,
+    super.onVisible,
   }) : super(
-            key: key,
             elevation: 0,
             duration: duration ?? const Duration(seconds: 4),
             backgroundColor:
                 type._getBackgroundColor(TUITheme.of(context).colors),
             behavior: SnackBarBehavior.floating,
             content: _getWidget(context, type, message, action),
-            onVisible: onVisible,
             shape: const StadiumBorder());
 
   static Widget _getWidget(BuildContext context, TUISnackBarType type,
