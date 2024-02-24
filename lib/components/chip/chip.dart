@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:tarka_ui/styles/default_colors.dart';
 import 'package:tarka_ui/styles/text_style.dart';
 import 'package:tarka_ui/subcomponents/image.dart';
+
 /// TUIChip widget to display a chip with title, left icon, right icon and badge.
 /*
 Example:

@@ -39,15 +39,16 @@ class TUIDivider extends StatelessWidget {
   Widget build(BuildContext context) {
     return type == TUIDividerType.horizontal
         ? Divider(
-      thickness: 2,
-      color: color,
-      indent: _getHorizontalPadding(),
-      endIndent: _getHorizontalPadding(),
-    ) : VerticalDivider(
-      thickness: 2,
-      color: color,
-       indent: _getVerticalPadding(),
-    );
+            thickness: 2,
+            color: color,
+            indent: _getHorizontalPadding(),
+            endIndent: _getHorizontalPadding(),
+          )
+        : VerticalDivider(
+            thickness: 2,
+            color: color,
+            indent: _getVerticalPadding(),
+          );
   }
 
   double _getVerticalPadding() {

@@ -139,6 +139,7 @@ enum TUICheckBoxState {
   unchecked(0),
   mixed(1),
   checked(2);
+
   const TUICheckBoxState(this.value);
   final num value;
 

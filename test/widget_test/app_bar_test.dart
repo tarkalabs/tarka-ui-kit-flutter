@@ -31,7 +31,8 @@ main() {
     await widgetTester.pumpWidgetBuilder(appBar, wrapper: tuiAppWrapper());
     //Since we know that, `BottomNavigationBar` will always be displayed on top of SystemNavBar, we can be assured that TUIAppBar will also be displayed above System Nav Bar.
     var bottomNavBarFinder = find.descendant(
-        of: find.byType(TUIAppTopBar), matching: find.byType(BottomNavigationBar));
+        of: find.byType(TUIAppTopBar),
+        matching: find.byType(BottomNavigationBar));
     expect(bottomNavBarFinder, findsOneWidget);
   });
 

@@ -22,6 +22,7 @@ enum Symbol {
   sync(FluentIcons.arrow_sync_circle_24_regular),
   tabs(FluentIcons.tabs_24_regular),
   hamburgerMenu(FluentIcons.line_horizontal_3_20_filled);
+
   final IconData value;
 
   const Symbol(this.value);

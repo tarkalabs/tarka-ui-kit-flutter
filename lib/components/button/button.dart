@@ -25,7 +25,7 @@ class TUIButton extends StatelessWidget {
     required this.onPressed,
     this.onLongPress,
     this.height,
-  })  : assert(label != null || iconData != null);
+  }) : assert(label != null || iconData != null);
 
   final TUIButtonType type;
   final TUIButtonSize size;

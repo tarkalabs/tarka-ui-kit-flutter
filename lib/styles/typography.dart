@@ -2,7 +2,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/painting.dart';
 
 class TUITypography with Diagnosticable {
-
   final TextStyle heading1;
   final TextStyle heading2;
   final TextStyle heading3;
@@ -17,7 +16,6 @@ class TUITypography with Diagnosticable {
   final TextStyle button6;
   final TextStyle button7;
   final TextStyle button8;
-
 
   TUITypography(
       this.heading1,

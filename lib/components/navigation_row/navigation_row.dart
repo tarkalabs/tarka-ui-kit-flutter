@@ -44,11 +44,11 @@ class TUINavigationRow extends StatelessWidget {
   }
 
   Widget getLeftView(
-      BuildContext context,
-      IconData? icon,
-      String title,
-      double maxHeight,
-      ) {
+    BuildContext context,
+    IconData? icon,
+    String title,
+    double maxHeight,
+  ) {
     final theme = TUITheme.of(context);
 
     TextStyle titleTextStyle = theme.typography.heading7.copyWith(
