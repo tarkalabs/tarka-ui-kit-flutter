@@ -1,3 +1,38 @@
-## 1.0.0 - 2024-02-13
+## 1.1.0 - 2024-02-24
 
-* TODO: 
+* Added components:
+TUIAccordion
+TUIAnchor
+TUIAppTopBar
+TUIAttachmentUpload
+TUIAvatar
+TUIBadge
+TUIBreadCrumb
+TUIButton
+TUICheckBox
+TUICheckBoxRow
+TUIChip
+TUIDivider
+TUIDraggableCard
+TUIEmailField
+TUIEmailSubjectField
+TUIFloatingActionButton
+TUIIconButton
+TUIInputField
+TUIMediaThumbnail
+TUIMenuItem
+TUIMobileButtonBlock
+TUIMobileOverlayHeader
+TUIMobileOverlayFooter
+TUINavigationRow
+TUIRadioButton
+TUIRangeSlider
+TUISearchBar
+TUISelectionCard
+TUISlider
+TUISnackBar
+TUISuccessCheckMark
+TUIToggleSwitch
+TUITag
+TUIToggleRow
+
