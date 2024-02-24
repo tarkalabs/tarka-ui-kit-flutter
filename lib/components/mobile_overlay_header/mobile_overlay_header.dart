@@ -5,18 +5,19 @@ import 'package:tarka_ui/components/button/style.dart';
 import 'package:tarka_ui/styles/theme.dart';
 
 /// TUIMobileOverlayHeader is a widget that is used to create a header for the mobile overlay.
-/*
-Example:
-```dart
-TUIMobileOverlayHeader(
-  style: TUIOverlayMobileStyle(
-    style: TUIOverlayMobileStyleType.left,
-    title: "Title",
-    action: () {
-      print("Action");
-    },
-  ),
- */
+///
+/// Example:
+/// ```dart
+/// TUIMobileOverlayHeader(
+///   style: TUIOverlayMobileStyle(
+///     style: TUIOverlayMobileStyleType.left,
+///     title: "Title",
+///     action: () {
+///       print("Action");
+///     },
+///   ),
+/// )
+/// ```
 class TUIMobileOverlayHeader extends StatelessWidget {
   final TUIOverlayMobileStyle style;
   const TUIMobileOverlayHeader({super.key, required this.style});

@@ -3,17 +3,17 @@ import 'package:tarka_ui/components/button/style.dart';
 import 'package:tarka_ui/styles/theme.dart';
 
 /// TUIButton is used to create a button with label, icon and button type.
-/*
-  Example:
-    ```dart
-  TUIButton(
-    type: TUIButtonType.primary,
-    size: TUIButtonSize.m,
-    label: 'Primary',
-    onPressed: () {},
-  ),
-   ```
- */
+///
+///  Example:
+///    ```dart
+///  TUIButton(
+///    type: TUIButtonType.primary,
+///    size: TUIButtonSize.m,
+///    label: 'Primary',
+///    onPressed: () {},
+///  )
+///   ```
+
 class TUIButton extends StatelessWidget {
   const TUIButton({
     super.key,

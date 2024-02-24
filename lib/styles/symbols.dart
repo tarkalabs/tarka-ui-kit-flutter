@@ -1,6 +1,7 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 
+/// TUISymbol is a class that holds all the symbols used in the Tarka UI.
 class TUISymbol {
   TUISymbol._();
 

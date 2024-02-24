@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:tarka_ui/styles/theme.dart';
 
+/// TUIApp is a wrapper around [WidgetsApp] and [MaterialApp]
 class TUIApp extends StatefulWidget {
   /// Creates a TUIApp.
   ///

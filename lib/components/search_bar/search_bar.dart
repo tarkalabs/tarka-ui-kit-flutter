@@ -3,24 +3,25 @@ import 'package:flutter/material.dart';
 import 'package:tarka_ui/styles/theme.dart';
 
 /// TUISearchBar widget that can be used to search for items in a list.
-/*
-Example:
-```dart
-TUISearchBar(
-  showBackIcon: true,
-  showTrailingIcon: true,
-  placeholder: "Search",
-  onBackAction: () {
-    print("Back button pressed");
-  },
-  onTrailingButtonAction: () {
-    print("Trailing button pressed");
-  },
-  onChanged: (value) {
-    print("Search value: $value");
-  },
-  autofocus: true,
- */
+///
+/// Example:
+/// ```dart
+/// TUISearchBar(
+///   showBackIcon: true,
+///   showTrailingIcon: true,
+///   placeholder: "Search",
+///   onBackAction: () {
+///     print("Back button pressed");
+///   },
+///   onTrailingButtonAction: () {
+///     print("Trailing button pressed");
+///   },
+///   onChanged: (value) {
+///     print("Search value: $value");
+///   },
+///   autofocus: true,
+/// )
+/// ```
 class TUISearchBar extends StatefulWidget {
   final bool showBackIcon;
   final bool showTrailingIcon;

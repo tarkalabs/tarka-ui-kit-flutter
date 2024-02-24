@@ -5,20 +5,21 @@ import 'package:tarka_ui/styles/text_style.dart';
 import 'package:tarka_ui/subcomponents/image.dart';
 
 /// TUIChip widget to display a chip with title, left icon, right icon and badge.
-/*
-Example:
-```dart
-TUIChip(
-  title: "Chip 1",
-  size: TUIChipSize.m,
-  highlighted: false,
-  leftIcon: FluentIcons.attach_12_regular,
-  badgeValue: "2",
-  rightIcon: FluentIcons.dismiss_12_filled,
-  onRightIconTap: () {
-    print("Right icon tapped");
-  },
- */
+///
+/// Example:
+/// ```dart
+/// TUIChip(
+///   title: "Chip 1",
+///   size: TUIChipSize.m,
+///   highlighted: false,
+///   leftIcon: FluentIcons.attach_12_regular,
+///   badgeValue: "2",
+///   rightIcon: FluentIcons.dismiss_12_filled,
+///   onRightIconTap: () {
+///     print("Right icon tapped");
+///   },
+///  )
+///   ```
 class TUIChip extends StatelessWidget {
   final String title;
   final TUIChipSize size;

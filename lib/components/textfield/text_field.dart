@@ -3,26 +3,25 @@ import 'package:tarka_ui/styles/default_colors.dart';
 import 'package:tarka_ui/styles/text_style.dart';
 
 /// TUIInputField is a text input field that allows users to enter text.
-/*
-  Example:
-  ```dart
-  TUIInputField(
-    hintText: 'Hint Text',
-    labelText: 'Label',
-    prefixText: 'Prefix',
-    suffixText: 'Suffix',
-    prefixIcon: Icons.add,
-    suffixIcon: Icons.remove,
-    obscureText: true,
-    controller: TextEditingController(),
-    keyboardType: TextInputType.text,
-    textInputAction: TextInputAction.done,
-    onChanged: (value) {},
-    onEditingComplete: () {},
-    onSubmitted: (value) {},
-  )
-  ```
- */
+///
+///   Example:
+///   ```dart
+///   TUIInputField(
+///     hintText: 'Hint Text',
+///     labelText: 'Label',
+///     prefixText: 'Prefix',
+///     suffixText: 'Suffix',
+///     prefixIcon: Icons.add,
+///     suffixIcon: Icons.remove,
+///     obscureText: true,
+///     controller: TextEditingController(),
+///     keyboardType: TextInputType.text,
+///     textInputAction: TextInputAction.done,
+///     onChanged: (value) {},
+///     onEditingComplete: () {},
+///     onSubmitted: (value) {},
+///   )
+///   ```
 class TUIInputField extends StatelessWidget {
   final bool enabled;
   final bool readOnly;

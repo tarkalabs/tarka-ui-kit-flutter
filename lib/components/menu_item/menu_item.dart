@@ -15,18 +15,19 @@ class TUIMenuItemProperties {
 }
 
 /// TUIMenuItem is a widget that represents a menu item with a title and an icon.
-/*
-Example:
-```dart
-TUIMenuItem(
-  item: TUIMenuItemProperties(
-    title: 'Item 1',
-    style: TUIMenuItemStyle.both,
-  ),
-  action: (state) {
-    print(state);
-  },
- */
+///
+/// Example:
+/// ```dart
+/// TUIMenuItem(
+///   item: TUIMenuItemProperties(
+///     title: 'Item 1',
+///     style: TUIMenuItemStyle.both,
+///   ),
+///   action: (state) {
+///     print(state);
+///   },
+/// )
+/// ```
 class TUIMenuItem extends StatefulWidget {
   final TUIMenuItemProperties item;
   final bool backgroundDark; // for hover

@@ -11,17 +11,16 @@ enum TUIDividerHorizontalPadding { none, s, m, l, xl }
 enum TUIDividerType { horizontal, vertical }
 
 /// TKDivider is used to create a divider with default height and color.
-/*
-  Example:
-  ```dart
-  TUIDivider(
-    type: TUIDividerType.horizontal,
-    color: TUIColors.surfaceVariantHover,
-    verticalPadding: TUIDividerVerticalPadding.s,
-    horizontalPadding: TUIDividerHorizontalPadding.s,
-  )
-  ```
- */
+///
+///   Example:
+///   ```dart
+///   TUIDivider(
+///     type: TUIDividerType.horizontal,
+///     color: TUIColors.surfaceVariantHover,
+///     verticalPadding: TUIDividerVerticalPadding.s,
+///     horizontalPadding: TUIDividerHorizontalPadding.s,
+///   )
+///   ```
 class TUIDivider extends StatelessWidget {
   final TUIDividerType? type;
   final Color? color;

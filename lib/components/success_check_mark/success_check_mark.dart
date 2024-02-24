@@ -3,12 +3,11 @@ import 'package:tarka_ui/styles/symbols.dart';
 import 'package:tarka_ui/styles/theme.dart';
 
 /// TUISuccessCheckMark is used to create a success check mark.
-/*
-  Example:
-  ```dart
-  TUISuccessCheckMark()
-  ```
- */
+///
+///   Example:
+///   ```dart
+///   TUISuccessCheckMark()
+///   ```
 class TUISuccessCheckMark extends StatelessWidget {
   const TUISuccessCheckMark({super.key});
 

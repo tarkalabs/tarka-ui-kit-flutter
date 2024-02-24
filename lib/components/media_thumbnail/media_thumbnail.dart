@@ -4,20 +4,21 @@ import 'package:tarka_ui/styles/default_colors.dart';
 import 'package:tarka_ui/subcomponents/image.dart';
 
 /// TUIMediaThumbnail is a widget that displays a thumbnail of a media file.
-/*
-Example:
-```dart
-TUIMediaThumbnail(
-  onPressed: () {
-    print('Thumbnail pressed');
-  },
-  isSelectable: true,
-  size: TUIMediaThumbnailSize.large,
-  mediaType: TUIMediaThumbnailType.photo,
-  customThumbnailImage: TUIImage(
-    image: Image.asset('assets/images/image.png'),
-  ),
- */
+///
+/// Example:
+/// ```dart
+/// TUIMediaThumbnail(
+///   onPressed: () {
+///     print('Thumbnail pressed');
+///   },
+///   isSelectable: true,
+///   size: TUIMediaThumbnailSize.large,
+///   mediaType: TUIMediaThumbnailType.photo,
+///   customThumbnailImage: TUIImage(
+///     image: Image.asset('assets/images/image.png'),
+///   ),
+/// )
+/// ```
 class TUIMediaThumbnail extends StatelessWidget {
   final VoidCallback? onPressed;
   final bool? isSelectable;

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// TUIDefaultColors is a class that holds all the default colors used in the Tarka UI.
 class TUIDefaultColors {
   TUIDefaultColors._();
   // Base

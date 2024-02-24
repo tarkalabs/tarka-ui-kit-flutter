@@ -50,17 +50,6 @@ Tarka UI Kit is a reusable component library for building Flutter apps, based on
 - TUITag
 - TUIToggleRow
 
-
-## How to use this package in your project?  
-
-```
-# Add this below package in the dependencies section of the pubspec.yaml file
-tarka_ui:
-    git:
-      url: git@github.com:tarkalabs/tarka-ui-kit-flutter.git
-      ref: v1.1.0
-```
-
 ## How to run the kitchen sink app?
 
 ### From Android Studio

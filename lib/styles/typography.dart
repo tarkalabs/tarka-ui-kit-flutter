@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/painting.dart';
 
+/// TUITypography is a class that holds all the text styles used in the Tarka UI.
 class TUITypography with Diagnosticable {
   final TextStyle heading1;
   final TextStyle heading2;
