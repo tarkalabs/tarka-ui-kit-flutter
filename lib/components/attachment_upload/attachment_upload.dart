@@ -20,17 +20,16 @@ TUIAttachmentUpload(
     print("Delete tapped");
   },
  */
-
 class TUIAttachmentUpload extends StatelessWidget {
   final String title;
   final bool isIconUsed;
-   IconData? icon;
-   TUIImage? image;
+  final IconData? icon;
+  final TUIImage? image;
   final String description;
   final Function()? deleteTapped;
   final Function()? downloadTapped;
 
-  TUIAttachmentUpload({
+  const TUIAttachmentUpload({
     super.key,
     required this.title,
     required this.isIconUsed,
@@ -39,19 +38,11 @@ class TUIAttachmentUpload extends StatelessWidget {
     this.description = "",
     this.downloadTapped,
     this.deleteTapped,
-  }) {
-    if (isIconUsed == true) {
-      image = null;
-    } else {
-      icon = null;
-    }
-  }
-
+  });
 
   @override
   Widget build(BuildContext context) {
     final theme = TUITheme.of(context);
-
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -166,6 +157,11 @@ class TUIAttachmentUpload extends StatelessWidget {
   }
 
   Widget _getImageOrIcon(TUIImage? image, IconData? icon) {
+    if (isIconUsed) {
+      image = null;
+    } else {
+      icon = null;
+    }
     if (image != null) {
       return image;
     } else if (icon != null) {

@@ -151,7 +151,6 @@ class _HomePageState extends State<HomePage> {
         currentIndex: selectedBottomNavBarItem,
         onTap: (value) => {
           setState(() {
-            print("On tap, item selected: $value");
             selectedBottomNavBarItem = value;
           })
         },
@@ -400,9 +399,7 @@ class _HomePageState extends State<HomePage> {
               title: "Chip",
               size: TUIChipSize.m,
               rightIcon: Icons.access_alarm,
-              onRightIconTap: () {
-                print("Right Icon Tapped");
-              },
+              onRightIconTap: () {},
               badgeValue: "4",
             ),
             const SizedBox(height: 8),
@@ -411,9 +408,7 @@ class _HomePageState extends State<HomePage> {
               title: "Chip",
               size: TUIChipSize.m,
               rightIcon: Icons.access_alarm,
-              onRightIconTap: () {
-                print("Right Icon Tapped");
-              },
+              onRightIconTap: () {},
               badgeValue: "4",
             ),
             const SizedBox(height: 8),
@@ -423,9 +418,7 @@ class _HomePageState extends State<HomePage> {
                   leftIcon: Icons.abc_outlined,
                   title: "Suggestion Chip",
                   size: TUIChipSize.l,
-                  onRightIconTap: () {
-                    print("Right Icon Tapped");
-                  },
+                  onRightIconTap: () {},
                   highlighted: false,
                 ),
                 const SizedBox(width: 24),
@@ -434,9 +427,7 @@ class _HomePageState extends State<HomePage> {
                   title: "Chip",
                   size: TUIChipSize.m,
                   rightIcon: Icons.access_alarm,
-                  onRightIconTap: () {
-                    print("Right Icon Tapped");
-                  },
+                  onRightIconTap: () {},
                   badgeValue: "4",
                   highlighted: true,
                 ),
@@ -458,9 +449,7 @@ class _HomePageState extends State<HomePage> {
                 "nine",
                 "ten"
               ],
-              onTap: (index) {
-                print("The tapped index is ${index}");
-              },
+              onTap: (index) {},
             ),
             const SizedBox(height: 8),
             const Text("Icon Button", style: TUITextStyle.heading6),
@@ -525,10 +514,7 @@ class _HomePageState extends State<HomePage> {
                         type: TUISnackBarType.error,
                         message: "This is an error Snackbar with action",
                         action: TUISnackBarAction(
-                            label: "Retry",
-                            onActionPressed: () {
-                              print("Snackbar Retry onPressed");
-                            }),
+                            label: "Retry", onActionPressed: () {}),
                       ));
                     })
               ],
@@ -544,9 +530,7 @@ class _HomePageState extends State<HomePage> {
                 TUIMediaThumbnail(
                   size: TUIMediaThumbnailSize.large,
                   mediaType: TUIMediaThumbnailType.video,
-                  onPressed: () {
-                    print("Video thumbnail tapped.");
-                  },
+                  onPressed: () {},
                   customThumbnailImage: TUIImage(
                     imageUrl:
                         "https://images.unsplash.com/photo-1579353977828-2a4eab540b9a",
@@ -559,24 +543,18 @@ class _HomePageState extends State<HomePage> {
                   size: TUIMediaThumbnailSize.large,
                   mediaType: TUIMediaThumbnailType.audio,
                   isSelectable: false,
-                  onPressed: () {
-                    print("Audio thumbnail tapped.");
-                  },
+                  onPressed: () {},
                 ),
                 TUIMediaThumbnail(
                   size: TUIMediaThumbnailSize.large,
                   mediaType: TUIMediaThumbnailType.document,
-                  onPressed: () {
-                    print("Document thumbnail tapped.");
-                  },
+                  onPressed: () {},
                 ),
                 TUIMediaThumbnail(
                   size: TUIMediaThumbnailSize.large,
                   mediaType: TUIMediaThumbnailType.photo,
                   isSelectable: false,
-                  onPressed: () {
-                    print("Photo thumbnail tapped.");
-                  },
+                  onPressed: () {},
                   customThumbnailImage: TUIImage(
                     imageUrl:
                         "https://images.unsplash.com/photo-1579353977828-2a4eab540b9a",
@@ -592,8 +570,8 @@ class _HomePageState extends State<HomePage> {
               onChanged: (value) {
                 updateRangeSliderValue(value);
               },
-              onChangeStart: (value) => {print("Range change Started $value")},
-              onChangeEnd: (value) => {print("Range change Ended $value")},
+              onChangeStart: (value) => {},
+              onChangeEnd: (value) => {},
               max: 1,
               min: 0,
             ),
@@ -611,20 +589,18 @@ class _HomePageState extends State<HomePage> {
               children: [
                 TUICheckBox(
                   enableMixedState: true,
-                  onChanged: (state) {
-                    print("The tapped index is ${state}");
-                  },
+                  onChanged: (state) {},
                 ),
                 const SizedBox(width: 20),
-                TUICheckBox(
+                const TUICheckBox(
                   state: TUICheckBoxState.unchecked,
                 ),
                 const SizedBox(width: 20),
-                TUICheckBox(
+                const TUICheckBox(
                   state: TUICheckBoxState.mixed,
                 ),
                 const SizedBox(width: 20),
-                TUICheckBox(
+                const TUICheckBox(
                   state: TUICheckBoxState.checked,
                 ),
               ],
@@ -635,19 +611,15 @@ class _HomePageState extends State<HomePage> {
             TUICheckBoxRow(
               enableMixedState: true,
               title: "Title",
-              onChanged: (state) {
-                print("The tapped index is $state");
-              },
+              onChanged: (state) {},
             ),
             TUICheckBoxRow(
               enableMixedState: true,
               title: "Title",
               backgroundDark: true,
-              onChanged: (state) {
-                print("The tapped index is $state");
-              },
+              onChanged: (state) {},
             ),
-            TUICheckBoxRow(
+            const TUICheckBoxRow(
               enableMixedState: true,
               title: "Title",
               description: "Description",
@@ -658,11 +630,9 @@ class _HomePageState extends State<HomePage> {
               title: "Title",
               description: "Description",
               backgroundDark: true,
-              onChanged: (state) {
-                print("The tapped index is $state");
-              },
+              onChanged: (state) {},
             ),
-            TUICheckBoxRow(
+            const TUICheckBoxRow(
               enableMixedState: true,
               title: "Title",
               state: TUICheckBoxRowState.checked,
@@ -672,11 +642,9 @@ class _HomePageState extends State<HomePage> {
               title: "Title",
               backgroundDark: true,
               state: TUICheckBoxRowState.checked,
-              onChanged: (state) {
-                print("The tapped index is $state");
-              },
+              onChanged: (state) {},
             ),
-            TUICheckBoxRow(
+            const TUICheckBoxRow(
               enableMixedState: true,
               title: "Title",
               description: "Description",
@@ -688,18 +656,14 @@ class _HomePageState extends State<HomePage> {
               description: "Description",
               backgroundDark: true,
               state: TUICheckBoxRowState.checked,
-              onChanged: (state) {
-                print("The tapped index is $state");
-              },
+              onChanged: (state) {},
             ),
             const SizedBox(height: 8.0),
             const Text("Radio Button", style: TUITextStyle.heading6),
             Row(
               children: [
                 TUIRadioButton(
-                  onPressed: () {
-                    print("Anchor tapped");
-                  },
+                  onPressed: () {},
                 ),
                 const SizedBox(width: 8),
                 const TUIRadioButton(
@@ -708,9 +672,7 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(width: 8),
                 TUIRadioButton(
                   isSelected: true,
-                  onPressed: () {
-                    print("Anchor tapped");
-                  },
+                  onPressed: () {},
                 ),
                 const SizedBox(width: 8),
                 const TUIRadioButton()
@@ -719,9 +681,7 @@ class _HomePageState extends State<HomePage> {
             const Text("Anchor", style: TUITextStyle.heading6),
             TUIAnchor(
               title: "Link Text",
-              onPressed: () {
-                print("Anchor tapped");
-              },
+              onPressed: () {},
             ),
             const Text("Anchor with truncating text",
                 style: TUITextStyle.heading6),
@@ -729,9 +689,7 @@ class _HomePageState extends State<HomePage> {
             TUIAnchor(
               title:
                   "This is an anchor with some very long test. This should hopefully overflow the text to the next line.",
-              onPressed: () {
-                print("Anchor tapped");
-              },
+              onPressed: () {},
             ),
             const SizedBox(height: 8),
             const Text("Anchor text with newlines",
@@ -739,9 +697,7 @@ class _HomePageState extends State<HomePage> {
             TUIAnchor(
               title:
                   "This is an anchor with some very long test.\n\n This should hopefully overflow the text to the next line.",
-              onPressed: () {
-                print("Anchor tapped");
-              },
+              onPressed: () {},
             ),
             const SizedBox(height: 8),
             const Text("Accordion", style: TUITextStyle.heading6),
@@ -774,11 +730,9 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 8),
             // TUISwitch
             TUIEmailField(
-              emails: [],
+              emails: const [],
               showSuffix: true,
-              onAdd: () {
-                print("Hello");
-              },
+              onAdd: () {},
             ),
             const SizedBox(height: 8),
             const Text("Attachment Upload With Description",
@@ -788,12 +742,8 @@ class _HomePageState extends State<HomePage> {
               description: "This is a long description to test overflow.",
               isIconUsed: true,
               icon: FluentIcons.access_time_20_filled,
-              downloadTapped: () {
-                print("download tapped");
-              },
-              deleteTapped: () {
-                print("delete tapped");
-              },
+              downloadTapped: () {},
+              deleteTapped: () {},
             ),
             const Text("Attachment Upload", style: TUITextStyle.heading6),
             TUIAttachmentUpload(
@@ -820,9 +770,7 @@ class _HomePageState extends State<HomePage> {
             const Text("Email Subject Field", style: TUITextStyle.heading6),
             const SizedBox(height: 8),
             TUIEmailSubjectField(
-              onTextChanged: (String text) {
-                print("text changed: ${text}");
-              },
+              onTextChanged: (String text) {},
             ),
             const SizedBox(height: 8),
             const Text("Menu Item", style: TUITextStyle.heading6),
@@ -832,9 +780,7 @@ class _HomePageState extends State<HomePage> {
                 title: "Item",
                 style: TUIMenuItemStyle.none,
               ),
-              action: (state) {
-                print("hello");
-              },
+              action: (state) {},
             ),
             const SizedBox(height: 8),
             TUIMenuItem(
@@ -865,9 +811,7 @@ class _HomePageState extends State<HomePage> {
                 title: "Item",
                 style: TUIMenuItemStyle.onlyLeft,
               ),
-              onLeftTap: (state) {
-                print("left tapped");
-              },
+              onLeftTap: (state) {},
             ),
             const SizedBox(height: 8),
             TUIMenuItem(
@@ -916,9 +860,7 @@ class _HomePageState extends State<HomePage> {
                 style: TUIMenuItemStyle.onlyLeft,
                 state: TUIMenuItemState.leftChecked,
               ),
-              onLeftTap: (state) {
-                print("left tapped");
-              },
+              onLeftTap: (state) {},
             ),
             const SizedBox(height: 8),
             TUIMenuItem(
@@ -980,10 +922,7 @@ class _HomePageState extends State<HomePage> {
                         type: TUISnackBarType.error,
                         message: "This is an error Snackbar with action",
                         action: TUISnackBarAction(
-                            label: "Retry",
-                            onActionPressed: () {
-                              print("Snackbar Retry onPressed");
-                            }),
+                            label: "Retry", onActionPressed: () {}),
                       ));
                     }),
               ),
@@ -1034,9 +973,7 @@ class _HomePageState extends State<HomePage> {
               style: TUIOverlayMobileStyle(
                   style: TUIOverlayMobileStyleType.left,
                   title: "Hello",
-                  action: () {
-                    print("hello tapped");
-                  }),
+                  action: () {}),
             ),
             const SizedBox(height: 8),
             TUIMobileOverlayHeader(
@@ -1049,9 +986,7 @@ class _HomePageState extends State<HomePage> {
                   style: TUIOverlayMobileStyleType.right,
                   title: "right",
                   icon: FluentIcons.access_time_20_filled,
-                  action: () {
-                    print("right icon tapped");
-                  }),
+                  action: () {}),
             ),
             const SizedBox(height: 8),
             const Text("Selection Card", style: TUITextStyle.heading6),
@@ -1064,9 +999,7 @@ class _HomePageState extends State<HomePage> {
               ),
               icon: FluentIcons.guest_24_regular,
               badgeCount: 4,
-              action: () {
-                print("hello");
-              },
+              action: () {},
             ),
             const SizedBox(height: 8),
             TUISelectionCard(
@@ -1078,9 +1011,7 @@ class _HomePageState extends State<HomePage> {
               icon: FluentIcons.guest_24_regular,
               badgeCount: 4,
               isHovered: true,
-              action: () {
-                print("hello");
-              },
+              action: () {},
             ),
             const SizedBox(height: 8),
             TUISelectionCard(
@@ -1092,9 +1023,7 @@ class _HomePageState extends State<HomePage> {
               icon: FluentIcons.guest_24_regular,
               badgeCount: 4,
               isSelected: true,
-              action: () {
-                print("hello");
-              },
+              action: () {},
             ),
             const SizedBox(height: 8),
             TUISelectionCard(
@@ -1107,9 +1036,7 @@ class _HomePageState extends State<HomePage> {
               badgeCount: 4,
               isSelected: true,
               isHovered: true,
-              action: () {
-                print("hello");
-              },
+              action: () {},
             ),
             const SizedBox(height: 8),
             const Text("Toggle Row", style: TUITextStyle.heading6),
@@ -1131,17 +1058,17 @@ class _HomePageState extends State<HomePage> {
               onChanged: (value) {},
             ),
             const SizedBox(height: 8),
-            TUIToggleRow(
+            const TUIToggleRow(
               title: "Title",
               description:
-                  "Descrption for this menu item that goes upto two lines",
+                  "Description for this menu item that goes up-to two lines",
               value: false,
             ),
             const SizedBox(height: 8),
             TUIToggleRow(
               title: "Title",
               description:
-                  "Descrption for this menu item that goes upto two lines",
+                  "Description for this menu item that goes up-to two lines",
               value: false,
               backgroundDark: true,
               onChanged: (value) {
@@ -1177,7 +1104,7 @@ class _HomePageState extends State<HomePage> {
             TUIToggleRow(
               title: "Hello",
               description:
-                  "Descrption for this menu item that goes upto two lines",
+                  "Description for this menu item that goes up-to two lines",
               value: false,
               icon: const Icon(FluentIcons.guest_24_filled),
               onChanged: (value) {
@@ -1190,7 +1117,7 @@ class _HomePageState extends State<HomePage> {
             TUIToggleRow(
               title: "Hello",
               description:
-                  "Descrption for this menu item that goes upto two lines",
+                  "Description for this menu item that goes up-to two lines",
               value: false,
               icon: const Icon(FluentIcons.guest_24_filled),
               backgroundDark: true,
@@ -1203,11 +1130,11 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 8),
             const Text("Search Bar", style: TUITextStyle.heading6),
             const SizedBox(height: 8),
-            TUISearchBar(
+            const TUISearchBar(
               showBackIcon: true,
             ),
             const SizedBox(height: 8),
-            TUISearchBar(
+            const TUISearchBar(
               showBackIcon: true,
               showTrailingIcon: true,
             ),

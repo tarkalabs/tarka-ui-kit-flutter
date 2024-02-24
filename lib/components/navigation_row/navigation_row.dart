@@ -17,31 +17,38 @@ TUINavigationRow(
  */
 class TUINavigationRow extends StatelessWidget {
   final String title;
-  late final IconData? icon;
-  late final Widget? accessoryView;
-  late final double? _height;
+  final IconData? icon;
+  final Widget? accessoryView;
+  final double? height;
 
-    TUINavigationRow({
+  const TUINavigationRow({
     super.key,
     required this.title,
     this.icon,
     this.accessoryView,
+    this.height,
   });
 
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
-        builder: (BuildContext context, BoxConstraints constraints) {
-      _height = constraints.maxHeight;
-      return Row(children: [getLeftView(context, icon, title)]);
-    });
+      builder: (BuildContext context, BoxConstraints constraints) {
+        final double maxHeight = height ?? constraints.maxHeight;
+        return Row(
+          children: [
+            getLeftView(context, icon, title, maxHeight),
+          ],
+        );
+      },
+    );
   }
 
   Widget getLeftView(
-    BuildContext context,
-    IconData? icon,
-    String title,
-  ) {
+      BuildContext context,
+      IconData? icon,
+      String title,
+      double maxHeight,
+      ) {
     final theme = TUITheme.of(context);
 
     TextStyle titleTextStyle = theme.typography.heading7.copyWith(
@@ -68,7 +75,7 @@ class TUINavigationRow extends StatelessWidget {
         title,
         style: titleTextStyle,
         textAlign: TextAlign.left,
-        overflow: getTextOverFlow(),
+        overflow: maxHeight == double.infinity ? null : TextOverflow.ellipsis,
       ),
     );
 
@@ -89,9 +96,5 @@ class TUINavigationRow extends StatelessWidget {
         children: leftViewItems,
       ),
     );
-  }
-
-  TextOverflow? getTextOverFlow() {
-    return _height == double.infinity ? null : TextOverflow.ellipsis;
   }
 }
