@@ -3,17 +3,16 @@ import 'package:tarka_ui/styles/default_colors.dart';
 import 'package:tarka_ui/styles/text_style.dart';
 
 /// TUITag is used to create a tag with contrast, icon type, size and text content.
-/*
-  Example:
-  ```dart
-  TUITag(
-    tagContrast: TUITagContrast.low,
-    tagIconType: TUITagIconType.left,
-    tagSize: TUITagSize.s,
-    tagText: 'Tag',
-  )
-  ```
- */
+///
+///  Example:
+///  ```dart
+///  TUITag(
+///    tagContrast: TUITagContrast.low,
+///    tagIconType: TUITagIconType.left,
+///    tagSize: TUITagSize.s,
+///    tagText: 'Tag',
+///  )
+///  ```
 class TUITag extends StatelessWidget {
   final TUITagContrast tagContrast;
   final TUITagIconType tagIconType;

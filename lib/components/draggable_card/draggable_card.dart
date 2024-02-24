@@ -3,14 +3,13 @@ import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:tarka_ui/styles/theme.dart';
 
 /// TUIDraggableCard is a card that can be dragged and dropped.
-/*
-  Example:
-  ```dart
-  TUIDraggableCard(
-    child: Text('Hello World'),
-  )
-  ```
-*/
+///
+///   Example:
+///   ```dart
+///   TUIDraggableCard(
+///     child: Text('Hello World'),
+///   )
+///   ```
 class TUIDraggableCard extends StatelessWidget {
   final Widget child;
   final bool backgroundDark;

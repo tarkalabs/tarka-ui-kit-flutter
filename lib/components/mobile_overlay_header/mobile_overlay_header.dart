@@ -5,18 +5,19 @@ import 'package:tarka_ui/components/button/style.dart';
 import 'package:tarka_ui/styles/theme.dart';
 
 /// TUIMobileOverlayHeader is a widget that is used to create a header for the mobile overlay.
-/*
-Example:
-```dart
-TUIMobileOverlayHeader(
-  style: TUIOverlayMobileStyle(
-    style: TUIOverlayMobileStyleType.left,
-    title: "Title",
-    action: () {
-      print("Action");
-    },
-  ),
- */
+///
+/// Example:
+/// ```dart
+/// TUIMobileOverlayHeader(
+///   style: TUIOverlayMobileStyle(
+///     style: TUIOverlayMobileStyleType.left,
+///     title: "Title",
+///     action: () {
+///       print("Action");
+///     },
+///   ),
+/// )
+/// ```
 class TUIMobileOverlayHeader extends StatelessWidget {
   final TUIOverlayMobileStyle style;
   const TUIMobileOverlayHeader({super.key, required this.style});
@@ -84,28 +85,30 @@ class TUIMobileOverlayHeader extends StatelessWidget {
   Widget? getRightView(BuildContext context) {
     return (style.style == TUIOverlayMobileStyleType.right)
         ? Positioned(
-      top: 0,
-      right: 0,
-      child: SizedBox(
-        width: MediaQuery.of(context).size.width, // Set the width to the screen width
-        child: Row(
-          children: [
-            const Spacer(),
-            Flexible(
-              fit: FlexFit.loose,
-              child: Center(
-                child: TUIIconButton(
-                  type: TUIIconButtonType.ghost,
-                  size: TUIIconButtonSize.px40,
-                  iconData: style.getIcon(),
-                  onPressed: style.action,
-                ),
+            top: 0,
+            right: 0,
+            child: SizedBox(
+              width: MediaQuery.of(context)
+                  .size
+                  .width, // Set the width to the screen width
+              child: Row(
+                children: [
+                  const Spacer(),
+                  Flexible(
+                    fit: FlexFit.loose,
+                    child: Center(
+                      child: TUIIconButton(
+                        type: TUIIconButtonType.ghost,
+                        size: TUIIconButtonSize.px40,
+                        iconData: style.getIcon(),
+                        onPressed: style.action,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
-          ],
-        ),
-      ),
-    )
+          )
         : null;
   }
 

@@ -1,5 +1,6 @@
 library tarka_ui;
 
+/// Tarka UI is a collection of widgets and styles that can be used to build a Flutter mobile application.
 export 'package:flutter/material.dart'
     show
         Brightness,

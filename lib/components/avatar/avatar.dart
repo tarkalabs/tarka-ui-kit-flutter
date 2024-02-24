@@ -4,20 +4,21 @@ import 'package:tarka_ui/styles/text_style.dart';
 import 'package:tarka_ui/subcomponents/image.dart';
 
 /// TUIAvatar is used to create a Avatar with content, size and badge flag.
-/*
-  Example:
-    ```dart
-  TUIAvatar(
-    avatarSize: TUIAvatarSize.xs,
-    avatarContent: TUIAvatarContent(
-      type: TUIAvatarContentType.image,
-      image: TUIImage(
-        imageUrl: 'https://picsum.photos/200/300',
-      ),
-    ),
-    isBadged: true,
-  ),```
- */
+///
+///   Example:
+///     ```dart
+///   TUIAvatar(
+///     avatarSize: TUIAvatarSize.xs,
+///     avatarContent: TUIAvatarContent(
+///       type: TUIAvatarContentType.image,
+///       image: TUIImage(
+///         imageUrl: 'https://picsum.photos/200/300',
+///       ),
+///     ),
+///     isBadged: true,
+///   )
+///   ```
+
 class TUIAvatar extends StatelessWidget {
   final TUIAvatarSize avatarSize;
   final TUIAvatarContent avatarContent;

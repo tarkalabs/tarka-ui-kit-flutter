@@ -12,7 +12,7 @@ and the Flutter guide for
 -->
 
 # Tarka UI Kit Flutter
-Tarka UI Kit is a reusable component library for building Flutter apps, based on a design system using Atomic Design principles
+Tarka UI Kit is a pre-built component library for building Flutter apps. It is based on our design system, utilizing Atomic Design principles.
 
 # List of components
 - TUIAccordion
@@ -49,17 +49,6 @@ Tarka UI Kit is a reusable component library for building Flutter apps, based on
 - TUIToggleSwitch
 - TUITag
 - TUIToggleRow
-
-
-## How to use this package in your project?  
-
-```
-# Add this below package in the dependencies section of the pubspec.yaml file
-tarka_ui:
-    git:
-      url: git@github.com:tarkalabs/tarka-ui-kit-flutter.git
-      ref: v1.1.0
-```
 
 ## How to run the kitchen sink app?
 

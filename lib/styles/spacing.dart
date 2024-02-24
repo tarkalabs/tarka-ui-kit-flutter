@@ -1,3 +1,4 @@
+/// TUISpacing class to define the spacing values used in the app.
 class TUISpacing {
   TUISpacing._();
 

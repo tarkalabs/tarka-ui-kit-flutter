@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 
+/// TUIColors is a class that holds all the colors used in the Tarka UI.
 class TUIColors with Diagnosticable {
   final Color primary;
   final Color onPrimary;

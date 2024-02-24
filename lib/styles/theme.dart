@@ -5,6 +5,7 @@ import 'package:tarka_ui/components/floating_action_button/floating_action_butto
 import 'package:tarka_ui/styles/colors.dart';
 import 'package:tarka_ui/styles/typography.dart';
 
+/// TUITheme that configures the color and typography values for a Tarka UI app.
 class TUITheme extends StatelessWidget {
   /// Applies the given theme [data] to [child].
   ///

@@ -60,16 +60,15 @@ enum TUIBadgeSize {
 }
 
 /// TUIBadge is used to create a Badge with content, size and badge flag.
-/*
-  Example:
-  ```dart
-  TUIBadge(
-    badgeSize: TUIBadgeSize.xs,
-    content: '1',
-    isNumbered: true,
-  ),
-  ```
- */
+///
+///  Example:
+///  ```dart
+///  TUIBadge(
+///    badgeSize: TUIBadgeSize.xs,
+///    content: '1',
+///    isNumbered: true,
+///  ),
+///  ```
 class TUIBadge extends StatelessWidget {
   final TUIBadgeSize badgeSize;
   final String? content;

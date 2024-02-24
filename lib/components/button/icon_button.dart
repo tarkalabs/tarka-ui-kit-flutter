@@ -3,17 +3,16 @@ import 'package:tarka_ui/components/button/style.dart';
 import 'package:tarka_ui/styles/theme.dart';
 
 /// TUIIconButton is used to create a button with icon and button type.
-/*
-  Example:
-    ```dart
-  TUIIconButton(
-    type: TUIIconButtonType.primary,
-    size: TUIIconButtonSize.m,
-    iconData: Icons.add,
-    onPressed: () {},
-  ),
-   ```
- */
+///
+///  Example:
+///    ```dart
+///  TUIIconButton(
+///    type: TUIIconButtonType.primary,
+///    size: TUIIconButtonSize.m,
+///    iconData: Icons.add,
+///    onPressed: () {},
+///  ),
+///   ```
 class TUIIconButton extends StatelessWidget {
   const TUIIconButton(
       {super.key,

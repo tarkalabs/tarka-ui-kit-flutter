@@ -3,17 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:tarka_ui/styles/theme.dart';
 
 /// TUICheckBox is used to create a checkbox with label and checkbox state.
-/*
-  Example:
-    ```dart
-  TUICheckBox(
-    state: TUICheckBoxState.unchecked,
-    onChanged: (TUICheckBoxState state) {
-      print(state);
-    },
-  ),
-   ```
-  */
+///
+///  Example:
+///    ```dart
+///  TUICheckBox(
+///    state: TUICheckBoxState.unchecked,
+///    onChanged: (TUICheckBoxState state) {
+///      print(state);
+///    },
+///  ),
+///   ```
 class TUICheckBox extends StatefulWidget {
   final bool? enableMixedState;
   final TUICheckBoxState state;
@@ -139,6 +138,7 @@ enum TUICheckBoxState {
   unchecked(0),
   mixed(1),
   checked(2);
+
   const TUICheckBoxState(this.value);
   final num value;
 

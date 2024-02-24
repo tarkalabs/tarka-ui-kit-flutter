@@ -2,17 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:tarka_ui/styles/theme.dart';
 
 /// TUIAnchor is a component that is used to create a clickable anchor.
-/*
-  Example:
-  ```dart
-  TUIAnchor(
-    title: 'Anchor',
-    onPressed: () {
-      print('Anchor pressed');
-    },
-  )
-  ```
-*/
+///
+/// Example:
+/// ```dart
+/// TUIAnchor(
+///     title: 'Anchor',
+///     onPressed: () {
+///       print('Anchor pressed');
+///     },
+///   )
+/// ```
 class TUIAnchor extends StatefulWidget {
   const TUIAnchor({
     super.key,
