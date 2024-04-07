@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tarka_ui/styles/default_colors.dart';
 import 'package:tarka_ui/styles/text_style.dart';
+import 'package:tarka_ui/styles/theme.dart';
 
 /// TUITag is used to create a tag with contrast, icon type, size and text content.
 ///
@@ -29,13 +29,14 @@ class TUITag extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TUIThemeData theme = TUITheme.of(context);
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Container(
           decoration: BoxDecoration(
             borderRadius: const BorderRadius.all(Radius.circular(4)),
-            color: tagContrast._getColor(),
+            color: tagContrast._getColor(theme),
           ),
           height: tagSize._getTagSize(),
           padding: EdgeInsets.fromLTRB(
@@ -43,13 +44,13 @@ class TUITag extends StatelessWidget {
               tagSize._getVerticalPadding(),
               tagSize._getRightPadding(tagIconType),
               tagSize._getVerticalPadding()),
-          child: _getIconAndText(),
+          child: _getIconAndText(theme),
         ),
       ],
     );
   }
 
-  Widget _getIconAndText() {
+  Widget _getIconAndText(TUIThemeData theme) {
     switch (tagIconType) {
       case TUITagIconType.none:
         return Row(
@@ -57,7 +58,7 @@ class TUITag extends StatelessWidget {
             Text(
               tagText,
               style: tagSize._getTextStyle().copyWith(
-                    color: tagContrast._getTextColor(),
+                    color: tagContrast._getTextColor(theme),
                   ),
             ),
           ],
@@ -68,13 +69,13 @@ class TUITag extends StatelessWidget {
             Icon(
               Icons.circle_outlined,
               size: tagSize._getIconSize(),
-              color: tagContrast._getTextColor(),
+              color: tagContrast._getTextColor(theme),
             ),
             SizedBox(width: tagSize._getSpacingBetweenIconAndText()),
             Text(
               tagText,
               style: tagSize._getTextStyle().copyWith(
-                    color: tagContrast._getTextColor(),
+                    color: tagContrast._getTextColor(theme),
                   ),
             ),
           ],
@@ -85,14 +86,14 @@ class TUITag extends StatelessWidget {
             Text(
               tagText,
               style: tagSize._getTextStyle().copyWith(
-                    color: tagContrast._getTextColor(),
+                    color: tagContrast._getTextColor(theme),
                   ),
             ),
             SizedBox(width: tagSize._getSpacingBetweenIconAndText()),
             Icon(
               Icons.circle_outlined,
               size: tagSize._getIconSize(),
-              color: tagContrast._getTextColor(),
+              color: tagContrast._getTextColor(theme),
             )
           ],
         );
@@ -105,21 +106,21 @@ enum TUITagContrast {
   low,
   high;
 
-  Color _getColor() {
+  Color _getColor(TUIThemeData theme) {
     switch (this) {
       case low:
-        return TUIDefaultColors.secondary;
+        return theme.colors.secondary;
       case high:
-        return TUIDefaultColors.secondaryAlt;
+        return theme.colors.secondaryAlt;
     }
   }
 
-  Color _getTextColor() {
+  Color _getTextColor(TUIThemeData theme) {
     switch (this) {
       case low:
-        return TUIDefaultColors.onSecondary;
+        return theme.colors.onSecondary;
       case high:
-        return TUIDefaultColors.onSecondaryAlt;
+        return theme.colors.onSecondaryAlt;
     }
   }
 }

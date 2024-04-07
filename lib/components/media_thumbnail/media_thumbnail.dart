@@ -1,6 +1,6 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:tarka_ui/styles/default_colors.dart';
+import 'package:tarka_ui/styles/theme.dart';
 import 'package:tarka_ui/subcomponents/image.dart';
 
 /// TUIMediaThumbnail is a widget that displays a thumbnail of a media file.
@@ -37,13 +37,14 @@ class TUIMediaThumbnail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TUIThemeData theme = TUITheme.of(context);
     if (isSelectable == true) {
       return GestureDetector(
         onTap: onPressed,
-        child: getBody(),
+        child: getBody(theme),
       );
     } else {
-      return getBody();
+      return getBody(theme);
     }
   }
 
@@ -59,7 +60,7 @@ class TUIMediaThumbnail extends StatelessWidget {
     }
   }
 
-  Row getBody() {
+  Row getBody(TUIThemeData theme) {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -67,7 +68,7 @@ class TUIMediaThumbnail extends StatelessWidget {
           alignment: Alignment.topRight,
           children: [
             Container(
-              decoration: decorate(),
+              decoration: decorate(theme),
               height: size.height,
               width: size.width,
             ),
@@ -175,10 +176,10 @@ class TUIMediaThumbnail extends StatelessWidget {
         ));
   }
 
-  BoxDecoration decorate() {
-    return const BoxDecoration(
-      color: TUIDefaultColors.surfaceVariant,
-      borderRadius: BorderRadius.all(
+  BoxDecoration decorate(TUIThemeData theme) {
+    return BoxDecoration(
+      color: theme.colors.surfaceVariant,
+      borderRadius: const BorderRadius.all(
         Radius.circular(8),
       ),
     );

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tarka_ui/styles/default_colors.dart';
 import 'package:tarka_ui/styles/text_style.dart';
+import 'package:tarka_ui/styles/theme.dart';
 import 'package:tarka_ui/subcomponents/image.dart';
 
 /// TUIAvatar is used to create a Avatar with content, size and badge flag.
@@ -40,12 +40,13 @@ class TUIAvatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget circleChild;
+    TUIThemeData theme = TUITheme.of(context);
 
     if (avatarContent.icon != null) {
       circleChild = Icon(
         avatarContent.icon,
         size: avatarSize._size / 2,
-        color: TUIDefaultColors.constantLight,
+        color: theme.colors.constantLight,
       );
     } else if (avatarContent.text != null) {
       TextStyle textStyle = avatarSize._textStyle.copyWith(
@@ -78,9 +79,9 @@ class TUIAvatar extends StatelessWidget {
               child: Container(
                 height: avatarSize._badgeSize,
                 width: avatarSize._badgeSize,
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: TUIDefaultColors.success,
+                  color: theme.colors.success,
                 ),
               ),
             );
@@ -91,9 +92,9 @@ class TUIAvatar extends StatelessWidget {
               child: Container(
                 height: avatarSize._badgeSize,
                 width: avatarSize._badgeSize,
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: TUIDefaultColors.success,
+                  color: theme.colors.success,
                 ),
               ),
             );

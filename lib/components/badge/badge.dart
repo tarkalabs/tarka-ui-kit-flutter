@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tarka_ui/styles/default_colors.dart';
 import 'package:tarka_ui/styles/text_style.dart';
+import 'package:tarka_ui/styles/theme.dart';
 
 enum TUIBadgeSize {
   xs,
@@ -40,20 +40,20 @@ enum TUIBadgeSize {
     }
   }
 
-  TextStyle _getStyle() {
+  TextStyle _getStyle(TUIThemeData theme) {
     switch (this) {
       case xs:
         return TUITextStyle.button8.copyWith(
-          color: TUIDefaultColors.onError,
+          color: theme.colors.onError,
           fontSize: 10,
         );
       case s:
         return TUITextStyle.button8.copyWith(
-          color: TUIDefaultColors.onError,
+          color: theme.colors.onError,
         );
       case l:
         return TUITextStyle.button7.copyWith(
-          color: TUIDefaultColors.onError,
+          color: theme.colors.onError,
         );
     }
   }
@@ -83,6 +83,7 @@ class TUIBadge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TUIThemeData theme = TUITheme.of(context);
     if (content != null && isNumbered) {
       return Container(
         height: badgeSize._getBadgeSize(),
@@ -93,13 +94,13 @@ class TUIBadge extends StatelessWidget {
           maxWidth: MediaQuery.of(context).size.width,
         ),
         decoration: BoxDecoration(
-          color: TUIDefaultColors.error,
+          color: theme.colors.error,
           borderRadius: BorderRadius.all(badgeSize._getBorderRadius()),
         ),
         padding: badgeSize._getEdgeInsets(),
         child: Text(
           content!,
-          style: badgeSize._getStyle(),
+          style: badgeSize._getStyle(theme),
         ),
       );
     } else {
@@ -107,9 +108,9 @@ class TUIBadge extends StatelessWidget {
         height: badgeSize._getBadgeSize(),
         width: badgeSize._getBadgeSize(),
         padding: badgeSize._getEdgeInsets(),
-        decoration: const BoxDecoration(
-            color: TUIDefaultColors.error,
-            borderRadius: BorderRadius.all(Radius.circular(20))),
+        decoration: BoxDecoration(
+            color: theme.colors.error,
+            borderRadius: const BorderRadius.all(Radius.circular(20))),
       );
     }
   }
