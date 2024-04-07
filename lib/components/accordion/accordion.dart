@@ -35,8 +35,8 @@ class _TUIAccordionState extends State<TUIAccordion> {
     return Card(
         elevation: 0,
         shape: RoundedRectangleBorder(
-          side: const BorderSide(
-            color: TUIDefaultColors.outline,
+          side: BorderSide(
+            color: theme.colors.outline,
             width: 1,
           ),
           borderRadius: BorderRadius.circular(36.0),

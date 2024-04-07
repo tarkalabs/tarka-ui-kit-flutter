@@ -31,9 +31,9 @@ class TUIAvatar extends StatelessWidget {
     super.key,
     required this.avatarSize,
     required this.avatarContent,
-    this.textColor = TUIDefaultColors.onTertiary,
-    this.foregroundColor = TUIDefaultColors.constantLight,
-    this.backgroundColor = TUIDefaultColors.tertiary,
+    this.textColor,
+    this.foregroundColor,
+    this.backgroundColor,
     this.isBadged = false,
   });
 
