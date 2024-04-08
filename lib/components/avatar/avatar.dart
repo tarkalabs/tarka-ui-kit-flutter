@@ -22,7 +22,6 @@ class TUIAvatar extends StatelessWidget {
   final TUIAvatarSize avatarSize;
   final TUIAvatarContent avatarContent;
   final Color? textColor;
-  final Color? foregroundColor;
   final Color? backgroundColor;
   final bool isBadged;
 
@@ -31,7 +30,6 @@ class TUIAvatar extends StatelessWidget {
     required this.avatarSize,
     required this.avatarContent,
     this.textColor,
-    this.foregroundColor,
     this.backgroundColor,
     this.isBadged = false,
   });
@@ -40,6 +38,8 @@ class TUIAvatar extends StatelessWidget {
   Widget build(BuildContext context) {
     Widget circleChild;
     TUIThemeData theme = TUITheme.of(context);
+    final textColor = this.textColor ?? theme.colors.onTertiary;
+    final backgroundColor = this.backgroundColor ?? theme.colors.tertiary;
 
     if (avatarContent.icon != null) {
       circleChild = Icon(
