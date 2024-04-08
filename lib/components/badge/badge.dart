@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tarka_ui/styles/text_style.dart';
 import 'package:tarka_ui/styles/theme.dart';
 
 enum TUIBadgeSize {
@@ -43,16 +42,16 @@ enum TUIBadgeSize {
   TextStyle _getStyle(TUIThemeData theme) {
     switch (this) {
       case xs:
-        return TUITextStyle.button8.copyWith(
+        return theme.typography.button8.copyWith(
           color: theme.colors.onError,
           fontSize: 10,
         );
       case s:
-        return TUITextStyle.button8.copyWith(
+        return theme.typography.button8.copyWith(
           color: theme.colors.onError,
         );
       case l:
-        return TUITextStyle.button7.copyWith(
+        return theme.typography.button7.copyWith(
           color: theme.colors.onError,
         );
     }

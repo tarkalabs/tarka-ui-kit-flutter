@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tarka_ui/styles/text_style.dart';
 import 'package:tarka_ui/styles/theme.dart';
 
 /// TUITag is used to create a tag with contrast, icon type, size and text content.
@@ -57,7 +56,7 @@ class TUITag extends StatelessWidget {
           children: [
             Text(
               tagText,
-              style: tagSize._getTextStyle().copyWith(
+              style: tagSize._getTextStyle(theme).copyWith(
                     color: tagContrast._getTextColor(theme),
                   ),
             ),
@@ -74,7 +73,7 @@ class TUITag extends StatelessWidget {
             SizedBox(width: tagSize._getSpacingBetweenIconAndText()),
             Text(
               tagText,
-              style: tagSize._getTextStyle().copyWith(
+              style: tagSize._getTextStyle(theme).copyWith(
                     color: tagContrast._getTextColor(theme),
                   ),
             ),
@@ -85,7 +84,7 @@ class TUITag extends StatelessWidget {
           children: [
             Text(
               tagText,
-              style: tagSize._getTextStyle().copyWith(
+              style: tagSize._getTextStyle(theme).copyWith(
                     color: tagContrast._getTextColor(theme),
                   ),
             ),
@@ -227,14 +226,14 @@ enum TUITagSize {
     }
   }
 
-  TextStyle _getTextStyle() {
+  TextStyle _getTextStyle(TUIThemeData theme) {
     switch (this) {
       case s:
-        return TUITextStyle.button8;
+        return theme.typography.button8;
       case m:
-        return TUITextStyle.button7;
+        return theme.typography.button7;
       case l:
-        return TUITextStyle.button6;
+        return theme.typography.button6;
     }
   }
 

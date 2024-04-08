@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tarka_ui/styles/text_style.dart';
 import 'package:tarka_ui/styles/theme.dart';
 
 /// TUIInputField is a text input field that allows users to enter text.
@@ -127,10 +126,10 @@ class TUIInputField extends StatelessWidget {
           fillColor: theme.colors.inputBackground,
           hintText: hintText,
           hintStyle:
-              TUITextStyle.body6.copyWith(color: theme.colors.inputTextDim),
+              theme.typography.body6.copyWith(color: theme.colors.inputTextDim),
           labelText: labelText,
           labelStyle:
-              TUITextStyle.body6.copyWith(color: theme.colors.inputTextDim),
+              theme.typography.body6.copyWith(color: theme.colors.inputTextDim),
           suffixText: suffixText,
           prefixText: prefixText,
           prefixIconColor: prefixIconColor,
@@ -140,9 +139,9 @@ class TUIInputField extends StatelessWidget {
           errorText: errorText,
           helperText: helperText,
           errorStyle:
-              TUITextStyle.body7.copyWith(color: theme.colors.inputText),
+              theme.typography.body7.copyWith(color: theme.colors.inputText),
           helperStyle:
-              TUITextStyle.body7.copyWith(color: theme.colors.inputText),
+              theme.typography.body7.copyWith(color: theme.colors.inputText),
           focusedBorder: UnderlineInputBorder(
               borderRadius: const BorderRadius.all(Radius.circular(8)),
               borderSide: BorderSide(color: theme.colors.primary)),

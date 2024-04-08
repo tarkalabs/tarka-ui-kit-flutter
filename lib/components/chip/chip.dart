@@ -1,6 +1,5 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:tarka_ui/styles/text_style.dart';
 import 'package:tarka_ui/styles/theme.dart';
 import 'package:tarka_ui/subcomponents/image.dart';
 
@@ -75,8 +74,9 @@ class TUIChip extends StatelessWidget {
         children: [
           Badge(
               label: Text(
-                style:
-                    size._badgeTextStyle.copyWith(color: theme.colors.onError),
+                style: size
+                    ._getBadgeTextStyle(theme)
+                    .copyWith(color: theme.colors.onError),
                 badgeValue!,
               ),
               child: chipContent),
@@ -191,44 +191,37 @@ class TUIChip extends StatelessWidget {
 
   TextStyle getTextStyle(TUIThemeData theme) {
     if (!highlighted) {
-      return TUITextStyle.button7.copyWith(color: theme.colors.onSurface);
+      return theme.typography.button7.copyWith(color: theme.colors.onSurface);
     } else {
-      return TUITextStyle.button7.copyWith(color: theme.colors.onSecondary);
+      return theme.typography.button7.copyWith(color: theme.colors.onSecondary);
     }
   }
 }
 
 /// TUIChipSize is used to define the size of the chip, there are only two sizes for now, `medium` and `large`.
 enum TUIChipSize {
-  m(
-      height: 32,
-      textStyle: TUITextStyle.body7,
-      rightIconSize: 12,
-      rightIconPadding: 10.25,
-      badgeSize: 16,
-      badgeTextStyle: TUITextStyle.button8),
-  l(
-      height: 40,
-      textStyle: TUITextStyle.body6,
-      rightIconSize: 16,
-      rightIconPadding: 13.75,
-      badgeSize: 24,
-      badgeTextStyle: TUITextStyle.button7);
+  m(height: 32, rightIconSize: 12, rightIconPadding: 10.25, badgeSize: 16),
+  l(height: 40, rightIconSize: 16, rightIconPadding: 13.75, badgeSize: 24);
 
   const TUIChipSize(
       {required double height,
-      required TextStyle textStyle,
       required double rightIconSize,
       required double rightIconPadding,
-      required double badgeSize,
-      required TextStyle badgeTextStyle})
+      required double badgeSize})
       : _height = height,
         _rightIconSize = rightIconSize,
-        _rightIconPadding = rightIconPadding,
-        _badgeTextStyle = badgeTextStyle;
+        _rightIconPadding = rightIconPadding;
 
   final double _height;
   final double _rightIconSize;
   final double _rightIconPadding;
-  final TextStyle _badgeTextStyle;
+
+  TextStyle _getBadgeTextStyle(TUIThemeData theme) {
+    switch (this) {
+      case TUIChipSize.m:
+        return theme.typography.button8;
+      case TUIChipSize.l:
+        return theme.typography.button7;
+    }
+  }
 }

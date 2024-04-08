@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tarka_ui/styles/text_style.dart';
 import 'package:tarka_ui/styles/theme.dart';
 import 'package:tarka_ui/subcomponents/image.dart';
 
@@ -49,9 +48,9 @@ class TUIAvatar extends StatelessWidget {
         color: theme.colors.constantLight,
       );
     } else if (avatarContent.text != null) {
-      TextStyle textStyle = avatarSize._textStyle.copyWith(
-        color: textColor,
-      );
+      TextStyle textStyle = avatarSize._getTextStyle(theme).copyWith(
+            color: textColor,
+          );
 
       circleChild = Text(
         avatarContent.text!,
@@ -136,23 +135,37 @@ enum TUIAvatarContentType { image, icon, text }
 
 /// TUIAvatarSize is used to define the size of Avatar.
 enum TUIAvatarSize {
-  xxs(size: 24, badgeSize: 12, textStyle: TUITextStyle.body8),
-  xs(size: 32, badgeSize: 12, textStyle: TUITextStyle.heading7),
-  s(size: 40, badgeSize: 12, textStyle: TUITextStyle.heading6),
-  m(size: 48, badgeSize: 12, textStyle: TUITextStyle.heading5),
-  l(size: 64, badgeSize: 16, textStyle: TUITextStyle.heading4),
-  xl(size: 80, badgeSize: 24, textStyle: TUITextStyle.heading3),
-  xxl(size: 96, badgeSize: 24, textStyle: TUITextStyle.heading2);
+  xxs(size: 24, badgeSize: 12),
+  xs(size: 32, badgeSize: 12),
+  s(size: 40, badgeSize: 12),
+  m(size: 48, badgeSize: 12),
+  l(size: 64, badgeSize: 16),
+  xl(size: 80, badgeSize: 24),
+  xxl(size: 96, badgeSize: 24);
 
-  const TUIAvatarSize(
-      {required double size,
-      required double badgeSize,
-      required TextStyle textStyle})
+  const TUIAvatarSize({required double size, required double badgeSize})
       : _size = size,
-        _badgeSize = badgeSize,
-        _textStyle = textStyle;
+        _badgeSize = badgeSize;
 
   final double _size;
   final double _badgeSize;
-  final TextStyle _textStyle;
+
+  TextStyle _getTextStyle(TUIThemeData theme) {
+    switch (this) {
+      case TUIAvatarSize.xxs:
+        return theme.typography.body8;
+      case TUIAvatarSize.xs:
+        return theme.typography.heading7;
+      case TUIAvatarSize.s:
+        return theme.typography.heading6;
+      case TUIAvatarSize.m:
+        return theme.typography.heading5;
+      case TUIAvatarSize.l:
+        return theme.typography.heading4;
+      case TUIAvatarSize.xl:
+        return theme.typography.heading3;
+      case TUIAvatarSize.xxl:
+        return theme.typography.heading2;
+    }
+  }
 }
