@@ -102,6 +102,8 @@ class TUIInputField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = TUITheme.of(context);
+    final suffixIconColor = this.suffixIconColor ?? theme.colors.inputText;
+    final prefixIconColor = this.prefixIconColor ?? theme.colors.inputText;
     return TextField(
         onChanged: onChanged,
         onEditingComplete: onEditingComplete,
@@ -134,7 +136,7 @@ class TUIInputField extends StatelessWidget {
           prefixText: prefixText,
           prefixIconColor: prefixIconColor,
           prefixIcon: prefixIcon ?? prefixIcon,
-          suffixIconColor: theme.colors.inputText,
+          suffixIconColor: suffixIconColor,
           suffixIcon: suffixIcon ?? suffixIcon,
           errorText: errorText,
           helperText: helperText,
