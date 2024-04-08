@@ -664,7 +664,9 @@ class _HomePageState extends State<HomePage> {
             Row(
               children: [
                 TUIRadioButton(
-                  onPressed: () {},
+                  onPressed: (isSelected) {
+                    print(isSelected);
+                  },
                 ),
                 const SizedBox(width: 8),
                 const TUIRadioButton(
@@ -673,7 +675,9 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(width: 8),
                 TUIRadioButton(
                   isSelected: true,
-                  onPressed: () {},
+                  onPressed: (isSelected) {
+                    print(isSelected);
+                  },
                 ),
                 const SizedBox(width: 8),
                 const TUIRadioButton()
@@ -1152,8 +1156,9 @@ class _HomePageState extends State<HomePage> {
             TUIRadioRow(
               title: "title",
               description: "description",
-              onPressed: () {
-                print("Button pressed");
+              isSelected: true,
+              onPressed: (isSelected) {
+                print(isSelected);
               },
             ),
 
@@ -1161,8 +1166,9 @@ class _HomePageState extends State<HomePage> {
               title: "title",
               description: "description",
               backgroundDark: true,
-              onPressed: () {
-                print("Button pressed");
+              isSelected: false,
+              onPressed: (isSelected) {
+                print(isSelected);
               },
             ),
             const SizedBox(height: 100),

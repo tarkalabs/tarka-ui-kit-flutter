@@ -13,7 +13,7 @@ import 'package:tarka_ui/styles/theme.dart';
 ///  ),
 ///  ```
 class TUIRadioButton extends StatefulWidget {
-  final VoidCallback? onPressed;
+  final Function(bool)? onPressed;
   final bool isSelected;
 
   const TUIRadioButton({
@@ -75,7 +75,7 @@ class _TUIRadioButtonState extends State<TUIRadioButton> {
       onTap: () {
         if (widget.onPressed != null) {
           _setState();
-          widget.onPressed?.call();
+          widget.onPressed!(isSelected);
         }
       },
       child: child,

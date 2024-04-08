@@ -6,8 +6,8 @@ import '../radio_button/radio_button.dart';
 class TUIRadioRow extends StatelessWidget {
   final String title;
   final String description;
-  final VoidCallback? onPressed;
-  final bool? isSelected;
+  final Function(bool)? onPressed;
+  final bool isSelected;
   final bool backgroundDark;
 
   const TUIRadioRow({
@@ -15,22 +15,9 @@ class TUIRadioRow extends StatelessWidget {
     required this.title,
     this.description = "",
     this.onPressed,
-    this.isSelected,
+    this.isSelected = false,
     this.backgroundDark = false,
   });
-
-  TUIRadioButton getRadioButton() {
-    if (isSelected == null) {
-      return TUIRadioButton(
-        onPressed: () {},
-      );
-    } else {
-      return TUIRadioButton(
-        onPressed: () {},
-        isSelected: isSelected ?? false,
-      );
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,25 +36,23 @@ class TUIRadioRow extends StatelessWidget {
         mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: getRowCrossAxisAlignment(description),
         children: [
-          getRadioButton(),
+          TUIRadioButton(
+            onPressed: (isSelected) {
+              if (onPressed != null) {
+                onPressed!(isSelected);
+              }
+            },
+            isSelected: isSelected,
+          ),
           const SizedBox(
             width: 20.0,
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                title,
-                style: theme.typography.heading7
-                    .copyWith(fontWeight: FontWeight.w600),
-              ),
+              Text(title, style: theme.typography.heading7),
               if (showDescription)
-                Text(
-                  description,
-                  style: theme.typography.body7.copyWith(
-                    fontWeight: FontWeight.w400,
-                  ),
-                )
+                Text(description, style: theme.typography.body7)
             ],
           )
         ],
