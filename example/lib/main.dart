@@ -7,6 +7,7 @@ import 'package:tarka_ui/components/chip/chip.dart';
 import 'package:tarka_ui/components/draggable_card/draggable_card.dart';
 import 'package:tarka_ui/components/email_field/email_field.dart';
 import 'package:tarka_ui/components/menu_item/menu_item.dart';
+import 'package:tarka_ui/components/radio_row/radio_row.dart';
 import 'package:tarka_ui/components/search_bar/search_bar.dart';
 import 'package:tarka_ui/components/selection_card/selection_card.dart';
 import 'package:tarka_ui/components/toggle_row/toggle_row.dart';
@@ -663,7 +664,9 @@ class _HomePageState extends State<HomePage> {
             Row(
               children: [
                 TUIRadioButton(
-                  onPressed: () {},
+                  onPressed: (isSelected) {
+                    print(isSelected);
+                  },
                 ),
                 const SizedBox(width: 8),
                 const TUIRadioButton(
@@ -672,7 +675,9 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(width: 8),
                 TUIRadioButton(
                   isSelected: true,
-                  onPressed: () {},
+                  onPressed: (isSelected) {
+                    print(isSelected);
+                  },
                 ),
                 const SizedBox(width: 8),
                 const TUIRadioButton()
@@ -1144,6 +1149,27 @@ class _HomePageState extends State<HomePage> {
               showTrailingIcon: true,
               onChanged: (String value) {},
               autofocus: true,
+            ),
+            const SizedBox(height: 8),
+            const Text("Radio Row", style: TUITextStyle.heading6),
+            const SizedBox(height: 8),
+            TUIRadioRow(
+              title: "title",
+              description: "description",
+              isSelected: true,
+              onPressed: (isSelected) {
+                print(isSelected);
+              },
+            ),
+
+            TUIRadioRow(
+              title: "title",
+              description: "description",
+              backgroundDark: true,
+              isSelected: false,
+              onPressed: (isSelected) {
+                print(isSelected);
+              },
             ),
             const SizedBox(height: 100),
           ],
