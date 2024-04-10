@@ -40,19 +40,21 @@ enum TUIBadgeSize {
   }
 
   TextStyle _getStyle(TUIThemeData theme) {
+    final colors = theme.colors;
+    final typography = theme.typography;
     switch (this) {
       case xs:
-        return theme.typography.button8.copyWith(
-          color: theme.colors.onError,
+        return typography.button8.copyWith(
+          color: colors.onError,
           fontSize: 10,
         );
       case s:
-        return theme.typography.button8.copyWith(
-          color: theme.colors.onError,
+        return typography.button8.copyWith(
+          color: colors.onError,
         );
       case l:
-        return theme.typography.button7.copyWith(
-          color: theme.colors.onError,
+        return typography.button7.copyWith(
+          color: colors.onError,
         );
     }
   }

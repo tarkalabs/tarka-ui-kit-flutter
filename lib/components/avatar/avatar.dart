@@ -38,14 +38,15 @@ class TUIAvatar extends StatelessWidget {
   Widget build(BuildContext context) {
     Widget circleChild;
     TUIThemeData theme = TUITheme.of(context);
-    final textColor = this.textColor ?? theme.colors.onTertiary;
-    final backgroundColor = this.backgroundColor ?? theme.colors.tertiary;
+    final colors = theme.colors;
+    final textColor = this.textColor ?? colors.onTertiary;
+    final backgroundColor = this.backgroundColor ?? colors.tertiary;
 
     if (avatarContent.icon != null) {
       circleChild = Icon(
         avatarContent.icon,
         size: avatarSize._size / 2,
-        color: theme.colors.constantLight,
+        color: colors.constantLight,
       );
     } else if (avatarContent.text != null) {
       TextStyle textStyle = avatarSize._getTextStyle(theme).copyWith(
@@ -80,7 +81,7 @@ class TUIAvatar extends StatelessWidget {
                 width: avatarSize._badgeSize,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: theme.colors.success,
+                  color: colors.success,
                 ),
               ),
             );
@@ -93,7 +94,7 @@ class TUIAvatar extends StatelessWidget {
                 width: avatarSize._badgeSize,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: theme.colors.success,
+                  color: colors.success,
                 ),
               ),
             );
