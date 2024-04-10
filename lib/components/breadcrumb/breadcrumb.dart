@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tarka_ui/styles/default_colors.dart';
 import 'package:tarka_ui/styles/theme.dart';
 
 /// TUIBreadCrumb is used to create a BreadCrumb with titles and onTap function.
@@ -67,7 +66,7 @@ class TUIBreadCrumb extends StatelessWidget {
               return Text(
                 titles[index],
                 style: textStyle.button6.copyWith(
-                  color: TUIDefaultColors.onSurface,
+                  color: colors.onSurface,
                 ),
               );
             }

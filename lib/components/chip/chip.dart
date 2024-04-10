@@ -1,7 +1,6 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:tarka_ui/styles/default_colors.dart';
-import 'package:tarka_ui/styles/text_style.dart';
+import 'package:tarka_ui/styles/theme.dart';
 import 'package:tarka_ui/subcomponents/image.dart';
 
 /// TUIChip widget to display a chip with title, left icon, right icon and badge.
@@ -44,24 +43,25 @@ class TUIChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TUIThemeData theme = TUITheme.of(context);
     Widget chipContent = Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Container(
-          decoration: getChipDecoration(),
+          decoration: getChipDecoration(theme),
           height: size._height,
           padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              getLeftIcon(),
-              getLeftIconPaddingIfNeeded(),
+              getLeftIcon(theme),
+              getLeftIconPaddingIfNeeded(theme),
               Text(
                 title,
-                style: getTextStyle(),
+                style: getTextStyle(theme),
               ),
-              getRightIconPaddingIfNeeded(),
-              getDismissOrRightIcon(),
+              getRightIconPaddingIfNeeded(theme),
+              getDismissOrRightIcon(theme),
             ].whereType<Widget>().toList(),
           ),
         ),
@@ -74,8 +74,9 @@ class TUIChip extends StatelessWidget {
         children: [
           Badge(
               label: Text(
-                style: size._badgeTextStyle
-                    .copyWith(color: TUIDefaultColors.onError),
+                style: size
+                    ._getBadgeTextStyle(theme)
+                    .copyWith(color: theme.colors.onError),
                 badgeValue!,
               ),
               child: chipContent),
@@ -86,26 +87,26 @@ class TUIChip extends StatelessWidget {
     }
   }
 
-  BoxDecoration getChipDecoration() {
+  BoxDecoration getChipDecoration(TUIThemeData theme) {
     if (!highlighted) {
       return BoxDecoration(
-        border: Border.all(color: TUIDefaultColors.outline, width: 1.5),
+        border: Border.all(color: theme.colors.outline, width: 1.5),
         borderRadius: const BorderRadius.all(Radius.circular(8)),
-        color: TUIDefaultColors.surfaceHover,
+        color: theme.colors.surfaceHover,
       );
     } else {
-      return const BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(8)),
-        color: TUIDefaultColors.secondary,
+      return BoxDecoration(
+        borderRadius: const BorderRadius.all(Radius.circular(8)),
+        color: theme.colors.secondary,
       );
     }
   }
 
-  Icon getDismissIconImage() {
+  Icon getDismissIconImage(TUIThemeData theme) {
     if (highlighted) {
-      return const Icon(
+      return Icon(
         FluentIcons.dismiss_12_filled,
-        color: TUIDefaultColors.onSecondary,
+        color: theme.colors.onSecondary,
         size: 12,
       );
     } else {
@@ -116,28 +117,28 @@ class TUIChip extends StatelessWidget {
     }
   }
 
-  Widget? getDismissOrRightIcon() {
+  Widget? getDismissOrRightIcon(TUIThemeData theme) {
     if (onRightIconTap != null && rightIcon == null) {
       return GestureDetector(
         onTap: onRightIconTap,
-        child: getDismissIconImage(),
+        child: getDismissIconImage(theme),
       );
     } else {
-      return getRightIcon();
+      return getRightIcon(theme);
     }
   }
 
-  Widget? getLeftIcon() {
+  Widget? getLeftIcon(TUIThemeData theme) {
     if (leftIcon != null) {
       if (highlighted) {
         return Icon(
           leftIcon!,
-          color: TUIDefaultColors.onSecondary,
+          color: theme.colors.onSecondary,
         );
       } else {
         return Icon(
           leftIcon!,
-          color: TUIDefaultColors.onSurface,
+          color: theme.colors.onSurface,
         );
       }
     } else if (leftIconImage != null) {
@@ -147,22 +148,22 @@ class TUIChip extends StatelessWidget {
     }
   }
 
-  Widget? getLeftIconPaddingIfNeeded() {
-    if (getLeftIcon() != null) {
+  Widget? getLeftIconPaddingIfNeeded(TUIThemeData theme) {
+    if (getLeftIcon(theme) != null) {
       return const SizedBox(width: 11);
     } else {
       return null;
     }
   }
 
-  Widget? getRightIcon() {
+  Widget? getRightIcon(TUIThemeData theme) {
     if (rightIcon != null) {
       if (highlighted) {
         return GestureDetector(
           onTap: onRightIconTap,
           child: Icon(
             rightIcon!,
-            color: TUIDefaultColors.onSecondary,
+            color: theme.colors.onSecondary,
             size: size._rightIconSize,
           ),
         );
@@ -180,54 +181,47 @@ class TUIChip extends StatelessWidget {
     return null;
   }
 
-  Widget? getRightIconPaddingIfNeeded() {
-    if (getDismissOrRightIcon() != null) {
+  Widget? getRightIconPaddingIfNeeded(TUIThemeData theme) {
+    if (getDismissOrRightIcon(theme) != null) {
       return SizedBox(width: size._rightIconPadding);
     } else {
       return null;
     }
   }
 
-  TextStyle getTextStyle() {
+  TextStyle getTextStyle(TUIThemeData theme) {
     if (!highlighted) {
-      return TUITextStyle.button7.copyWith(color: TUIDefaultColors.onSurface);
+      return theme.typography.button7.copyWith(color: theme.colors.onSurface);
     } else {
-      return TUITextStyle.button7.copyWith(color: TUIDefaultColors.onSecondary);
+      return theme.typography.button7.copyWith(color: theme.colors.onSecondary);
     }
   }
 }
 
 /// TUIChipSize is used to define the size of the chip, there are only two sizes for now, `medium` and `large`.
 enum TUIChipSize {
-  m(
-      height: 32,
-      textStyle: TUITextStyle.body7,
-      rightIconSize: 12,
-      rightIconPadding: 10.25,
-      badgeSize: 16,
-      badgeTextStyle: TUITextStyle.button8),
-  l(
-      height: 40,
-      textStyle: TUITextStyle.body6,
-      rightIconSize: 16,
-      rightIconPadding: 13.75,
-      badgeSize: 24,
-      badgeTextStyle: TUITextStyle.button7);
+  m(height: 32, rightIconSize: 12, rightIconPadding: 10.25, badgeSize: 16),
+  l(height: 40, rightIconSize: 16, rightIconPadding: 13.75, badgeSize: 24);
 
   const TUIChipSize(
       {required double height,
-      required TextStyle textStyle,
       required double rightIconSize,
       required double rightIconPadding,
-      required double badgeSize,
-      required TextStyle badgeTextStyle})
+      required double badgeSize})
       : _height = height,
         _rightIconSize = rightIconSize,
-        _rightIconPadding = rightIconPadding,
-        _badgeTextStyle = badgeTextStyle;
+        _rightIconPadding = rightIconPadding;
 
   final double _height;
   final double _rightIconSize;
   final double _rightIconPadding;
-  final TextStyle _badgeTextStyle;
+
+  TextStyle _getBadgeTextStyle(TUIThemeData theme) {
+    switch (this) {
+      case TUIChipSize.m:
+        return theme.typography.button8;
+      case TUIChipSize.l:
+        return theme.typography.button7;
+    }
+  }
 }
