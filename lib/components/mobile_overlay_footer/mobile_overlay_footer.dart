@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../styles/theme.dart';
+
 class TUIMobileOverlayFooter extends StatelessWidget {
   final List<TUIOverlayFooterAction> actions;
 
@@ -10,16 +12,18 @@ class TUIMobileOverlayFooter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    TUIThemeData theme = TUITheme.of(context);
+    final colors = theme.colors;
+
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
         const Divider(
           height: 0,
           thickness: 1,
-          color: Colors.grey,
         ),
         Container(
-          color: Colors.grey.shade200,
+          color: colors.surface,
           padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 24),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,

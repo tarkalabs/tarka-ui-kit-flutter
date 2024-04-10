@@ -35,6 +35,7 @@ class TUIMobileOverlayMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisSize: MainAxisSize.min,
       children: [
         getHeaderView(context),
         getMenuItemView(context),
@@ -87,13 +88,10 @@ class TUIMobileOverlayMenu extends StatelessWidget {
   }
 
   Widget getFooterView(BuildContext context) {
-    TUIThemeData theme = TUITheme.of(context);
-    final colors = theme.colors;
-
     TUIOverlayFooterAction closeButton = TUIOverlayFooterAction(
         icon: FluentIcons.dismiss_24_regular,
         handler: () {
-          print("close tapped");
+          Navigator.of(context).pop();
         });
 
     return TUIMobileOverlayFooter(actions: [closeButton]);
