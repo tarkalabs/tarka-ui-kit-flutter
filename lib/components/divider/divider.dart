@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tarka_ui/styles/theme.dart';
 
 /// TUIDividerVerticalPadding is used to define the vertical padding of divider.
 enum TUIDividerVerticalPadding { none, s }
@@ -35,6 +36,8 @@ class TUIDivider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = TUITheme.of(context);
+    final color = this.color ?? theme.colors.surfaceVariantHover;
     return type == TUIDividerType.horizontal
         ? Divider(
             thickness: 2,
