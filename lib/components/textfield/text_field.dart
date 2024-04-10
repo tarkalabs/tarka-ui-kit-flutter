@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tarka_ui/styles/default_colors.dart';
-import 'package:tarka_ui/styles/text_style.dart';
+import 'package:tarka_ui/styles/theme.dart';
 
 /// TUIInputField is a text input field that allows users to enter text.
 ///
@@ -72,9 +71,9 @@ class TUIInputField extends StatelessWidget {
     this.expands = false,
     this.maxLength,
     this.prefixIcon,
-    this.prefixIconColor = TUIDefaultColors.inputText,
+    this.prefixIconColor,
     this.suffixIcon,
-    this.suffixIconColor = TUIDefaultColors.inputText,
+    this.suffixIconColor,
     this.obscureText = false,
     this.obscuringCharacter = '*',
     this.controller,
@@ -102,68 +101,67 @@ class TUIInputField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-        child: TextField(
-            onChanged: onChanged,
-            onEditingComplete: onEditingComplete,
-            onSubmitted: onSubmitted,
-            keyboardType: keyboardType,
-            textInputAction: textInputAction,
-            controller: controller,
-            onTap: onTap,
-            readOnly: readOnly,
-            enabled: enabled,
-            obscureText: obscureText,
-            obscuringCharacter: obscuringCharacter,
-            textAlign: textAlign,
-            textAlignVertical: textAlignVertical,
-            textCapitalization: textCapitalization,
-            textDirection: textDirection,
-            minLines: minLines,
-            maxLines: maxLines,
-            maxLength: maxLength,
-            decoration: InputDecoration(
-              filled: true,
-              fillColor: TUIDefaultColors.inputBackground,
-              hintText: hintText,
-              hintStyle: TUITextStyle.body6
-                  .copyWith(color: TUIDefaultColors.inputTextDim),
-              labelText: labelText,
-              labelStyle: TUITextStyle.body6
-                  .copyWith(color: TUIDefaultColors.inputTextDim),
-              suffixText: suffixText,
-              prefixText: prefixText,
-              prefixIconColor: prefixIconColor,
-              prefixIcon: prefixIcon ?? prefixIcon,
-              suffixIconColor: TUIDefaultColors.inputText,
-              suffixIcon: suffixIcon ?? suffixIcon,
-              errorText: errorText,
-              helperText: helperText,
-              errorStyle: TUITextStyle.body7
-                  .copyWith(color: TUIDefaultColors.inputText),
-              helperStyle: TUITextStyle.body7
-                  .copyWith(color: TUIDefaultColors.inputText),
-              focusedBorder: const UnderlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(8)),
-                  borderSide: BorderSide(color: TUIDefaultColors.primary)),
-              disabledBorder: const UnderlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(8)),
-                  borderSide:
-                      BorderSide(color: TUIDefaultColors.inputBackground)),
-              enabledBorder: const UnderlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(8)),
-                  borderSide:
-                      BorderSide(color: TUIDefaultColors.inputBackground)),
-              border: const UnderlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(8)),
-                  borderSide:
-                      BorderSide(color: TUIDefaultColors.inputBackground)),
-              errorBorder: const UnderlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(8)),
-                  borderSide: BorderSide(color: TUIDefaultColors.error)),
-              focusedErrorBorder: const UnderlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(8)),
-                  borderSide: BorderSide(color: TUIDefaultColors.error)),
-            )));
+    final theme = TUITheme.of(context);
+    final suffixIconColor = this.suffixIconColor ?? theme.colors.inputText;
+    final prefixIconColor = this.prefixIconColor ?? theme.colors.inputText;
+    return TextField(
+        onChanged: onChanged,
+        onEditingComplete: onEditingComplete,
+        onSubmitted: onSubmitted,
+        keyboardType: keyboardType,
+        textInputAction: textInputAction,
+        controller: controller,
+        onTap: onTap,
+        readOnly: readOnly,
+        enabled: enabled,
+        obscureText: obscureText,
+        obscuringCharacter: obscuringCharacter,
+        textAlign: textAlign,
+        textAlignVertical: textAlignVertical,
+        textCapitalization: textCapitalization,
+        textDirection: textDirection,
+        minLines: minLines,
+        maxLines: maxLines,
+        maxLength: maxLength,
+        decoration: InputDecoration(
+          filled: true,
+          fillColor: theme.colors.inputBackground,
+          hintText: hintText,
+          hintStyle:
+              theme.typography.body6.copyWith(color: theme.colors.inputTextDim),
+          labelText: labelText,
+          labelStyle:
+              theme.typography.body6.copyWith(color: theme.colors.inputTextDim),
+          suffixText: suffixText,
+          prefixText: prefixText,
+          prefixIconColor: prefixIconColor,
+          prefixIcon: prefixIcon ?? prefixIcon,
+          suffixIconColor: suffixIconColor,
+          suffixIcon: suffixIcon ?? suffixIcon,
+          errorText: errorText,
+          helperText: helperText,
+          errorStyle:
+              theme.typography.body7.copyWith(color: theme.colors.inputText),
+          helperStyle:
+              theme.typography.body7.copyWith(color: theme.colors.inputText),
+          focusedBorder: UnderlineInputBorder(
+              borderRadius: const BorderRadius.all(Radius.circular(8)),
+              borderSide: BorderSide(color: theme.colors.primary)),
+          disabledBorder: UnderlineInputBorder(
+              borderRadius: const BorderRadius.all(Radius.circular(8)),
+              borderSide: BorderSide(color: theme.colors.inputBackground)),
+          enabledBorder: UnderlineInputBorder(
+              borderRadius: const BorderRadius.all(Radius.circular(8)),
+              borderSide: BorderSide(color: theme.colors.inputBackground)),
+          border: UnderlineInputBorder(
+              borderRadius: const BorderRadius.all(Radius.circular(8)),
+              borderSide: BorderSide(color: theme.colors.inputBackground)),
+          errorBorder: UnderlineInputBorder(
+              borderRadius: const BorderRadius.all(Radius.circular(8)),
+              borderSide: BorderSide(color: theme.colors.error)),
+          focusedErrorBorder: UnderlineInputBorder(
+              borderRadius: const BorderRadius.all(Radius.circular(8)),
+              borderSide: BorderSide(color: theme.colors.error)),
+        ));
   }
 }
