@@ -11,26 +11,14 @@ class TUIMobileOverlayMenu extends StatelessWidget {
   final VoidCallback? action;
   final double padding = 16;
   final double verticalGap = 8;
-  late List<MenuItem> menuItems;
+  final List<TUIMenuItem> menuItems;
 
-  TUIMobileOverlayMenu({
+  const TUIMobileOverlayMenu({
     super.key,
     required this.title,
     required this.action,
-    required List<TUIMenuItem> menuItems,
-  }) {
-    final menuItemsList = <MenuItem>[];
-
-    for (int index = 0; index < menuItems.length; index++) {
-      final menuItem = MenuItem(
-        view: menuItems[index],
-        index: index,
-      );
-      menuItemsList.add(menuItem);
-    }
-
-    this.menuItems = menuItemsList;
-  }
+    required this.menuItems,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -63,23 +51,20 @@ class TUIMobileOverlayMenu extends StatelessWidget {
       color: colors.surface,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: menuItems.map((item) {
-          if (item.index != 0) {
-            return Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  // SizedBox(height: verticalGap),
-                  Padding(
-                    padding: EdgeInsets.all(
-                        padding), // Apply padding of 16 pixels on all sides
-                    child: item.view,
-                  ),
-                ]);
+        children: menuItems.indexed.map((item) {
+          if (item.$1 != 0) {
+            return Padding(
+              padding: EdgeInsets.all(
+                padding,
+              ), // Apply padding of 16 pixels on all sides
+              child: item.$2,
+            );
           } else {
             return Padding(
               padding: EdgeInsets.all(
-                  padding), // Apply padding of 16 pixels on all sides
-              child: item.view,
+                padding,
+              ), // Apply padding of 16 pixels on all sides
+              child: item.$2,
             );
           }
         }).toList(),
@@ -96,11 +81,4 @@ class TUIMobileOverlayMenu extends StatelessWidget {
 
     return TUIMobileOverlayFooter(actions: [closeButton]);
   }
-}
-
-class MenuItem {
-  final TUIMenuItem view;
-  final int index;
-
-  const MenuItem({required this.view, required this.index});
 }
