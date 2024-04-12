@@ -1171,6 +1171,56 @@ class _HomePageState extends State<HomePage> {
                 print(isSelected);
               },
             ),
+
+            const SizedBox(height: 8),
+            const Text("Overlay Menu", style: TUITextStyle.heading6),
+            const SizedBox(height: 8),
+
+            ElevatedButton(
+              onPressed: () {
+                showModalBottomSheet(
+                  context: context,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(
+                          20.0), // Adjust the top corner radius here
+                    ),
+                  ),
+                  builder: (BuildContext context) {
+                    return ClipRRect(
+                      borderRadius: BorderRadius.vertical(
+                        top: Radius.circular(
+                            20.0), // Match the radius with the shape
+                      ),
+                      child: TUIMobileOverlayMenu(
+                        title: "title",
+                        action: () {
+                          print("tapped");
+                        },
+                        menuItems: [
+                          TUIMenuItem(
+                            item: TUIMenuItemProperties(
+                              title: "Item 1",
+                              style: TUIMenuItemStyle.both,
+                              state: TUIMenuItemState.unchecked,
+                            ),
+                            backgroundDark: true,
+                          ),
+                          TUIMenuItem(
+                            item: TUIMenuItemProperties(
+                              title: "Item 2",
+                              style: TUIMenuItemStyle.none,
+                              state: TUIMenuItemState.unchecked,
+                            ),
+                          )
+                        ],
+                      ),
+                    );
+                  },
+                );
+              },
+              child: Text('Show Modal Bottom Sheet'),
+            ),
             const SizedBox(height: 100),
           ],
         ),

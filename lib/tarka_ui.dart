@@ -42,6 +42,7 @@ export 'package:tarka_ui/components/floating_action_button/floating_action_butto
 export 'package:tarka_ui/components/media_thumbnail/media_thumbnail.dart';
 export 'package:tarka_ui/components/mobile_button_block/mobile_button_block.dart';
 export 'package:tarka_ui/components/mobile_overlay_header/mobile_overlay_header.dart';
+export 'package:tarka_ui/components/mobile_overlay_menu/mobile_overlay_menu.dart';
 export 'package:tarka_ui/components/navigation_row/navigation_row.dart';
 export 'package:tarka_ui/components/radio_button/radio_button.dart';
 export 'package:tarka_ui/components/slider/slider.dart';
