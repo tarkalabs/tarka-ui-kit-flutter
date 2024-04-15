@@ -77,10 +77,10 @@ class _TUIToggleSwitchState extends State<TUIToggleSwitch>
                   borderRadius: BorderRadius.circular(24.0),
                   color: _circleAnimation!.value == Alignment.centerLeft
                       ? isEnabled()
-                          ? colors.primary
+                          ? colors.surfaceVariant
                           : colors.disabledBackground
                       : isEnabled()
-                          ? colors.surfaceVariant
+                          ? colors.primary
                           : colors.disabledBackground,
                 ),
                 child: Padding(
