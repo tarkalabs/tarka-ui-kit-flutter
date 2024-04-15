@@ -137,15 +137,15 @@ class _TUIToggleSwitchState extends State<TUIToggleSwitch>
 
     if (widget.value) {
       return Icon(
-        FluentIcons.dismiss_12_regular,
-        size: 16,
-        color: colors.constantLight,
-      );
-    } else {
-      return Icon(
         Icons.check,
         size: 16,
         color: isEnabled() ? colors.primary : colors.constantLight,
+      );
+    } else {
+      return Icon(
+        FluentIcons.dismiss_12_regular,
+        size: 16,
+        color: colors.constantLight,
       );
     }
   }
