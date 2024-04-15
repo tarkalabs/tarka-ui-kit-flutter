@@ -126,8 +126,8 @@ class _TUIToggleSwitchState extends State<TUIToggleSwitch>
 
     return isEnabled()
         ? widget.value
-            ? colors.constantDark
-            : colors.constantLight
+            ? colors.constantLight
+            : colors.constantDark
         : colors.disabledContent;
   }
 
