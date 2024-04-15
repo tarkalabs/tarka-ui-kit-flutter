@@ -89,11 +89,11 @@ class _TUIToggleSwitchState extends State<TUIToggleSwitch>
                   child: Container(
                       alignment: widget.value
                           ? ((Directionality.of(context) == TextDirection.rtl)
-                              ? Alignment.centerRight
-                              : Alignment.centerLeft)
-                          : ((Directionality.of(context) == TextDirection.rtl)
                               ? Alignment.centerLeft
-                              : Alignment.centerRight),
+                              : Alignment.centerRight)
+                          : ((Directionality.of(context) == TextDirection.rtl)
+                              ? Alignment.centerRight
+                              : Alignment.centerLeft),
                       child: getThumb(context)),
                 ),
               ),
