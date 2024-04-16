@@ -1221,6 +1221,15 @@ class _HomePageState extends State<HomePage> {
               },
               child: Text('Show Modal Bottom Sheet'),
             ),
+            const SizedBox(height: 8),
+            const Text("Date Picker", style: TUITextStyle.heading6),
+            const SizedBox(height: 8),
+            TUIDatePicker(
+              placeholder: "placeHolder",
+              dateSelected: (date) {
+                print(date);
+              },
+            ),
             const SizedBox(height: 100),
           ],
         ),
