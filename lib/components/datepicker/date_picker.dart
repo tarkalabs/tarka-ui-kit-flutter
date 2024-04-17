@@ -5,6 +5,7 @@ class TUIDatePicker extends StatefulWidget {
   final String placeholder;
   final String dateFormat;
   final DateTime? minimumDate;
+  final DateTime? initialDate;
   final DateTime? maximumDate;
   final Function(DateTime)? dateSelected;
 
@@ -12,6 +13,7 @@ class TUIDatePicker extends StatefulWidget {
       {required this.placeholder,
       this.dateFormat = 'yyyy-MM-dd',
       this.minimumDate,
+      this.initialDate,
       this.maximumDate,
       this.dateSelected});
 
@@ -46,7 +48,7 @@ class _TUIDatePickerState extends State<TUIDatePicker> {
   Future<void> _selectDate(BuildContext context) async {
     final DateTime? pickedDate = await showDatePicker(
       context: context,
-      initialDate: _selectedDate ?? DateTime.now(),
+      initialDate: _selectedDate ?? (widget.initialDate ?? DateTime.now()),
       firstDate: widget.minimumDate ?? DateTime(1900),
       lastDate: widget.maximumDate ?? DateTime(2101),
     );
