@@ -16,7 +16,7 @@ import 'package:tarka_ui/tarka_ui.dart';
 ///     },
 ///   ),
 ///   ```
-class TUIToggleRow extends StatefulWidget {
+class TUIToggleRow extends StatelessWidget {
   final String title;
   final String description;
   final Icon? icon;
@@ -35,49 +35,29 @@ class TUIToggleRow extends StatefulWidget {
   });
 
   @override
-  State<StatefulWidget> createState() => _TUIToggleRowState();
-}
-
-class _TUIToggleRowState extends State<TUIToggleRow> {
-  bool _value = false;
-
-  @override
-  void initState() {
-    super.initState();
-    setState(() {
-      _value = widget.value;
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
     TUIThemeData theme = TUITheme.of(context);
 
     return Container(
       padding: const EdgeInsets.all(8.0),
       decoration: BoxDecoration(
-        color: widget.backgroundDark
-            ? theme.colors.background
-            : Colors.transparent,
+        color: backgroundDark ? theme.colors.background : Colors.transparent,
         borderRadius: const BorderRadius.all(
           Radius.circular(16.0),
         ),
       ),
       child: Row(
-        crossAxisAlignment: widget.description.isNotEmpty
+        crossAxisAlignment: description.isNotEmpty
             ? CrossAxisAlignment.start
             : CrossAxisAlignment.center,
         children: [
-          getIcon(),
-          getTitleDescription(theme),
-          getSpacer(),
+          _getIcon(),
+          _getTitleDescription(theme),
+          _getSpacer(),
           TUIToggleSwitch(
-            value: widget.value,
+            value: value,
             onChanged: (value) {
-              setState(() {
-                _value = !_value;
-              });
-              widget.onChanged?.call(value);
+              onChanged?.call(value);
             },
           ),
         ],
@@ -85,8 +65,8 @@ class _TUIToggleRowState extends State<TUIToggleRow> {
     );
   }
 
-  getSpacer() {
-    if (widget.icon == null && widget.description.isEmpty) {
+  _getSpacer() {
+    if (icon == null && description.isEmpty) {
       return const Spacer();
     }
 
@@ -95,26 +75,26 @@ class _TUIToggleRowState extends State<TUIToggleRow> {
     );
   }
 
-  getTitleDescription(TUIThemeData theme) {
+  _getTitleDescription(TUIThemeData theme) {
     return Flexible(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
-            widget.title,
+            title,
             style: theme.typography.heading7,
             overflow: TextOverflow.ellipsis,
           ),
-          getDescription(theme),
+          _getDescription(theme),
         ],
       ),
     );
   }
 
-  getDescription(TUIThemeData theme) {
-    if (widget.description.isNotEmpty) {
+  _getDescription(TUIThemeData theme) {
+    if (description.isNotEmpty) {
       return Text(
-        widget.description,
+        description,
         style: theme.typography.body7,
       );
     }
@@ -122,11 +102,11 @@ class _TUIToggleRowState extends State<TUIToggleRow> {
     return Container();
   }
 
-  getIcon() {
-    if (widget.icon != null) {
+  _getIcon() {
+    if (icon != null) {
       return Padding(
         padding: const EdgeInsets.only(right: 16.0),
-        child: widget.icon,
+        child: icon,
       );
     }
 
