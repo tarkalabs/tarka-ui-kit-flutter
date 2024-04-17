@@ -68,36 +68,32 @@ class _TUIToggleSwitchState extends State<TUIToggleSwitch>
                   : widget.onChanged!(false);
             }
           },
-          child: Row(
-            children: [
-              Container(
-                width: 40.0,
-                height: 24.0,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(24.0),
-                  color: _circleAnimation!.value == Alignment.centerLeft
-                      ? isEnabled()
-                          ? colors.primary
-                          : colors.disabledBackground
-                      : isEnabled()
-                          ? colors.surfaceVariant
-                          : colors.disabledBackground,
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                      top: 2.0, bottom: 2.0, right: 2.0, left: 2.0),
-                  child: Container(
-                      alignment: widget.value
-                          ? ((Directionality.of(context) == TextDirection.rtl)
-                              ? Alignment.centerRight
-                              : Alignment.centerLeft)
-                          : ((Directionality.of(context) == TextDirection.rtl)
-                              ? Alignment.centerLeft
-                              : Alignment.centerRight),
-                      child: getThumb(context)),
-                ),
-              ),
-            ],
+          child: Container(
+            width: 40.0,
+            height: 24.0,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(24.0),
+              color: _circleAnimation!.value == Alignment.centerLeft
+                  ? isEnabled()
+                      ? colors.surfaceVariant
+                      : colors.disabledBackground
+                  : isEnabled()
+                      ? colors.primary
+                      : colors.disabledBackground,
+            ),
+            child: Padding(
+              padding: const EdgeInsets.only(
+                  top: 2.0, bottom: 2.0, right: 2.0, left: 2.0),
+              child: Container(
+                  alignment: widget.value
+                      ? ((Directionality.of(context) == TextDirection.rtl)
+                          ? Alignment.centerLeft
+                          : Alignment.centerRight)
+                      : ((Directionality.of(context) == TextDirection.rtl)
+                          ? Alignment.centerRight
+                          : Alignment.centerLeft),
+                  child: getThumb(context)),
+            ),
           ),
         );
       },
@@ -126,8 +122,8 @@ class _TUIToggleSwitchState extends State<TUIToggleSwitch>
 
     return isEnabled()
         ? widget.value
-            ? colors.constantDark
-            : colors.constantLight
+            ? colors.constantLight
+            : colors.constantDark
         : colors.disabledContent;
   }
 
@@ -137,15 +133,15 @@ class _TUIToggleSwitchState extends State<TUIToggleSwitch>
 
     if (widget.value) {
       return Icon(
-        FluentIcons.dismiss_12_regular,
-        size: 16,
-        color: colors.constantLight,
-      );
-    } else {
-      return Icon(
         Icons.check,
         size: 16,
         color: isEnabled() ? colors.primary : colors.constantLight,
+      );
+    } else {
+      return Icon(
+        FluentIcons.dismiss_12_regular,
+        size: 16,
+        color: colors.constantLight,
       );
     }
   }
