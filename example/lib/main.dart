@@ -1225,7 +1225,7 @@ class _HomePageState extends State<HomePage> {
             const Text("Date Picker", style: TUITextStyle.heading6),
             const SizedBox(height: 8),
             TUIDatePicker(
-              placeholder: "placeHolder",
+              labelText: "Label Text",
               dateSelected: (date) {
                 print(date);
               },
