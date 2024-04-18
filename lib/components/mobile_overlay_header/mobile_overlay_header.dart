@@ -73,7 +73,11 @@ class TUIMobileOverlayHeader extends StatelessWidget {
 
     return (style.style == TUIOverlayMobileStyleType.handle)
         ? null
-        : Center(
+        : Container(
+            alignment: style.style == TUIOverlayMobileStyleType.right
+                ? Alignment.centerLeft
+                : Alignment.center,
+            margin: const EdgeInsets.all(16),
             child: Text(
               style.title ?? "",
               style: textStyle,
