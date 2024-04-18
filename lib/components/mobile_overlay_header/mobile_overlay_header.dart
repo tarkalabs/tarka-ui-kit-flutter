@@ -20,6 +20,7 @@ import 'package:tarka_ui/styles/theme.dart';
 /// ```
 class TUIMobileOverlayHeader extends StatelessWidget {
   final TUIOverlayMobileStyle style;
+
   const TUIMobileOverlayHeader({super.key, required this.style});
 
   @override
@@ -114,15 +115,15 @@ class TUIMobileOverlayHeader extends StatelessWidget {
 
   Widget? getBackButton() {
     return (style.style == TUIOverlayMobileStyleType.left)
-        ? SizedBox(
-            width: TUIIconButtonSize.px40.iconSize,
-            child: Center(
-              child: TUIIconButton(
-                type: TUIIconButtonType.ghost,
-                size: TUIIconButtonSize.px40,
-                iconData: FluentIcons.chevron_left_20_regular,
-                onPressed: style.action,
-              ),
+        ? Positioned(
+            left: 0,
+            top: 0,
+            bottom: 0,
+            child: TUIIconButton(
+              type: TUIIconButtonType.ghost,
+              size: TUIIconButtonSize.px40,
+              iconData: FluentIcons.chevron_left_20_regular,
+              onPressed: style.action,
             ),
           )
         : null;
