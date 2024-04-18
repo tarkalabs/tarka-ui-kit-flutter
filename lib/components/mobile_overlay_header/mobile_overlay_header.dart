@@ -52,19 +52,17 @@ class TUIMobileOverlayHeader extends StatelessWidget {
   Widget? getTopDivider(BuildContext context, double width) {
     final theme = TUITheme.of(context);
 
-    return SizedBox(
-      height: 4,
-      width: width,
-      child: Center(
-        child: Container(
-          height: 4,
-          width: 68,
-          decoration: BoxDecoration(
-              color: theme.colors.surfaceVariant,
-              borderRadius: const BorderRadius.all(
-                Radius.circular(4),
-              )),
-        ),
+    return Center(
+      heightFactor: 1,
+      child: Container(
+        height: 4,
+        width: 68,
+        margin: const EdgeInsets.only(top: 8),
+        decoration: BoxDecoration(
+            color: theme.colors.surfaceVariant,
+            borderRadius: const BorderRadius.all(
+              Radius.circular(4),
+            )),
       ),
     );
   }
