@@ -192,21 +192,4 @@ class _TUIDatePickerState extends State<TUIDatePicker> {
       });
     }
   }
-
-  // Future<void> _selectDate(BuildContext context) async {
-  //   final DateTime? pickedDate = await showDatePicker(
-  //     context: context,
-  //     initialDate: _selectedDate ?? (widget.initialDate ?? DateTime.now()),
-  //     firstDate: widget.minimumDate ?? DateTime(1900),
-  //     lastDate: widget.maximumDate ?? DateTime(2101),
-  //   );
-  //
-  //   if (pickedDate != null && pickedDate != _selectedDate) {
-  //     setState(() {
-  //       _selectedDate = pickedDate;
-  //       _dateController.text = DateFormat(widget.dateFormat).format(pickedDate);
-  //       widget.dateSelected?.call(pickedDate);
-  //     });
-  //   }
-  // }
 }
