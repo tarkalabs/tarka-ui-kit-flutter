@@ -47,6 +47,9 @@ class TUIInputField extends StatelessWidget {
   final TextEditingController? controller;
   final TextInputType? keyboardType;
   final TextInputAction? textInputAction;
+  final bool canRequestFocus;
+  final bool? enableInteractiveSelection;
+  final MouseCursor? mouseCursor;
   final void Function(String)? onChanged;
   final void Function()? onEditingComplete;
   final void Function(String)? onSubmitted;
@@ -83,6 +86,9 @@ class TUIInputField extends StatelessWidget {
     this.onEditingComplete,
     this.onSubmitted,
     this.onTap,
+    this.canRequestFocus = true,
+    this.enableInteractiveSelection,
+    this.mouseCursor,
   })  : assert(maxLines == null || maxLines > 0),
         assert(minLines == null || minLines > 0),
         assert(
@@ -105,6 +111,9 @@ class TUIInputField extends StatelessWidget {
     final suffixIconColor = this.suffixIconColor ?? theme.colors.inputText;
     final prefixIconColor = this.prefixIconColor ?? theme.colors.inputText;
     return TextField(
+        mouseCursor: mouseCursor,
+        canRequestFocus: canRequestFocus,
+        enableInteractiveSelection: enableInteractiveSelection,
         onChanged: onChanged,
         onEditingComplete: onEditingComplete,
         onSubmitted: onSubmitted,
