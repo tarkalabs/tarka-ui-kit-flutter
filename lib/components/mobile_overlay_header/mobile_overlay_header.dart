@@ -20,6 +20,7 @@ import 'package:tarka_ui/styles/theme.dart';
 /// ```
 class TUIMobileOverlayHeader extends StatelessWidget {
   final TUIOverlayMobileStyle style;
+
   const TUIMobileOverlayHeader({super.key, required this.style});
 
   @override
@@ -51,19 +52,17 @@ class TUIMobileOverlayHeader extends StatelessWidget {
   Widget? getTopDivider(BuildContext context, double width) {
     final theme = TUITheme.of(context);
 
-    return SizedBox(
-      height: 4,
-      width: width,
-      child: Center(
-        child: Container(
-          height: 4,
-          width: 68,
-          decoration: BoxDecoration(
-              color: theme.colors.surfaceVariant,
-              borderRadius: const BorderRadius.all(
-                Radius.circular(4),
-              )),
-        ),
+    return Center(
+      heightFactor: 1,
+      child: Container(
+        height: 4,
+        width: 68,
+        margin: const EdgeInsets.only(top: 8),
+        decoration: BoxDecoration(
+            color: theme.colors.surfaceVariant,
+            borderRadius: const BorderRadius.all(
+              Radius.circular(4),
+            )),
       ),
     );
   }
@@ -74,7 +73,11 @@ class TUIMobileOverlayHeader extends StatelessWidget {
 
     return (style.style == TUIOverlayMobileStyleType.handle)
         ? null
-        : Center(
+        : Container(
+            alignment: style.style == TUIOverlayMobileStyleType.right
+                ? Alignment.centerLeft
+                : Alignment.center,
+            margin: const EdgeInsets.all(16),
             child: Text(
               style.title ?? "",
               style: textStyle,
@@ -87,26 +90,12 @@ class TUIMobileOverlayHeader extends StatelessWidget {
         ? Positioned(
             top: 0,
             right: 0,
-            child: SizedBox(
-              width: MediaQuery.of(context)
-                  .size
-                  .width, // Set the width to the screen width
-              child: Row(
-                children: [
-                  const Spacer(),
-                  Flexible(
-                    fit: FlexFit.loose,
-                    child: Center(
-                      child: TUIIconButton(
-                        type: TUIIconButtonType.ghost,
-                        size: TUIIconButtonSize.px40,
-                        iconData: style.getIcon(),
-                        onPressed: style.action,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+            bottom: 0,
+            child: TUIIconButton(
+              type: TUIIconButtonType.ghost,
+              size: TUIIconButtonSize.px40,
+              iconData: style.getIcon(),
+              onPressed: style.action,
             ),
           )
         : null;
@@ -114,15 +103,15 @@ class TUIMobileOverlayHeader extends StatelessWidget {
 
   Widget? getBackButton() {
     return (style.style == TUIOverlayMobileStyleType.left)
-        ? SizedBox(
-            width: TUIIconButtonSize.px40.iconSize,
-            child: Center(
-              child: TUIIconButton(
-                type: TUIIconButtonType.ghost,
-                size: TUIIconButtonSize.px40,
-                iconData: FluentIcons.chevron_left_20_regular,
-                onPressed: style.action,
-              ),
+        ? Positioned(
+            left: 0,
+            top: 0,
+            bottom: 0,
+            child: TUIIconButton(
+              type: TUIIconButtonType.ghost,
+              size: TUIIconButtonSize.px40,
+              iconData: FluentIcons.chevron_left_20_regular,
+              onPressed: style.action,
             ),
           )
         : null;
