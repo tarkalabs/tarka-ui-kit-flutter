@@ -39,6 +39,7 @@ export 'package:tarka_ui/components/checkbox/checkbox.dart';
 export 'package:tarka_ui/components/datepicker/date_picker.dart';
 export 'package:tarka_ui/components/divider/divider.dart';
 export 'package:tarka_ui/components/email_subject_field/email_subject_field.dart';
+export 'package:tarka_ui/components/file_picker/file_picker.dart';
 export 'package:tarka_ui/components/floating_action_button/floating_action_button.dart';
 export 'package:tarka_ui/components/media_thumbnail/media_thumbnail.dart';
 export 'package:tarka_ui/components/mobile_button_block/mobile_button_block.dart';
