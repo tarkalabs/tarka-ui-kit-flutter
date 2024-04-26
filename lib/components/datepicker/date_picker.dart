@@ -78,6 +78,14 @@ class _TUIDatePickerState extends State<TUIDatePicker> {
     super.initState();
     _dateController = widget.controller ?? material.TextEditingController();
     _dateFormat = widget.format ?? _getDefaultDateTimeFormat();
+    if (widget.initialDate != null || widget.initialTime != null) {
+      if (widget.initialDate != null) {
+        _selectedDate = combine(widget.initialDate!, widget.initialTime);
+      } else {
+        _selectedDate = convert(widget.initialTime);
+      }
+      _dateController.text = _dateFormat.format(_selectedDate!);
+    }
   }
 
   @override
