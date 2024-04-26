@@ -103,6 +103,9 @@ class _TUIDatePickerState extends State<TUIDatePicker> {
       onTap: () {
         _selectDate(context);
       },
+      mouseCursor: MaterialStateMouseCursor.clickable,
+      canRequestFocus: false,
+      enableInteractiveSelection: false,
     );
   }
 
