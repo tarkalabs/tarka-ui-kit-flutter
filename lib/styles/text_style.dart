@@ -3,10 +3,16 @@ import 'package:tarka_ui/styles/default_colors.dart';
 
 /// TUITextStyle is a class that holds all the text styles used in the Tarka UI.
 class TUITextStyle {
-  TUITextStyle._();
+  // TUITextStyle._();
+
+  final BuildContext context;
+
+  const TUITextStyle({
+    required this.context,
+  });
 
   static const TextStyle heading1 = TextStyle(
-    color: TUIDefaultColors.inputText,
+    color: TUIDefaultColors.onSurface,
     fontSize: 30,
     fontFamily: 'Inter',
     fontWeight: FontWeight.w700,
