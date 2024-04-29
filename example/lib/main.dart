@@ -1,18 +1,6 @@
 import 'package:example/styles/colors.dart';
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:tarka_ui/components/button/style.dart';
-import 'package:tarka_ui/components/checkbox_row/checkbox_row.dart';
-import 'package:tarka_ui/components/chip/chip.dart';
-import 'package:tarka_ui/components/draggable_card/draggable_card.dart';
-import 'package:tarka_ui/components/email_field/email_field.dart';
-import 'package:tarka_ui/components/menu_item/menu_item.dart';
-import 'package:tarka_ui/components/radio_row/radio_row.dart';
-import 'package:tarka_ui/components/search_bar/search_bar.dart';
-import 'package:tarka_ui/components/selection_card/selection_card.dart';
-import 'package:tarka_ui/components/toggle_row/toggle_row.dart';
-import 'package:tarka_ui/styles/theme.dart';
-import 'package:tarka_ui/subcomponents/image.dart';
 import 'package:tarka_ui/tarka_ui.dart';
 
 import 'symbol.dart';
@@ -28,54 +16,57 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     var tuiThemeData = TUIThemeData(
         TUIColors(
-            AppColors.primary,
-            AppColors.onPrimary,
-            AppColors.primaryAlt,
-            AppColors.onPrimaryAlt,
-            AppColors.primaryHover,
-            AppColors.primaryAltHover,
-            AppColors.secondary,
-            AppColors.onSecondary,
-            AppColors.secondaryAlt,
-            AppColors.onSecondaryAlt,
-            AppColors.secondaryHover,
-            AppColors.secondaryAltHover,
-            AppColors.tertiary,
-            AppColors.onTertiary,
-            AppColors.tertiaryAlt,
-            AppColors.onTertiaryAlt,
-            AppColors.tertiaryHover,
-            AppColors.tertiaryAltHover,
-            AppColors.success,
-            AppColors.onSuccess,
-            AppColors.success10,
-            AppColors.success20,
-            AppColors.error,
-            AppColors.onError,
-            AppColors.error10,
-            AppColors.errorHover,
-            AppColors.warning,
-            AppColors.onWarning,
-            AppColors.warning10,
-            AppColors.warningHover,
-            AppColors.background,
-            AppColors.onBackground,
-            AppColors.outline,
-            AppColors.disabledContent,
-            AppColors.disabledBackground,
-            AppColors.disabledBackgroundHover,
-            AppColors.link,
-            AppColors.inputText,
-            AppColors.inputBackground,
-            AppColors.inputTextDim,
-            AppColors.surface,
-            AppColors.surface50,
-            AppColors.onSurface,
-            AppColors.surfaceVariant,
-            AppColors.surfaceHover,
-            AppColors.surfaceVariantHover,
-            AppColors.constantLight,
-            AppColors.constantDark),
+            primary: AppColors.primary,
+            onPrimary: AppColors.onPrimary,
+            primaryAlt: AppColors.primaryAlt,
+            onPrimaryAlt: AppColors.onPrimaryAlt,
+            primaryHover: AppColors.primaryHover,
+            primaryAltHover: AppColors.primaryAltHover,
+            secondary: AppColors.secondary,
+            onSecondary: AppColors.onSecondary,
+            secondaryAlt: AppColors.secondaryAlt,
+            onSecondaryAlt: AppColors.onSecondaryAlt,
+            secondaryHover: AppColors.secondaryHover,
+            secondaryAltHover: AppColors.secondaryAltHover,
+            tertiary: AppColors.tertiary,
+            onTertiary: AppColors.onTertiary,
+            tertiaryAlt: AppColors.tertiaryAlt,
+            onTertiaryAlt: AppColors.onTertiaryAlt,
+            tertiaryHover: AppColors.tertiaryHover,
+            tertiaryAltHover: AppColors.tertiaryAltHover,
+            success: AppColors.success,
+            onSuccess: AppColors.onSuccess,
+            error: AppColors.error,
+            onError: AppColors.onError,
+            errorHover: AppColors.errorHover,
+            warning: AppColors.warning,
+            onWarning: AppColors.onWarning,
+            warningHover: AppColors.warningHover,
+            background: AppColors.background,
+            onBackground: AppColors.onBackground,
+            outline: AppColors.outline,
+            disabledContent: AppColors.disabledContent,
+            disabledBackground: AppColors.disabledBackground,
+            disabledBackgroundHover: AppColors.disabledBackgroundHover,
+            backgroundScrim: const LinearGradient(colors: [
+              Color.fromARGB(1, 234, 236, 240),
+              Color.fromARGB(0, 234, 236, 240)
+            ]),
+            link: AppColors.link,
+            inputText: AppColors.inputText,
+            inputBackground: AppColors.inputBackground,
+            inputTextDim: AppColors.inputTextDim,
+            surface: AppColors.surface,
+            onSurface: AppColors.onSurface,
+            surfaceVariant: AppColors.surfaceVariant,
+            surfaceHover: AppColors.surfaceHover,
+            surfaceVariantHover: AppColors.surfaceVariantHover,
+            surfaceScrim: const LinearGradient(colors: [
+              Color.fromARGB(1, 249, 250, 251),
+              Color.fromARGB(0, 249, 250, 251)
+            ]),
+            constantLight: AppColors.constantLight,
+            constantDark: AppColors.constantDark),
         TUITypography(
           TUITextStyle.heading1,
           TUITextStyle.heading2,
