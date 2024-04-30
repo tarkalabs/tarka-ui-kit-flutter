@@ -1,6 +1,5 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:tarka_ui/styles/default_colors.dart';
 import 'package:tarka_ui/styles/theme.dart';
 
 /// TUIAccordion is a widget that allows you to show and hide content.
