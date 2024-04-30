@@ -44,6 +44,7 @@ export 'package:tarka_ui/components/divider/divider.dart';
 export 'package:tarka_ui/components/draggable_card/draggable_card.dart';
 export 'package:tarka_ui/components/email_field/email_field.dart';
 export 'package:tarka_ui/components/email_subject_field/email_subject_field.dart';
+export 'package:tarka_ui/components/file_picker/file_picker.dart';
 export 'package:tarka_ui/components/floating_action_button/floating_action_button.dart';
 export 'package:tarka_ui/components/media_thumbnail/media_thumbnail.dart';
 export 'package:tarka_ui/components/menu_item/menu_item.dart';
