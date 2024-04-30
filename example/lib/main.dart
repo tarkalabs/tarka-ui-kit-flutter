@@ -3,6 +3,7 @@ import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:tarka_ui/tarka_ui.dart';
 
+import 'styles/text_style.dart';
 import 'symbol.dart';
 
 void main() {
