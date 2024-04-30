@@ -1230,6 +1230,16 @@ class _HomePageState extends State<HomePage> {
                 print(date);
               },
             ),
+            const SizedBox(
+              height: 20,
+            ),
+            // TUIFilePicker(),
+            TUIFilePicker(
+              title: "Pick file",
+              filesPicked: (files) {
+                print(files);
+              },
+            ),
             const SizedBox(height: 100),
           ],
         ),
