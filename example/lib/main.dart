@@ -1198,12 +1198,12 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 8),
             const TUISearchBar(
               showBackIcon: true,
-              showTrailingIcon: true,
+              showClearButton: true,
             ),
             const SizedBox(height: 8),
             TUISearchBar(
               showBackIcon: false,
-              showTrailingIcon: true,
+              showClearButton: true,
               onChanged: (String value) {},
               autofocus: true,
             ),
