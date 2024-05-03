@@ -82,9 +82,11 @@ class _TUISearchBarState extends State<TUISearchBar> {
               style: theme.typography.body6,
               onChanged: (value) {
                 widget.onChanged?.call(value);
-                setState(() {
-                  _showClearButton = value.isNotEmpty;
-                });
+                if (widget.showClearButton) {
+                  setState(() {
+                    _showClearButton = value.isNotEmpty;
+                  });
+                }
               },
               autofocus: widget.autofocus,
               decoration: InputDecoration(
@@ -110,7 +112,7 @@ class _TUISearchBarState extends State<TUISearchBar> {
   }
 
   getSuffixIcon(TUIThemeData theme) {
-    if (widget.showClearButton && _showClearButton) {
+    if (_showClearButton) {
       return GestureDetector(
         onTap: () {
           _controller.text = "";
