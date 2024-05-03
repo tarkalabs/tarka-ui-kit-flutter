@@ -80,9 +80,6 @@ class _TUISearchBarState extends State<TUISearchBar> {
               maxLines: 1,
               controller: _controller,
               style: theme.typography.body6,
-              cursorHeight: 16.0,
-              textAlign: TextAlign.start,
-              textAlignVertical: TextAlignVertical.top,
               onChanged: (value) {
                 widget.onChanged?.call(value);
                 setState(() {
