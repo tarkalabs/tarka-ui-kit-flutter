@@ -1,4 +1,4 @@
-import 'dart:ui';
+import 'package:flutter/cupertino.dart';
 
 class AppColors {
   static const Color primary = Color(0xff0052D6);
@@ -29,41 +29,29 @@ class AppColors {
   static const Color tertiaryAlt = Color(0xffF3CEF3);
   static const Color tertiaryAltDark = Color(0xff532D53);
 
-  static const Color success10 = Color(0x33148F47);
-  static const Color success10Dark = Color(0x1A55E792);
-
-  static const Color success20 = Color(0x33148F47);
-  static const Color success20Dark = Color(0x3355E792);
-
-  static const Color warning10 = Color(0x1AFFB938);
-  static const Color warning10Dark = Color(0x1AFFB938);
-
-  static const Color error10 = Color(0x1ACD1D32);
-  static const Color error10Dark = Color(0x1AD42136);
-
   // On Colors
-  static const Color onPrimary = Color(0xffF5F8FF);
+  static const Color onPrimary = Color(0xffF5F9FF);
   static const Color onPrimaryDark = Color(0xffFAFCFF);
 
-  static const Color onSecondary = Color(0xffEFF7FF);
+  static const Color onSecondary = Color(0xffF0F7FF);
   static const Color onSecondaryDark = Color(0xff002B57);
 
   static const Color onTertiary = Color(0xffFFF5FF);
   static const Color onTertiaryDark = Color(0xff5C0A5C);
 
-  static const Color onSuccess = Color(0xffF1FCF6);
+  static const Color onSuccess = Color(0xffF2FDF6);
   static const Color onSuccessDark = Color(0xff003817);
 
-  static const Color onError = Color(0xffFDFAFA);
+  static const Color onError = Color(0xffFEFBFB);
   static const Color onErrorDark = Color(0xffFFFAFA);
 
-  static const Color onWarning = Color(0xff231D0F);
+  static const Color onWarning = Color(0xff241D0F);
   static const Color onWarningDark = Color(0xff003817);
 
   static const Color onSurface = Color(0xff1A1B1F);
   static const Color onSurfaceDark = Color(0xffFCFCFD);
 
-  static const Color onBackground = Color(0xff161B20);
+  static const Color onBackground = Color(0xff171B21);
   static const Color onBackgroundDark = Color(0xffF0F2F4);
 
   // On Colors - Alt
@@ -77,7 +65,7 @@ class AppColors {
   static const Color onTertiaryAltDark = Color(0xffFFD6FF);
 
   // Input
-  static const Color inputBackground = Color(0xD9EAEBEF);
+  static const Color inputBackground = Color(0xD9EAECF0);
   static const Color inputBackgroundDark = Color(0x990F1115);
 
   static const Color inputText = Color(0xff1A1B1F);
@@ -87,36 +75,43 @@ class AppColors {
   static const Color inputTextDimDark = Color(0xB2FCFCFD);
 
   // Utility
-  static const Color disabledBackground = Color(0x0D1A1B1F);
+  static const Color disabledBackground = Color.fromARGB(31, 26, 27, 31);
   static const Color disabledBackgroundDark = Color(0x1FFCFCFD);
 
-  static const Color disabledContent = Color(0x661A1B1F);
+  static const Color disabledContent = Color(0x631A1B1F);
   static const Color disabledContentDark = Color(0x61FCFCFD);
 
   static const Color link = Color(0xff3381FF);
   static const Color linkDark = Color(0xff80B0FF);
 
-  static const Color outline = Color(0xff868A92);
+  static const Color outline = Color(0xffB3BCCC);
   static const Color transparent = Color(0x00FFFFFF);
 
   // Backgrounds
-  static const Color background = Color(0xffEAEBEF);
+  static const Color background = Color(0xffEAECF0);
   static const Color backgroundDark = Color(0xff0F1115);
 
-  static const Color surface = Color(0xffF8F9FA);
-  static const Color surfaceDark = Color(0xff212731);
+  static Gradient backgroundScrim =
+      LinearGradient(colors: [background, background.withAlpha(0)]);
+  static Gradient backgroundScrimDark =
+      LinearGradient(colors: [backgroundDark, backgroundDark.withAlpha(0)]);
 
-  static const Color surface50 = Color(0x80F9FAFB);
-  static const Color surface50Dark = Color(0x99212731);
+  static const Color surface = Color(0xffF9FAFB);
+  static const Color surfaceDark = Color(0xff212731);
 
   static const Color surfaceVariant = Color(0xffEBEFF4);
   static const Color surfaceVariantDark = Color(0xff2D3543);
 
-  static const Color surfaceHover = Color(0xffF0F2F5);
+  static const Color surfaceHover = Color(0x00276614);
   static const Color surfaceHoverDark = Color(0xff2D3543);
 
   static const Color surfaceVariantHover = Color(0xffE1E6EF);
   static const Color surfaceVariantHoverDark = Color(0xff353F50);
+
+  static Gradient surfaceScrim =
+      LinearGradient(colors: [surface, surface.withAlpha(0)]);
+  static Gradient surfaceScrimDark =
+      LinearGradient(colors: [surfaceDark, surfaceDark.withAlpha(0)]);
 
   // Constants
   static const Color constantDark = Color(0xff000000);
@@ -146,6 +141,6 @@ class AppColors {
   static const Color warningHover = Color(0xffFFAD14);
   static const Color warningHoverDark = Color(0xffFFA90A);
 
-  static const Color disabledBackgroundHover = Color(0x331A1B1F);
+  static const Color disabledBackgroundHover = Color.fromARGB(51, 26, 27, 31);
   static const Color disabledBackgroundHoverDark = Color(0x33FCFCFD);
 }
