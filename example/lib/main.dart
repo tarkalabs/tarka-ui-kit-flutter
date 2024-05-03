@@ -3,6 +3,7 @@ import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:tarka_ui/tarka_ui.dart';
 
+import 'styles/text_style.dart';
 import 'symbol.dart';
 
 void main() {
@@ -83,9 +84,77 @@ class MyApp extends StatelessWidget {
           TUITextStyle.button7,
           TUITextStyle.button8,
         ));
+
+    var tuiDarkThemeData = TUIThemeData(
+        TUIColors(
+            AppColors.primaryDark,
+            AppColors.onPrimaryDark,
+            AppColors.primaryAltDark,
+            AppColors.onPrimaryAltDark,
+            AppColors.primaryHoverDark,
+            AppColors.primaryAltHoverDark,
+            AppColors.secondaryDark,
+            AppColors.onSecondaryDark,
+            AppColors.secondaryAltDark,
+            AppColors.onSecondaryAltDark,
+            AppColors.secondaryHoverDark,
+            AppColors.secondaryAltHoverDark,
+            AppColors.tertiaryDark,
+            AppColors.onTertiaryDark,
+            AppColors.tertiaryAltDark,
+            AppColors.onTertiaryAltDark,
+            AppColors.tertiaryHoverDark,
+            AppColors.tertiaryAltHoverDark,
+            AppColors.successDark,
+            AppColors.onSuccessDark,
+            AppColors.success10Dark,
+            AppColors.success20Dark,
+            AppColors.errorDark,
+            AppColors.onErrorDark,
+            AppColors.error10Dark,
+            AppColors.errorHoverDark,
+            AppColors.warningDark,
+            AppColors.onWarningDark,
+            AppColors.warning10Dark,
+            AppColors.warningHoverDark,
+            AppColors.backgroundDark,
+            AppColors.onBackgroundDark,
+            AppColors.outline,
+            AppColors.disabledContentDark,
+            AppColors.disabledBackgroundDark,
+            AppColors.disabledBackgroundHoverDark,
+            AppColors.linkDark,
+            AppColors.inputTextDark,
+            AppColors.inputBackgroundDark,
+            AppColors.inputTextDimDark,
+            AppColors.surfaceDark,
+            AppColors.surface50Dark,
+            AppColors.onSurfaceDark,
+            AppColors.surfaceVariantDark,
+            AppColors.surfaceHoverDark,
+            AppColors.surfaceVariantHoverDark,
+            AppColors.constantLight,
+            AppColors.constantDark),
+        TUITypography(
+          TUITextStyle.heading1,
+          TUITextStyle.heading2,
+          TUITextStyle.heading3,
+          TUITextStyle.heading4,
+          TUITextStyle.heading5,
+          TUITextStyle.heading6,
+          TUITextStyle.heading7,
+          TUITextStyle.body5,
+          TUITextStyle.body6,
+          TUITextStyle.body7,
+          TUITextStyle.body8,
+          TUITextStyle.button6,
+          TUITextStyle.button7,
+          TUITextStyle.button8,
+        ));
+
     return TUIApp(
       theme: tuiThemeData,
-      darkTheme: tuiThemeData,
+      darkTheme: tuiDarkThemeData,
       title: 'Tarka Kit Show Case',
       debugShowCheckedModeBanner: false,
       home: const HomePage(),
@@ -1219,6 +1288,16 @@ class _HomePageState extends State<HomePage> {
               labelText: "Label Text",
               dateSelected: (date) {
                 print(date);
+              },
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            // TUIFilePicker(),
+            TUIFilePicker(
+              title: "Pick file",
+              filesPicked: (files) {
+                print(files);
               },
             ),
             const SizedBox(height: 100),
