@@ -75,7 +75,7 @@ class AppColors {
   static const Color inputTextDimDark = Color(0xB2FCFCFD);
 
   // Utility
-  static const Color disabledBackground = Color.fromARGB(31, 26, 27, 31);
+  static const Color disabledBackground = Color(0x1F1A1B1F);
   static const Color disabledBackgroundDark = Color(0x1FFCFCFD);
 
   static const Color disabledContent = Color(0x631A1B1F);
@@ -141,6 +141,6 @@ class AppColors {
   static const Color warningHover = Color(0xffFFAD14);
   static const Color warningHoverDark = Color(0xffFFA90A);
 
-  static const Color disabledBackgroundHover = Color.fromARGB(51, 26, 27, 31);
+  static const Color disabledBackgroundHover = Color(0x331A1B1F);
   static const Color disabledBackgroundHoverDark = Color(0x33FCFCFD);
 }
