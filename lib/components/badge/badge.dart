@@ -49,11 +49,11 @@ enum TUIBadgeSize {
           fontSize: 10,
         );
       case s:
-        return typography.button8.copyWith(
+        return typography.xsSemiBold.copyWith(
           color: colors.onError,
         );
       case l:
-        return typography.button7.copyWith(
+        return typography.smSemiBold.copyWith(
           color: colors.onError,
         );
     }

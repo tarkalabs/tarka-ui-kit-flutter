@@ -110,7 +110,7 @@ class TUISnackBar extends SnackBar {
         Expanded(
             child: Text(
           message,
-          style: themeData.typography.body6
+          style: themeData.typography.base
               .copyWith(color: type._getForegroundColor(themeData.colors)),
         )),
         if (action != null) ...[
@@ -134,7 +134,7 @@ class TUISnackBar extends SnackBar {
               child: Text(
                 action.label,
                 textAlign: TextAlign.center,
-                style: themeData.typography.button7.copyWith(
+                style: themeData.typography.smSemiBold.copyWith(
                     color: type._getBackgroundColor(themeData.colors)),
               ))
         ]

@@ -69,7 +69,7 @@ class TUIMobileOverlayHeader extends StatelessWidget {
 
   Widget? getTitleView(BuildContext context) {
     final theme = TUITheme.of(context);
-    TextStyle textStyle = theme.typography.heading5;
+    TextStyle textStyle = theme.typography.lgSemiBold;
 
     return (style.style == TUIOverlayMobileStyleType.handle)
         ? null

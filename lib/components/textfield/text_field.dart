@@ -137,10 +137,10 @@ class TUIInputField extends StatelessWidget {
           fillColor: theme.colors.inputBackground,
           hintText: hintText,
           hintStyle:
-              theme.typography.body6.copyWith(color: theme.colors.inputTextDim),
+              theme.typography.lg.copyWith(color: theme.colors.inputTextDim),
           labelText: labelText,
           labelStyle:
-              theme.typography.body6.copyWith(color: theme.colors.inputTextDim),
+              theme.typography.lg.copyWith(color: theme.colors.inputTextDim),
           suffixText: suffixText,
           prefixText: prefixText,
           prefixIconColor: prefixIconColor,
@@ -150,9 +150,9 @@ class TUIInputField extends StatelessWidget {
           errorText: errorText,
           helperText: helperText,
           errorStyle:
-              theme.typography.body7.copyWith(color: theme.colors.inputText),
+              theme.typography.sm.copyWith(color: theme.colors.inputText),
           helperStyle:
-              theme.typography.body7.copyWith(color: theme.colors.inputText),
+              theme.typography.sm.copyWith(color: theme.colors.inputText),
           focusedBorder: UnderlineInputBorder(
               borderRadius: const BorderRadius.all(Radius.circular(8)),
               borderSide: BorderSide(color: theme.colors.primary)),

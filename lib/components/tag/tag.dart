@@ -229,11 +229,11 @@ enum TUITagSize {
   TextStyle _getTextStyle(TUIThemeData theme) {
     switch (this) {
       case s:
-        return theme.typography.button8;
+        return theme.typography.xsSemiBold;
       case m:
-        return theme.typography.button7;
+        return theme.typography.smSemiBold;
       case l:
-        return theme.typography.button6;
+        return theme.typography.baseSemiBold;
     }
   }
 

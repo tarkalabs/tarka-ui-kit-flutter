@@ -50,9 +50,9 @@ class TUIRadioRow extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(title, style: theme.typography.heading7),
+              Text(title, style: theme.typography.baseBold),
               if (showDescription)
-                Text(description, style: theme.typography.body7)
+                Text(description, style: theme.typography.base)
             ],
           )
         ],

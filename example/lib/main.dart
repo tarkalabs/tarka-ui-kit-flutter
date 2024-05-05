@@ -63,20 +63,16 @@ class MyApp extends StatelessWidget {
             constantLight: AppColors.constantLight,
             constantDark: AppColors.constantDark),
         TUITypography(
-          TUITextStyle.heading1,
-          TUITextStyle.heading2,
-          TUITextStyle.heading3,
-          TUITextStyle.heading4,
-          TUITextStyle.heading5,
-          TUITextStyle.heading6,
-          TUITextStyle.heading7,
-          TUITextStyle.body5,
-          TUITextStyle.body6,
-          TUITextStyle.body7,
-          TUITextStyle.body8,
-          TUITextStyle.button6,
-          TUITextStyle.button7,
-          TUITextStyle.button8,
+          xl5: TUITextStyle.xl5,
+          xl4: TUITextStyle.xl4,
+          xl3: TUITextStyle.xl3,
+          xl2: TUITextStyle.xl2,
+          xl: TUITextStyle.xl,
+          lg: TUITextStyle.lg,
+          base: TUITextStyle.base,
+          sm: TUITextStyle.sm,
+          xs: TUITextStyle.xs,
+          xs2: TUITextStyle.xs2,
         ));
 
     var tuiDarkThemeData = TUIThemeData(
@@ -127,20 +123,16 @@ class MyApp extends StatelessWidget {
             constantLight: AppColors.constantLight,
             constantDark: AppColors.constantDark),
         TUITypography(
-          TUITextStyle.heading1,
-          TUITextStyle.heading2,
-          TUITextStyle.heading3,
-          TUITextStyle.heading4,
-          TUITextStyle.heading5,
-          TUITextStyle.heading6,
-          TUITextStyle.heading7,
-          TUITextStyle.body5,
-          TUITextStyle.body6,
-          TUITextStyle.body7,
-          TUITextStyle.body8,
-          TUITextStyle.button6,
-          TUITextStyle.button7,
-          TUITextStyle.button8,
+          xl5: TUITextStyle.xl5,
+          xl4: TUITextStyle.xl4,
+          xl3: TUITextStyle.xl3,
+          xl2: TUITextStyle.xl2,
+          xl: TUITextStyle.xl,
+          lg: TUITextStyle.lg,
+          base: TUITextStyle.base,
+          sm: TUITextStyle.sm,
+          xs: TUITextStyle.xs,
+          xs2: TUITextStyle.xs2,
         ));
 
     return TUIApp(
@@ -211,25 +203,18 @@ class _HomePageState extends State<HomePage> {
         child: ListView(
           padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 30),
           children: [
-            const Text("Text Style", style: TUITextStyle.heading6),
+            const Text("Text Style", style: TUITextStyle.lg),
             const SizedBox(height: 8),
-            const Text("Heading1", style: TUITextStyle.heading1),
-            const Text("Heading2", style: TUITextStyle.heading2),
-            const Text("Heading3", style: TUITextStyle.heading3),
-            const Text("Heading4", style: TUITextStyle.heading4),
-            const Text("Heading5", style: TUITextStyle.heading5),
-            const Text("Heading6", style: TUITextStyle.heading6),
-            const Text("Heading7", style: TUITextStyle.heading7),
-            const Text("Body5", style: TUITextStyle.body5),
-            const Text("Body6", style: TUITextStyle.body6),
-            const Text("Body7", style: TUITextStyle.body7),
-            const Text("Body8", style: TUITextStyle.body8),
-            const Text("Button6", style: TUITextStyle.button6),
-            const Text("Button7", style: TUITextStyle.button7),
-            const Text("Button8", style: TUITextStyle.button8),
-            const SizedBox(height: 8),
-            const Text("Button", style: TUITextStyle.heading6),
-            const SizedBox(height: 8),
+            const Text("XL5", style: TUITextStyle.xl5),
+            const Text("XL4", style: TUITextStyle.xl4),
+            const Text("XL3", style: TUITextStyle.xl3),
+            const Text("XL2", style: TUITextStyle.xl2),
+            const Text("XL", style: TUITextStyle.xl),
+            const Text("LG", style: TUITextStyle.lg),
+            const Text("BASE", style: TUITextStyle.base),
+            const Text("SM", style: TUITextStyle.sm),
+            const Text("XS", style: TUITextStyle.xs),
+            const Text("XS2", style: TUITextStyle.xs2),
             TUIButton(
               label: "Primary Button",
               type: TUIButtonType.primary,
@@ -272,7 +257,7 @@ class _HomePageState extends State<HomePage> {
               onPressed: () {},
             ),
             const SizedBox(height: 8),
-            const Text("Avatar", style: TUITextStyle.heading6),
+            const Text("Avatar", style: TUITextStyle.xl),
             const SizedBox(height: 8),
             TUIAvatar(
               avatarSize: TUIAvatarSize.xxl,
@@ -309,7 +294,7 @@ class _HomePageState extends State<HomePage> {
               isBadged: true,
             ),
             const SizedBox(height: 8),
-            const Text("Divider", style: TUITextStyle.heading6),
+            const Text("Divider", style: TUITextStyle.xl),
             const SizedBox(height: 8),
             const TUIDivider(horizontalPadding: TUIDividerHorizontalPadding.s),
             const TUIDivider(horizontalPadding: TUIDividerHorizontalPadding.m),
@@ -323,7 +308,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             const SizedBox(height: 8),
-            const Text("Badge", style: TUITextStyle.heading6),
+            const Text("Badge", style: TUITextStyle.xl),
             const SizedBox(height: 8),
             const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -358,11 +343,11 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             const SizedBox(height: 8),
-            const Text("SuccessCheckMark", style: TUITextStyle.heading6),
+            const Text("SuccessCheckMark", style: TUITextStyle.xl),
             const SizedBox(height: 8),
             const TUISuccessCheckMark(),
             const SizedBox(height: 8),
-            const Text("Tag-Small", style: TUITextStyle.heading6),
+            const Text("Tag-Small", style: TUITextStyle.xl),
             const SizedBox(height: 8),
             const Row(
               children: [
@@ -384,7 +369,7 @@ class _HomePageState extends State<HomePage> {
                     tagIconType: TUITagIconType.right),
               ],
             ),
-            const Text("Tag-Medium", style: TUITextStyle.heading6),
+            const Text("Tag-Medium", style: TUITextStyle.xl),
             const SizedBox(height: 8),
             const Row(
               children: [
@@ -406,7 +391,7 @@ class _HomePageState extends State<HomePage> {
                     tagIconType: TUITagIconType.right),
               ],
             ),
-            const Text("Tag-Large", style: TUITextStyle.heading6),
+            const Text("Tag-Large", style: TUITextStyle.xl),
             const SizedBox(height: 8),
             const Row(
               children: [
@@ -429,7 +414,7 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             const SizedBox(height: 8),
-            const Text("Text Field", style: TUITextStyle.heading6),
+            const Text("Text Field", style: TUITextStyle.xl),
             const SizedBox(height: 8),
             const TUIInputField(
               labelText: "Label",
@@ -444,7 +429,7 @@ class _HomePageState extends State<HomePage> {
               errorText: "Error message goes here.",
             ),
             const SizedBox(height: 8),
-            const Text("Chips", style: TUITextStyle.heading6),
+            const Text("Chips", style: TUITextStyle.xl),
             const SizedBox(height: 8),
             TUIChip(
               leftIcon: Icons.abc_outlined,
@@ -486,7 +471,7 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             const SizedBox(height: 8),
-            const Text("Breadcrumb", style: TUITextStyle.heading6),
+            const Text("Breadcrumb", style: TUITextStyle.xl),
             const SizedBox(height: 8),
             TUIBreadCrumb(
               titles: const [
@@ -504,7 +489,7 @@ class _HomePageState extends State<HomePage> {
               onTap: (index) {},
             ),
             const SizedBox(height: 8),
-            const Text("Icon Button", style: TUITextStyle.heading6),
+            const Text("Icon Button", style: TUITextStyle.xl),
             const SizedBox(height: 8),
             Column(
                 children: TUIIconButtonType.values
@@ -518,7 +503,7 @@ class _HomePageState extends State<HomePage> {
                             .toList(growable: false)))
                     .toList(growable: false)),
             const SizedBox(height: 8),
-            const Text("Snackbar", style: TUITextStyle.heading6),
+            const Text("Snackbar", style: TUITextStyle.xl),
             const SizedBox(height: 8),
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -572,7 +557,7 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             const SizedBox(height: 8),
-            const Text("Media Thumbnail", style: TUITextStyle.heading6),
+            const Text("Media Thumbnail", style: TUITextStyle.xl),
             const SizedBox(height: 8),
             Wrap(
               direction: Axis.horizontal,
@@ -636,7 +621,7 @@ class _HomePageState extends State<HomePage> {
               min: 0,
             ),
             const SizedBox(height: 8),
-            const Text("Checkbox", style: TUITextStyle.heading6),
+            const Text("Checkbox", style: TUITextStyle.xl),
             Row(
               children: [
                 TUICheckBox(
@@ -658,7 +643,7 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             const SizedBox(height: 8.0),
-            const Text("CheckBoxRow", style: TUITextStyle.heading6),
+            const Text("CheckBoxRow", style: TUITextStyle.xl),
             const SizedBox(height: 8.0),
             TUICheckBoxRow(
               enableMixedState: true,
@@ -711,7 +696,7 @@ class _HomePageState extends State<HomePage> {
               onChanged: (state) {},
             ),
             const SizedBox(height: 8.0),
-            const Text("Radio Button", style: TUITextStyle.heading6),
+            const Text("Radio Button", style: TUITextStyle.xl),
             Row(
               children: [
                 TUIRadioButton(
@@ -734,13 +719,12 @@ class _HomePageState extends State<HomePage> {
                 const TUIRadioButton()
               ],
             ),
-            const Text("Anchor", style: TUITextStyle.heading6),
+            const Text("Anchor", style: TUITextStyle.xl),
             TUIAnchor(
               title: "Link Text",
               onPressed: () {},
             ),
-            const Text("Anchor with truncating text",
-                style: TUITextStyle.heading6),
+            const Text("Anchor with truncating text", style: TUITextStyle.xl),
             const SizedBox(height: 8),
             TUIAnchor(
               title:
@@ -748,21 +732,20 @@ class _HomePageState extends State<HomePage> {
               onPressed: () {},
             ),
             const SizedBox(height: 8),
-            const Text("Anchor text with newlines",
-                style: TUITextStyle.heading6),
+            const Text("Anchor text with newlines", style: TUITextStyle.xl),
             TUIAnchor(
               title:
                   "This is an anchor with some very long test.\n\n This should hopefully overflow the text to the next line.",
               onPressed: () {},
             ),
             const SizedBox(height: 8),
-            const Text("Accordion", style: TUITextStyle.heading6),
+            const Text("Accordion", style: TUITextStyle.xl),
             const TUIAccordion(
                 title: "Is this an accordion row?",
                 subtitle:
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
             const SizedBox(height: 8),
-            const Text("Switch", style: TUITextStyle.heading6),
+            const Text("Switch", style: TUITextStyle.xl),
             Row(
               children: [
                 TUIToggleSwitch(
@@ -782,7 +765,7 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             const SizedBox(height: 8),
-            const Text("Email Field", style: TUITextStyle.heading6),
+            const Text("Email Field", style: TUITextStyle.xl),
             const SizedBox(height: 8),
             // TUISwitch
             TUIEmailField(
@@ -792,7 +775,7 @@ class _HomePageState extends State<HomePage> {
             ),
             const SizedBox(height: 8),
             const Text("Attachment Upload With Description",
-                style: TUITextStyle.heading6),
+                style: TUITextStyle.xl),
             TUIAttachmentUpload(
               title: "Title",
               description: "This is a long description to test overflow.",
@@ -801,7 +784,7 @@ class _HomePageState extends State<HomePage> {
               downloadTapped: () {},
               deleteTapped: () {},
             ),
-            const Text("Attachment Upload", style: TUITextStyle.heading6),
+            const Text("Attachment Upload", style: TUITextStyle.xl),
             TUIAttachmentUpload(
               title: "Title",
               isIconUsed: false,
@@ -813,7 +796,7 @@ class _HomePageState extends State<HomePage> {
                 fit: BoxFit.fill,
               ),
             ),
-            const Text("Draggable Card", style: TUITextStyle.heading6),
+            const Text("Draggable Card", style: TUITextStyle.xl),
             const SizedBox(height: 8),
             const TUIDraggableCard(
               child: Text("Hello"),
@@ -823,13 +806,13 @@ class _HomePageState extends State<HomePage> {
               child: Text("Hello"),
             ),
             const SizedBox(height: 8),
-            const Text("Email Subject Field", style: TUITextStyle.heading6),
+            const Text("Email Subject Field", style: TUITextStyle.xl),
             const SizedBox(height: 8),
             TUIEmailSubjectField(
               onTextChanged: (String text) {},
             ),
             const SizedBox(height: 8),
-            const Text("Menu Item", style: TUITextStyle.heading6),
+            const Text("Menu Item", style: TUITextStyle.xl),
             const SizedBox(height: 8),
             TUIMenuItem(
               item: TUIMenuItemProperties(
@@ -945,7 +928,7 @@ class _HomePageState extends State<HomePage> {
               backgroundDark: true,
             ),
             const SizedBox(height: 8),
-            const Text("Navigation Row", style: TUITextStyle.heading6),
+            const Text("Navigation Row", style: TUITextStyle.xl),
             SizedBox(
               height: 40,
               child: TUINavigationRow(
@@ -965,7 +948,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             const SizedBox(height: 8),
-            const Text("Button Block", style: TUITextStyle.heading6),
+            const Text("Button Block", style: TUITextStyle.xl),
             TUIMobileButtonBlock(
               style: TUIMobileButtonBlockStyle(
                 style: Style.one,
@@ -1018,7 +1001,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             const SizedBox(height: 8),
-            const Text("Mobile Overlay Header", style: TUITextStyle.heading6),
+            const Text("Mobile Overlay Header", style: TUITextStyle.xl),
             const SizedBox(height: 8),
             TUIMobileOverlayHeader(
                 style: TUIOverlayMobileStyle(
@@ -1045,7 +1028,7 @@ class _HomePageState extends State<HomePage> {
                   action: () {}),
             ),
             const SizedBox(height: 8),
-            const Text("Selection Card", style: TUITextStyle.heading6),
+            const Text("Selection Card", style: TUITextStyle.xl),
             const SizedBox(height: 8),
             TUISelectionCard(
               style: TUISelectionCardStyle(
@@ -1095,7 +1078,7 @@ class _HomePageState extends State<HomePage> {
               action: () {},
             ),
             const SizedBox(height: 8),
-            const Text("Toggle Row", style: TUITextStyle.heading6),
+            const Text("Toggle Row", style: TUITextStyle.xl),
             const SizedBox(height: 8),
             TUIToggleRow(
               title: "Title",
@@ -1184,7 +1167,7 @@ class _HomePageState extends State<HomePage> {
               },
             ),
             const SizedBox(height: 8),
-            const Text("Search Bar", style: TUITextStyle.heading6),
+            const Text("Search Bar", style: TUITextStyle.xl),
             const SizedBox(height: 8),
             const TUISearchBar(
               showBackIcon: true,
@@ -1202,7 +1185,7 @@ class _HomePageState extends State<HomePage> {
               autofocus: true,
             ),
             const SizedBox(height: 8),
-            const Text("Radio Row", style: TUITextStyle.heading6),
+            const Text("Radio Row", style: TUITextStyle.xl),
             const SizedBox(height: 8),
             TUIRadioRow(
               title: "title",
@@ -1224,7 +1207,7 @@ class _HomePageState extends State<HomePage> {
             ),
 
             const SizedBox(height: 8),
-            const Text("Overlay Menu", style: TUITextStyle.heading6),
+            const Text("Overlay Menu", style: TUITextStyle.xl),
             const SizedBox(height: 8),
 
             ElevatedButton(
@@ -1273,7 +1256,7 @@ class _HomePageState extends State<HomePage> {
               child: Text('Show Modal Bottom Sheet'),
             ),
             const SizedBox(height: 8),
-            const Text("Date Picker", style: TUITextStyle.heading6),
+            const Text("Date Picker", style: TUITextStyle.xl),
             const SizedBox(height: 8),
             TUIDatePicker(
               labelText: "Label Text",

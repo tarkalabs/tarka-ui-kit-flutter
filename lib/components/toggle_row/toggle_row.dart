@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tarka_ui/styles/theme.dart';
 import 'package:tarka_ui/tarka_ui.dart';
 
 /// TUIToggleRow widget row with a title, description and a toggle switch.
@@ -82,7 +81,7 @@ class TUIToggleRow extends StatelessWidget {
         children: [
           Text(
             title,
-            style: theme.typography.heading7,
+            style: theme.typography.baseBold,
             overflow: TextOverflow.ellipsis,
           ),
           _getDescription(theme),
@@ -95,7 +94,7 @@ class TUIToggleRow extends StatelessWidget {
     if (description.isNotEmpty) {
       return Text(
         description,
-        style: theme.typography.body7,
+        style: theme.typography.base,
       );
     }
 
