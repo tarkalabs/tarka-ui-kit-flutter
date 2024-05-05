@@ -175,6 +175,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = TUITheme.of(context);
     return Scaffold(
       floatingActionButton: TUIFloatingActionButton(
         iconData: Symbol.map.value,
@@ -203,7 +204,7 @@ class _HomePageState extends State<HomePage> {
         child: ListView(
           padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 30),
           children: [
-            const Text("Text Style", style: TUITextStyle.lg),
+            Text("Text Style", style: theme.typography.baseBold),
             const SizedBox(height: 8),
             const Text("XL5", style: TUITextStyle.xl5),
             const Text("XL4", style: TUITextStyle.xl4),
@@ -257,7 +258,7 @@ class _HomePageState extends State<HomePage> {
               onPressed: () {},
             ),
             const SizedBox(height: 8),
-            const Text("Avatar", style: TUITextStyle.xl),
+            Text("Avatar", style: theme.typography.baseBold),
             const SizedBox(height: 8),
             TUIAvatar(
               avatarSize: TUIAvatarSize.xxl,
@@ -294,7 +295,7 @@ class _HomePageState extends State<HomePage> {
               isBadged: true,
             ),
             const SizedBox(height: 8),
-            const Text("Divider", style: TUITextStyle.xl),
+            Text("Divider", style: theme.typography.baseBold),
             const SizedBox(height: 8),
             const TUIDivider(horizontalPadding: TUIDividerHorizontalPadding.s),
             const TUIDivider(horizontalPadding: TUIDividerHorizontalPadding.m),
@@ -308,7 +309,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             const SizedBox(height: 8),
-            const Text("Badge", style: TUITextStyle.xl),
+            Text("Badge", style: theme.typography.baseBold),
             const SizedBox(height: 8),
             const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -343,11 +344,11 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             const SizedBox(height: 8),
-            const Text("SuccessCheckMark", style: TUITextStyle.xl),
+            Text("SuccessCheckMark", style: theme.typography.baseBold),
             const SizedBox(height: 8),
             const TUISuccessCheckMark(),
             const SizedBox(height: 8),
-            const Text("Tag-Small", style: TUITextStyle.xl),
+            Text("Tag-Small", style: theme.typography.baseBold),
             const SizedBox(height: 8),
             const Row(
               children: [
@@ -369,7 +370,7 @@ class _HomePageState extends State<HomePage> {
                     tagIconType: TUITagIconType.right),
               ],
             ),
-            const Text("Tag-Medium", style: TUITextStyle.xl),
+            Text("Tag-Medium", style: theme.typography.baseBold),
             const SizedBox(height: 8),
             const Row(
               children: [
@@ -391,7 +392,7 @@ class _HomePageState extends State<HomePage> {
                     tagIconType: TUITagIconType.right),
               ],
             ),
-            const Text("Tag-Large", style: TUITextStyle.xl),
+            Text("Tag-Large", style: theme.typography.baseBold),
             const SizedBox(height: 8),
             const Row(
               children: [
@@ -414,7 +415,7 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             const SizedBox(height: 8),
-            const Text("Text Field", style: TUITextStyle.xl),
+            Text("Text Field", style: theme.typography.baseBold),
             const SizedBox(height: 8),
             const TUIInputField(
               labelText: "Label",
@@ -429,7 +430,7 @@ class _HomePageState extends State<HomePage> {
               errorText: "Error message goes here.",
             ),
             const SizedBox(height: 8),
-            const Text("Chips", style: TUITextStyle.xl),
+            Text("Chips", style: theme.typography.baseBold),
             const SizedBox(height: 8),
             TUIChip(
               leftIcon: Icons.abc_outlined,
@@ -471,7 +472,7 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             const SizedBox(height: 8),
-            const Text("Breadcrumb", style: TUITextStyle.xl),
+            Text("Breadcrumb", style: theme.typography.baseBold),
             const SizedBox(height: 8),
             TUIBreadCrumb(
               titles: const [
@@ -489,7 +490,7 @@ class _HomePageState extends State<HomePage> {
               onTap: (index) {},
             ),
             const SizedBox(height: 8),
-            const Text("Icon Button", style: TUITextStyle.xl),
+            Text("Icon Button", style: theme.typography.baseBold),
             const SizedBox(height: 8),
             Column(
                 children: TUIIconButtonType.values
@@ -503,7 +504,7 @@ class _HomePageState extends State<HomePage> {
                             .toList(growable: false)))
                     .toList(growable: false)),
             const SizedBox(height: 8),
-            const Text("Snackbar", style: TUITextStyle.xl),
+            Text("Snackbar", style: theme.typography.baseBold),
             const SizedBox(height: 8),
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
@@ -557,7 +558,7 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             const SizedBox(height: 8),
-            const Text("Media Thumbnail", style: TUITextStyle.xl),
+            Text("Media Thumbnail", style: theme.typography.baseBold),
             const SizedBox(height: 8),
             Wrap(
               direction: Axis.horizontal,
@@ -621,7 +622,7 @@ class _HomePageState extends State<HomePage> {
               min: 0,
             ),
             const SizedBox(height: 8),
-            const Text("Checkbox", style: TUITextStyle.xl),
+            Text("Checkbox", style: theme.typography.baseBold),
             Row(
               children: [
                 TUICheckBox(
@@ -643,7 +644,7 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             const SizedBox(height: 8.0),
-            const Text("CheckBoxRow", style: TUITextStyle.xl),
+            Text("CheckBoxRow", style: theme.typography.baseBold),
             const SizedBox(height: 8.0),
             TUICheckBoxRow(
               enableMixedState: true,
@@ -696,7 +697,7 @@ class _HomePageState extends State<HomePage> {
               onChanged: (state) {},
             ),
             const SizedBox(height: 8.0),
-            const Text("Radio Button", style: TUITextStyle.xl),
+            Text("Radio Button", style: theme.typography.baseBold),
             Row(
               children: [
                 TUIRadioButton(
@@ -719,12 +720,13 @@ class _HomePageState extends State<HomePage> {
                 const TUIRadioButton()
               ],
             ),
-            const Text("Anchor", style: TUITextStyle.xl),
+            Text("Anchor", style: theme.typography.baseBold),
             TUIAnchor(
               title: "Link Text",
               onPressed: () {},
             ),
-            const Text("Anchor with truncating text", style: TUITextStyle.xl),
+            Text("Anchor with truncating text",
+                style: theme.typography.baseBold),
             const SizedBox(height: 8),
             TUIAnchor(
               title:
@@ -732,20 +734,20 @@ class _HomePageState extends State<HomePage> {
               onPressed: () {},
             ),
             const SizedBox(height: 8),
-            const Text("Anchor text with newlines", style: TUITextStyle.xl),
+            Text("Anchor text with newlines", style: theme.typography.baseBold),
             TUIAnchor(
               title:
                   "This is an anchor with some very long test.\n\n This should hopefully overflow the text to the next line.",
               onPressed: () {},
             ),
             const SizedBox(height: 8),
-            const Text("Accordion", style: TUITextStyle.xl),
+            Text("Accordion", style: theme.typography.baseBold),
             const TUIAccordion(
                 title: "Is this an accordion row?",
                 subtitle:
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."),
             const SizedBox(height: 8),
-            const Text("Switch", style: TUITextStyle.xl),
+            Text("Switch", style: theme.typography.baseBold),
             Row(
               children: [
                 TUIToggleSwitch(
@@ -765,7 +767,7 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             const SizedBox(height: 8),
-            const Text("Email Field", style: TUITextStyle.xl),
+            Text("Email Field", style: theme.typography.baseBold),
             const SizedBox(height: 8),
             // TUISwitch
             TUIEmailField(
@@ -774,8 +776,8 @@ class _HomePageState extends State<HomePage> {
               onAdd: () {},
             ),
             const SizedBox(height: 8),
-            const Text("Attachment Upload With Description",
-                style: TUITextStyle.xl),
+            Text("Attachment Upload With Description",
+                style: theme.typography.baseBold),
             TUIAttachmentUpload(
               title: "Title",
               description: "This is a long description to test overflow.",
@@ -784,7 +786,7 @@ class _HomePageState extends State<HomePage> {
               downloadTapped: () {},
               deleteTapped: () {},
             ),
-            const Text("Attachment Upload", style: TUITextStyle.xl),
+            Text("Attachment Upload", style: theme.typography.baseBold),
             TUIAttachmentUpload(
               title: "Title",
               isIconUsed: false,
@@ -796,7 +798,7 @@ class _HomePageState extends State<HomePage> {
                 fit: BoxFit.fill,
               ),
             ),
-            const Text("Draggable Card", style: TUITextStyle.xl),
+            Text("Draggable Card", style: theme.typography.baseBold),
             const SizedBox(height: 8),
             const TUIDraggableCard(
               child: Text("Hello"),
@@ -806,13 +808,13 @@ class _HomePageState extends State<HomePage> {
               child: Text("Hello"),
             ),
             const SizedBox(height: 8),
-            const Text("Email Subject Field", style: TUITextStyle.xl),
+            Text("Email Subject Field", style: theme.typography.baseBold),
             const SizedBox(height: 8),
             TUIEmailSubjectField(
               onTextChanged: (String text) {},
             ),
             const SizedBox(height: 8),
-            const Text("Menu Item", style: TUITextStyle.xl),
+            Text("Menu Item", style: theme.typography.baseBold),
             const SizedBox(height: 8),
             TUIMenuItem(
               item: TUIMenuItemProperties(
@@ -928,7 +930,7 @@ class _HomePageState extends State<HomePage> {
               backgroundDark: true,
             ),
             const SizedBox(height: 8),
-            const Text("Navigation Row", style: TUITextStyle.xl),
+            Text("Navigation Row", style: theme.typography.baseBold),
             SizedBox(
               height: 40,
               child: TUINavigationRow(
@@ -948,7 +950,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             const SizedBox(height: 8),
-            const Text("Button Block", style: TUITextStyle.xl),
+            Text("Button Block", style: theme.typography.baseBold),
             TUIMobileButtonBlock(
               style: TUIMobileButtonBlockStyle(
                 style: Style.one,
@@ -1001,7 +1003,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             const SizedBox(height: 8),
-            const Text("Mobile Overlay Header", style: TUITextStyle.xl),
+            Text("Mobile Overlay Header", style: theme.typography.baseBold),
             const SizedBox(height: 8),
             TUIMobileOverlayHeader(
                 style: TUIOverlayMobileStyle(
@@ -1028,7 +1030,7 @@ class _HomePageState extends State<HomePage> {
                   action: () {}),
             ),
             const SizedBox(height: 8),
-            const Text("Selection Card", style: TUITextStyle.xl),
+            Text("Selection Card", style: theme.typography.baseBold),
             const SizedBox(height: 8),
             TUISelectionCard(
               style: TUISelectionCardStyle(
@@ -1078,7 +1080,7 @@ class _HomePageState extends State<HomePage> {
               action: () {},
             ),
             const SizedBox(height: 8),
-            const Text("Toggle Row", style: TUITextStyle.xl),
+            Text("Toggle Row", style: theme.typography.baseBold),
             const SizedBox(height: 8),
             TUIToggleRow(
               title: "Title",
@@ -1167,7 +1169,7 @@ class _HomePageState extends State<HomePage> {
               },
             ),
             const SizedBox(height: 8),
-            const Text("Search Bar", style: TUITextStyle.xl),
+            Text("Search Bar", style: theme.typography.baseBold),
             const SizedBox(height: 8),
             const TUISearchBar(
               showBackIcon: true,
@@ -1185,7 +1187,7 @@ class _HomePageState extends State<HomePage> {
               autofocus: true,
             ),
             const SizedBox(height: 8),
-            const Text("Radio Row", style: TUITextStyle.xl),
+            Text("Radio Row", style: theme.typography.baseBold),
             const SizedBox(height: 8),
             TUIRadioRow(
               title: "title",
@@ -1207,7 +1209,7 @@ class _HomePageState extends State<HomePage> {
             ),
 
             const SizedBox(height: 8),
-            const Text("Overlay Menu", style: TUITextStyle.xl),
+            Text("Overlay Menu", style: theme.typography.baseBold),
             const SizedBox(height: 8),
 
             ElevatedButton(
@@ -1256,7 +1258,7 @@ class _HomePageState extends State<HomePage> {
               child: Text('Show Modal Bottom Sheet'),
             ),
             const SizedBox(height: 8),
-            const Text("Date Picker", style: TUITextStyle.xl),
+            Text("Date Picker", style: theme.typography.baseBold),
             const SizedBox(height: 8),
             TUIDatePicker(
               labelText: "Label Text",
