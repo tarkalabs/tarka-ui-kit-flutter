@@ -1216,7 +1216,7 @@ class _HomePageState extends State<HomePage> {
               onPressed: () {
                 showModalBottomSheet(
                   context: context,
-                  shape: RoundedRectangleBorder(
+                  shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.vertical(
                       top: Radius.circular(
                           20.0), // Adjust the top corner radius here
@@ -1224,7 +1224,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   builder: (BuildContext context) {
                     return ClipRRect(
-                      borderRadius: BorderRadius.vertical(
+                      borderRadius: const BorderRadius.vertical(
                         top: Radius.circular(
                             20.0), // Match the radius with the shape
                       ),
@@ -1255,7 +1255,7 @@ class _HomePageState extends State<HomePage> {
                   },
                 );
               },
-              child: Text('Show Modal Bottom Sheet'),
+              child: const Text('Show Modal Bottom Sheet'),
             ),
             const SizedBox(height: 8),
             Text("Date Picker", style: theme.typography.baseBold),
