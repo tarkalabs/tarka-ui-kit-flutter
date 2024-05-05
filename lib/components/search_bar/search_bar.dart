@@ -24,10 +24,10 @@ import 'package:tarka_ui/styles/theme.dart';
 /// ```
 class TUISearchBar extends StatefulWidget {
   final bool showBackIcon;
-  final bool showTrailingIcon;
+  final bool showClearButton;
   final String placeholder;
   final Function()? onBackAction;
-  final Function()? onTrailingButtonAction;
+  final Function()? onClear;
   final Function(String)? onChanged;
   final TextEditingController? textEditingController;
   final bool autofocus;
@@ -35,10 +35,10 @@ class TUISearchBar extends StatefulWidget {
   const TUISearchBar({
     super.key,
     this.showBackIcon = true,
-    this.showTrailingIcon = false,
+    this.showClearButton = false,
     this.placeholder = "Search",
     this.onBackAction,
-    this.onTrailingButtonAction,
+    this.onClear,
     this.textEditingController,
     this.onChanged,
     this.autofocus = false,
@@ -50,6 +50,7 @@ class TUISearchBar extends StatefulWidget {
 
 class _TUISearchBarState extends State<TUISearchBar> {
   TextEditingController _controller = TextEditingController();
+  late bool _showClearButton = false;
 
   @override
   void initState() {
@@ -79,10 +80,14 @@ class _TUISearchBarState extends State<TUISearchBar> {
               maxLines: 1,
               controller: _controller,
               style: theme.typography.body6,
-              cursorHeight: 16.0,
-              textAlign: TextAlign.start,
-              textAlignVertical: TextAlignVertical.top,
-              onChanged: (value) => widget.onChanged?.call(value),
+              onChanged: (value) {
+                widget.onChanged?.call(value);
+                if (widget.showClearButton) {
+                  setState(() {
+                    _showClearButton = value.isNotEmpty;
+                  });
+                }
+              },
               autofocus: widget.autofocus,
               decoration: InputDecoration(
                 hintText: widget.placeholder,
@@ -107,11 +112,11 @@ class _TUISearchBarState extends State<TUISearchBar> {
   }
 
   getSuffixIcon(TUIThemeData theme) {
-    if (widget.showTrailingIcon) {
+    if (_showClearButton) {
       return GestureDetector(
         onTap: () {
           _controller.text = "";
-          widget.onTrailingButtonAction?.call();
+          widget.onClear?.call();
         },
         child: Container(
           padding: const EdgeInsets.all(8.0),
