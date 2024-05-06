@@ -154,7 +154,7 @@ enum TUIAvatarSize {
   TextStyle _getTextStyle(TUIThemeData theme) {
     switch (this) {
       case TUIAvatarSize.xxs:
-        return theme.typography.xsBold;
+        return theme.typography.xsSemiBold;
       case TUIAvatarSize.xs:
         return theme.typography.smBold;
       case TUIAvatarSize.s:
