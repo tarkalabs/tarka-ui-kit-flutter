@@ -128,7 +128,6 @@ class TUISelectionCard extends StatelessWidget {
     );
   }
 
-  xs
   Row getRightSide(TUIThemeData theme) {
     return Row(
       children: [
