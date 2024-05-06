@@ -40,11 +40,11 @@ class _TUIEmailSubjectFieldState extends State<TUIEmailSubjectField> {
   Widget build(BuildContext context) {
     final theme = TUITheme.of(context);
 
-    TextStyle labelTextStyle = theme.typography.body7.copyWith(
+    TextStyle labelTextStyle = theme.typography.sm.copyWith(
       color: theme.colors.outline,
     );
 
-    TextStyle textStyle = theme.typography.heading7;
+    TextStyle textStyle = theme.typography.smSemiBold;
 
     return TextField(
       controller: _controller,

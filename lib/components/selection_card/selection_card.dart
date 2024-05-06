@@ -116,10 +116,10 @@ class TUISelectionCard extends StatelessWidget {
           children: [
             Text(
               style.title,
-              style: theme.typography.body7,
+              style: theme.typography.sm,
             ),
             ...style.description!.map(
-              (e) => Text(e, style: theme.typography.heading6),
+                  (e) => Text(e, style: theme.typography.baseSemiBold),
             ),
             getFooter(theme),
           ],
@@ -128,6 +128,7 @@ class TUISelectionCard extends StatelessWidget {
     );
   }
 
+  xs
   Row getRightSide(TUIThemeData theme) {
     return Row(
       children: [
@@ -140,7 +141,7 @@ class TUISelectionCard extends StatelessWidget {
           ),
           child: Text(
             badgeCount != null ? badgeCount.toString() : "",
-            style: theme.typography.body8.copyWith(color: Colors.white),
+            style: theme.typography.xs.copyWith(color: Colors.white),
             textAlign: TextAlign.center,
           ),
         ),
@@ -162,7 +163,7 @@ class TUISelectionCard extends StatelessWidget {
 
   getFooter(TUIThemeData theme) {
     return style.footer.isNotEmpty
-        ? Text(style.footer, style: theme.typography.body7)
+        ? Text(style.footer, style: theme.typography.sm)
         : Container();
   }
 }

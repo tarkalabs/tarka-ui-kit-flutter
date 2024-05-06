@@ -44,9 +44,8 @@ enum TUIBadgeSize {
     final typography = theme.typography;
     switch (this) {
       case xs:
-        return typography.button8.copyWith(
+        return typography.xs2SemiBold.copyWith(
           color: colors.onError,
-          fontSize: 10,
         );
       case s:
         return typography.xsSemiBold.copyWith(
