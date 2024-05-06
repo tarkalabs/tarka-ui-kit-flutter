@@ -77,6 +77,7 @@ class TUIMobileOverlayMenu extends StatelessWidget {
         icon: FluentIcons.dismiss_24_regular,
         handler: () {
           Navigator.of(context).pop();
+          action?.call();
         });
 
     return TUIMobileOverlayFooter(actions: [closeButton]);
