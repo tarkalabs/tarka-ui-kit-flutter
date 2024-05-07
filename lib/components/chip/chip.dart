@@ -191,9 +191,11 @@ class TUIChip extends StatelessWidget {
 
   TextStyle getTextStyle(TUIThemeData theme) {
     if (!highlighted) {
-      return theme.typography.button7.copyWith(color: theme.colors.onSurface);
+      return theme.typography.smSemiBold
+          .copyWith(color: theme.colors.onSurface);
     } else {
-      return theme.typography.button7.copyWith(color: theme.colors.onSecondary);
+      return theme.typography.smSemiBold
+          .copyWith(color: theme.colors.onSecondary);
     }
   }
 }
@@ -219,9 +221,9 @@ enum TUIChipSize {
   TextStyle _getBadgeTextStyle(TUIThemeData theme) {
     switch (this) {
       case TUIChipSize.m:
-        return theme.typography.button8;
+        return theme.typography.xsSemiBold;
       case TUIChipSize.l:
-        return theme.typography.button7;
+        return theme.typography.smSemiBold;
     }
   }
 }

@@ -1,6 +1,6 @@
+import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:tarka_ui/styles/theme.dart';
-import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 
 /// TUIEmailField is a widget that allows the user to input email addresses.
 ///
@@ -190,9 +190,7 @@ class _TUIEmailFieldState extends State<TUIEmailField> {
         vertical: 1.0,
         horizontal: 8.0,
       ),
-      labelStyle: theme.typography.body7.copyWith(
-        fontWeight: FontWeight.w600,
-      ),
+      labelStyle: theme.typography.sm,
       labelPadding: EdgeInsets.zero,
       backgroundColor: theme.colors.background,
       shape: const RoundedRectangleBorder(
@@ -270,9 +268,7 @@ class _TUIEmailFieldState extends State<TUIEmailField> {
       children: [
         Text(
           label,
-          style: theme.typography.body7.copyWith(
-            fontSize: 15,
-          ),
+          style: theme.typography.sm,
         ),
         // ..._emails.map((e) => getChip(e, theme)).toList(),
       ],

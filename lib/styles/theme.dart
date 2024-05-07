@@ -40,7 +40,7 @@ class TUITheme extends StatelessWidget {
       // child: IconTheme(
       //   data: data.iconTheme,
       child: DefaultTextStyle(
-        style: data.typography.body6,
+        style: data.typography.base,
         child: child,
       ),
       // ),
@@ -100,8 +100,8 @@ class TUIThemeData with Diagnosticable {
         backgroundColor: colors.surface,
         selectedItemColor: colors.secondary,
         unselectedItemColor: colors.onSurface,
-        selectedLabelStyle: typography.button8,
-        unselectedLabelStyle: typography.button8,
+        selectedLabelStyle: typography.xsSemiBold,
+        unselectedLabelStyle: typography.xsSemiBold,
         type: BottomNavigationBarType.fixed,
         showSelectedLabels: false,
         showUnselectedLabels: false);

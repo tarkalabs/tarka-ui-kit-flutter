@@ -79,7 +79,7 @@ class _TUISearchBarState extends State<TUISearchBar> {
             child: TextField(
               maxLines: 1,
               controller: _controller,
-              style: theme.typography.body6,
+              style: theme.typography.base,
               onChanged: (value) {
                 widget.onChanged?.call(value);
                 if (widget.showClearButton) {

@@ -4,87 +4,71 @@ import 'package:flutter/material.dart';
 class TUITextStyle {
   TUITextStyle._();
 
-  static const TextStyle heading1 = TextStyle(
-    fontSize: 30,
+  static const TextStyle xl5 = TextStyle(
+    fontSize: 64,
+    letterSpacing: -0.02,
     fontFamily: 'Inter',
-    fontWeight: FontWeight.w700,
+    fontWeight: FontWeight.w400,
   );
 
-  static const TextStyle heading2 = TextStyle(
+  static const TextStyle xl4 = TextStyle(
+    fontSize: 32,
+    letterSpacing: -0.02,
+    fontFamily: 'Inter',
+    fontWeight: FontWeight.w400,
+  );
+
+  static const TextStyle xl3 = TextStyle(
     fontSize: 24,
+    letterSpacing: -0.02,
     fontFamily: 'Inter',
-    fontWeight: FontWeight.w700,
+    fontWeight: FontWeight.w400,
   );
 
-  static const TextStyle heading3 = TextStyle(
+  static const TextStyle xl2 = TextStyle(
     fontSize: 22,
+    letterSpacing: -0.02,
     fontFamily: 'Inter',
-    fontWeight: FontWeight.w700,
+    fontWeight: FontWeight.w400,
   );
 
-  static const TextStyle heading4 = TextStyle(
+  static const TextStyle xl = TextStyle(
     fontSize: 20,
+    letterSpacing: -0.02,
     fontFamily: 'Inter',
-    fontWeight: FontWeight.w700,
+    fontWeight: FontWeight.w400,
   );
 
-  static const TextStyle heading5 = TextStyle(
-    fontSize: 18,
-    fontFamily: 'Inter',
-    fontWeight: FontWeight.w600,
-  );
-
-  static const TextStyle heading6 = TextStyle(
-    fontSize: 16,
-    fontFamily: 'Inter',
-    fontWeight: FontWeight.w600,
-  );
-
-  static const TextStyle heading7 = TextStyle(
-    fontSize: 14,
-    fontFamily: 'Inter',
-    fontWeight: FontWeight.w600,
-  );
-
-  static const TextStyle body5 = TextStyle(
+  static const TextStyle lg = TextStyle(
     fontSize: 18,
     fontFamily: 'Inter',
     fontWeight: FontWeight.w400,
   );
 
-  static const TextStyle body6 = TextStyle(
+  static const TextStyle base = TextStyle(
     fontSize: 16,
     fontFamily: 'Inter',
     fontWeight: FontWeight.w400,
   );
 
-  static const TextStyle body7 = TextStyle(
+  static const TextStyle sm = TextStyle(
     fontSize: 14,
+    letterSpacing: 0.01,
     fontFamily: 'Inter',
     fontWeight: FontWeight.w400,
   );
 
-  static const TextStyle body8 = TextStyle(
+  static const TextStyle xs = TextStyle(
     fontSize: 12,
+    letterSpacing: 0.01,
     fontFamily: 'Inter',
     fontWeight: FontWeight.w400,
   );
 
-  static const TextStyle button6 = TextStyle(
-    fontSize: 16,
+  static const TextStyle xs2 = TextStyle(
+    fontSize: 10,
+    letterSpacing: 0.01,
     fontFamily: 'Inter',
-    fontWeight: FontWeight.w600,
-  );
-
-  static const TextStyle button7 = TextStyle(
-    fontSize: 14,
-    fontFamily: 'Inter',
-    fontWeight: FontWeight.w600,
-  );
-
-  static const TextStyle button8 = TextStyle(
-    fontSize: 12,
-    fontFamily: 'Inter',
-    fontWeight: FontWeight.w600,
+    fontWeight: FontWeight.w400,
   );
 }

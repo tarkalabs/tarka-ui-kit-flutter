@@ -48,7 +48,7 @@ class TUIBreadCrumb extends StatelessWidget {
                   children: [
                     Text(
                       titles[index],
-                      style: textStyle.button6.copyWith(
+                      style: textStyle.baseSemiBold.copyWith(
                         color: colors.inputTextDim,
                       ),
                     ),
@@ -57,7 +57,7 @@ class TUIBreadCrumb extends StatelessWidget {
                     ),
                     Text(
                       "/",
-                      style: textStyle.button6.copyWith(
+                      style: textStyle.baseSemiBold.copyWith(
                         color: colors.inputTextDim,
                       ),
                     )
@@ -65,7 +65,7 @@ class TUIBreadCrumb extends StatelessWidget {
             } else {
               return Text(
                 titles[index],
-                style: textStyle.button6.copyWith(
+                style: textStyle.baseSemiBold.copyWith(
                   color: colors.onSurface,
                 ),
               );

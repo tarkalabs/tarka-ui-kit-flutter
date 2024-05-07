@@ -154,19 +154,19 @@ enum TUIAvatarSize {
   TextStyle _getTextStyle(TUIThemeData theme) {
     switch (this) {
       case TUIAvatarSize.xxs:
-        return theme.typography.body8;
+        return theme.typography.xsSemiBold;
       case TUIAvatarSize.xs:
-        return theme.typography.heading7;
+        return theme.typography.smBold;
       case TUIAvatarSize.s:
-        return theme.typography.heading6;
+        return theme.typography.baseBold;
       case TUIAvatarSize.m:
-        return theme.typography.heading5;
+        return theme.typography.lgSemiBold;
       case TUIAvatarSize.l:
-        return theme.typography.heading4;
+        return theme.typography.xlSemiBold;
       case TUIAvatarSize.xl:
-        return theme.typography.heading3;
+        return theme.typography.xl2SemiBold;
       case TUIAvatarSize.xxl:
-        return theme.typography.heading2;
+        return theme.typography.xl3Bold;
     }
   }
 }

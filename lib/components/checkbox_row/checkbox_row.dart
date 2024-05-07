@@ -86,16 +86,11 @@ class _TUICheckBoxRowState extends State<TUICheckBoxRow> {
           children: [
             Text(
               widget.title,
-              style: theme.typography.heading7
-                  .copyWith(fontWeight: FontWeight.w600),
+              style: theme.typography.baseBold,
             ),
             if (showDescription)
               Text(
-                widget.description,
-                style: theme.typography.body7.copyWith(
-                  fontWeight: FontWeight.w400,
-                ),
-              )
+                widget.description, style: theme.typography.base)
           ],
         )
       ],
