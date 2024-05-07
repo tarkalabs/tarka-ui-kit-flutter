@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-/// TUITextStyle is a class that holds all the text styles used in the Tarka UI.
 class AppTextStyle {
   AppTextStyle._();
 
