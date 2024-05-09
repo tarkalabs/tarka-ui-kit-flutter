@@ -31,11 +31,11 @@ enum TUIBadgeSize {
   EdgeInsets _getEdgeInsets() {
     switch (this) {
       case xs:
-        return const EdgeInsets.fromLTRB(3, 0, 3, 0);
+        return const EdgeInsets.all(0);
       case s:
-        return const EdgeInsets.symmetric(horizontal: 5, vertical: 1);
+        return const EdgeInsets.symmetric(horizontal: 4);
       case l:
-        return const EdgeInsets.symmetric(horizontal: 8, vertical: 4);
+        return const EdgeInsets.symmetric(horizontal: 8);
     }
   }
 
@@ -85,23 +85,30 @@ class TUIBadge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TUIThemeData theme = TUITheme.of(context);
-    if (content != null && isNumbered) {
+
+    if (content != null && isNumbered && badgeSize != TUIBadgeSize.xs) {
       return Container(
         height: badgeSize._getBadgeSize(),
+        alignment: Alignment.center,
         constraints: BoxConstraints(
           minHeight: badgeSize._getBadgeSize(), //minimum height
           minWidth: badgeSize._getBadgeSize(), // minimum width
-          maxHeight: badgeSize._getBadgeSize(),
-          maxWidth: MediaQuery.of(context).size.width,
         ),
         decoration: BoxDecoration(
           color: theme.colors.error,
           borderRadius: BorderRadius.all(badgeSize._getBorderRadius()),
         ),
         padding: badgeSize._getEdgeInsets(),
-        child: Text(
-          content!,
-          style: badgeSize._getStyle(theme),
+        child: Flex(
+          direction: Axis.horizontal,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              content!,
+              style: badgeSize._getStyle(theme),
+            )
+          ],
         ),
       );
     } else {
@@ -111,7 +118,7 @@ class TUIBadge extends StatelessWidget {
         padding: badgeSize._getEdgeInsets(),
         decoration: BoxDecoration(
             color: theme.colors.error,
-            borderRadius: const BorderRadius.all(Radius.circular(20))),
+            borderRadius: BorderRadius.all(badgeSize._getBorderRadius())),
       );
     }
   }
