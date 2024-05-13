@@ -419,8 +419,8 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 8),
             const TUIInputField(
               labelText: "Label",
-              prefixIcon: Icon(TUISymbol.successCheckMark),
-              suffixIcon: Icon(TUISymbol.chevronDown),
+              prefix: TUITextFieldStartEndItem.icon(TUISymbol.successCheckMark),
+              suffix: TUITextFieldStartEndItem.icon(TUISymbol.chevronDown),
               helperText: "Helper / hint message goes here.",
             ),
             const SizedBox(height: 8),
@@ -429,6 +429,22 @@ class _HomePageState extends State<HomePage> {
               labelText: "Hello World",
               errorText: "Error message goes here.",
             ),
+            const SizedBox(height: 8),
+            TUIInputField(
+                labelText: null,
+                hintText: "Text Prefix and icon button Suffix",
+                prefix: const TUITextFieldStartEndItem.text("\$"),
+                suffix: TUITextFieldStartEndItem.iconButton(
+                    icon: FluentIcons.dismiss_24_regular,
+                    buttonType: TUIIconButtonType.ghost,
+                    onButtonTap: () {
+                      ScaffoldMessenger.of(context).showSnackBar(TUISnackBar(
+                        context: context,
+                        type: TUISnackBarType.information,
+                        message: "Suffix icon clicked",
+                        action: TUISnackBarAction.dismiss("Dismiss"),
+                      ));
+                    })),
             const SizedBox(height: 8),
             Text("Chips", style: theme.typography.baseBold),
             const SizedBox(height: 8),

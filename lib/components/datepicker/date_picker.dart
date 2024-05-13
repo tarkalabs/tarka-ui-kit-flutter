@@ -12,16 +12,12 @@ class TUIDatePicker extends StatefulWidget {
   final String? labelText;
   final String? errorText;
   final String? helperText;
-  final String? prefixText;
-  final String? suffixText;
+  final TUITextFieldStartEndItem? prefix;
+  final TUITextFieldStartEndItem? suffix;
   final material.TextAlign textAlign;
   final material.TextAlignVertical? textAlignVertical;
   final material.TextCapitalization textCapitalization;
   final material.TextDirection? textDirection;
-  final material.Icon? prefixIcon;
-  final material.Color? prefixIconColor;
-  final material.Icon? suffixIcon;
-  final material.Color? suffixIconColor;
   final material.TextEditingController? controller;
   final DateFormat? format;
   final DateTime? minimumDate;
@@ -41,16 +37,12 @@ class TUIDatePicker extends StatefulWidget {
     this.labelText,
     this.errorText,
     this.helperText,
-    this.prefixText,
-    this.suffixText,
+    this.prefix,
+    this.suffix,
     this.textAlign = material.TextAlign.start,
     this.textAlignVertical,
     this.textCapitalization = material.TextCapitalization.none,
     this.textDirection,
-    this.prefixIcon,
-    this.prefixIconColor,
-    this.suffixIcon,
-    this.suffixIconColor,
     this.controller,
     this.minimumDate,
     this.initialDate,
@@ -97,16 +89,12 @@ class _TUIDatePickerState extends State<TUIDatePicker> {
       labelText: widget.labelText,
       errorText: widget.errorText,
       helperText: widget.helperText,
-      prefixText: widget.prefixText,
-      suffixText: widget.suffixText,
+      prefix: widget.prefix,
+      suffix: widget.suffix,
       textAlign: widget.textAlign,
       textAlignVertical: widget.textAlignVertical,
       textCapitalization: widget.textCapitalization,
       textDirection: widget.textDirection,
-      prefixIcon: widget.prefixIcon,
-      prefixIconColor: widget.prefixIconColor,
-      suffixIcon: widget.suffixIcon,
-      suffixIconColor: widget.suffixIconColor,
       controller: _dateController,
       onTap: () {
         _selectDate(context);
