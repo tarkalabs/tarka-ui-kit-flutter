@@ -47,9 +47,7 @@ class TUIRadioButton extends StatelessWidget {
 
     return GestureDetector(
       onTap: () {
-        if (onPressed != null) {
-          onPressed!(isSelected);
-        }
+        onPressed?.call(!isSelected);
       },
       child: child,
     );
