@@ -37,8 +37,9 @@ void main() {
     const Key tapTarget = Key('tap-target');
     final snackBarWidget =
         Scaffold(body: Builder(builder: (BuildContext context) {
-      return GestureDetector(
-          onTap: () {
+      return OutlinedButton(
+          key: tapTarget,
+          onPressed: () {
             ScaffoldMessenger.of(context).showSnackBar(TUISnackBar(
                 context: context,
                 type: TUISnackBarType.success,
@@ -49,13 +50,12 @@ void main() {
                       isClicked = true;
                     })));
           },
-          behavior: HitTestBehavior.opaque,
-          child: const SizedBox(height: 100.0, width: 100.0, key: tapTarget));
+          child: const Text("Button"));
     }));
     await widgetTester.pumpWidgetBuilder(snackBarWidget,
         wrapper: tuiAppWrapper());
-    await widgetTester.tap(find.byKey(tapTarget), warnIfMissed: false);
-    await widgetTester.pump();
+    await widgetTester.tap(find.byKey(tapTarget));
+    await widgetTester.pumpAndSettle();
     await widgetTester.tap(find.text('ACTION'));
     expect(isClicked, true,
         reason: "Action button click did not trigger onActionPressed callback");

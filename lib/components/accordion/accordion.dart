@@ -50,7 +50,7 @@ class _TUIAccordionState extends State<TUIAccordion> {
             padding: const EdgeInsets.fromLTRB(0, 24, 0, 24),
             child: Text(
               widget.title,
-              style: theme.typography.heading5,
+              style: theme.typography.lgSemiBold,
             ),
           ),
           trailing: Padding(
@@ -67,7 +67,7 @@ class _TUIAccordionState extends State<TUIAccordion> {
               child: ListTile(
                 title: Text(
                   widget.subtitle,
-                  style: theme.typography.body6,
+                  style: theme.typography.base,
                 ),
               ),
             ),

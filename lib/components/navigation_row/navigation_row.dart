@@ -52,7 +52,7 @@ class TUINavigationRow extends StatelessWidget {
   ) {
     final theme = TUITheme.of(context);
 
-    TextStyle titleTextStyle = theme.typography.heading7.copyWith(
+    TextStyle titleTextStyle = theme.typography.baseBold.copyWith(
       color: theme.colors.onSurface,
     );
 

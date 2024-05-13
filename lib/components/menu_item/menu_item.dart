@@ -157,7 +157,7 @@ class _TUIMenuItemState extends State<TUIMenuItem> {
                     padding: getTextPadding(),
                     child: Text(
                       widget.item.title,
-                      style: theme.typography.body6,
+                      style: theme.typography.base,
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),

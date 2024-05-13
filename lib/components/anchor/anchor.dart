@@ -58,7 +58,7 @@ class _TUIAnchor extends State<TUIAnchor> {
             padding: const EdgeInsets.fromLTRB(6, 10, 10, 10),
             child: Text(
               widget.title,
-              style: theme.typography.body6.copyWith(
+              style: theme.typography.base.copyWith(
                 color: theme.colors.inputTextDim,
               ),
               softWrap: false,

@@ -54,11 +54,11 @@ class TUIAttachmentUpload extends StatelessWidget {
   }
 
   Widget getTitleAndDescription(TUIThemeData theme) {
-    TextStyle titleTextStyle = theme.typography.body7.copyWith(
+    TextStyle titleTextStyle = theme.typography.base.copyWith(
       color: theme.colors.onSurface,
     );
 
-    TextStyle descriptionTextStyle = theme.typography.body8.copyWith(
+    TextStyle descriptionTextStyle = theme.typography.xs.copyWith(
       color: theme.colors.inputTextDim,
     );
 
