@@ -29,20 +29,18 @@ class TUIRadioButton extends StatelessWidget {
     child = Container(
       width: 24,
       height: 24,
+      alignment: Alignment.center,
       decoration: BoxDecoration(
         color: getOuterContainerColor(context),
         border: getOuterBorder(context),
         shape: BoxShape.circle,
       ),
-      child: Padding(
-        padding: const EdgeInsets.all(7),
-        child: Container(
-          width: 8,
-          height: 8,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: getColorOfInnerContainer(context),
-          ),
+      child: Container(
+        width: 8,
+        height: 8,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: getColorOfInnerContainer(context),
         ),
       ),
     );
