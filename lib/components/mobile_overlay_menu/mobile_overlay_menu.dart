@@ -12,24 +12,45 @@ class TUIMobileOverlayMenu extends StatelessWidget {
   final double padding = 16;
   final double verticalGap = 8;
   final List<TUIMenuItem> menuItems;
+  final bool isScrollable;
 
   const TUIMobileOverlayMenu({
     super.key,
     required this.title,
     required this.action,
     required this.menuItems,
+    required this.isScrollable,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        getHeaderView(context),
-        getMenuItemView(context),
-        getFooterView(context),
-      ],
-    );
+    TUIThemeData theme = TUITheme.of(context);
+    final colors = theme.colors;
+    if (this.isScrollable == false) {
+      return Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          getHeaderView(context),
+          _getNonScrollingMenuItem(context),
+          getFooterView(context),
+        ],
+      );
+    } else {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          getHeaderView(context),
+          Expanded(
+            child: Container(
+              color: colors.surface,
+              child: _getMenuItemViewAsList(context),
+            ),
+          ),
+          getFooterView(context)
+        ],
+      );
+    }
   }
 
   Widget getHeaderView(BuildContext context) {
@@ -43,7 +64,7 @@ class TUIMobileOverlayMenu extends StatelessWidget {
     return TUIMobileOverlayHeader(style: style);
   }
 
-  Widget getMenuItemView(BuildContext context) {
+  Widget _getNonScrollingMenuItem(BuildContext context) {
     TUIThemeData theme = TUITheme.of(context);
     final colors = theme.colors;
 
@@ -69,6 +90,28 @@ class TUIMobileOverlayMenu extends StatelessWidget {
           }
         }).toList(),
       ),
+    );
+  }
+
+  Widget _getMenuItemViewAsList(BuildContext context) {
+    return ListView(
+      children: menuItems.indexed.map((item) {
+        if (item.$1 != 0) {
+          return Padding(
+            padding: EdgeInsets.all(
+              padding,
+            ), // Apply padding of 16 pixels on all sides
+            child: item.$2,
+          );
+        } else {
+          return Padding(
+            padding: EdgeInsets.all(
+              padding,
+            ), // Apply padding of 16 pixels on all sides
+            child: item.$2,
+          );
+        }
+      }).toList(),
     );
   }
 
