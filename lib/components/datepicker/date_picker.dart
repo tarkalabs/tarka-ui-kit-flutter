@@ -63,25 +63,26 @@ class _TUIDatePickerState extends State<TUIDatePicker> {
   late TextEditingController _dateController;
   late DateFormat _dateFormat;
 
-  DateTime? _selectedDate;
-
   @override
   void initState() {
     super.initState();
     _dateController = widget.controller ?? material.TextEditingController();
     _dateFormat = widget.format ?? _getDefaultDateTimeFormat();
-    if (widget.initialDate != null || widget.initialTime != null) {
-      if (widget.initialDate != null) {
-        _selectedDate = combine(widget.initialDate!, widget.initialTime);
-      } else {
-        _selectedDate = convert(widget.initialTime);
-      }
-      _dateController.text = _dateFormat.format(_selectedDate!);
-    }
   }
 
   @override
   Widget build(BuildContext context) {
+    if (widget.initialDate != null || widget.initialTime != null) {
+      DateTime selectedDate;
+      if (widget.initialDate != null) {
+        selectedDate = combine(widget.initialDate!, widget.initialTime);
+      } else {
+        selectedDate = convert(widget.initialTime)!;
+      }
+      _dateController.text = _dateFormat.format(selectedDate);
+    } else {
+      _dateController.clear();
+    }
     return TUIInputField(
       enabled: widget.enabled,
       readOnly: widget.readOnly,
@@ -183,12 +184,8 @@ class _TUIDatePickerState extends State<TUIDatePicker> {
         return;
     }
 
-    if (pickedDate != null && pickedDate != _selectedDate) {
-      setState(() {
-        _selectedDate = pickedDate;
-        _dateController.text = _dateFormat.format(_selectedDate!);
-        widget.dateSelected?.call(_selectedDate!);
-      });
+    if (pickedDate != null && pickedDate != widget.initialDate) {
+      widget.dateSelected?.call(pickedDate);
     }
   }
 }
