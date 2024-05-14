@@ -31,11 +31,11 @@ enum TUIBadgeSize {
   EdgeInsets _getEdgeInsets() {
     switch (this) {
       case xs:
-        return const EdgeInsets.fromLTRB(3, 0, 3, 0);
+        return const EdgeInsets.all(0);
       case s:
-        return const EdgeInsets.symmetric(horizontal: 5, vertical: 1);
+        return const EdgeInsets.symmetric(horizontal: 4);
       case l:
-        return const EdgeInsets.symmetric(horizontal: 8, vertical: 4);
+        return const EdgeInsets.symmetric(horizontal: 8);
     }
   }
 
@@ -72,26 +72,22 @@ enum TUIBadgeSize {
 class TUIBadge extends StatelessWidget {
   final TUIBadgeSize badgeSize;
   final String? content;
-  final bool isNumbered;
+  final Color? badgeColor;
 
-  const TUIBadge({
-    super.key,
-    required this.badgeSize,
-    this.content,
-    this.isNumbered = false,
-  });
+  const TUIBadge(
+      {super.key, required this.badgeSize, this.content, this.badgeColor});
 
   @override
   Widget build(BuildContext context) {
     TUIThemeData theme = TUITheme.of(context);
-    if (content != null && isNumbered) {
+
+    if (content != null && badgeSize != TUIBadgeSize.xs) {
       return Container(
         height: badgeSize._getBadgeSize(),
+        alignment: Alignment.center,
         constraints: BoxConstraints(
           minHeight: badgeSize._getBadgeSize(), //minimum height
           minWidth: badgeSize._getBadgeSize(), // minimum width
-          maxHeight: badgeSize._getBadgeSize(),
-          maxWidth: MediaQuery.of(context).size.width,
         ),
         decoration: BoxDecoration(
           color: theme.colors.error,
@@ -109,8 +105,8 @@ class TUIBadge extends StatelessWidget {
         width: badgeSize._getBadgeSize(),
         padding: badgeSize._getEdgeInsets(),
         decoration: BoxDecoration(
-            color: theme.colors.error,
-            borderRadius: const BorderRadius.all(Radius.circular(20))),
+            color: badgeColor ?? theme.colors.error,
+            borderRadius: BorderRadius.all(badgeSize._getBorderRadius())),
       );
     }
   }
