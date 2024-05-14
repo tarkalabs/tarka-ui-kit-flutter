@@ -73,20 +73,16 @@ enum TUIBadgeSize {
 class TUIBadge extends StatelessWidget {
   final TUIBadgeSize badgeSize;
   final String? content;
-  final bool isNumbered;
+  final Color? badgeColor;
 
-  const TUIBadge({
-    super.key,
-    required this.badgeSize,
-    this.content,
-    this.isNumbered = false,
-  });
+  const TUIBadge(
+      {super.key, required this.badgeSize, this.content, this.badgeColor});
 
   @override
   Widget build(BuildContext context) {
     TUIThemeData theme = TUITheme.of(context);
 
-    if (content != null && isNumbered && badgeSize != TUIBadgeSize.xs) {
+    if (content != null && badgeSize != TUIBadgeSize.xs) {
       return Container(
         height: badgeSize._getBadgeSize(),
         alignment: Alignment.center,
@@ -99,16 +95,9 @@ class TUIBadge extends StatelessWidget {
           borderRadius: BorderRadius.all(badgeSize._getBorderRadius()),
         ),
         padding: badgeSize._getEdgeInsets(),
-        child: Flex(
-          direction: Axis.horizontal,
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              content!,
-              style: badgeSize._getStyle(theme),
-            )
-          ],
+        child: Text(
+          content!,
+          style: badgeSize._getStyle(theme),
         ),
       );
     } else {
@@ -117,7 +106,7 @@ class TUIBadge extends StatelessWidget {
         width: badgeSize._getBadgeSize(),
         padding: badgeSize._getEdgeInsets(),
         decoration: BoxDecoration(
-            color: theme.colors.error,
+            color: badgeColor ?? theme.colors.error,
             borderRadius: BorderRadius.all(badgeSize._getBorderRadius())),
       );
     }

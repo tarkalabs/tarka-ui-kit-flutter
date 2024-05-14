@@ -335,30 +335,24 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 TUIBadge(
-                  isNumbered: true,
                   content: "400",
                   badgeSize: TUIBadgeSize.l,
                 ),
                 TUIBadge(
-                  isNumbered: true,
                   content: "4",
                   badgeSize: TUIBadgeSize.s,
                 ),
                 TUIBadge(
-                  isNumbered: true,
                   content: "400",
                   badgeSize: TUIBadgeSize.xs,
                 ),
                 TUIBadge(
-                  isNumbered: false,
                   badgeSize: TUIBadgeSize.l,
                 ),
                 TUIBadge(
-                  isNumbered: false,
                   badgeSize: TUIBadgeSize.s,
                 ),
                 TUIBadge(
-                  isNumbered: false,
                   badgeSize: TUIBadgeSize.xs,
                 ),
               ],
