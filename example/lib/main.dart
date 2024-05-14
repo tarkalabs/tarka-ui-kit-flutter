@@ -172,6 +172,8 @@ class _HomePageState extends State<HomePage> {
 
   int selectedBottomNavBarItem = 0;
   bool _enable = false;
+  bool _firstRadioButtonState = false;
+  bool _secondRadioButtonState = true;
 
   @override
   Widget build(BuildContext context) {
@@ -712,8 +714,11 @@ class _HomePageState extends State<HomePage> {
             Row(
               children: [
                 TUIRadioButton(
+                  isSelected: _firstRadioButtonState,
                   onPressed: (isSelected) {
-                    print(isSelected);
+                    setState(() {
+                      _firstRadioButtonState = isSelected;
+                    });
                   },
                 ),
                 const SizedBox(width: 8),
@@ -722,9 +727,11 @@ class _HomePageState extends State<HomePage> {
                 ),
                 const SizedBox(width: 8),
                 TUIRadioButton(
-                  isSelected: true,
+                  isSelected: _secondRadioButtonState,
                   onPressed: (isSelected) {
-                    print(isSelected);
+                    setState(() {
+                      _secondRadioButtonState = isSelected;
+                    });
                   },
                 ),
                 const SizedBox(width: 8),
