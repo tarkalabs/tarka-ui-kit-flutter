@@ -1227,7 +1227,8 @@ class _HomePageState extends State<HomePage> {
             ),
 
             const SizedBox(height: 8),
-            Text("Overlay Menu", style: theme.typography.baseBold),
+            Text("Overlay Menu Non Scrolling",
+                style: theme.typography.baseBold),
             const SizedBox(height: 8),
 
             ElevatedButton(
@@ -1251,6 +1252,7 @@ class _HomePageState extends State<HomePage> {
                         action: () {
                           print("tapped");
                         },
+                        isScrollable: false,
                         menuItems: [
                           TUIMenuItem(
                             item: TUIMenuItemProperties(
@@ -1274,6 +1276,163 @@ class _HomePageState extends State<HomePage> {
                 );
               },
               child: const Text('Show Modal Bottom Sheet'),
+            ),
+
+            const SizedBox(height: 8),
+            Text("Overlay Menu Non Scrolling",
+                style: theme.typography.baseBold),
+            const SizedBox(height: 8),
+
+            ElevatedButton(
+              onPressed: () {
+                showModalBottomSheet(
+                  context: context,
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(
+                          20.0), // Adjust the top corner radius here
+                    ),
+                  ),
+                  builder: (BuildContext context) {
+                    return ClipRRect(
+                      borderRadius: const BorderRadius.vertical(
+                        top: Radius.circular(
+                            20.0), // Match the radius with the shape
+                      ),
+                      child: TUIMobileOverlayMenu(
+                        title: "title",
+                        action: () {
+                          print("tapped");
+                        },
+                        isScrollable: true,
+                        menuItems: [
+                          TUIMenuItem(
+                            item: TUIMenuItemProperties(
+                              title: "Item 1",
+                              style: TUIMenuItemStyle.both,
+                              state: TUIMenuItemState.unchecked,
+                            ),
+                            backgroundDark: true,
+                          ),
+                          TUIMenuItem(
+                            item: TUIMenuItemProperties(
+                              title: "Item 2",
+                              style: TUIMenuItemStyle.none,
+                              state: TUIMenuItemState.unchecked,
+                            ),
+                          ),
+                          TUIMenuItem(
+                            item: TUIMenuItemProperties(
+                              title: "Item 1",
+                              style: TUIMenuItemStyle.both,
+                              state: TUIMenuItemState.unchecked,
+                            ),
+                            backgroundDark: true,
+                          ),
+                          TUIMenuItem(
+                            item: TUIMenuItemProperties(
+                              title: "Item 2",
+                              style: TUIMenuItemStyle.none,
+                              state: TUIMenuItemState.unchecked,
+                            ),
+                          ),
+                          TUIMenuItem(
+                            item: TUIMenuItemProperties(
+                              title: "Item 1",
+                              style: TUIMenuItemStyle.both,
+                              state: TUIMenuItemState.unchecked,
+                            ),
+                            backgroundDark: true,
+                          ),
+                          TUIMenuItem(
+                            item: TUIMenuItemProperties(
+                              title: "Item 2",
+                              style: TUIMenuItemStyle.none,
+                              state: TUIMenuItemState.unchecked,
+                            ),
+                          ),
+                          TUIMenuItem(
+                            item: TUIMenuItemProperties(
+                              title: "Item 1",
+                              style: TUIMenuItemStyle.both,
+                              state: TUIMenuItemState.unchecked,
+                            ),
+                            backgroundDark: true,
+                          ),
+                          TUIMenuItem(
+                            item: TUIMenuItemProperties(
+                              title: "Item 2",
+                              style: TUIMenuItemStyle.none,
+                              state: TUIMenuItemState.unchecked,
+                            ),
+                          ),
+                          TUIMenuItem(
+                            item: TUIMenuItemProperties(
+                              title: "Item 1",
+                              style: TUIMenuItemStyle.both,
+                              state: TUIMenuItemState.unchecked,
+                            ),
+                            backgroundDark: true,
+                          ),
+                          TUIMenuItem(
+                            item: TUIMenuItemProperties(
+                              title: "Item 2",
+                              style: TUIMenuItemStyle.none,
+                              state: TUIMenuItemState.unchecked,
+                            ),
+                          ),
+                          TUIMenuItem(
+                            item: TUIMenuItemProperties(
+                              title: "Item 1",
+                              style: TUIMenuItemStyle.both,
+                              state: TUIMenuItemState.unchecked,
+                            ),
+                            backgroundDark: true,
+                          ),
+                          TUIMenuItem(
+                            item: TUIMenuItemProperties(
+                              title: "Item 2",
+                              style: TUIMenuItemStyle.none,
+                              state: TUIMenuItemState.unchecked,
+                            ),
+                          ),
+                          TUIMenuItem(
+                            item: TUIMenuItemProperties(
+                              title: "Item 1",
+                              style: TUIMenuItemStyle.both,
+                              state: TUIMenuItemState.unchecked,
+                            ),
+                            backgroundDark: true,
+                          ),
+                          TUIMenuItem(
+                            item: TUIMenuItemProperties(
+                              title: "Item 2",
+                              style: TUIMenuItemStyle.none,
+                              state: TUIMenuItemState.unchecked,
+                            ),
+                          ),
+                          TUIMenuItem(
+                            item: TUIMenuItemProperties(
+                              title: "Item 1",
+                              style: TUIMenuItemStyle.both,
+                              state: TUIMenuItemState.unchecked,
+                            ),
+                            backgroundDark: true,
+                          ),
+                          TUIMenuItem(
+                            item: TUIMenuItemProperties(
+                              title: "Item 2",
+                              style: TUIMenuItemStyle.none,
+                              state: TUIMenuItemState.unchecked,
+                            ),
+                          )
+                        ],
+                      ),
+                    );
+                  },
+                );
+              },
+              child: const Text('Show Modal Bottom Sheet - Scrollable'),
             ),
             const SizedBox(height: 8),
             Text("Date Picker", style: theme.typography.baseBold),
