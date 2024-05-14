@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tarka_ui/components/button/icon_button.dart';
+import 'package:tarka_ui/components/button/style.dart';
 import 'package:tarka_ui/styles/theme.dart';
 
 /// TUIInputField is a text input field that allows users to enter text.
@@ -28,8 +30,6 @@ class TUIInputField extends StatelessWidget {
   final String? labelText;
   final String? errorText;
   final String? helperText;
-  final String? prefixText;
-  final String? suffixText;
   final TextAlign textAlign;
   final TextAlignVertical? textAlignVertical;
   final TextCapitalization textCapitalization;
@@ -38,10 +38,8 @@ class TUIInputField extends StatelessWidget {
   final int? minLines;
   final bool expands;
   final int? maxLength;
-  final Icon? prefixIcon;
-  final Color? prefixIconColor;
-  final Icon? suffixIcon;
-  final Color? suffixIconColor;
+  final TUITextFieldStartEndItem? prefix;
+  final TUITextFieldStartEndItem? suffix;
   final bool obscureText;
   final String obscuringCharacter;
   final TextEditingController? controller;
@@ -63,8 +61,6 @@ class TUIInputField extends StatelessWidget {
     this.labelText = 'Label',
     this.errorText,
     this.helperText,
-    this.prefixText,
-    this.suffixText,
     this.textAlign = TextAlign.start,
     this.textAlignVertical = TextAlignVertical.center,
     this.textCapitalization = TextCapitalization.none,
@@ -73,10 +69,8 @@ class TUIInputField extends StatelessWidget {
     this.minLines,
     this.expands = false,
     this.maxLength,
-    this.prefixIcon,
-    this.prefixIconColor,
-    this.suffixIcon,
-    this.suffixIconColor,
+    this.prefix,
+    this.suffix,
     this.obscureText = false,
     this.obscuringCharacter = '*',
     this.controller,
@@ -108,8 +102,10 @@ class TUIInputField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = TUITheme.of(context);
-    final suffixIconColor = this.suffixIconColor ?? theme.colors.inputText;
-    final prefixIconColor = this.prefixIconColor ?? theme.colors.inputText;
+    final (prefixIcon, prefixIconConstraints) =
+        _convertStartEndItemToWidget(prefix, theme);
+    final (suffixIcon, suffixIconConstraints) =
+        _convertStartEndItemToWidget(suffix, theme);
     return TextField(
         mouseCursor: mouseCursor,
         canRequestFocus: canRequestFocus,
@@ -120,8 +116,10 @@ class TUIInputField extends StatelessWidget {
         keyboardType: keyboardType,
         textInputAction: textInputAction,
         controller: controller,
+        style: theme.typography.lg.copyWith(color: theme.colors.inputText),
         onTap: onTap,
         readOnly: readOnly,
+        expands: expands,
         enabled: enabled,
         obscureText: obscureText,
         obscuringCharacter: obscuringCharacter,
@@ -141,12 +139,10 @@ class TUIInputField extends StatelessWidget {
           labelText: labelText,
           labelStyle:
               theme.typography.lg.copyWith(color: theme.colors.inputTextDim),
-          suffixText: suffixText,
-          prefixText: prefixText,
-          prefixIconColor: prefixIconColor,
-          prefixIcon: prefixIcon ?? prefixIcon,
-          suffixIconColor: suffixIconColor,
-          suffixIcon: suffixIcon ?? suffixIcon,
+          prefixIcon: prefixIcon,
+          prefixIconConstraints: prefixIconConstraints,
+          suffixIcon: suffixIcon,
+          suffixIconConstraints: suffixIconConstraints,
           errorText: errorText,
           helperText: helperText,
           errorStyle:
@@ -173,4 +169,76 @@ class TUIInputField extends StatelessWidget {
               borderSide: BorderSide(color: theme.colors.error)),
         ));
   }
+
+  (Widget?, BoxConstraints?) _convertStartEndItemToWidget(
+      TUITextFieldStartEndItem? item, TUIThemeData theme) {
+    if (item == null) {
+      return (null, null);
+    }
+    switch (item._type) {
+      case _StartEndItemType.text:
+        return (
+          Align(
+            widthFactor: 1,
+            heightFactor: 1,
+            child: Text(
+              item.text!,
+              style: theme.typography.lg
+                  .copyWith(color: theme.colors.inputTextDim),
+            ),
+          ),
+          null
+        );
+      case _StartEndItemType.icon:
+        return (
+          Icon(
+            item.icon!,
+            size: 24,
+          ),
+          null
+        );
+      case _StartEndItemType.iconButton:
+        return (
+          TUIIconButton(
+              type: item.buttonType!,
+              size: TUIIconButtonSize.px40,
+              onPressed: item.onButtonTap!,
+              iconData: item.icon!),
+          null
+        );
+    }
+  }
+}
+
+class TUITextFieldStartEndItem {
+  final IconData? icon;
+  final String? text;
+  final TUIIconButtonType? buttonType;
+  final VoidCallback? onButtonTap;
+  final _StartEndItemType _type;
+
+  const TUITextFieldStartEndItem.text(this.text)
+      : icon = null,
+        buttonType = null,
+        onButtonTap = null,
+        _type = _StartEndItemType.text;
+
+  const TUITextFieldStartEndItem.icon(this.icon)
+      : text = null,
+        buttonType = null,
+        onButtonTap = null,
+        _type = _StartEndItemType.icon;
+
+  const TUITextFieldStartEndItem.iconButton(
+      {required this.icon,
+      required this.onButtonTap,
+      this.buttonType = TUIIconButtonType.ghost})
+      : text = null,
+        _type = _StartEndItemType.iconButton;
+}
+
+enum _StartEndItemType {
+  text,
+  icon,
+  iconButton;
 }
