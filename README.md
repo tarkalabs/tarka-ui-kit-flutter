@@ -26,6 +26,7 @@ Tarka UI Kit is a pre-built component library for building Flutter apps. It is b
 - TUICheckBox
 - TUICheckBoxRow
 - TUIChip
+- TUIDatePicker
 - TUIDivider
 - TUIDraggableCard
 - TUIEmailField
