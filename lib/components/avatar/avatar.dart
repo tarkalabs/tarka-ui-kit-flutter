@@ -61,47 +61,54 @@ class TUIAvatar extends StatelessWidget {
       circleChild = ClipOval(child: avatarContent.image!);
     }
 
-    CircleAvatar circleAvatar = CircleAvatar(
-      radius: avatarSize._size / 2,
-      backgroundColor: backgroundColor,
-      child: circleChild,
-    );
+    Widget circleAvatar = ClipRRect(
+        borderRadius: BorderRadius.circular(8.0),
+        child: Container(
+          alignment: Alignment.center,
+          width: avatarSize._size,
+          height: avatarSize._size,
+          color: backgroundColor,
+          child: circleChild,
+        ));
 
-    if (isBadged) {
-      return LayoutBuilder(
-        builder: (context, constraints) {
-          Positioned badge;
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        Positioned? badge;
 
-          if (constraints.maxHeight != double.infinity) {
-            badge = Positioned(
-              left: constraints.maxWidth / 2 + avatarSize._size / 4,
-              top: constraints.maxHeight / 2 + avatarSize._size / 4,
-              child: Container(
-                height: avatarSize._badgeSize,
-                width: avatarSize._badgeSize,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: colors.success,
-                ),
+        if (constraints.maxHeight != double.infinity) {
+          badge = Positioned(
+            left: constraints.maxWidth / 2 + avatarSize._size / 4,
+            top: constraints.maxHeight / 2 + avatarSize._size / 4,
+            child: Container(
+              height: avatarSize._badgeSize,
+              width: avatarSize._badgeSize,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: colors.success,
               ),
-            );
-          } else {
-            badge = Positioned(
-              left: constraints.maxWidth / 2 + avatarSize._size / 4,
-              bottom: 0,
-              child: Container(
-                height: avatarSize._badgeSize,
-                width: avatarSize._badgeSize,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: colors.success,
-                ),
+            ),
+          );
+        } else {
+          badge = Positioned(
+            left: constraints.maxWidth / 2 +
+                avatarSize._size / 2 -
+                avatarSize._badgeSize / 2,
+            bottom: -avatarSize._badgeSize / 2,
+            child: Container(
+              height: avatarSize._badgeSize,
+              width: avatarSize._badgeSize,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: colors.success,
               ),
-            );
-          }
+            ),
+          );
+        }
 
+        if (isBadged) {
           return Stack(
             alignment: Alignment.center,
+            clipBehavior: Clip.none,
             children: [
               Center(
                 child: SizedBox(
@@ -113,11 +120,23 @@ class TUIAvatar extends StatelessWidget {
               badge
             ],
           );
-        },
-      );
-    } else {
-      return circleAvatar;
-    }
+        } else {
+          return Stack(
+            alignment: Alignment.center,
+            clipBehavior: Clip.none,
+            children: [
+              Center(
+                child: SizedBox(
+                  width: avatarSize._size,
+                  height: avatarSize._size,
+                  child: circleAvatar,
+                ),
+              ),
+            ],
+          );
+        }
+      },
+    );
   }
 }
 
