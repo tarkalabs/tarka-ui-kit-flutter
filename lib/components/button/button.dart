@@ -15,23 +15,25 @@ import 'package:tarka_ui/styles/theme.dart';
 ///   ```
 
 class TUIButton extends StatelessWidget {
-  const TUIButton({
-    super.key,
-    required this.type,
-    this.size = TUIButtonSize.m,
-    this.label,
-    this.iconData,
-    this.iconPosition = TUIButtonIconPosition.left,
-    required this.onPressed,
-    this.onLongPress,
-    this.height,
-  }) : assert(label != null || iconData != null);
+  const TUIButton(
+      {super.key,
+      required this.type,
+      this.size = TUIButtonSize.m,
+      this.label,
+      this.iconData,
+      this.iconPosition = TUIButtonIconPosition.left,
+      required this.onPressed,
+      this.onLongPress,
+      this.height,
+      this.customInsets})
+      : assert(label != null || iconData != null);
 
   final TUIButtonType type;
   final TUIButtonSize size;
   final String? label;
   final IconData? iconData;
   final TUIButtonIconPosition? iconPosition;
+  final EdgeInsets? customInsets;
   final double? height;
 
   /// Called when the button is tapped or otherwise activated.
@@ -127,7 +129,7 @@ class TUIButton extends StatelessWidget {
     }
 
     return Container(
-        margin: const EdgeInsets.all(5),
+        margin: customInsets ?? EdgeInsets.all(5),
         child: TextButton(
           onPressed: onPressed,
           onLongPress: onLongPress,

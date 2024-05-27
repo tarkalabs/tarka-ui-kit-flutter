@@ -59,6 +59,7 @@ export 'package:tarka_ui/components/selection_card/selection_card.dart';
 export 'package:tarka_ui/components/slider/slider.dart';
 export 'package:tarka_ui/components/snack_bar/snack_bar.dart';
 export 'package:tarka_ui/components/success_check_mark/success_check_mark.dart';
+export 'package:tarka_ui/components/tab_bar/tab_bar.dart';
 export 'package:tarka_ui/components/tag/tag.dart';
 export 'package:tarka_ui/components/textfield/text_field.dart';
 export 'package:tarka_ui/components/toggle_row/toggle_row.dart';

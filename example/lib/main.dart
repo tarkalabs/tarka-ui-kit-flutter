@@ -175,6 +175,8 @@ class _HomePageState extends State<HomePage> {
   bool _firstRadioButtonState = false;
   bool _secondRadioButtonState = true;
 
+  int _selectedIndexForTab = 2;
+
   @override
   Widget build(BuildContext context) {
     final theme = TUITheme.of(context);
@@ -1453,6 +1455,21 @@ class _HomePageState extends State<HomePage> {
                 print(files);
               },
             ),
+            const SizedBox(height: 8),
+            Text("Tab bar", style: theme.typography.baseBold),
+            const SizedBox(height: 8),
+            TUITabBar(
+                titles: const [
+                  "Tab 1",
+                  "Tab 2",
+                  "Tab 3",
+                ],
+                selectedIndex: _selectedIndexForTab,
+                onPressed: (index) {
+                  setState(() {
+                    _selectedIndexForTab = index;
+                  });
+                }),
             const SizedBox(height: 100),
           ],
         ),
