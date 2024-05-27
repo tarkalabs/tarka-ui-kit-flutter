@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:tarka_ui/styles/theme.dart';
 import 'package:tarka_ui/subcomponents/image.dart';
 
+import '../badge/badge.dart';
+
 /// TUIAvatar is used to create a Avatar with content, size and badge flag.
 ///
 ///   Example:
@@ -61,7 +63,7 @@ class TUIAvatar extends StatelessWidget {
       circleChild = ClipOval(child: avatarContent.image!);
     }
 
-    Widget circleAvatar = ClipRRect(
+    Widget avatar = ClipRRect(
         borderRadius: BorderRadius.circular(8.0),
         child: Container(
           alignment: Alignment.center,
@@ -71,72 +73,39 @@ class TUIAvatar extends StatelessWidget {
           child: circleChild,
         ));
 
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        Positioned? badge;
-
-        if (constraints.maxHeight != double.infinity) {
-          badge = Positioned(
-            left: constraints.maxWidth / 2 + avatarSize._size / 4,
-            top: constraints.maxHeight / 2 + avatarSize._size / 4,
-            child: Container(
-              height: avatarSize._badgeSize,
-              width: avatarSize._badgeSize,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: colors.success,
-              ),
-            ),
-          );
-        } else {
-          badge = Positioned(
-            left: constraints.maxWidth / 2 +
-                avatarSize._size / 2 -
-                avatarSize._badgeSize / 2,
-            bottom: -avatarSize._badgeSize / 2,
-            child: Container(
-              height: avatarSize._badgeSize,
-              width: avatarSize._badgeSize,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: colors.success,
-              ),
-            ),
-          );
-        }
-
-        if (isBadged) {
-          return Stack(
+    if (isBadged) {
+      Positioned? badge = Positioned(
+        right: getPaddingForSize(),
+        bottom: getPaddingForSize(),
+        child: TUIBadge(
+          badgeSize: avatarSize._badgeSize,
+          badgeColor: colors.success,
+        ),
+      );
+      return Center(
+        child: SizedBox(
+          width: avatarSize._size,
+          height: avatarSize._size,
+          child: Stack(
             alignment: Alignment.center,
             clipBehavior: Clip.none,
-            children: [
-              Center(
-                child: SizedBox(
-                  width: avatarSize._size,
-                  height: avatarSize._size,
-                  child: circleAvatar,
-                ),
-              ),
-              badge
-            ],
-          );
-        } else {
-          return Stack(
-            alignment: Alignment.center,
-            clipBehavior: Clip.none,
-            children: [
-              Center(
-                child: SizedBox(
-                  width: avatarSize._size,
-                  height: avatarSize._size,
-                  child: circleAvatar,
-                ),
-              ),
-            ],
-          );
-        }
-      },
-    );
+            children: [avatar, badge],
+          ),
+        ),
+      );
+    } else {
+      return Center(
+        child: SizedBox(
+          width: avatarSize._size,
+          height: avatarSize._size,
+          child: avatar,
+        ),
+      );
+    }
+  }
+
+  double getPaddingForSize() {
+    return avatarSize._badgeSize == TUIBadgeSize.l ? -8 : -4;
   }
 }
 
@@ -155,20 +124,20 @@ enum TUIAvatarContentType { image, icon, text }
 
 /// TUIAvatarSize is used to define the size of Avatar.
 enum TUIAvatarSize {
-  xxs(size: 24, badgeSize: 12),
-  xs(size: 32, badgeSize: 12),
-  s(size: 40, badgeSize: 12),
-  m(size: 48, badgeSize: 12),
-  l(size: 64, badgeSize: 16),
-  xl(size: 80, badgeSize: 24),
-  xxl(size: 96, badgeSize: 24);
+  xxs(size: 24, badgeSize: TUIBadgeSize.s),
+  xs(size: 32, badgeSize: TUIBadgeSize.s),
+  s(size: 40, badgeSize: TUIBadgeSize.s),
+  m(size: 48, badgeSize: TUIBadgeSize.s),
+  l(size: 64, badgeSize: TUIBadgeSize.m),
+  xl(size: 80, badgeSize: TUIBadgeSize.l),
+  xxl(size: 96, badgeSize: TUIBadgeSize.l);
 
-  const TUIAvatarSize({required double size, required double badgeSize})
+  const TUIAvatarSize({required double size, required TUIBadgeSize badgeSize})
       : _size = size,
         _badgeSize = badgeSize;
 
   final double _size;
-  final double _badgeSize;
+  final TUIBadgeSize _badgeSize;
 
   TextStyle _getTextStyle(TUIThemeData theme) {
     switch (this) {
