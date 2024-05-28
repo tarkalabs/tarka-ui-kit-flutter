@@ -5,6 +5,7 @@
     * TUIToggleRow
     * TUIDatePicker
     * TUIMobileOverlayMenu
+    * TUITabBar
 * Updated to new design:
     * TUIBadge
     * TUIRadioButton
