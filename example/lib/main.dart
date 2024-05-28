@@ -269,6 +269,7 @@ class _HomePageState extends State<HomePage> {
                 text: "TUI",
                 type: TUIAvatarContentType.text,
               ),
+              isBadged: false,
             ),
             TUIAvatar(
               avatarSize: TUIAvatarSize.xl,
@@ -276,6 +277,7 @@ class _HomePageState extends State<HomePage> {
                 text: "TUI",
                 type: TUIAvatarContentType.text,
               ),
+              isBadged: false,
             ),
             TUIAvatar(
               avatarSize: TUIAvatarSize.m,
@@ -283,7 +285,7 @@ class _HomePageState extends State<HomePage> {
                 type: TUIAvatarContentType.icon,
                 icon: Symbol.export.value,
               ),
-              isBadged: true,
+              isBadged: false,
             ),
             TUIAvatar(
               avatarSize: TUIAvatarSize.xxl,
@@ -323,20 +325,20 @@ class _HomePageState extends State<HomePage> {
                 ),
                 TUIBadge(
                   content: "4",
-                  badgeSize: TUIBadgeSize.s,
+                  badgeSize: TUIBadgeSize.m,
                 ),
                 TUIBadge(
                   content: "400",
-                  badgeSize: TUIBadgeSize.xs,
+                  badgeSize: TUIBadgeSize.s,
                 ),
                 TUIBadge(
                   badgeSize: TUIBadgeSize.l,
                 ),
                 TUIBadge(
-                  badgeSize: TUIBadgeSize.s,
+                  badgeSize: TUIBadgeSize.m,
                 ),
                 TUIBadge(
-                  badgeSize: TUIBadgeSize.xs,
+                  badgeSize: TUIBadgeSize.s,
                 ),
               ],
             ),

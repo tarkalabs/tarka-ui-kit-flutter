@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:tarka_ui/styles/theme.dart';
 
 enum TUIBadgeSize {
-  xs,
   s,
+  m,
   l;
 
   double _getBadgeSize() {
     switch (this) {
-      case xs:
-        return 12;
       case s:
+        return 12;
+      case m:
         return 16;
       case l:
         return 24;
@@ -19,9 +19,9 @@ enum TUIBadgeSize {
 
   Radius _getBorderRadius() {
     switch (this) {
-      case xs:
-        return const Radius.circular(6);
       case s:
+        return const Radius.circular(6);
+      case m:
         return const Radius.circular(8);
       case l:
         return const Radius.circular(12);
@@ -30,9 +30,9 @@ enum TUIBadgeSize {
 
   EdgeInsets _getEdgeInsets() {
     switch (this) {
-      case xs:
-        return const EdgeInsets.all(0);
       case s:
+        return const EdgeInsets.all(0);
+      case m:
         return const EdgeInsets.symmetric(horizontal: 4);
       case l:
         return const EdgeInsets.symmetric(horizontal: 8);
@@ -43,11 +43,11 @@ enum TUIBadgeSize {
     final colors = theme.colors;
     final typography = theme.typography;
     switch (this) {
-      case xs:
+      case s:
         return typography.xs2SemiBold.copyWith(
           color: colors.onError,
         );
-      case s:
+      case m:
         return typography.xsSemiBold.copyWith(
           color: colors.onError,
         );
@@ -81,7 +81,7 @@ class TUIBadge extends StatelessWidget {
   Widget build(BuildContext context) {
     TUIThemeData theme = TUITheme.of(context);
 
-    if (content != null && badgeSize != TUIBadgeSize.xs) {
+    if (content != null && badgeSize != TUIBadgeSize.s) {
       return Container(
         height: badgeSize._getBadgeSize(),
         alignment: Alignment.center,
