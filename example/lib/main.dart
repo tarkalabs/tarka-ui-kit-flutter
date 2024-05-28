@@ -227,6 +227,9 @@ class _HomePageState extends State<HomePage> {
               size: TUIButtonSize.xs,
               onPressed: () {},
             ),
+            SizedBox(
+              height: 5,
+            ),
             TUIButton(
               label: "Secondary Button",
               iconData: Symbol.chevronDown.value,
@@ -235,12 +238,18 @@ class _HomePageState extends State<HomePage> {
               iconPosition: TUIButtonIconPosition.right,
               onPressed: () {},
             ),
+            SizedBox(
+              height: 5,
+            ),
             TUIButton(
               label: "Outlined Button",
               iconData: Symbol.chevronDown.value,
               type: TUIButtonType.outlined,
               size: TUIButtonSize.m,
               onPressed: () {},
+            ),
+            SizedBox(
+              height: 5,
             ),
             TUIButton(
               label: "Ghost Button",
@@ -249,12 +258,18 @@ class _HomePageState extends State<HomePage> {
               size: TUIButtonSize.l,
               onPressed: () {},
             ),
+            SizedBox(
+              height: 5,
+            ),
             TUIButton(
               label: "Danger Button",
               iconData: Symbol.chevronDown.value,
               type: TUIButtonType.danger,
               size: TUIButtonSize.l,
               onPressed: () {},
+            ),
+            SizedBox(
+              height: 5,
             ),
             TUIButton(
               iconData: Symbol.hamburgerMenu.value,
@@ -1465,6 +1480,24 @@ class _HomePageState extends State<HomePage> {
                   "Tab 3",
                 ],
                 selectedIndex: _selectedIndexForTab,
+                size: TabBarSize.regular,
+                onPressed: (index) {
+                  setState(() {
+                    _selectedIndexForTab = index;
+                  });
+                }),
+            const SizedBox(height: 8),
+            TUITabBar(
+                titles: const [
+                  "Tab 1",
+                  "Tab 2",
+                  "Tab 3",
+                  "Tab 4",
+                  "Tab 5",
+                  "Tab 6",
+                ],
+                selectedIndex: _selectedIndexForTab,
+                size: TabBarSize.large,
                 onPressed: (index) {
                   setState(() {
                     _selectedIndexForTab = index;
