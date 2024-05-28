@@ -1,6 +1,6 @@
 name: tarka_ui
 description: Tarka UI Kit is a pre-built component library for building Flutter apps. It is based on our design system, utilizing Atomic Design principles.
-version: 1.1.2
+version: 2.0.0-dev.1
 issue_tracker: https://github.com/tarkalabs/tarka-ui-kit-flutter/issues
 homepage: https://github.com/tarkalabs/tarka-ui-kit-flutter.git
 topics: [design-system,ui-kit]
@@ -15,7 +15,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   fluentui_system_icons: ^1.1.226
-  intl: ^0.18.1
+  intl: ^0.19.0
   file_picker: ^8.0.2
 
 dev_dependencies:
