@@ -181,7 +181,6 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final theme = TUITheme.of(context);
     return Scaffold(
-      backgroundColor: theme.colors.surface,
       floatingActionButton: TUIFloatingActionButton(
         iconData: Symbol.map.value,
         onPressed: () {},
