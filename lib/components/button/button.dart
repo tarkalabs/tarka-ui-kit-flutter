@@ -126,14 +126,12 @@ class TUIButton extends StatelessWidget {
       buttonChild = Icon(iconData);
     }
 
-    return Container(
-        margin: const EdgeInsets.all(5),
-        child: TextButton(
-          onPressed: onPressed,
-          onLongPress: onLongPress,
-          style: buttonStyle,
-          child: buttonChild,
-        ));
+    return TextButton(
+      onPressed: onPressed,
+      onLongPress: onLongPress,
+      style: buttonStyle,
+      child: buttonChild,
+    );
   }
 }
 
