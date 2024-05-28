@@ -30,6 +30,7 @@ Tarka UI Kit is a pre-built component library for building Flutter apps. It is b
 - TUIDraggableCard
 - TUIEmailField
 - TUIEmailSubjectField
+- TUIFilePicker
 - TUIFloatingActionButton
 - TUIIconButton
 - TUIInputField
@@ -38,6 +39,7 @@ Tarka UI Kit is a pre-built component library for building Flutter apps. It is b
 - TUIMobileButtonBlock
 - TUIMobileOverlayHeader
 - TUIMobileOverlayFooter
+- TUIMobileOverlayMenu
 - TUINavigationRow
 - TUIRadioButton
 - TUIRadioRow
@@ -47,9 +49,9 @@ Tarka UI Kit is a pre-built component library for building Flutter apps. It is b
 - TUISlider
 - TUISnackBar
 - TUISuccessCheckMark
-- TUIToggleSwitch
 - TUITag
 - TUIToggleRow
+- TUIToggleSwitch
 
 ## How to run the kitchen sink app?
 
