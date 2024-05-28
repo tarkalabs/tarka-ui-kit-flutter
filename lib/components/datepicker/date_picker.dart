@@ -5,7 +5,7 @@ import 'package:tarka_ui/components/textfield/text_field.dart';
 
 enum InputType { date, time, both }
 
-class TUIDatePicker extends StatefulWidget {
+class TUIDatePicker extends StatelessWidget {
   final bool enabled;
   final bool readOnly;
   final String? hintText;
@@ -18,8 +18,6 @@ class TUIDatePicker extends StatefulWidget {
   final material.TextAlignVertical? textAlignVertical;
   final material.TextCapitalization textCapitalization;
   final material.TextDirection? textDirection;
-  final material.TextEditingController? controller;
-  final DateFormat? format;
   final DateTime? minimumDate;
   final DateTime? initialDate;
   final DateTime? maximumDate;
@@ -29,7 +27,10 @@ class TUIDatePicker extends StatefulWidget {
   final Locale? locale;
   final TransitionBuilder? transitionBuilder;
 
-  const TUIDatePicker({
+  final TextEditingController _dateController;
+  final DateFormat _dateFormat;
+
+  TUIDatePicker({
     super.key,
     this.enabled = true,
     this.readOnly = false,
@@ -43,100 +44,79 @@ class TUIDatePicker extends StatefulWidget {
     this.textAlignVertical,
     this.textCapitalization = material.TextCapitalization.none,
     this.textDirection,
-    this.controller,
+    material.TextEditingController? controller,
     this.minimumDate,
     this.initialDate,
     this.maximumDate,
     this.dateSelected,
     this.inputType = InputType.both,
-    this.format,
+    DateFormat? format,
     this.locale,
     this.transitionBuilder,
     this.initialTime,
-  });
+  })  : _dateController = controller ?? material.TextEditingController(),
+        _dateFormat = format ??
+            switch (inputType) {
+              InputType.time => DateFormat.Hm(locale?.languageCode),
+              InputType.date => DateFormat.yMd(locale?.languageCode),
+              InputType.both => DateFormat.yMd(locale?.languageCode).add_Hms()
+            };
 
   @override
-  State<TUIDatePicker> createState() => _TUIDatePickerState();
-}
-
-class _TUIDatePickerState extends State<TUIDatePicker> {
-  late TextEditingController _dateController;
-  late DateFormat _dateFormat;
-
-  DateTime? _selectedDate;
-
-  @override
-  void initState() {
-    super.initState();
-    _dateController = widget.controller ?? material.TextEditingController();
-    _dateFormat = widget.format ?? _getDefaultDateTimeFormat();
-    if (widget.initialDate != null || widget.initialTime != null) {
-      if (widget.initialDate != null) {
-        _selectedDate = combine(widget.initialDate!, widget.initialTime);
+  material.Widget build(BuildContext context) {
+    if (initialDate != null || initialTime != null) {
+      DateTime selectedDate;
+      if (initialDate != null) {
+        selectedDate = combine(initialDate!, initialTime);
       } else {
-        _selectedDate = convert(widget.initialTime);
+        selectedDate = convert(initialTime)!;
       }
-      _dateController.text = _dateFormat.format(_selectedDate!);
+      _dateController.text = _dateFormat.format(selectedDate);
+    } else {
+      _dateController.clear();
     }
-  }
-
-  @override
-  Widget build(BuildContext context) {
     return TUIInputField(
-      enabled: widget.enabled,
-      readOnly: widget.readOnly,
-      hintText: widget.hintText,
-      labelText: widget.labelText,
-      errorText: widget.errorText,
-      helperText: widget.helperText,
-      prefix: widget.prefix,
-      suffix: widget.suffix,
-      textAlign: widget.textAlign,
-      textAlignVertical: widget.textAlignVertical,
-      textCapitalization: widget.textCapitalization,
-      textDirection: widget.textDirection,
+      enabled: enabled,
+      readOnly: readOnly,
+      hintText: hintText,
+      labelText: labelText,
+      errorText: errorText,
+      helperText: helperText,
+      prefix: prefix,
+      suffix: suffix,
+      textAlign: textAlign,
+      textAlignVertical: textAlignVertical,
+      textCapitalization: textCapitalization,
+      textDirection: textDirection,
       controller: _dateController,
       onTap: () {
         _selectDate(context);
       },
-      mouseCursor: MaterialStateMouseCursor.clickable,
+      mouseCursor: WidgetStateMouseCursor.clickable,
       canRequestFocus: false,
       enableInteractiveSelection: false,
     );
   }
 
-  DateFormat _getDefaultDateTimeFormat() {
-    final languageCode = widget.locale?.languageCode;
-    switch (widget.inputType) {
-      case InputType.time:
-        return DateFormat.Hm(languageCode);
-      case InputType.date:
-        return DateFormat.yMd(languageCode);
-      case InputType.both:
-      default:
-        return DateFormat.yMd(languageCode).add_Hms();
-    }
-  }
-
   Future<DateTime?> _showDatePicker(BuildContext context) {
     return showDatePicker(
       context: context,
-      initialDate: widget.initialDate ?? DateTime.now(),
-      firstDate: widget.minimumDate ?? DateTime(1900),
-      lastDate: widget.maximumDate ?? DateTime(2100),
-      locale: widget.locale,
-      textDirection: widget.textDirection,
+      initialDate: initialDate ?? DateTime.now(),
+      firstDate: minimumDate ?? DateTime(1900),
+      lastDate: maximumDate ?? DateTime(2100),
+      locale: locale,
+      textDirection: textDirection,
     );
   }
 
   Future<TimeOfDay?> _showTimePicker(BuildContext context) async {
-    var builder = widget.transitionBuilder;
-    if (widget.locale != null) {
+    var builder = transitionBuilder;
+    if (locale != null) {
       builder = (context, child) {
-        var transitionBuilder = widget.transitionBuilder;
+        var transitionBuilder = this.transitionBuilder;
         return Localizations.override(
           context: context,
-          locale: widget.locale,
+          locale: locale,
           child: transitionBuilder == null
               ? child
               : transitionBuilder(context, child),
@@ -146,7 +126,7 @@ class _TUIDatePickerState extends State<TUIDatePicker> {
 
     final timePickerResult = await showTimePicker(
       context: context,
-      initialTime: widget.initialTime ?? TimeOfDay.fromDateTime(DateTime.now()),
+      initialTime: initialTime ?? TimeOfDay.fromDateTime(DateTime.now()),
       builder: builder,
     );
 
@@ -162,7 +142,7 @@ class _TUIDatePickerState extends State<TUIDatePicker> {
 
   Future<void> _selectDate(BuildContext context) async {
     DateTime? pickedDate;
-    switch (widget.inputType) {
+    switch (inputType) {
       case InputType.date:
         pickedDate = await _showDatePicker(context);
         break;
@@ -174,7 +154,7 @@ class _TUIDatePickerState extends State<TUIDatePicker> {
         if (!context.mounted) return;
         final date = await _showDatePicker(context);
         if (date != null) {
-          if (!mounted) break;
+          if (!context.mounted) break;
           final time = await _showTimePicker(context);
           pickedDate = combine(date, time);
         }
@@ -183,12 +163,8 @@ class _TUIDatePickerState extends State<TUIDatePicker> {
         return;
     }
 
-    if (pickedDate != null && pickedDate != _selectedDate) {
-      setState(() {
-        _selectedDate = pickedDate;
-        _dateController.text = _dateFormat.format(_selectedDate!);
-        widget.dateSelected?.call(_selectedDate!);
-      });
+    if (pickedDate != null && pickedDate != initialDate) {
+      dateSelected?.call(pickedDate);
     }
   }
 }

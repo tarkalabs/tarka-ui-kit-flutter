@@ -174,6 +174,7 @@ class _HomePageState extends State<HomePage> {
   bool _enable = false;
   bool _firstRadioButtonState = false;
   bool _secondRadioButtonState = true;
+  DateTime? _selectedDate;
 
   int _selectedIndexForTab = 2;
 
@@ -1458,8 +1459,15 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 8),
             TUIDatePicker(
               labelText: "Label Text",
+              initialDate: _selectedDate,
+              initialTime: _selectedDate != null
+                  ? TimeOfDay(
+                      hour: _selectedDate!.hour, minute: _selectedDate!.minute)
+                  : null,
               dateSelected: (date) {
-                print(date);
+                setState(() {
+                  _selectedDate = date;
+                });
               },
             ),
             const SizedBox(
