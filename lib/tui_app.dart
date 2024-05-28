@@ -350,9 +350,7 @@ class _TUIAppState extends State<TUIApp> {
                   onError: themeData.colors.onError,
                   surface: themeData.colors.surface,
                   onSurface: themeData.colors.onSurface,
-                  surfaceVariant: themeData.colors.surfaceVariant,
-                  background: themeData.colors.background,
-                  onBackground: themeData.colors.onBackground,
+                  surfaceContainerHighest: themeData.colors.surfaceVariant,
                 ),
                 textSelectionTheme: m.TextSelectionThemeData(
                   selectionColor: themeData.colors.onPrimary,
